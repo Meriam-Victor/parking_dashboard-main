@@ -1,0 +1,71 @@
+name: parking_dashboard
+description: "A new Flutter project."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.3.4 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.6
+  http:
+  flutter_bloc:
+  flutter_svg:
+  fluttertoast:
+  loading_indicator: ^3.1.1
+  go_router:
+  shared_preferences:
+  cached_network_image:
+  image_picker:
+  url_launcher:
+  flutter_rating_bar:
+  group_button: ^5.3.4
+  easy_localization: ^3.0.1
+  flutter_launcher_icons: ^0.13.1
+  intl_phone_field: ^3.2.0
+  lottie:
+  pin_code_fields:
+  barcode_widget: ^2.0.4
+  fdottedline_nullsafety: ^2.0.1
+  otp_pin_field:
+  percent_indicator: ^4.0.1
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^3.0.0
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/image/mainLogo.png"
+  min_sdk_android: 21
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/
+    - assets/image/
+    - assets/image/lottie/
+    - assets/translations/
+
+  fonts:
+    - family: Inter
+      fonts:
+        - asset: assets/font/Inter-Black.ttf
+        - asset: assets/font/Inter-Bold.ttf
+        - asset: assets/font/Inter-ExtraBold.ttf
+        - asset: assets/font/Inter-ExtraLight.ttf
+        - asset: assets/font/Inter-Light.ttf
+        - asset: assets/font/Inter-Regular.ttf
+        - asset: assets/font/Inter-SemiBold.ttf
+        - asset: assets/font/Inter-Medium.ttf
+        - asset: assets/font/Inter-SemiBold.ttf
+        - asset: assets/font/Inter-Thin.ttf
+
+
