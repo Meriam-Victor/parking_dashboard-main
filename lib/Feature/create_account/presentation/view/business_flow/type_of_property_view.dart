@@ -30,10 +30,13 @@ class _TypeOfPropertyView extends State<TypeOfPropertyView> {
   ];
 
   String? selectedPropertyType;
+  String selectedValue = 'yes';
+  bool isSingleLevel = true;
 
   bool showSecurityFeature = false;
+  bool showParkingComposition = false;
 
-  String selectedValue = 'yes';
+
 
 
   @override
@@ -135,6 +138,7 @@ class _TypeOfPropertyView extends State<TypeOfPropertyView> {
                         setState(() {
                           selectedPropertyType = type;
                           showSecurityFeature = type == "Land";
+                          showParkingComposition = type == "Building";
                         });
                       },
                     ),
@@ -173,7 +177,7 @@ class _TypeOfPropertyView extends State<TypeOfPropertyView> {
                             });
                           },
                           child: Container(
-                            width: Unit(context).getWidthSize*0.2,
+                            width: Unit(context).getWidthSize*0.22,
                             decoration: BoxDecoration(
                               color: selectedValue == 'yes' ?
                               ColorData.secondary1Color :
@@ -226,7 +230,7 @@ class _TypeOfPropertyView extends State<TypeOfPropertyView> {
                             });
                           },
                           child: Container(
-                            width: Unit(context).getWidthSize*0.2,
+                            width: Unit(context).getWidthSize*0.22,
                             decoration: BoxDecoration(
                               color: selectedValue == 'no' ?
                               ColorData.secondary1Color :
@@ -260,7 +264,7 @@ class _TypeOfPropertyView extends State<TypeOfPropertyView> {
                                   ),
                                 ),
                                 Text(
-                                  LocaleKeys.kYes.tr(),
+                                  LocaleKeys.kNo.tr(),
                                   style: selectedValue == 'no' ?
                                   Styles.textStyleSecondary4ColorR14 :
                                   Styles.textStyleGreyBlue8ColorR14,
@@ -274,30 +278,203 @@ class _TypeOfPropertyView extends State<TypeOfPropertyView> {
                     SizedBox(
                       height: SizeData.s24,
                     ),
-                    Row(
-                      children: [
-                        Text(
-                          LocaleKeys.kEnterCode.tr(),
-                          style: Styles.textStyleGreyBlue1ColorR14,
-                        ),
-                        SizedBox(
-                          width: SizeData.s8,
-                        ),
-                        SvgPicture.asset(
-                          AssetsData.infoCircleBlue,
-                          width: Unit(context).getWidthSize*0.053,
-                        ),
-                      ],
+                    if(selectedValue == 'yes')
+                      Column(
+                        children: [
+                          Row(
+                            children: [
+                              Text(
+                                LocaleKeys.kEnterCode.tr(),
+                                style: Styles.textStyleGreyBlue1ColorR14,
+                              ),
+                              SizedBox(
+                                width: SizeData.s8,
+                              ),
+                              SvgPicture.asset(
+                                AssetsData.infoCircleBlue,
+                                width: Unit(context).getWidthSize*0.053,
+                              ),
+                            ],
+                          ),
+                          SizedBox(
+                            height: SizeData.s8,
+                          ),
+                          InputTextCustom(
+                            controller: TextEditingController(),
+                            hintText: LocaleKeys.kTypeHere.tr(),
+                          ),
+                        ],
+                      ),
+                  ],
+                ),
+
+              if(showParkingComposition)
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      LocaleKeys.kYourParkingIsComposedOf.tr(),
+                      style: Styles.textStyleGreyBlue1ColorM16,
                     ),
                     SizedBox(
                       height: SizeData.s8,
                     ),
-                    InputTextCustom(
-                      controller: TextEditingController(),
-                      hintText: LocaleKeys.kTypeHere.tr(),
+                    Row(
+                      children: [
+                        GestureDetector(
+                          onTap: () {
+                            setState(() {
+                              isSingleLevel = true;
+                            });
+                          },
+                          child: Container(
+                            width: Unit(context).getWidthSize*0.427,
+                            decoration: BoxDecoration(
+                              color: isSingleLevel ?
+                              ColorData.blue3Color :
+                              ColorData.whiteColor,
+                              border: Border.all(
+                                color: isSingleLevel ?
+                                ColorData.blue5Color :
+                                ColorData.greyBlue2Color,
+                              ),
+                              borderRadius: BorderRadius.circular(
+                                SizeData.s8,
+                              ),
+                            ),
+                            child: Padding(
+                              padding: EdgeInsets.all(
+                                SizeData.s10,
+                              ),
+                              child: Center(
+                                child: Text(
+                                  LocaleKeys.kSingleLevelGarage.tr(),
+                                  style: isSingleLevel ?
+                                  Styles.textStyleBlue2ColorR12 :
+                                  Styles.textStyleGreyBlue8ColorR12,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        const Spacer(),
+                        GestureDetector(
+                          onTap: () {
+                            setState(() {
+                              isSingleLevel = false;
+                            });
+                          },
+                          child: Container(
+                            width: Unit(context).getWidthSize*0.427,
+                            decoration: BoxDecoration(
+                              color: !isSingleLevel ?
+                              ColorData.blue3Color :
+                              ColorData.whiteColor,
+                              border: Border.all(
+                                color: !isSingleLevel ?
+                                ColorData.blue5Color :
+                                ColorData.greyBlue2Color,
+                              ),
+                              borderRadius: BorderRadius.circular(
+                                SizeData.s8,
+                              ),
+                            ),
+                            child: Padding(
+                              padding: EdgeInsets.all(
+                                SizeData.s10,
+                              ),
+                              child: Center(
+                                child: Text(
+                                  LocaleKeys.kMultiLevelGarage.tr(),
+                                  style: !isSingleLevel ?
+                                  Styles.textStyleBlue2ColorR12 :
+                                  Styles.textStyleGreyBlue8ColorR12,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
+                    SizedBox(
+                      height: SizeData.s16,
+                    ),
+
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        SizedBox(
+                          width: Unit(context).getWidthSize*0.427,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                LocaleKeys.kFloorNumber.tr(),
+                                style: Styles.textStyleGreyBlue1ColorR14,
+                              ),
+                              SizedBox(
+                                height: SizeData.s8,
+                              ),
+                              InputTextCustom(
+                                controller: TextEditingController(),
+                                hintText: LocaleKeys.kPlusOne.tr(),
+                              ),
+                            ],
+                          ),
+                        ),
+                        const Spacer(),
+                        if(!isSingleLevel)
+                          SizedBox(
+                            width: Unit(context).getWidthSize*0.427,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  LocaleKeys.kFloorNumber.tr(),
+                                  style: Styles.textStyleGreyBlue1ColorR14,
+                                ),
+                                SizedBox(
+                                  height: SizeData.s8,
+                                ),
+                                InputTextCustom(
+                                  controller: TextEditingController(),
+                                  hintText: LocaleKeys.kPlusTwo.tr(),
+                                ),
+                              ],
+                            ),
+                          ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: SizeData.s16,
+                    ),
+                    if(!isSingleLevel)
+                      GestureDetector(
+                        onTap: (){},
+                        child: Row(
+                          children: [
+                            SvgPicture.asset(
+                              AssetsData.addSquareIcon,
+                              width: Unit(context).getWidthSize*0.064,
+                            ),
+                            SizedBox(
+                              width: SizeData.s8,
+                            ),
+                            Text(
+                              LocaleKeys.kAddMoreFloor.tr(),
+                              style: Styles.textStyleBlue1ColorR14,
+                            ),
+                          ],
+                        ),
+                      )
                   ],
                 ),
+
+
               SizedBox(
                 height: SizeData.s32,
               ),
@@ -322,6 +499,7 @@ class _TypeOfPropertyView extends State<TypeOfPropertyView> {
                   ),
                 ],
               ),
+
             ],
           ),
         ),

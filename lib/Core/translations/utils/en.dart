@@ -174,6 +174,10 @@ const Map<String, String> en = {
   'kTheCustomerPays20UponBooking':'The customer pays 20% upon booking, and the rest in cash. In case of cancellation, Customer gets no Refund. Parkorus will take 10%, and you (parking owner) will receive 10%',
   'kParkingDetails' : 'Parking Details',
   'kEnterCode' : 'Enter Code',
+  'kPlusOne' : '+1',
+  'kPlusTwo' : '+2',
+  'kAddMoreFloor' : 'Add More Floor',
+
 };
 
 

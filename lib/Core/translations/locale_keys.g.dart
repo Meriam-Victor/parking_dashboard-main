@@ -173,6 +173,9 @@ abstract class  LocaleKeys {
   static const String kResendCode='kResendCode';
   static const String kParkingDetails='kParkingDetails';
   static const String kEnterCode='kEnterCode';
+  static const String kPlusOne='kPlusOne';
+  static const String kPlusTwo='kPlusTwo';
+  static const String kAddMoreFloor='kAddMoreFloor';
 
 
 }

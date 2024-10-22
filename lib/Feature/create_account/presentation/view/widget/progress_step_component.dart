@@ -73,7 +73,7 @@ class ProgressStepComponent extends StatelessWidget {
           padding: EdgeInsets.all(
             SizeData.s10,
           ),
-          width: Unit(context).getWidthSize*0.24,
+          width: Unit(context).getWidthSize*0.25,
           decoration: BoxDecoration(
             color: stateBackgroundColor,
             borderRadius: BorderRadius.circular(

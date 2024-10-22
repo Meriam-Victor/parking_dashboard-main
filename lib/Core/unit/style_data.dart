@@ -260,6 +260,14 @@ abstract class Styles {
     fontFamily: fontFamily,
   );
 
+  static TextStyle textStyleBlue2ColorR12 = TextStyle(
+    color: ColorData.blue2Color,
+    fontWeight: FontWeightStyles.regular,
+    fontSize: unit!.fontSize(12),
+    height: 0.0,
+    fontFamily: fontFamily,
+  );
+
 }
 
 
