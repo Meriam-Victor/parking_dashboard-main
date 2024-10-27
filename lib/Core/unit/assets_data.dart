@@ -148,6 +148,9 @@ class AssetsData {
   static const String activatedStep ='$buseUrl/activated_step.svg';
   static const String unactivatedStep ='$buseUrl/unactivated_step.svg';
   static const String completedStep ='$buseUrl/completed_step.svg';
+  static const String arrowDown ='$buseUrl/arrow_down.svg';
+  static const String calendar2Blue ='$buseUrl/calendar_2_blue.svg';
+  static const String clockBlue ='$buseUrl/clock_blue.svg';
 
 
 

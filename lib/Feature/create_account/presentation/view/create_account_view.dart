@@ -1,6 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:parking_dashboard/Core/unit/assets_data.dart';
 import 'package:parking_dashboard/Core/unit/size_data.dart';
 import 'package:parking_dashboard/Core/unit/style_data.dart';
@@ -11,6 +12,8 @@ import 'package:parking_dashboard/Core/widget/appbar/custom_app_bar.dart';
 import 'package:parking_dashboard/Feature/create_account/presentation/view/widget/functions/verification_code_dialog.dart';
 import 'package:parking_dashboard/Core/widget/buttons/main_custom_button.dart';
 import 'package:parking_dashboard/Core/widget/input_fields/custom_input_field.dart';
+
+import '../../../../Core/unit/app_routes.dart';
 
 class CreateAccount extends StatefulWidget {
   const CreateAccount({super.key});
@@ -115,6 +118,7 @@ class _CreateAccountState extends State<CreateAccount> {
               InputTextCustom(
                 controller: TextEditingController(),
                 hintText: LocaleKeys.kTypeHere.tr(),
+                obscureText: true,
                 suffixIcon: Padding(
                   padding: EdgeInsets.all(
                     SizeData.s12,
@@ -137,6 +141,7 @@ class _CreateAccountState extends State<CreateAccount> {
               InputTextCustom(
                 controller: TextEditingController(),
                 hintText: LocaleKeys.kTypeHere.tr(),
+                obscureText: true,
                 suffixIcon: Padding(
                   padding: EdgeInsets.all(
                     SizeData.s12,
@@ -156,7 +161,7 @@ class _CreateAccountState extends State<CreateAccount> {
                 text: LocaleKeys.kCreateAccount.tr(),
               ),
               SizedBox(
-                height: SizeData.s32,
+                height: SizeData.s20,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -170,7 +175,7 @@ class _CreateAccountState extends State<CreateAccount> {
                   ),
                   GestureDetector(
                     onTap: (){
-
+                      GoRouter.of(context).push(AppRouter.kLogin);
                     },
                     child: Text(
                       LocaleKeys.kLogIn.tr(),

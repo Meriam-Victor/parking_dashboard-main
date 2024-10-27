@@ -12,6 +12,8 @@ import 'package:parking_dashboard/Core/widget/buttons/main_custom_button.dart';
 import 'package:parking_dashboard/Feature/create_account/presentation/view/widget/progress_step_component.dart';
 import 'package:parking_dashboard/Core/widget/input_fields/custom_input_field.dart';
 
+import '../../../../../Core/unit/app_routes.dart';
+
 class TypeOfPropertyView extends StatefulWidget {
   const TypeOfPropertyView({super.key});
 
@@ -35,8 +37,6 @@ class _TypeOfPropertyView extends State<TypeOfPropertyView> {
 
   bool showSecurityFeature = false;
   bool showParkingComposition = false;
-
-
 
 
   @override
@@ -149,331 +149,316 @@ class _TypeOfPropertyView extends State<TypeOfPropertyView> {
                 height: SizeData.s32,
               ),
 
-              if (showSecurityFeature)
-                Column(
+              if (showSecurityFeature) ...[
+                Text(
+                  LocaleKeys.kSecurityFeature.tr(),
+                  style: Styles.textStyleGreyBlue1ColorM16,
+                ),
+                SizedBox(
+                  height: SizeData.s8,
+                ),
+                Text(
+                  LocaleKeys.kDoesYourParkingHasEntryCodeAtTheFrontGate.tr(),
+                  style: Styles.textStyleGreyBlue8ColorR14,
+                ),
+                SizedBox(
+                  height: SizeData.s16,
+                ),
+                Row(
+                  children: [
+                    GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          selectedValue = 'yes';
+                        });
+                      },
+                      child: Container(
+                        width: Unit(context).getWidthSize*0.22,
+                        decoration: BoxDecoration(
+                          color: selectedValue == 'yes' ?
+                          ColorData.secondary1Color :
+                          ColorData.whiteColor,
+                          border: Border.all(
+                            color: selectedValue == 'yes' ?
+                            ColorData.secondary2Color :
+                            ColorData.greyBlue2Color,
+                          ),
+                          borderRadius: BorderRadius.circular(
+                            SizeData.s8,
+                          ),
+                        ),
+                        child: Row(
+                          children: [
+                            Transform.scale(
+                              scale: 1.2,
+                              child: Checkbox(
+                                shape: const CircleBorder(),
+                                value: selectedValue == 'yes',
+                                activeColor: ColorData.secondary4Color,
+                                side: BorderSide(
+                                  width: SizeData.s1,
+                                  color: ColorData.greyBlue9Color,
+                                ),
+                                onChanged: (bool? value) {
+                                  setState(() {
+                                    selectedValue = 'yes';
+                                  });
+                                },
+                              ),
+                            ),
+                            Text(
+                              LocaleKeys.kYes.tr(),
+                              style: selectedValue == 'yes' ?
+                              Styles.textStyleSecondary4ColorR14 :
+                              Styles.textStyleGreyBlue8ColorR14,
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      width: SizeData.s10,
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          selectedValue = 'no';
+                        });
+                      },
+                      child: Container(
+                        width: Unit(context).getWidthSize*0.22,
+                        decoration: BoxDecoration(
+                          color: selectedValue == 'no' ?
+                          ColorData.secondary1Color :
+                          ColorData.whiteColor,
+                          border: Border.all(
+                            color: selectedValue == 'no' ?
+                            ColorData.secondary2Color :
+                            ColorData.greyBlue2Color,
+                          ),
+                          borderRadius: BorderRadius.circular(
+                            SizeData.s8,
+                          ),
+                        ),
+                        child: Row(
+                          children: [
+                            Transform.scale(
+                              scale: 1.2,
+                              child: Checkbox(
+                                shape: const CircleBorder(),
+                                value: selectedValue == 'no',
+                                activeColor: ColorData.secondary4Color,
+                                side: BorderSide(
+                                  width: SizeData.s1,
+                                  color: ColorData.greyBlue9Color,
+                                ),
+                                onChanged: (bool? value) {
+                                  setState(() {
+                                    selectedValue = 'no';
+                                  });
+                                },
+                              ),
+                            ),
+                            Text(
+                              LocaleKeys.kNo.tr(),
+                              style: selectedValue == 'no' ?
+                              Styles.textStyleSecondary4ColorR14 :
+                              Styles.textStyleGreyBlue8ColorR14,
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: SizeData.s24,
+                ),
+                if(selectedValue == 'yes') ...[
+                  Row(
+                    children: [
+                      Text(
+                        LocaleKeys.kEnterCode.tr(),
+                        style: Styles.textStyleGreyBlue1ColorR14,
+                      ),
+                      SizedBox(
+                        width: SizeData.s8,
+                      ),
+                      SvgPicture.asset(
+                        AssetsData.infoCircleBlue,
+                        width: Unit(context).getWidthSize*0.053,
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: SizeData.s8,
+                  ),
+                  InputTextCustom(
+                    controller: TextEditingController(),
+                    hintText: LocaleKeys.kTypeHere.tr(),
+                  ),
+                ],
+              ],
+              if(showParkingComposition) ...[
+                Text(
+                  LocaleKeys.kYourParkingIsComposedOf.tr(),
+                  style: Styles.textStyleGreyBlue1ColorM16,
+                ),
+                SizedBox(
+                  height: SizeData.s8,
+                ),
+                Row(
+                  children: [
+                    GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          isSingleLevel = true;
+                        });
+                      },
+                      child: Container(
+                        width: Unit(context).getWidthSize*0.427,
+                        decoration: BoxDecoration(
+                          color: isSingleLevel ?
+                          ColorData.blue3Color :
+                          ColorData.whiteColor,
+                          border: Border.all(
+                            color: isSingleLevel ?
+                            ColorData.blue5Color :
+                            ColorData.greyBlue2Color,
+                          ),
+                          borderRadius: BorderRadius.circular(
+                            SizeData.s8,
+                          ),
+                        ),
+                        child: Padding(
+                          padding: EdgeInsets.all(
+                            SizeData.s10,
+                          ),
+                          child: Center(
+                            child: Text(
+                              LocaleKeys.kSingleLevelGarage.tr(),
+                              style: isSingleLevel ?
+                              Styles.textStyleBlue2ColorR12 :
+                              Styles.textStyleGreyBlue8ColorR12,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    const Spacer(),
+                    GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          isSingleLevel = false;
+                        });
+                      },
+                      child: Container(
+                        width: Unit(context).getWidthSize*0.427,
+                        decoration: BoxDecoration(
+                          color: !isSingleLevel ?
+                          ColorData.blue3Color :
+                          ColorData.whiteColor,
+                          border: Border.all(
+                            color: !isSingleLevel ?
+                            ColorData.blue5Color :
+                            ColorData.greyBlue2Color,
+                          ),
+                          borderRadius: BorderRadius.circular(
+                            SizeData.s8,
+                          ),
+                        ),
+                        child: Padding(
+                          padding: EdgeInsets.all(
+                            SizeData.s10,
+                          ),
+                          child: Center(
+                            child: Text(
+                              LocaleKeys.kMultiLevelGarage.tr(),
+                              style: !isSingleLevel ?
+                              Styles.textStyleBlue2ColorR12 :
+                              Styles.textStyleGreyBlue8ColorR12,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: SizeData.s16,
+                ),
+
+                Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      LocaleKeys.kSecurityFeature.tr(),
-                      style: Styles.textStyleGreyBlue1ColorM16,
-                    ),
                     SizedBox(
-                      height: SizeData.s8,
-                    ),
-                    Text(
-                      LocaleKeys.kDoesYourParkingHasEntryCodeAtTheFrontGate.tr(),
-                      style: Styles.textStyleGreyBlue8ColorR14,
-                    ),
-                    SizedBox(
-                      height: SizeData.s16,
-                    ),
-                    Row(
-                      children: [
-                        GestureDetector(
-                          onTap: () {
-                            setState(() {
-                              selectedValue = 'yes';
-                            });
-                          },
-                          child: Container(
-                            width: Unit(context).getWidthSize*0.22,
-                            decoration: BoxDecoration(
-                              color: selectedValue == 'yes' ?
-                              ColorData.secondary1Color :
-                              ColorData.whiteColor,
-                              border: Border.all(
-                                color: selectedValue == 'yes' ?
-                                ColorData.secondary2Color :
-                                ColorData.greyBlue2Color,
-                              ),
-                              borderRadius: BorderRadius.circular(
-                                SizeData.s8,
-                              ),
-                            ),
-                            child: Row(
-                              children: [
-                                Transform.scale(
-                                  scale: 1.2,
-                                  child: Checkbox(
-                                    shape: const CircleBorder(),
-                                    value: selectedValue == 'yes',
-                                    activeColor: ColorData.secondary4Color,
-                                    side: BorderSide(
-                                      width: SizeData.s1,
-                                      color: ColorData.greyBlue9Color,
-                                    ),
-                                    onChanged: (bool? value) {
-                                      setState(() {
-                                        selectedValue = 'yes';
-                                      });
-                                    },
-                                  ),
-                                ),
-                                Text(
-                                  LocaleKeys.kYes.tr(),
-                                  style: selectedValue == 'yes' ?
-                                  Styles.textStyleSecondary4ColorR14 :
-                                  Styles.textStyleGreyBlue8ColorR14,
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                        SizedBox(
-                          width: SizeData.s10,
-                        ),
-                        GestureDetector(
-                          onTap: () {
-                            setState(() {
-                              selectedValue = 'no';
-                            });
-                          },
-                          child: Container(
-                            width: Unit(context).getWidthSize*0.22,
-                            decoration: BoxDecoration(
-                              color: selectedValue == 'no' ?
-                              ColorData.secondary1Color :
-                              ColorData.whiteColor,
-                              border: Border.all(
-                                color: selectedValue == 'no' ?
-                                ColorData.secondary2Color :
-                                ColorData.greyBlue2Color,
-                              ),
-                              borderRadius: BorderRadius.circular(
-                                SizeData.s8,
-                              ),
-                            ),
-                            child: Row(
-                              children: [
-                                Transform.scale(
-                                  scale: 1.2,
-                                  child: Checkbox(
-                                    shape: const CircleBorder(),
-                                    value: selectedValue == 'no',
-                                    activeColor: ColorData.secondary4Color,
-                                    side: BorderSide(
-                                      width: SizeData.s1,
-                                      color: ColorData.greyBlue9Color,
-                                    ),
-                                    onChanged: (bool? value) {
-                                      setState(() {
-                                        selectedValue = 'no';
-                                      });
-                                    },
-                                  ),
-                                ),
-                                Text(
-                                  LocaleKeys.kNo.tr(),
-                                  style: selectedValue == 'no' ?
-                                  Styles.textStyleSecondary4ColorR14 :
-                                  Styles.textStyleGreyBlue8ColorR14,
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                    SizedBox(
-                      height: SizeData.s24,
-                    ),
-                    if(selectedValue == 'yes')
-                      Column(
+                      width: Unit(context).getWidthSize*0.427,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Row(
-                            children: [
-                              Text(
-                                LocaleKeys.kEnterCode.tr(),
-                                style: Styles.textStyleGreyBlue1ColorR14,
-                              ),
-                              SizedBox(
-                                width: SizeData.s8,
-                              ),
-                              SvgPicture.asset(
-                                AssetsData.infoCircleBlue,
-                                width: Unit(context).getWidthSize*0.053,
-                              ),
-                            ],
+                          Text(
+                            LocaleKeys.kFloorNumber.tr(),
+                            style: Styles.textStyleGreyBlue1ColorR14,
                           ),
                           SizedBox(
                             height: SizeData.s8,
                           ),
                           InputTextCustom(
                             controller: TextEditingController(),
-                            hintText: LocaleKeys.kTypeHere.tr(),
+                            hintText: LocaleKeys.kPlusOne.tr(),
                           ),
                         ],
                       ),
-                  ],
-                ),
-
-              if(showParkingComposition)
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      LocaleKeys.kYourParkingIsComposedOf.tr(),
-                      style: Styles.textStyleGreyBlue1ColorM16,
                     ),
-                    SizedBox(
-                      height: SizeData.s8,
-                    ),
-                    Row(
-                      children: [
-                        GestureDetector(
-                          onTap: () {
-                            setState(() {
-                              isSingleLevel = true;
-                            });
-                          },
-                          child: Container(
-                            width: Unit(context).getWidthSize*0.427,
-                            decoration: BoxDecoration(
-                              color: isSingleLevel ?
-                              ColorData.blue3Color :
-                              ColorData.whiteColor,
-                              border: Border.all(
-                                color: isSingleLevel ?
-                                ColorData.blue5Color :
-                                ColorData.greyBlue2Color,
-                              ),
-                              borderRadius: BorderRadius.circular(
-                                SizeData.s8,
-                              ),
-                            ),
-                            child: Padding(
-                              padding: EdgeInsets.all(
-                                SizeData.s10,
-                              ),
-                              child: Center(
-                                child: Text(
-                                  LocaleKeys.kSingleLevelGarage.tr(),
-                                  style: isSingleLevel ?
-                                  Styles.textStyleBlue2ColorR12 :
-                                  Styles.textStyleGreyBlue8ColorR12,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                        const Spacer(),
-                        GestureDetector(
-                          onTap: () {
-                            setState(() {
-                              isSingleLevel = false;
-                            });
-                          },
-                          child: Container(
-                            width: Unit(context).getWidthSize*0.427,
-                            decoration: BoxDecoration(
-                              color: !isSingleLevel ?
-                              ColorData.blue3Color :
-                              ColorData.whiteColor,
-                              border: Border.all(
-                                color: !isSingleLevel ?
-                                ColorData.blue5Color :
-                                ColorData.greyBlue2Color,
-                              ),
-                              borderRadius: BorderRadius.circular(
-                                SizeData.s8,
-                              ),
-                            ),
-                            child: Padding(
-                              padding: EdgeInsets.all(
-                                SizeData.s10,
-                              ),
-                              child: Center(
-                                child: Text(
-                                  LocaleKeys.kMultiLevelGarage.tr(),
-                                  style: !isSingleLevel ?
-                                  Styles.textStyleBlue2ColorR12 :
-                                  Styles.textStyleGreyBlue8ColorR12,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                    SizedBox(
-                      height: SizeData.s16,
-                    ),
-
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        SizedBox(
-                          width: Unit(context).getWidthSize*0.427,
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                LocaleKeys.kFloorNumber.tr(),
-                                style: Styles.textStyleGreyBlue1ColorR14,
-                              ),
-                              SizedBox(
-                                height: SizeData.s8,
-                              ),
-                              InputTextCustom(
-                                controller: TextEditingController(),
-                                hintText: LocaleKeys.kPlusOne.tr(),
-                              ),
-                            ],
-                          ),
-                        ),
-                        const Spacer(),
-                        if(!isSingleLevel)
-                          SizedBox(
-                            width: Unit(context).getWidthSize*0.427,
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  LocaleKeys.kFloorNumber.tr(),
-                                  style: Styles.textStyleGreyBlue1ColorR14,
-                                ),
-                                SizedBox(
-                                  height: SizeData.s8,
-                                ),
-                                InputTextCustom(
-                                  controller: TextEditingController(),
-                                  hintText: LocaleKeys.kPlusTwo.tr(),
-                                ),
-                              ],
-                            ),
-                          ),
-                      ],
-                    ),
-                    SizedBox(
-                      height: SizeData.s16,
-                    ),
+                    const Spacer(),
                     if(!isSingleLevel)
-                      GestureDetector(
-                        onTap: (){},
-                        child: Row(
+                      SizedBox(
+                        width: Unit(context).getWidthSize*0.427,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            SvgPicture.asset(
-                              AssetsData.addSquareIcon,
-                              width: Unit(context).getWidthSize*0.064,
+                            Text(
+                              LocaleKeys.kFloorNumber.tr(),
+                              style: Styles.textStyleGreyBlue1ColorR14,
                             ),
                             SizedBox(
-                              width: SizeData.s8,
+                              height: SizeData.s8,
                             ),
-                            Text(
-                              LocaleKeys.kAddMoreFloor.tr(),
-                              style: Styles.textStyleBlue1ColorR14,
+                            InputTextCustom(
+                              controller: TextEditingController(),
+                              hintText: LocaleKeys.kPlusTwo.tr(),
                             ),
                           ],
                         ),
-                      )
+                      ),
                   ],
                 ),
-
+                SizedBox(
+                  height: SizeData.s16,
+                ),
+                if(!isSingleLevel)
+                  GestureDetector(
+                    onTap: (){},
+                    child: Row(
+                      children: [
+                        SvgPicture.asset(
+                          AssetsData.addSquareIcon,
+                          width: Unit(context).getWidthSize*0.064,
+                        ),
+                        SizedBox(
+                          width: SizeData.s8,
+                        ),
+                        Text(
+                          LocaleKeys.kAddMoreFloor.tr(),
+                          style: Styles.textStyleBlue1ColorR14,
+                        ),
+                      ],
+                    ),
+                  )
+              ],
 
               SizedBox(
                 height: SizeData.s32,
@@ -492,6 +477,7 @@ class _TypeOfPropertyView extends State<TypeOfPropertyView> {
                   const Spacer(),
                   MainCustomButton(
                     onTap: (){
+                      GoRouter.of(context).push(AppRouter.kWorkingHoursView);
                     },
                     width: Unit(context).getWidthSize*0.48,
                     text: LocaleKeys.kNext.tr(),

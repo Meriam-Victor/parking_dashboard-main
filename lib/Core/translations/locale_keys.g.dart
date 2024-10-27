@@ -176,6 +176,13 @@ abstract class  LocaleKeys {
   static const String kPlusOne='kPlusOne';
   static const String kPlusTwo='kPlusTwo';
   static const String kAddMoreFloor='kAddMoreFloor';
+  static const String k24Hrs='k24Hrs';
+  static const String kOr='kOr';
+  static const String kDate='kDate';
+  static const String kSelectDate='kSelectDate';
+  static const String kStartTime='kStartTime';
+  static const String kSelectHere='kSelectHere';
+  static const String kEndTime='kEndTime';
 
 
 }

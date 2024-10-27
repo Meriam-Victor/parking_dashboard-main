@@ -117,6 +117,7 @@ class _LoginState extends State<Login> {
               InputTextCustom(
                 controller: TextEditingController(),
                 hintText: LocaleKeys.kTypeHere.tr(),
+                obscureText: true,
                 suffixIcon: Padding(
                   padding: EdgeInsets.all(
                     SizeData.s12,

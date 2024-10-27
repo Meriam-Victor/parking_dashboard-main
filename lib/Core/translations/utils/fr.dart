@@ -179,6 +179,14 @@ const Map<String, String> fr = {
   'kPlusOne' : '+1',
   'kPlusTwo' : '+2',
   'kAddMoreFloor' : 'Add More Floor',
+  'k24Hrs' : '24 Hrs',
+  'kOr' : 'Or',
+  'kDate' : 'Date',
+  'kSelectDate' : 'Select Date',
+  'kStartTime' : 'Start Time',
+  'kSelectHere' : 'Select Here',
+  'kEndTime' : 'End Time',
+
 
 
 
