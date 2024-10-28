@@ -183,6 +183,29 @@ abstract class  LocaleKeys {
   static const String kStartTime='kStartTime';
   static const String kSelectHere='kSelectHere';
   static const String kEndTime='kEndTime';
+  static const String kConfirmed='kConfirmed';
+  static const String kPictures='kPictures';
+  static const String kUnlimited='kUnlimited';
+  static const String kInstantBooking='kInstantBooking';
+  static const String kAdvanceBooking='kAdvanceBooking';
+  static const String kDecideHowYouWillConfirmReservations='kDecideHowYouWillConfirmReservations';
+  static const String kWhenThisOptionIsActivatedCustomerRequestsAreAutomaticallyAccepted='kWhenThisOptionIsActivatedCustomerRequestsAreAutomaticallyAccepted';
+  static const String kWhenThisOptionIsActivatedCustomerRequestsAwaitConfirmation='kWhenThisOptionIsActivatedCustomerRequestsAwaitConfirmation';
+  static const String kBookingDeadlineBeforeArrival='kBookingDeadlineBeforeArrival';
+  static const String kHowLongBeforeArrivalDoYouNeedToReceiveATravelerReservation='kHowLongBeforeArrivalDoYouNeedToReceiveATravelerReservation';
+  static const String kTheSameDay='kTheSameDay';
+  static const String kAtLeastOneDayInAdvance='kAtLeastOneDayInAdvance';
+  static const String kAtLeastTwoDayInAdvance='kAtLeastTwoDayInAdvance';
+  static const String kAtLeastThreeDayInAdvance='kAtLeastThreeDayInAdvance';
+  static const String kAtLeastSevenDayInAdvance='kAtLeastSevenDayInAdvance';
+  static const String kServices='kServices';
+  static const String kPricePlan='kPricePlan';
+  static const String kAddParkingPhotos='kAddParkingPhotos';
+  static const String kYouCanStillAddPhotosLater='kYouCanStillAddPhotosLater';
+  static const String kCoverPhoto='kCoverPhoto';
+  static const String kGallery='kGallery';
+  static const String kDragAndDrop='kDragAndDrop';
+  static const String kMaxFileSize25MB='kMaxFileSize25MB';
 
 
 }

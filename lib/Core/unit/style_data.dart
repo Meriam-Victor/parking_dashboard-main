@@ -43,6 +43,14 @@ abstract class Styles {
     height: 0.0,
     fontFamily: fontFamily,
   );
+
+  static TextStyle textStyleGreyBlue1ColorM14 = TextStyle(
+    color: ColorData.greyBlue1Color,
+    fontWeight: FontWeightStyles.medium,
+    fontSize: unit!.fontSize(14),
+    height: 0.0,
+    fontFamily: fontFamily,
+  );
   
   static TextStyle textStyleBlue1ColorR12 = TextStyle(
     color: ColorData.blue1Color,
@@ -237,6 +245,14 @@ abstract class Styles {
     fontFamily: fontFamily,
   );
 
+  static TextStyle textStyleGreyBlue4ColorM14 = TextStyle(
+    color: ColorData.greyBlue4Color,
+    fontWeight: FontWeightStyles.medium,
+    fontSize: unit!.fontSize(14),
+    height: 0.0,
+    fontFamily: fontFamily,
+  );
+
   static TextStyle textStyleGreyBlue10ColorR12 = TextStyle(
     color: ColorData.greyBlue10Color,
     fontWeight: FontWeightStyles.regular,
@@ -281,6 +297,22 @@ abstract class Styles {
     color: ColorData.greyBlue3Color,
     fontWeight: FontWeightStyles.regular,
     fontSize: unit!.fontSize(14),
+    height: 0.0,
+    fontFamily: fontFamily,
+  );
+
+  static TextStyle textStylePrimaryColorR10 = TextStyle(
+    color: ColorData.primaryColor,
+    fontWeight: FontWeightStyles.regular,
+    fontSize: unit!.fontSize(10),
+    height: 0.0,
+    fontFamily: fontFamily,
+  );
+
+  static TextStyle textStylePrimary4ColorR10 = TextStyle(
+    color: ColorData.primary4Color,
+    fontWeight: FontWeightStyles.regular,
+    fontSize: unit!.fontSize(10),
     height: 0.0,
     fontFamily: fontFamily,
   );

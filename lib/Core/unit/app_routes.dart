@@ -5,7 +5,12 @@ import 'package:parking_dashboard/Feature/create_account/presentation/view/add_p
 import 'package:parking_dashboard/Feature/create_account/presentation/view/business_flow/parking_title_view.dart';
 import 'package:parking_dashboard/Feature/create_account/presentation/view/business_flow/type_of_property_view.dart';
 import 'package:parking_dashboard/Feature/create_account/presentation/view/business_flow/working_hours_view.dart';
+import 'package:parking_dashboard/Feature/create_account/presentation/view/business_flow/type_of_parking_view.dart';
 
+import '../../Feature/create_account/presentation/view/business_flow/adding_parking_pictures_view.dart';
+import '../../Feature/create_account/presentation/view/business_flow/confirm_reservation_view.dart';
+import '../../Feature/create_account/presentation/view/business_flow/terms_and_conditions_view.dart';
+import '../../Feature/create_account/presentation/view/business_flow/type_of_vehicle_view.dart';
 
 abstract class AppRouter {
 
@@ -15,6 +20,11 @@ abstract class AppRouter {
   static const kParkingTitleView='/kParkingTitleView';
   static const kTypeOfPropertyView='/kTypeOfPropertyView';
   static const kWorkingHoursView='/kWorkingHoursView';
+  static const kTypeOfParkingView='/kTypeOfParkingView';
+  static const kTypeOfVehicleView='/kTypeOfVehicleView';
+  static const kTermsAndConditionsView='/kTermsAndConditionsView';
+  static const kConfirmReservationView='/kConfirmReservationView';
+  static const kAddingParkingPicturesView='/kAddingParkingPicturesView';
 
   static final GoRouter router = GoRouter(
     routes: [
@@ -54,6 +64,30 @@ abstract class AppRouter {
         builder: (context, state)=> const WorkingHoursView(),
       ),
 
+      GoRoute(
+        path: kTypeOfParkingView,
+        builder: (context, state)=> const TypeOfParkingView(),
+      ),
+
+      GoRoute(
+        path: kTypeOfVehicleView,
+        builder: (context, state)=> const TypeOfVehicleView(),
+      ),
+
+      GoRoute(
+        path: kTermsAndConditionsView,
+        builder: (context, state)=> const TermsAndConditionsView(),
+      ),
+
+      GoRoute(
+        path: kConfirmReservationView,
+        builder: (context, state)=> const ConfirmReservationView(),
+      ),
+
+      GoRoute(
+        path: kAddingParkingPicturesView,
+        builder: (context, state)=> const AddingParkingPicturesView(),
+      ),
     ],
   );
 }

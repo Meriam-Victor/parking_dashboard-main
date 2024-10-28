@@ -9,7 +9,7 @@ import 'package:parking_dashboard/Core/unit/size_data.dart';
 import 'package:parking_dashboard/Core/unit/style_data.dart';
 import 'package:parking_dashboard/Core/unit/unit.dart';
 import 'package:parking_dashboard/Core/widget/buttons/main_custom_button.dart';
-import 'package:parking_dashboard/Feature/create_account/presentation/view/widget/progress_step_component.dart';
+import 'package:parking_dashboard/Feature/create_account/presentation/view/widget/progress_steps.dart';
 import 'package:parking_dashboard/Core/widget/input_fields/custom_input_field.dart';
 import 'package:parking_dashboard/Core/unit/app_routes.dart';
 
@@ -44,43 +44,14 @@ class _ParkingTitleView extends State<ParkingTitleView> {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  children: [
-                    ProgressStepComponent(
-                      stepIcon: SvgPicture.asset(
-                        AssetsData.activatedStep,
-                        width: Unit(context).getWidthSize*0.064,
-                      ),
-                      progressColor: ColorData.blue2Color,
-                      percent: 0.3,
-                      stepNumber: '1',
-                      title: LocaleKeys.kParkingDetails.tr(),
-                      stateName: LocaleKeys.kInProgress.tr(),
-                      stateNameColor: ColorData.blue4Color,
-                      stateBackgroundColor: ColorData.blue3Color,
-                    ),
-                    SizedBox(
-                      width: SizeData.s24,
-                    ),
-                    ProgressStepComponent(
-                      stepIcon: SvgPicture.asset(
-                        AssetsData.unactivatedStep,
-                        width: Unit(context).getWidthSize*0.064,
-                      ),
-                      progressColor: ColorData.blue2Color,
-                      percent: 0.0,
-                      stepNumber: '2',
-                      title: LocaleKeys.kConfiguration.tr(),
-                      stateName: LocaleKeys.kPending.tr(),
-                      stateNameColor: ColorData.greyBlue5Color,
-                      stateBackgroundColor: ColorData.greyBlue7Color,
-                    ),
-
-                  ],
-                ),
+              ProgressSteps(
+                step1State: LocaleKeys.kInProgress.tr(),
+                step2State: LocaleKeys.kPending.tr(),
+                step3State: LocaleKeys.kPending.tr(),
+                step4State: LocaleKeys.kPending.tr(),
+                step5State: LocaleKeys.kPending.tr(),
               ),
+
               SizedBox(
                 height: SizeData.s48,
               ),

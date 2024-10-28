@@ -32,6 +32,8 @@ dependencies:
   fdottedline_nullsafety: ^2.0.1
   otp_pin_field:
   percent_indicator: ^4.0.1
+  dotted_border: ^2.0.0
+
 
 
 dev_dependencies:
