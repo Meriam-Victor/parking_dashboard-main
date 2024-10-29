@@ -206,6 +206,16 @@ abstract class  LocaleKeys {
   static const String kGallery='kGallery';
   static const String kDragAndDrop='kDragAndDrop';
   static const String kMaxFileSize25MB='kMaxFileSize25MB';
+  static const String kServicesYourParkingOffers='kServicesYourParkingOffers';
+  static const String kYouCanStillAddServicesLater='kYouCanStillAddServicesLater';
+  static const String kShuttleService='kShuttleService';
+  static const String kCarWash='kCarWash';
+  static const String kElectricCarCharging='kElectricCarCharging';
+  static const String kVehicleCovers='kVehicleCovers';
+  static const String kVehicleRevision='kVehicleRevision';
+  static const String kShuttleDetails='kShuttleDetails';
+  static const String kYouWillBeAbleToAddMoreDetailsAboutYourShuttleLater='kYouWillBeAbleToAddMoreDetailsAboutYourShuttleLater';
+  static const String kForFree='kForFree';
 
 
 }

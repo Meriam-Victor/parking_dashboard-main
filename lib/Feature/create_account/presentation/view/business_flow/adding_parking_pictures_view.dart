@@ -18,6 +18,7 @@ import 'package:parking_dashboard/Core/widget/buttons/main_custom_button.dart';
 import 'package:parking_dashboard/Core/widget/input_fields/custom_input_field.dart';
 
 import 'package:parking_dashboard/Core/widget/input_fields/custom_dropdown.dart';
+import '../../../../../Core/unit/app_routes.dart';
 import '../widget/custom_progress_step.dart';
 
 class AddingParkingPicturesView extends StatefulWidget {
@@ -335,7 +336,7 @@ class _AddingParkingPicturesView extends State<AddingParkingPicturesView> {
                   const Spacer(),
                   MainCustomButton(
                     onTap: (){
-                      //GoRouter.of(context).push(AppRouter.kTypeOfParkingView);
+                      GoRouter.of(context).push(AppRouter.kOfferedServicesView);
                     },
                     width: Unit(context).getWidthSize*0.48,
                     text: LocaleKeys.kNext.tr(),

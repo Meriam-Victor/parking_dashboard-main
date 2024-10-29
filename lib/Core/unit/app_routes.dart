@@ -6,11 +6,11 @@ import 'package:parking_dashboard/Feature/create_account/presentation/view/busin
 import 'package:parking_dashboard/Feature/create_account/presentation/view/business_flow/type_of_property_view.dart';
 import 'package:parking_dashboard/Feature/create_account/presentation/view/business_flow/working_hours_view.dart';
 import 'package:parking_dashboard/Feature/create_account/presentation/view/business_flow/type_of_parking_view.dart';
-
-import '../../Feature/create_account/presentation/view/business_flow/adding_parking_pictures_view.dart';
-import '../../Feature/create_account/presentation/view/business_flow/confirm_reservation_view.dart';
-import '../../Feature/create_account/presentation/view/business_flow/terms_and_conditions_view.dart';
-import '../../Feature/create_account/presentation/view/business_flow/type_of_vehicle_view.dart';
+import 'package:parking_dashboard/Feature/create_account/presentation/view/business_flow/adding_parking_pictures_view.dart';
+import 'package:parking_dashboard/Feature/create_account/presentation/view/business_flow/confirm_reservation_view.dart';
+import 'package:parking_dashboard/Feature/create_account/presentation/view/business_flow/offered_services_view.dart';
+import 'package:parking_dashboard/Feature/create_account/presentation/view/business_flow/terms_and_conditions_view.dart';
+import 'package:parking_dashboard/Feature/create_account/presentation/view/business_flow/type_of_vehicle_view.dart';
 
 abstract class AppRouter {
 
@@ -25,6 +25,7 @@ abstract class AppRouter {
   static const kTermsAndConditionsView='/kTermsAndConditionsView';
   static const kConfirmReservationView='/kConfirmReservationView';
   static const kAddingParkingPicturesView='/kAddingParkingPicturesView';
+  static const kOfferedServicesView='/kOfferedServicesView';
 
   static final GoRouter router = GoRouter(
     routes: [
@@ -87,6 +88,11 @@ abstract class AppRouter {
       GoRoute(
         path: kAddingParkingPicturesView,
         builder: (context, state)=> const AddingParkingPicturesView(),
+      ),
+
+      GoRoute(
+        path: kOfferedServicesView,
+        builder: (context, state)=> const OfferedServicesView(),
       ),
     ],
   );

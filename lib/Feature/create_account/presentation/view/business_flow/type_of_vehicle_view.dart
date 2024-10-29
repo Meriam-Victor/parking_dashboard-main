@@ -300,11 +300,6 @@ class _TypeOfVehicleView extends State<TypeOfVehicleView> {
                                 ],
                               ),
 
-
-
-
-
-
                             ],
                           ),
                         SizedBox(

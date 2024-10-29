@@ -209,6 +209,16 @@ const Map<String, String> fr = {
   'kGallery' : 'Gallery',
   'kDragAndDrop' : 'drag and drop',
   'kMaxFileSize25MB' : '(Max. File size: 25 MB)',
+  'kServicesYourParkingOffers' : 'Services your Parking Offers',
+  'kYouCanStillAddServicesLater' : 'you can still add Services later',
+  'kShuttleService' : 'Shuttle Service',
+  'kCarWash' : 'Car Wash',
+  'kElectricCarCharging' : 'Electric Car Charging',
+  'kVehicleCovers' : 'Vehicle Covers',
+  'kVehicleRevision' : 'Vehicle Revision',
+  'kShuttleDetails' : 'Shuttle Details',
+  'kYouWillBeAbleToAddMoreDetailsAboutYourShuttleLater' : 'you’ll be able to add more details about your shuttle Later',
+  'kForFree' : 'For Free',
 
 
 
