@@ -10,12 +10,9 @@ import 'package:parking_dashboard/Core/unit/size_data.dart';
 import 'package:parking_dashboard/Core/unit/style_data.dart';
 import 'package:parking_dashboard/Core/unit/unit.dart';
 import 'package:parking_dashboard/Feature/create_account/presentation/view/widget/progress_steps.dart';
-import 'package:parking_dashboard/Core/widget/buttons/main_custom_button.dart';
-import 'package:parking_dashboard/Core/widget/input_fields/custom_input_field.dart';
-
-import '../../../../../Core/unit/app_routes.dart';
-import '../../../../../Core/widget/input_fields/custom_dropdown.dart';
-import '../widget/custom_progress_step.dart';
+import 'package:parking_dashboard/Core/unit/app_routes.dart';
+import 'package:parking_dashboard/Core/widget/provider_app/buttons/main_button_custom.dart';
+import 'package:parking_dashboard/Core/widget/provider_app/input_fields/drop_down_custom.dart';
 
 class ConfirmReservationView extends StatefulWidget {
   const ConfirmReservationView({super.key});
@@ -62,12 +59,12 @@ class _ConfirmReservationView extends State<ConfirmReservationView> {
   Widget build(BuildContext context) {
 
     return Scaffold(
-      backgroundColor: ColorData.whiteColor,
+      backgroundColor: ColorProviderData.whiteColor,
       appBar: AppBar(
-        backgroundColor: ColorData.whiteColor,
+        backgroundColor: ColorProviderData.whiteColor,
         title: Text(
           LocaleKeys.kAddParking.tr(),
-          style: Styles.textStyleGreyBlue5ColorR16,
+          style: StylesProvider.textStyleGreyBlue5ColorR16,
         ),
         centerTitle: true,
       ),
@@ -92,7 +89,7 @@ class _ConfirmReservationView extends State<ConfirmReservationView> {
               ),
               Text(
                 LocaleKeys.kDecideHowYouWillConfirmReservations.tr(),
-                style: Styles.textStyleGreyBlue1ColorM20,
+                style: StylesProvider.textStyleGreyBlue1ColorM20,
               ),
               SizedBox(
                 height: SizeData.s32,
@@ -122,12 +119,12 @@ class _ConfirmReservationView extends State<ConfirmReservationView> {
                       ),
                       decoration: BoxDecoration(
                         color: groupButtonCheckList[index] ?
-                        ColorData.blue3Color :
-                        ColorData.whiteColor,
+                        ColorProviderData.blue3Color :
+                        ColorProviderData.whiteColor,
                         border: Border.all(
                           color: groupButtonCheckList[index] ?
-                          ColorData.blue5Color :
-                          ColorData.greyBlue2Color,
+                          ColorProviderData.blue5Color :
+                          ColorProviderData.greyBlue2Color,
                         ),
                         borderRadius: BorderRadius.circular(
                           SizeData.s8,
@@ -143,14 +140,14 @@ class _ConfirmReservationView extends State<ConfirmReservationView> {
                               children: [
                                 Text(
                                   groupButtonTitleList[index],
-                                  style: Styles.textStyleGreyBlue8ColorM16,
+                                  style: StylesProvider.textStyleGreyBlue8ColorM16,
                                 ),
                                 SizedBox(
                                   height: SizeData.s4,
                                 ),
                                 Text(
                                   groupButtonTextList[index],
-                                  style: Styles.textStyleGreyBlue8ColorR12,
+                                  style: StylesProvider.textStyleGreyBlue8ColorR12,
                                 ),
                               ],
                             ),
@@ -183,14 +180,14 @@ class _ConfirmReservationView extends State<ConfirmReservationView> {
                         children: [
                           Text(
                             LocaleKeys.kBookingDeadlineBeforeArrival.tr(),
-                            style: Styles.textStyleGreyBlue8ColorM16,
+                            style: StylesProvider.textStyleGreyBlue8ColorM16,
                           ),
                           SizedBox(
                             height: SizeData.s4,
                           ),
                           Text(
                             LocaleKeys.kHowLongBeforeArrivalDoYouNeedToReceiveATravelerReservation.tr(),
-                            style: Styles.textStyleGreyBlue8ColorR12,
+                            style: StylesProvider.textStyleGreyBlue8ColorR12,
                           ),
                         ],
                       ),
@@ -204,7 +201,7 @@ class _ConfirmReservationView extends State<ConfirmReservationView> {
                 SizedBox(
                   height: SizeData.s8,
                 ),
-                DropDownFieldCustom(
+                DropDownFieldProviderCustom(
                   value: deadline,
                   icon: SvgPicture.asset(
                     AssetsData.arrowDown
@@ -226,17 +223,17 @@ class _ConfirmReservationView extends State<ConfirmReservationView> {
               ),
               Row(
                 children: [
-                  MainCustomButton(
+                  MainButtonProviderCustom(
                     onTap: (){},
                     width: Unit(context).getWidthSize*0.35,
                     text: LocaleKeys.kSaveForLater.tr(),
-                    color: ColorData.whiteColor,
-                    colorFont: ColorData.primary2Color,
-                    borderColor: ColorData.primary2Color,
+                    color: ColorProviderData.whiteColor,
+                    colorFont: ColorProviderData.primary2Color,
+                    borderColor: ColorProviderData.primary2Color,
                     borderWidth: 1.0,
                   ),
                   const Spacer(),
-                  MainCustomButton(
+                  MainButtonProviderCustom(
                     onTap: (){
                       GoRouter.of(context).push(AppRouter.kAddingParkingPicturesView);
                     },

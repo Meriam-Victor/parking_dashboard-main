@@ -1,17 +1,15 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:parking_dashboard/Core/translations/locale_keys.g.dart';
-import 'package:parking_dashboard/Core/unit/assets_data.dart';
 import 'package:parking_dashboard/Core/unit/color_data.dart';
 import 'package:parking_dashboard/Core/unit/size_data.dart';
 import 'package:parking_dashboard/Core/unit/style_data.dart';
 import 'package:parking_dashboard/Core/unit/unit.dart';
-import 'package:parking_dashboard/Core/widget/buttons/main_custom_button.dart';
 import 'package:parking_dashboard/Feature/create_account/presentation/view/widget/progress_steps.dart';
-import 'package:parking_dashboard/Core/widget/input_fields/custom_input_field.dart';
 import 'package:parking_dashboard/Core/unit/app_routes.dart';
+import 'package:parking_dashboard/Core/widget/provider_app/buttons/main_button_custom.dart';
+import 'package:parking_dashboard/Core/widget/provider_app/input_fields/input_text_custom.dart';
 
 class ParkingTitleView extends StatefulWidget {
   const ParkingTitleView({super.key});
@@ -26,12 +24,12 @@ class _ParkingTitleView extends State<ParkingTitleView> {
   Widget build(BuildContext context) {
 
     return Scaffold(
-      backgroundColor: ColorData.whiteColor,
+      backgroundColor: ColorProviderData.whiteColor,
       appBar: AppBar(
-        backgroundColor: ColorData.whiteColor,
+        backgroundColor: ColorProviderData.whiteColor,
         title: Text(
           LocaleKeys.kAddParking.tr(),
-          style: Styles.textStyleGreyBlue5ColorR16,
+          style: StylesProvider.textStyleGreyBlue5ColorR16,
         ),
         centerTitle: true,
       ),
@@ -57,19 +55,19 @@ class _ParkingTitleView extends State<ParkingTitleView> {
               ),
               Text(
                 LocaleKeys.kNowLetUsGiveYourParkingTitle.tr(),
-                style: Styles.textStyleGreyBlue1ColorM20,
+                style: StylesProvider.textStyleGreyBlue1ColorM20,
               ),
               SizedBox(
                 height: SizeData.s32,
               ),
               Text(
                 LocaleKeys.kParkingTitle.tr(),
-                style: Styles.textStyleGreyBlue1ColorR14,
+                style: StylesProvider.textStyleGreyBlue1ColorR14,
               ),
               SizedBox(
                 height: SizeData.s8,
               ),
-              InputTextCustom(
+              InputTextProviderCustom(
                 controller: TextEditingController(),
                 hintText: LocaleKeys.kTypeHere.tr(),
               ),
@@ -78,12 +76,12 @@ class _ParkingTitleView extends State<ParkingTitleView> {
               ),
               Text(
                 LocaleKeys.kDescription.tr(),
-                style: Styles.textStyleGreyBlue1ColorR14,
+                style: StylesProvider.textStyleGreyBlue1ColorR14,
               ),
               SizedBox(
                 height: SizeData.s8,
               ),
-              InputTextCustom(
+              InputTextProviderCustom(
                 controller: TextEditingController(),
                 hintText: LocaleKeys.kTypeHere.tr(),
                 minLines: 6,
@@ -93,12 +91,12 @@ class _ParkingTitleView extends State<ParkingTitleView> {
               ),
               Text(
                 LocaleKeys.kAddress.tr(),
-                style: Styles.textStyleGreyBlue1ColorR14,
+                style: StylesProvider.textStyleGreyBlue1ColorR14,
               ),
               SizedBox(
                 height: SizeData.s8,
               ),
-              InputTextCustom(
+              InputTextProviderCustom(
                 controller: TextEditingController(),
                 hintText: LocaleKeys.kTypeHere.tr(),
               ),
@@ -107,15 +105,15 @@ class _ParkingTitleView extends State<ParkingTitleView> {
               ),
               Row(
                 children: [
-                  MainCustomButton(
+                  MainButtonProviderCustom(
                     onTap: (){},
                     width: Unit(context).getWidthSize*0.3,
                     text: LocaleKeys.kCancel.tr(),
-                    color: ColorData.primary3Color,
-                    colorFont: ColorData.primary2Color,
+                    color: ColorProviderData.primary3Color,
+                    colorFont: ColorProviderData.primary2Color,
                   ),
                   const Spacer(),
-                  MainCustomButton(
+                  MainButtonProviderCustom(
                     onTap: (){
                       GoRouter.of(context).push(AppRouter.kTypeOfPropertyView);
                     },

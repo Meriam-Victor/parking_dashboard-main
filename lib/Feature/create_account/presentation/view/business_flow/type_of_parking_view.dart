@@ -9,10 +9,9 @@ import 'package:parking_dashboard/Core/unit/size_data.dart';
 import 'package:parking_dashboard/Core/unit/style_data.dart';
 import 'package:parking_dashboard/Core/unit/unit.dart';
 import 'package:parking_dashboard/Feature/create_account/presentation/view/widget/progress_steps.dart';
-import 'package:parking_dashboard/Core/widget/buttons/main_custom_button.dart';
-import 'package:parking_dashboard/Core/widget/input_fields/custom_input_field.dart';
-
-import '../../../../../Core/unit/app_routes.dart';
+import 'package:parking_dashboard/Core/unit/app_routes.dart';
+import 'package:parking_dashboard/Core/widget/provider_app/buttons/main_button_custom.dart';
+import 'package:parking_dashboard/Core/widget/provider_app/input_fields/input_text_custom.dart';
 
 class TypeOfParkingView extends StatefulWidget {
   const TypeOfParkingView({super.key});
@@ -31,12 +30,12 @@ class _TypeOfParkingView extends State<TypeOfParkingView> {
   Widget build(BuildContext context) {
 
     return Scaffold(
-      backgroundColor: ColorData.whiteColor,
+      backgroundColor: ColorProviderData.whiteColor,
       appBar: AppBar(
-        backgroundColor: ColorData.whiteColor,
+        backgroundColor: ColorProviderData.whiteColor,
         title: Text(
           LocaleKeys.kAddParking.tr(),
-          style: Styles.textStyleGreyBlue5ColorR16,
+          style: StylesProvider.textStyleGreyBlue5ColorR16,
         ),
         centerTitle: true,
       ),
@@ -62,14 +61,14 @@ class _TypeOfParkingView extends State<TypeOfParkingView> {
               ),
               Text(
                 LocaleKeys.kParkingTypeAccepted.tr(),
-                style: Styles.textStyleGreyBlue1ColorM20,
+                style: StylesProvider.textStyleGreyBlue1ColorM20,
               ),
               SizedBox(
                 height: SizeData.s10,
               ),
               Text(
                 LocaleKeys.kYouCanStillEditTheseDataLater.tr(),
-                style: Styles.textStyleGreyBlue3ColorR14,
+                style: StylesProvider.textStyleGreyBlue3ColorR14,
               ),
               SizedBox(
                 height: SizeData.s32,
@@ -91,19 +90,19 @@ class _TypeOfParkingView extends State<TypeOfParkingView> {
                         ),
                         decoration: BoxDecoration(
                           color: indoor ?
-                          ColorData.blue3Color :
-                          ColorData.whiteColor,
+                          ColorProviderData.blue3Color :
+                          ColorProviderData.whiteColor,
                           border: Border.all(
                             color: indoor ?
-                            ColorData.blue5Color :
-                            ColorData.greyBlue2Color,
+                            ColorProviderData.blue5Color :
+                            ColorProviderData.greyBlue2Color,
                           ),
                           borderRadius: BorderRadius.circular(
                             SizeData.s8,
                           ),
                           boxShadow: [
                             BoxShadow(
-                              color: ColorData.shadow2Color,
+                              color: ColorProviderData.shadow2Color,
                               spreadRadius: 0,
                               blurRadius: 4,
                               offset: const Offset(0, 2),
@@ -124,17 +123,17 @@ class _TypeOfParkingView extends State<TypeOfParkingView> {
                                 ),
                                 Text(
                                   LocaleKeys.kIndoor.tr(),
-                                  style: Styles.textStyleGreyBlue1ColorR16,
+                                  style: StylesProvider.textStyleGreyBlue1ColorR16,
                                 ),
                               ],
                             ),
                             Checkbox(
                               shape: const CircleBorder(),
                               value: indoor,
-                              activeColor: ColorData.blue1Color,
+                              activeColor: ColorProviderData.blue1Color,
                               side: BorderSide(
                                 width: SizeData.s1,
-                                color: ColorData.greyBlue9Color,
+                                color: ColorProviderData.greyBlue9Color,
                               ),
                               onChanged: (bool? value) {
                                 setState(() {
@@ -166,19 +165,19 @@ class _TypeOfParkingView extends State<TypeOfParkingView> {
                         ),
                         decoration: BoxDecoration(
                           color: outdoor ?
-                          ColorData.blue3Color :
-                          ColorData.whiteColor,
+                          ColorProviderData.blue3Color :
+                          ColorProviderData.whiteColor,
                           border: Border.all(
                             color: outdoor ?
-                            ColorData.blue5Color :
-                            ColorData.greyBlue2Color,
+                            ColorProviderData.blue5Color :
+                            ColorProviderData.greyBlue2Color,
                           ),
                           borderRadius: BorderRadius.circular(
                             SizeData.s8,
                           ),
                           boxShadow: [
                             BoxShadow(
-                              color: ColorData.shadow2Color,
+                              color: ColorProviderData.shadow2Color,
                               spreadRadius: 0,
                               blurRadius: 4,
                               offset: const Offset(0, 2),
@@ -199,17 +198,17 @@ class _TypeOfParkingView extends State<TypeOfParkingView> {
                                 ),
                                 Text(
                                   LocaleKeys.kOutdoor.tr(),
-                                  style: Styles.textStyleGreyBlue1ColorR16,
+                                  style: StylesProvider.textStyleGreyBlue1ColorR16,
                                 ),
                               ],
                             ),
                             Checkbox(
                               shape: const CircleBorder(),
                               value: outdoor,
-                              activeColor: ColorData.blue1Color,
+                              activeColor: ColorProviderData.blue1Color,
                               side: BorderSide(
                                 width: SizeData.s1,
-                                color: ColorData.greyBlue9Color,
+                                color: ColorProviderData.greyBlue9Color,
                               ),
                               onChanged: (bool? value) {
                                 setState(() {
@@ -243,19 +242,19 @@ class _TypeOfParkingView extends State<TypeOfParkingView> {
                   ),
                   decoration: BoxDecoration(
                     color: parkingBox ?
-                    ColorData.blue3Color :
-                    ColorData.whiteColor,
+                    ColorProviderData.blue3Color :
+                    ColorProviderData.whiteColor,
                     border: Border.all(
                       color: indoor ?
-                      ColorData.blue5Color :
-                      ColorData.greyBlue2Color,
+                      ColorProviderData.blue5Color :
+                      ColorProviderData.greyBlue2Color,
                     ),
                     borderRadius: BorderRadius.circular(
                       SizeData.s8,
                     ),
                     boxShadow: [
                       BoxShadow(
-                        color: ColorData.shadow2Color,
+                        color: ColorProviderData.shadow2Color,
                         spreadRadius: 0,
                         blurRadius: 4,
                         offset: const Offset(0, 2),
@@ -276,17 +275,17 @@ class _TypeOfParkingView extends State<TypeOfParkingView> {
                           ),
                           Text(
                             LocaleKeys.kParkingBoxes.tr(),
-                            style: Styles.textStyleGreyBlue1ColorR16,
+                            style: StylesProvider.textStyleGreyBlue1ColorR16,
                           ),
                         ],
                       ),
                       Checkbox(
                         shape: const CircleBorder(),
                         value: parkingBox,
-                        activeColor: ColorData.blue1Color,
+                        activeColor: ColorProviderData.blue1Color,
                         side: BorderSide(
                           width: SizeData.s1,
-                          color: ColorData.greyBlue9Color,
+                          color: ColorProviderData.greyBlue9Color,
                         ),
                         onChanged: (bool? value) {
                           setState(() {
@@ -304,12 +303,12 @@ class _TypeOfParkingView extends State<TypeOfParkingView> {
               ),
               Text(
                 LocaleKeys.kTotalNumberOfSlot.tr(),
-                style: Styles.textStyleGreyBlue1ColorM14,
+                style: StylesProvider.textStyleGreyBlue1ColorM14,
               ),
               SizedBox(
                 height: SizeData.s8,
               ),
-              InputTextCustom(
+              InputTextProviderCustom(
                 controller: TextEditingController(),
                 hintText: LocaleKeys.kTypeHere.tr(),
               ),
@@ -318,12 +317,12 @@ class _TypeOfParkingView extends State<TypeOfParkingView> {
               ),
               Text(
                 LocaleKeys.kIndoorParkingVehicleCapacity.tr(),
-                style: Styles.textStyleGreyBlue1ColorM14,
+                style: StylesProvider.textStyleGreyBlue1ColorM14,
               ),
               SizedBox(
                 height: SizeData.s8,
               ),
-              InputTextCustom(
+              InputTextProviderCustom(
                 controller: TextEditingController(),
                 hintText: LocaleKeys.kTypeHere.tr(),
               ),
@@ -332,12 +331,12 @@ class _TypeOfParkingView extends State<TypeOfParkingView> {
               ),
               Text(
                 LocaleKeys.kOutdoorParkingVehicleCapacity.tr(),
-                style: Styles.textStyleGreyBlue1ColorM14,
+                style: StylesProvider.textStyleGreyBlue1ColorM14,
               ),
               SizedBox(
                 height: SizeData.s8,
               ),
-              InputTextCustom(
+              InputTextProviderCustom(
                 controller: TextEditingController(),
                 hintText: LocaleKeys.kTypeHere.tr(),
               ),
@@ -350,17 +349,17 @@ class _TypeOfParkingView extends State<TypeOfParkingView> {
               ),
               Row(
                 children: [
-                  MainCustomButton(
+                  MainButtonProviderCustom(
                     onTap: (){},
                     width: Unit(context).getWidthSize*0.35,
                     text: LocaleKeys.kSaveForLater.tr(),
-                    color: ColorData.whiteColor,
-                    colorFont: ColorData.primary2Color,
-                    borderColor: ColorData.primary2Color,
+                    color: ColorProviderData.whiteColor,
+                    colorFont: ColorProviderData.primary2Color,
+                    borderColor: ColorProviderData.primary2Color,
                     borderWidth: 1.0,
                   ),
                   const Spacer(),
-                  MainCustomButton(
+                  MainButtonProviderCustom(
                     onTap: (){
                       GoRouter.of(context).push(AppRouter.kTypeOfVehicleView);
                     },

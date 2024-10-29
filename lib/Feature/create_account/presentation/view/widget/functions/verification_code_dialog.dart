@@ -5,8 +5,8 @@ import 'package:parking_dashboard/Core/unit/size_data.dart';
 import 'package:parking_dashboard/Core/translations/locale_keys.g.dart';
 import 'package:parking_dashboard/Core/unit/style_data.dart';
 import 'package:otp_pin_field/otp_pin_field.dart';
-import 'package:parking_dashboard/Core/widget/buttons/main_custom_button.dart';
 import 'package:parking_dashboard/Feature/create_account/presentation/view/widget/functions/all_set_dialog.dart';
+import 'package:parking_dashboard/Core/widget/provider_app/buttons/main_button_custom.dart';
 
 buildVerificationCodeDialog({required BuildContext context,}) {
 
@@ -19,7 +19,7 @@ buildVerificationCodeDialog({required BuildContext context,}) {
             SizeData.s16,
           ),
         ),
-        backgroundColor: ColorData.whiteColor,
+        backgroundColor: ColorProviderData.whiteColor,
         child: Stack(
           clipBehavior: Clip.none,
           alignment: Alignment.center,
@@ -35,14 +35,14 @@ buildVerificationCodeDialog({required BuildContext context,}) {
                 children: [
                   Text(
                     LocaleKeys.kVerificationCode.tr(),
-                    style: Styles.textStyleBlue5ColorR18,
+                    style: StylesProvider.textStyleBlue5ColorR18,
                   ),
                   SizedBox(
                     height: SizeData.s8,
                   ),
                   Text(
                     LocaleKeys.kWeHaveSentAVerificationCodeTo.tr(),
-                    style: Styles.textStyleGreyBlue1ColorR14,
+                    style: StylesProvider.textStyleGreyBlue1ColorR14,
                   ),
                   SizedBox(
                     height: SizeData.s32,
@@ -52,10 +52,10 @@ buildVerificationCodeDialog({required BuildContext context,}) {
                     onSubmit: (String pin) {},
                     onChange: (String text) {  },
                     otpPinFieldStyle: OtpPinFieldStyle(
-                      defaultFieldBorderColor: ColorData.greyBlue2Color,
-                      activeFieldBorderColor: ColorData.blue1Color,
+                      defaultFieldBorderColor: ColorProviderData.greyBlue2Color,
+                      activeFieldBorderColor: ColorProviderData.blue1Color,
                       fieldBorderWidth: 1,
-                      textStyle: Styles.textStyleGreyBlue1ColorR16,
+                      textStyle: StylesProvider.textStyleGreyBlue1ColorR16,
                     ),
                     otpPinFieldDecoration: OtpPinFieldDecoration.defaultPinBoxDecoration,
                   ),
@@ -68,7 +68,7 @@ buildVerificationCodeDialog({required BuildContext context,}) {
                       Expanded(
                         child: Text(
                           LocaleKeys.kDidNotReceiveTheCode.tr(),
-                          style: Styles.textStyleGreyBlue1ColorR14,
+                          style: StylesProvider.textStyleGreyBlue1ColorR14,
                         ),
                       ),
                       SizedBox(
@@ -81,7 +81,7 @@ buildVerificationCodeDialog({required BuildContext context,}) {
                         child: Expanded(
                           child: Text(
                             LocaleKeys.kResendCode.tr(),
-                            style: Styles.textStyleBlue1ColorR14,
+                            style: StylesProvider.textStyleBlue1ColorR14,
                           ),
                         ),
                       ),
@@ -90,7 +90,7 @@ buildVerificationCodeDialog({required BuildContext context,}) {
                   SizedBox(
                     height: SizeData.s32,
                   ),
-                  MainCustomButton(
+                  MainButtonProviderCustom(
                     onTap: (){
                       buildAllSetDialog(context: context);
                     },
@@ -104,7 +104,7 @@ buildVerificationCodeDialog({required BuildContext context,}) {
                     children: [
                       Text(
                         LocaleKeys.kHavingTrouble.tr(),
-                        style: Styles.textStyleGreyBlue1ColorR14,
+                        style: StylesProvider.textStyleGreyBlue1ColorR14,
                       ),
                       SizedBox(
                         width: SizeData.s4,
@@ -116,7 +116,7 @@ buildVerificationCodeDialog({required BuildContext context,}) {
                         child: Expanded(
                           child: Text(
                             LocaleKeys.kContactSupport.tr(),
-                            style: Styles.textStyleBlue1ColorR14,
+                            style: StylesProvider.textStyleBlue1ColorR14,
                           ),
                         ),
                       ),
@@ -133,7 +133,7 @@ buildVerificationCodeDialog({required BuildContext context,}) {
                 },
                 child: CircleAvatar(
                   radius: SizeData.s20,
-                  backgroundColor: ColorData.whiteColor,
+                  backgroundColor: ColorProviderData.whiteColor,
                   child: const Icon(
                     Icons.close,
                   ),

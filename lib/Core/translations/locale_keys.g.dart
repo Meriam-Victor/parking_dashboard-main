@@ -206,10 +206,56 @@ abstract class  LocaleKeys {
   static const String kGallery='kGallery';
   static const String kDragAndDrop='kDragAndDrop';
   static const String kMaxFileSize25MB='kMaxFileSize25MB';
+  static const String kServicesYourParkingOffers='kServicesYourParkingOffers';
+  static const String kYouCanStillAddServicesLater='kYouCanStillAddServicesLater';
+  static const String kShuttleService='kShuttleService';
+  static const String kCarWash='kCarWash';
+  static const String kElectricCarCharging='kElectricCarCharging';
+  static const String kVehicleCovers='kVehicleCovers';
+  static const String kVehicleRevision='kVehicleRevision';
+  static const String kShuttleDetails='kShuttleDetails';
+  static const String kYouWillBeAbleToAddMoreDetailsAboutYourShuttleLater='kYouWillBeAbleToAddMoreDetailsAboutYourShuttleLater';
+  static const String kForFree='kForFree';
+  static const String kPricing='kPricing';
+  static const String kPaid='kPaid';
+  static const String kShuttleHours='kShuttleHours';
+  static const String kToTime='kToTime';
+  static const String kFromTime='kFromTime';
+  static const String kSetPrice='kSetPrice';
+  static const String kRoundTrip='kRoundTrip';
+  static const String kTransferOneWay='kTransferOneWay';
+  static const String kPerPassenger='kPerPassenger';
+  static const String kDoesYourParkingRequiresCustomerToLeaveCarKeys='kDoesYourParkingRequiresCustomerToLeaveCarKeys';
+  static const String kDoesYourParkingOfferValetServiceAtTheAirport='kDoesYourParkingOfferValetServiceAtTheAirport';
+  static const String kIsYourParkingSpaceSuitableForPeopleWithDisabilities='kIsYourParkingSpaceSuitableForPeopleWithDisabilities';
+  static const String kDoesYourParkingOfferSecurityCameraService='kDoesYourParkingOfferSecurityCameraService';
+  static const String kWhatTypeOfBookingDoYouAccept='kWhatTypeOfBookingDoYouAccept';
+  static const String kHourly='kHourly';
+  static const String kDaily='kDaily';
+  static const String kWeekly='kWeekly';
+  static const String kMonthly='kMonthly';
+  static const String kYourParkingDetailsHaveBeenSubmittedSuccessfully='kYourParkingDetailsHaveBeenSubmittedSuccessfully';
+  static const String kAddNewParking='kAddNewParking';
+  static const String kExploreDashboard='kExploreDashboard';
+  static const String kDonNotWorryYouCanStillAddMoreParkingSpacesInYourDashboard='kDonNotWorryYouCanStillAddMoreParkingSpacesInYourDashboard';
+  static const String kCongratulation='kCongratulation';
+  static const String kYourAccountHasBeenSuccessfullyVerifiedAndYourParkingIsNowOnline='kYourAccountHasBeenSuccessfullyVerifiedAndYourParkingIsNowOnline';
+  static const String kAddBankDetails='kAddBankDetails';
+  static const String kCourtyard='kCourtyard';
+  static const String kPrivateRoad='kPrivateRoad';
+  static const String kPlaceOfParking='kPlaceOfParking';
+  static const String kGarage='kGarage';
+  static const String kSkipThisStep='kSkipThisStep';
+  static const String kSkippingThisStepMeansYourParkingWillNotOfferAnyOfTheseServices='kSkippingThisStepMeansYourParkingWillNotOfferAnyOfTheseServices';
+  static const String kDoNotWorryYouCanStillManageServicesAtYourParkingLater='kDoNotWorryYouCanStillManageServicesAtYourParkingLater';
+  static const String kPleaseFillThisField='kPleaseFillThisField';
+  static const String kSkipAnyway='kSkipAnyway';
+  static const String kGoBack='kGoBack';
+  static const String kAddNewPayoutMethod='kAddNewPayoutMethod';
+
 
 
 }
-
 
 
 

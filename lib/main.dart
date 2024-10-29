@@ -55,7 +55,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Styles.init(context);
+    StylesProvider.init(context);
     return MaterialApp.router(
       title: 'Parking Dashboard',
       locale: context.locale,
@@ -66,8 +66,8 @@ class MyApp extends StatelessWidget {
           useMaterial3: true,
           appBarTheme: AppBarTheme(
               titleTextStyle: TextStyle(
-                  color: ColorData.greyBlue1Color,
-                  fontFamily: Styles.fontFamily
+                  color: ColorProviderData.greyBlue1Color,
+                  fontFamily: StylesProvider.fontFamily
               )
           )
       ),

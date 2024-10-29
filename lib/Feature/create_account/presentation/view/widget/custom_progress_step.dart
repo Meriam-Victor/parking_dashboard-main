@@ -44,12 +44,12 @@ class CustomProgressStep extends StatelessWidget {
             LinearPercentIndicator(
               width: Unit(context).getWidthSize*0.387,
               lineHeight: SizeData.s2,
-              backgroundColor: ColorData.greyBlue7Color,
+              backgroundColor: ColorProviderData.greyBlue7Color,
               progressColor: stepState == 'Pending' ?
-              ColorData.blue2Color :
+              ColorProviderData.blue2Color :
               stepState == 'In progress' ?
-              ColorData.blue2Color :
-              ColorData.green3Color,
+              ColorProviderData.blue2Color :
+              ColorProviderData.green3Color,
               percent: stepState == 'Pending' ?
               0.0 :
               stepState == 'In progress' ?
@@ -63,14 +63,14 @@ class CustomProgressStep extends StatelessWidget {
         ),
         Text(
           LocaleKeys.kStep.tr()+stepNumber,
-          style: Styles.textStyleGreyBlue1ColorR12,
+          style: StylesProvider.textStyleGreyBlue1ColorR12,
         ),
         SizedBox(
           height: SizeData.s4,
         ),
         Text(
           title,
-          style: Styles.textStyleGreyBlue4ColorM16,
+          style: StylesProvider.textStyleGreyBlue4ColorM16,
         ),
         SizedBox(
           height: SizeData.s8,
@@ -82,10 +82,10 @@ class CustomProgressStep extends StatelessWidget {
           width: Unit(context).getWidthSize*0.25,
           decoration: BoxDecoration(
             color: stepState == 'Pending' ?
-            ColorData.greyBlue7Color :
+            ColorProviderData.greyBlue7Color :
             stepState == 'In progress' ?
-            ColorData.blue3Color :
-            ColorData.green2Color,
+            ColorProviderData.blue3Color :
+            ColorProviderData.green2Color,
             borderRadius: BorderRadius.circular(
               SizeData.s16,
             ),
@@ -99,11 +99,11 @@ class CustomProgressStep extends StatelessWidget {
               LocaleKeys.kConfirmed.tr(),
               style: TextStyle(
                 color: stepState == 'Pending' ?
-                ColorData.greyBlue5Color :
+                ColorProviderData.greyBlue5Color :
                 stepState == 'In progress' ?
-                ColorData.blue4Color :
-                ColorData.green1Color,
-                fontWeight: FontWeightStyles.regular,
+                ColorProviderData.blue4Color :
+                ColorProviderData.green1Color,
+                fontWeight: FontWeightStylesProvider.regular,
                 fontSize: 14,
                 height: 0.0,
                 fontFamily: fontFamily,

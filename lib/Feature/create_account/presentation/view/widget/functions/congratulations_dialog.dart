@@ -9,7 +9,7 @@ import 'package:parking_dashboard/Core/unit/unit.dart';
 import 'package:parking_dashboard/Core/unit/style_data.dart';
 import 'package:parking_dashboard/Core/widget/provider_app/buttons/main_button_custom.dart';
 
-buildAllSetDialog({required BuildContext context,}) {
+buildCongratulationsDialog({required BuildContext context,}) {
 
   return showDialog(
     context: context,
@@ -35,14 +35,14 @@ buildAllSetDialog({required BuildContext context,}) {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Text(
-                    LocaleKeys.kYouAreAllSet.tr(),
+                    LocaleKeys.kCongratulation.tr(),
                     style: StylesProvider.textStyleBlue5ColorR18,
                   ),
                   SizedBox(
                     height: SizeData.s16,
                   ),
                   Lottie.asset(
-                    AssetsData.allSet,
+                    AssetsData.great,
                     width: Unit(context).getWidthSize*0.6,
                     height: Unit(context).getWidthSize*0.4,
                     alignment: Alignment.center,
@@ -51,7 +51,7 @@ buildAllSetDialog({required BuildContext context,}) {
                     height: SizeData.s16,
                   ),
                   Text(
-                    LocaleKeys.kYourOTPHasBeenVerifiedSuccessfully.tr(),
+                    LocaleKeys.kYourAccountHasBeenSuccessfullyVerifiedAndYourParkingIsNowOnline.tr(),
                     style: StylesProvider.textStyleGreyBlue1ColorR16,
                     textAlign: TextAlign.center,
                   ),
@@ -64,7 +64,7 @@ buildAllSetDialog({required BuildContext context,}) {
                     ),
                     child: MainButtonProviderCustom(
                       onTap: (){},
-                      text: LocaleKeys.kGetStarted.tr(),
+                      text: LocaleKeys.kAddBankDetails.tr(),
                     ),
                   ),
                 ],

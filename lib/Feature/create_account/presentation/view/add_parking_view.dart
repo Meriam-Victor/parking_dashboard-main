@@ -11,6 +11,10 @@ import 'package:parking_dashboard/Core/unit/unit.dart';
 import 'package:parking_dashboard/Feature/create_account/presentation/view/widget/progress_steps.dart';
 import 'package:parking_dashboard/Core/unit/app_routes.dart';
 
+class TypeOfParkingFlow {
+  static bool isBusiness = false;
+}
+
 class AddParking extends StatefulWidget {
      const AddParking({super.key});
 
@@ -24,12 +28,12 @@ class _AddParking extends State<AddParking> {
   Widget build(BuildContext context) {
 
     return Scaffold(
-      backgroundColor: ColorData.whiteColor,
+      backgroundColor: ColorProviderData.whiteColor,
       appBar: AppBar(
-        backgroundColor: ColorData.whiteColor,
+        backgroundColor: ColorProviderData.whiteColor,
         title: Text(
           LocaleKeys.kAddParking.tr(),
-          style: Styles.textStyleGreyBlue5ColorR16,
+          style: StylesProvider.textStyleGreyBlue5ColorR16,
         ),
         centerTitle: true,
       ),
@@ -56,7 +60,7 @@ class _AddParking extends State<AddParking> {
 
               Text(
                 LocaleKeys.kAreYouUsingParticularOrBusinessAccount.tr(),
-                style: Styles.textStyleGreyBlue1ColorM20,
+                style: StylesProvider.textStyleGreyBlue1ColorM20,
               ),
               SizedBox(
                 height: SizeData.s32,
@@ -64,7 +68,10 @@ class _AddParking extends State<AddParking> {
               SizedBox(
                 width: Unit(context).getWidthSize*0.915,
                 child: OutlinedButton(
-                  onPressed: () {  },
+                  onPressed: () {
+                    TypeOfParkingFlow.isBusiness = false;
+                    GoRouter.of(context).push(AppRouter.kParkingTitleView);
+                  },
                   style: ButtonStyle(
                     shape: WidgetStateProperty.all(
                       RoundedRectangleBorder(
@@ -76,19 +83,19 @@ class _AddParking extends State<AddParking> {
                     side: WidgetStateProperty.resolveWith<BorderSide>((states) {
                       if (states.contains(WidgetState.pressed)) {
                         return BorderSide(
-                          color: ColorData.blue5Color,
+                          color: ColorProviderData.blue5Color,
                           width: SizeData.s1,
                         );
                       }
                       return BorderSide(
-                        color: ColorData.greyBlue7Color,
+                        color: ColorProviderData.greyBlue7Color,
                         width: SizeData.s1,
                       );
                     }),
-                    overlayColor: WidgetStateProperty.all(ColorData.blue3Color),
+                    overlayColor: WidgetStateProperty.all(ColorProviderData.blue3Color),
                     backgroundColor: WidgetStateProperty.resolveWith<Color>((states) {
                       if (states.contains(WidgetState.pressed)) {
-                        return ColorData.blue3Color;
+                        return ColorProviderData.blue3Color;
                       }
                       return Colors.transparent;
                     }),
@@ -104,14 +111,14 @@ class _AddParking extends State<AddParking> {
                       children: [
                         Text(
                           LocaleKeys.kParticular.tr(),
-                          style: Styles.textStyleGreyBlue8ColorM16,
+                          style: StylesProvider.textStyleGreyBlue8ColorM16,
                         ),
                         SizedBox(
                           height: SizeData.s10,
                         ),
                         Text(
                           LocaleKeys.kIdealForIndividualParkingSpaceOwners.tr(),
-                          style: Styles.textStyleGreyBlue8ColorR14,
+                          style: StylesProvider.textStyleGreyBlue8ColorR14,
                         ),
                         SizedBox(
                           height: SizeData.s24,
@@ -132,6 +139,7 @@ class _AddParking extends State<AddParking> {
                 width: Unit(context).getWidthSize*0.915,
                 child: OutlinedButton(
                   onPressed: () {
+                    TypeOfParkingFlow.isBusiness = true;
                     GoRouter.of(context).push(AppRouter.kParkingTitleView);
                   },
                   style: ButtonStyle(
@@ -145,19 +153,19 @@ class _AddParking extends State<AddParking> {
                     side: WidgetStateProperty.resolveWith<BorderSide>((states) {
                       if (states.contains(WidgetState.pressed)) {
                         return BorderSide(
-                          color: ColorData.blue5Color,
+                          color: ColorProviderData.blue5Color,
                           width: SizeData.s1,
                         );
                       }
                       return BorderSide(
-                        color: ColorData.greyBlue7Color,
+                        color: ColorProviderData.greyBlue7Color,
                         width: SizeData.s1,
                       );
                     }),
-                    overlayColor: WidgetStateProperty.all(ColorData.blue3Color),
+                    overlayColor: WidgetStateProperty.all(ColorProviderData.blue3Color),
                     backgroundColor: WidgetStateProperty.resolveWith<Color>((states) {
                       if (states.contains(WidgetState.pressed)) {
-                        return ColorData.blue3Color;
+                        return ColorProviderData.blue3Color;
                       }
                       return Colors.transparent;
                     }),
@@ -173,14 +181,14 @@ class _AddParking extends State<AddParking> {
                       children: [
                         Text(
                           LocaleKeys.kBusinessCompany.tr(),
-                          style: Styles.textStyleGreyBlue8ColorM16,
+                          style: StylesProvider.textStyleGreyBlue8ColorM16,
                         ),
                         SizedBox(
                           height: SizeData.s10,
                         ),
                         Text(
                           LocaleKeys.kDesignedForBusinessesWithMultipleParkingLocations.tr(),
-                          style: Styles.textStyleGreyBlue8ColorR14,
+                          style: StylesProvider.textStyleGreyBlue8ColorR14,
                         ),
                         SizedBox(
                           height: SizeData.s24,

@@ -9,13 +9,11 @@ import 'package:parking_dashboard/Core/unit/color_data.dart';
 import 'package:parking_dashboard/Core/unit/size_data.dart';
 import 'package:parking_dashboard/Core/unit/style_data.dart';
 import 'package:parking_dashboard/Core/unit/unit.dart';
-import 'package:parking_dashboard/Core/widget/buttons/main_custom_button.dart';
 import 'package:parking_dashboard/Feature/create_account/presentation/view/widget/progress_steps.dart';
-import 'package:parking_dashboard/Core/widget/input_fields/custom_input_field.dart';
 import 'package:parking_dashboard/Feature/create_account/presentation/view/widget/day_working_hours.dart';
-
+import 'package:parking_dashboard/Core/widget/provider_app/buttons/main_button_custom.dart';
 import 'package:parking_dashboard/Core/unit/app_routes.dart';
-import '../widget/hours_for_special_date.dart';
+import 'package:parking_dashboard/Feature/create_account/presentation/view/widget/hours_for_special_date.dart';
 
 class WorkingHoursView extends StatefulWidget {
   const WorkingHoursView({super.key});
@@ -33,12 +31,12 @@ class _WorkingHoursView extends State<WorkingHoursView> {
   Widget build(BuildContext context) {
 
     return Scaffold(
-      backgroundColor: ColorData.whiteColor,
+      backgroundColor: ColorProviderData.whiteColor,
       appBar: AppBar(
-        backgroundColor: ColorData.whiteColor,
+        backgroundColor: ColorProviderData.whiteColor,
         title: Text(
           LocaleKeys.kAddParking.tr(),
-          style: Styles.textStyleGreyBlue5ColorR16,
+          style: StylesProvider.textStyleGreyBlue5ColorR16,
         ),
         centerTitle: true,
       ),
@@ -64,14 +62,14 @@ class _WorkingHoursView extends State<WorkingHoursView> {
               ),
               Text(
                 LocaleKeys.kWorkingHours.tr(),
-                style: Styles.textStyleGreyBlue1ColorM20,
+                style: StylesProvider.textStyleGreyBlue1ColorM20,
               ),
               SizedBox(
                 height: SizeData.s10,
               ),
               Text(
                 LocaleKeys.kThisSectionAllowsYouToManageYourParkingSchedule.tr(),
-                style: Styles.textStyleGreyBlue3ColorR14,
+                style: StylesProvider.textStyleGreyBlue3ColorR14,
               ),
               SizedBox(
                 height: SizeData.s32,
@@ -111,9 +109,9 @@ class _WorkingHoursView extends State<WorkingHoursView> {
                   SizeData.s16,
                 ),
                 decoration: BoxDecoration(
-                  color: ColorData.whiteColor,
+                  color: ColorProviderData.whiteColor,
                   border: Border.all(
-                    color: ColorData.blue5Color,
+                    color: ColorProviderData.blue5Color,
                   ),
                   borderRadius: BorderRadius.circular(
                     SizeData.s8,
@@ -126,7 +124,7 @@ class _WorkingHoursView extends State<WorkingHoursView> {
                         SizeData.s8,
                       ),
                       decoration: BoxDecoration(
-                        color: ColorData.blue3Color,
+                        color: ColorProviderData.blue3Color,
                         borderRadius: BorderRadius.circular(
                           SizeData.s8,
                         ),
@@ -147,7 +145,7 @@ class _WorkingHoursView extends State<WorkingHoursView> {
                             ),
                             Text(
                               LocaleKeys.kOpeningHoursForSpecialDates.tr(),
-                              style: Styles.textStyleBlue1ColorM14,
+                              style: StylesProvider.textStyleBlue1ColorM14,
                             ),
                           ],
                         ),
@@ -170,17 +168,17 @@ class _WorkingHoursView extends State<WorkingHoursView> {
               ),
               Row(
                 children: [
-                  MainCustomButton(
+                  MainButtonProviderCustom(
                     onTap: (){},
                     width: Unit(context).getWidthSize*0.35,
                     text: LocaleKeys.kSaveForLater.tr(),
-                    color: ColorData.whiteColor,
-                    colorFont: ColorData.primary2Color,
-                    borderColor: ColorData.primary2Color,
+                    color: ColorProviderData.whiteColor,
+                    colorFont: ColorProviderData.primary2Color,
+                    borderColor: ColorProviderData.primary2Color,
                     borderWidth: 1.0,
                   ),
                   const Spacer(),
-                  MainCustomButton(
+                  MainButtonProviderCustom(
                     onTap: (){
                       GoRouter.of(context).push(AppRouter.kTypeOfParkingView);
                     },

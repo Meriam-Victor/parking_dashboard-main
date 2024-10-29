@@ -1,6 +1,6 @@
 
 class AssetsData {
-  static const String buseUrl ='assets/image';
+  static const String buseUrl ='assets/image/provider_app';
 
   static const String menuIcon ='$buseUrl/menu_icon.svg';
   static const String kiroTravelLogo ='$buseUrl/Kirotravel_logo.svg';
@@ -156,6 +156,8 @@ class AssetsData {
 
   //lottie
   static const String allSet ='$buseUrl/lottie/all_set.json';
+  static const String great ='$buseUrl/lottie/great.json';
+  static const String info ='$buseUrl/lottie/info.json';
 
 
 

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class ColorData{
+class ColorProviderData{
 
   // todo: primary
   static Color primaryColor = const Color(0xff60387D);

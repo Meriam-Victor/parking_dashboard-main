@@ -1,53 +1,40 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:go_router/go_router.dart';
 import 'package:group_button/group_button.dart';
 import 'package:parking_dashboard/Core/translations/locale_keys.g.dart';
-import 'package:parking_dashboard/Core/unit/assets_data.dart';
 import 'package:parking_dashboard/Core/unit/color_data.dart';
 import 'package:parking_dashboard/Core/unit/size_data.dart';
 import 'package:parking_dashboard/Core/unit/style_data.dart';
 import 'package:parking_dashboard/Core/unit/unit.dart';
 import 'package:parking_dashboard/Feature/create_account/presentation/view/widget/progress_steps.dart';
-import 'package:parking_dashboard/Core/unit/app_routes.dart';
 import 'package:parking_dashboard/Core/widget/provider_app/buttons/main_button_custom.dart';
+import 'package:parking_dashboard/Feature/create_account/presentation/view/widget/functions/all_set_final_dialog.dart';
 
-class TermsAndConditionsView extends StatefulWidget {
-  const TermsAndConditionsView({super.key});
+class TypeOfBookingView extends StatefulWidget {
+  const TypeOfBookingView({super.key});
 
   @override
-  State<TermsAndConditionsView> createState() => _TermsAndConditionsView();
+  State<TypeOfBookingView> createState() => _TypeOfBookingView();
 }
 
-class _TermsAndConditionsView extends State<TermsAndConditionsView> {
-
-  List<String> groupButtonIconList = [
-    AssetsData.flexible,
-    AssetsData.nonRefundable,
-    AssetsData.cash,
-  ];
-
-  List<String> groupButtonTitleList = [
-    LocaleKeys.kFlexible.tr(),
-    LocaleKeys.kNonRefundable.tr(),
-    LocaleKeys.kCash.tr(),
-  ];
-
-  List<String> groupButtonTextList = [
-    LocaleKeys.kCustomerGetAFullRefundIf.tr(),
-    LocaleKeys.kCustomerPays10LessBut.tr(),
-    LocaleKeys.kTheCustomerPays20UponBooking.tr(),
-  ];
+class _TypeOfBookingView extends State<TypeOfBookingView> {
 
   List<bool> groupButtonCheckBoxList = [
     false,
     false,
     false,
+    false,
   ];
 
+  List<String> groupButtonTitleList = [
+    LocaleKeys.kHourly.tr(),
+    LocaleKeys.kDaily.tr(),
+    LocaleKeys.kWeekly.tr(),
+    LocaleKeys.kMonthly.tr(),
+  ];
 
   GroupButtonController checkController = GroupButtonController();
+
 
   @override
   Widget build(BuildContext context) {
@@ -73,17 +60,16 @@ class _TermsAndConditionsView extends State<TermsAndConditionsView> {
             children: [
               ProgressSteps(
                 step1State: LocaleKeys.kConfirmed.tr(),
-                step2State: LocaleKeys.kInProgress.tr(),
-                step3State: LocaleKeys.kPending.tr(),
-                step4State: LocaleKeys.kPending.tr(),
-                step5State: LocaleKeys.kPending.tr(),
+                step2State: LocaleKeys.kConfirmed.tr(),
+                step3State: LocaleKeys.kConfirmed.tr(),
+                step4State: LocaleKeys.kConfirmed.tr(),
+                step5State: LocaleKeys.kInProgress.tr(),
               ),
-
               SizedBox(
                 height: SizeData.s48,
               ),
               Text(
-                LocaleKeys.kTermsAndConditions.tr(),
+                LocaleKeys.kWhatTypeOfBookingDoYouAccept.tr(),
                 style: StylesProvider.textStyleGreyBlue1ColorM20,
               ),
               SizedBox(
@@ -96,8 +82,6 @@ class _TermsAndConditionsView extends State<TermsAndConditionsView> {
               SizedBox(
                 height: SizeData.s32,
               ),
-
-
 
               GroupButton(
                 controller: checkController,
@@ -115,6 +99,7 @@ class _TermsAndConditionsView extends State<TermsAndConditionsView> {
                     },
                     child: Container(
                       width: double.infinity,
+                      height: Unit(context).getHeightSize*0.064,
                       padding: EdgeInsets.only(
                         top: SizeData.s16,
                         bottom: SizeData.s16,
@@ -140,37 +125,9 @@ class _TermsAndConditionsView extends State<TermsAndConditionsView> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Expanded(
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                CircleAvatar(
-                                  backgroundColor: groupButtonCheckBoxList[index] ?
-                                  ColorProviderData.blue8Color :
-                                  ColorProviderData.greyBlue7Color,
-                                  radius: Unit(context).getWidthSize*0.07,
-                                  child: SvgPicture.asset(
-                                    groupButtonIconList[index],
-                                    width: Unit(context).getWidthSize*0.0853,
-                                  ),
-                                ),
-                                SizedBox(
-                                  height: SizeData.s16,
-                                ),
-                                Text(
-                                  groupButtonTitleList[index],
-                                  style: StylesProvider.textStyleGreyBlue8ColorM16,
-                                ),
-                                SizedBox(
-                                  height: SizeData.s4,
-                                ),
-                                Text(
-                                  groupButtonTextList[index],
-                                  style: StylesProvider.textStyleGreyBlue8ColorR12,
-                                ),
-                              ],
-                            ),
+                          Text(
+                            groupButtonTitleList[index],
+                            style: StylesProvider.textStyleGreyBlue1ColorR14,
                           ),
                           Checkbox(
                             value: groupButtonCheckBoxList[index],
@@ -185,7 +142,6 @@ class _TermsAndConditionsView extends State<TermsAndConditionsView> {
                               });
                             },
                           ),
-
                         ],
                       ),
                     ),
@@ -193,8 +149,11 @@ class _TermsAndConditionsView extends State<TermsAndConditionsView> {
                 },
                 onSelected: (_, index, selected) {
                 },
-                buttons: groupButtonIconList,
+                buttons: groupButtonTitleList,
               ),
+
+
+
 
               SizedBox(
                 height: SizeData.s32,
@@ -213,7 +172,8 @@ class _TermsAndConditionsView extends State<TermsAndConditionsView> {
                   const Spacer(),
                   MainButtonProviderCustom(
                     onTap: (){
-                      GoRouter.of(context).push(AppRouter.kConfirmReservationView);
+                      buildAllSetFinalDialog(context: context);
+                      //GoRouter.of(context).push(AppRouter.kTypeOfParkingView);
                     },
                     width: Unit(context).getWidthSize*0.48,
                     text: LocaleKeys.kNext.tr(),

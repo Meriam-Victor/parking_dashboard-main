@@ -1,5 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:lottie/lottie.dart';
 import 'package:parking_dashboard/Core/unit/color_data.dart';
 import 'package:parking_dashboard/Core/unit/size_data.dart';
@@ -8,8 +9,9 @@ import 'package:parking_dashboard/Core/unit/assets_data.dart';
 import 'package:parking_dashboard/Core/unit/unit.dart';
 import 'package:parking_dashboard/Core/unit/style_data.dart';
 import 'package:parking_dashboard/Core/widget/provider_app/buttons/main_button_custom.dart';
+import 'package:parking_dashboard/Feature/create_account/presentation/view/widget/functions/congratulations_dialog.dart';
 
-buildAllSetDialog({required BuildContext context,}) {
+buildAllSetFinalDialog({required BuildContext context,}) {
 
   return showDialog(
     context: context,
@@ -51,21 +53,68 @@ buildAllSetDialog({required BuildContext context,}) {
                     height: SizeData.s16,
                   ),
                   Text(
-                    LocaleKeys.kYourOTPHasBeenVerifiedSuccessfully.tr(),
+                    LocaleKeys.kYourParkingDetailsHaveBeenSubmittedSuccessfully.tr(),
                     style: StylesProvider.textStyleGreyBlue1ColorR16,
                     textAlign: TextAlign.center,
                   ),
                   SizedBox(
                     height: SizeData.s24,
                   ),
-                  Padding(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: Unit(context).getWidthSize*0.148,
+                  Container(
+                    padding: EdgeInsets.all(
+                      SizeData.s8,
                     ),
-                    child: MainButtonProviderCustom(
-                      onTap: (){},
-                      text: LocaleKeys.kGetStarted.tr(),
+                    decoration: BoxDecoration(
+                      color: ColorProviderData.blue3Color,
+                      borderRadius: BorderRadius.circular(
+                        SizeData.s8,
+                      ),
                     ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        SvgPicture.asset(
+                          AssetsData.infoCircleBlue,
+                        ),
+                        SizedBox(
+                          width: SizeData.s8,
+                        ),
+                        Expanded(
+                          child: Text(
+                            LocaleKeys.kDonNotWorryYouCanStillAddMoreParkingSpacesInYourDashboard.tr(),
+                            style: StylesProvider.textStyleBlue1ColorR12,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: SizeData.s24,
+                  ),
+                  Row(
+                    children: [
+                      Expanded(
+                        child: MainButtonProviderCustom(
+                          onTap: (){},
+                          text: LocaleKeys.kAddNewParking.tr(),
+                          color: ColorProviderData.primary3Color,
+                          colorFont: ColorProviderData.primary2Color,
+                        ),
+                      ),
+                      SizedBox(
+                        width: SizeData.s8,
+                      ),
+                      Expanded(
+                        child: MainButtonProviderCustom(
+                          onTap: (){
+                            Navigator.of(context).pop();
+                            buildCongratulationsDialog(context: context);
+                          },
+                          text: LocaleKeys.kExploreDashboard.tr(),
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),
