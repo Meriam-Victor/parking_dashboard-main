@@ -15,7 +15,7 @@ import 'package:parking_dashboard/Feature/create_account/presentation/view/busin
 import 'package:parking_dashboard/Feature/create_account/presentation/view/business_flow/offered_services_second_view.dart';
 import 'package:parking_dashboard/Feature/create_account/presentation/view/business_flow/type_of_booking_view.dart';
 
-abstract class AppRouter {
+abstract class AppProviderRouter {
 
   static const kLogin='/Login';
   static const kCreateAccount='/CreateAccount';

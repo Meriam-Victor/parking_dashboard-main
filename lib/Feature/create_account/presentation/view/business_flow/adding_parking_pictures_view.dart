@@ -331,7 +331,7 @@ class _AddingParkingPicturesView extends State<AddingParkingPicturesView> {
                   const Spacer(),
                   MainButtonProviderCustom(
                     onTap: (){
-                      GoRouter.of(context).push(AppRouter.kOfferedServicesFirstView);
+                      GoRouter.of(context).push(AppProviderRouter.kOfferedServicesFirstView);
                     },
                     width: Unit(context).getWidthSize*0.48,
                     text: LocaleKeys.kNext.tr(),
@@ -345,7 +345,7 @@ class _AddingParkingPicturesView extends State<AddingParkingPicturesView> {
                 ),
                 GestureDetector(
                   onTap: (){
-                    GoRouter.of(context).push(AppRouter.kOfferedServicesFirstView);
+                    GoRouter.of(context).push(AppProviderRouter.kOfferedServicesFirstView);
                   },
                   child: Center(
                     child: Text(

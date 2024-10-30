@@ -173,7 +173,7 @@ class _TypeOfBookingView extends State<TypeOfBookingView> {
                   MainButtonProviderCustom(
                     onTap: (){
                       buildAllSetFinalDialog(context: context);
-                      //GoRouter.of(context).push(AppRouter.kTypeOfParkingView);
+                      //GoRouter.of(context).push(AppProviderRouter.kTypeOfParkingView);
                     },
                     width: Unit(context).getWidthSize*0.48,
                     text: LocaleKeys.kNext.tr(),

@@ -235,7 +235,7 @@ class _ConfirmReservationView extends State<ConfirmReservationView> {
                   const Spacer(),
                   MainButtonProviderCustom(
                     onTap: (){
-                      GoRouter.of(context).push(AppRouter.kAddingParkingPicturesView);
+                      GoRouter.of(context).push(AppProviderRouter.kAddingParkingPicturesView);
                     },
                     width: Unit(context).getWidthSize*0.48,
                     text: LocaleKeys.kNext.tr(),

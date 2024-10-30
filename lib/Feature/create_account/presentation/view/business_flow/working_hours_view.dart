@@ -179,7 +179,7 @@ class _WorkingHoursView extends State<WorkingHoursView> {
                   const Spacer(),
                   MainButtonProviderCustom(
                     onTap: (){
-                      GoRouter.of(context).push(AppRouter.kTypeOfParkingView);
+                      GoRouter.of(context).push(AppProviderRouter.kTypeOfParkingView);
                     },
                     width: Unit(context).getWidthSize*0.48,
                     text: LocaleKeys.kNext.tr(),

@@ -361,7 +361,7 @@ class _TypeOfParkingView extends State<TypeOfParkingView> {
                   const Spacer(),
                   MainButtonProviderCustom(
                     onTap: (){
-                      GoRouter.of(context).push(AppRouter.kTypeOfVehicleView);
+                      GoRouter.of(context).push(AppProviderRouter.kTypeOfVehicleView);
                     },
                     width: Unit(context).getWidthSize*0.48,
                     text: LocaleKeys.kNext.tr(),

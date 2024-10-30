@@ -619,7 +619,7 @@ class _OfferedServicesFirstView extends State<OfferedServicesFirstView> {
                   const Spacer(),
                   MainButtonProviderCustom(
                     onTap: (){
-                      GoRouter.of(context).push(AppRouter.kOfferedServicesSecondView);
+                      GoRouter.of(context).push(AppProviderRouter.kOfferedServicesSecondView);
                     },
                     width: Unit(context).getWidthSize*0.48,
                     text: LocaleKeys.kNext.tr(),
@@ -633,7 +633,7 @@ class _OfferedServicesFirstView extends State<OfferedServicesFirstView> {
                 ),
                 GestureDetector(
                   onTap: (){
-                    GoRouter.of(context).push(AppRouter.kOfferedServicesSecondView);
+                    GoRouter.of(context).push(AppProviderRouter.kOfferedServicesSecondView);
                   },
                   child: Center(
                     child: Text(

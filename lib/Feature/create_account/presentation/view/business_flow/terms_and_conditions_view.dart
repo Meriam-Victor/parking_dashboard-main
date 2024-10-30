@@ -213,7 +213,7 @@ class _TermsAndConditionsView extends State<TermsAndConditionsView> {
                   const Spacer(),
                   MainButtonProviderCustom(
                     onTap: (){
-                      GoRouter.of(context).push(AppRouter.kConfirmReservationView);
+                      GoRouter.of(context).push(AppProviderRouter.kConfirmReservationView);
                     },
                     width: Unit(context).getWidthSize*0.48,
                     text: LocaleKeys.kNext.tr(),

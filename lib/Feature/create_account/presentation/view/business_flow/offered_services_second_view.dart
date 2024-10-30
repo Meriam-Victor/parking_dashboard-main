@@ -283,7 +283,7 @@ class _OfferedServicesSecondView extends State<OfferedServicesSecondView> {
                   const Spacer(),
                   MainButtonProviderCustom(
                     onTap: (){
-                      GoRouter.of(context).push(AppRouter.kTypeOfBookingView);
+                      GoRouter.of(context).push(AppProviderRouter.kTypeOfBookingView);
                     },
                     width: Unit(context).getWidthSize*0.48,
                     text: LocaleKeys.kNext.tr(),

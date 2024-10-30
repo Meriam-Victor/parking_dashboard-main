@@ -70,7 +70,7 @@ class _AddParking extends State<AddParking> {
                 child: OutlinedButton(
                   onPressed: () {
                     TypeOfParkingFlow.isBusiness = false;
-                    GoRouter.of(context).push(AppRouter.kParkingTitleView);
+                    GoRouter.of(context).push(AppProviderRouter.kParkingTitleView);
                   },
                   style: ButtonStyle(
                     shape: WidgetStateProperty.all(
@@ -140,7 +140,7 @@ class _AddParking extends State<AddParking> {
                 child: OutlinedButton(
                   onPressed: () {
                     TypeOfParkingFlow.isBusiness = true;
-                    GoRouter.of(context).push(AppRouter.kParkingTitleView);
+                    GoRouter.of(context).push(AppProviderRouter.kParkingTitleView);
                   },
                   style: ButtonStyle(
                     shape: WidgetStateProperty.all(

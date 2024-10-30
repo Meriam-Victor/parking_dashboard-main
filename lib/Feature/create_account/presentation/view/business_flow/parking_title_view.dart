@@ -115,7 +115,7 @@ class _ParkingTitleView extends State<ParkingTitleView> {
                   const Spacer(),
                   MainButtonProviderCustom(
                     onTap: (){
-                      GoRouter.of(context).push(AppRouter.kTypeOfPropertyView);
+                      GoRouter.of(context).push(AppProviderRouter.kTypeOfPropertyView);
                     },
                     width: Unit(context).getWidthSize*0.55,
                     text: LocaleKeys.kNext.tr(),

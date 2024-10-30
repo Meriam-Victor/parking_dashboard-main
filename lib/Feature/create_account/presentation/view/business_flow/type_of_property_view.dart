@@ -448,7 +448,7 @@ class _TypeOfPropertyView extends State<TypeOfPropertyView> {
                   const Spacer(),
                   MainButtonProviderCustom(
                     onTap: (){
-                      GoRouter.of(context).push(AppRouter.kWorkingHoursView);
+                      GoRouter.of(context).push(AppProviderRouter.kWorkingHoursView);
                     },
                     width: Unit(context).getWidthSize*0.48,
                     text: LocaleKeys.kNext.tr(),

@@ -328,7 +328,7 @@ class _TypeOfVehicleView extends State<TypeOfVehicleView> {
                   const Spacer(),
                   MainButtonProviderCustom(
                     onTap: (){
-                      GoRouter.of(context).push(AppRouter.kTermsAndConditionsView);
+                      GoRouter.of(context).push(AppProviderRouter.kTermsAndConditionsView);
                     },
                     width: Unit(context).getWidthSize*0.48,
                     text: LocaleKeys.kNext.tr(),

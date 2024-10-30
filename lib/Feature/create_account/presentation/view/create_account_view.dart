@@ -177,7 +177,7 @@ class _CreateAccountState extends State<CreateAccount> {
                         ),
                         GestureDetector(
                           onTap: (){
-                            GoRouter.of(context).push(AppRouter.kLogin);
+                            GoRouter.of(context).push(AppProviderRouter.kLogin);
                           },
                           child: Text(
                             LocaleKeys.kLogIn.tr(),

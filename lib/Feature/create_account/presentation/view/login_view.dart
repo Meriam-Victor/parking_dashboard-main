@@ -159,7 +159,7 @@ class _LoginState extends State<Login> {
                     ),
                     MainButtonProviderCustom(
                       onTap: () {
-                        GoRouter.of(context).push(AppRouter.kAddParking);
+                        GoRouter.of(context).push(AppProviderRouter.kAddParking);
                       },
                       text: LocaleKeys.kLogIn.tr(),
                     ),
@@ -178,7 +178,7 @@ class _LoginState extends State<Login> {
                         ),
                         GestureDetector(
                           onTap: (){
-                            GoRouter.of(context).push(AppRouter.kCreateAccount);
+                            GoRouter.of(context).push(AppProviderRouter.kCreateAccount);
                           },
                           child: Text(
                             LocaleKeys.kCreateAccount.tr(),
