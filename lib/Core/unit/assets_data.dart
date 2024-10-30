@@ -1,5 +1,5 @@
 
-class AssetsData {
+class AssetsProviderData {
   static const String buseUrl ='assets/image/provider_app';
 
   static const String menuIcon ='$buseUrl/menu_icon.svg';

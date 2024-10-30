@@ -23,9 +23,9 @@ class TermsAndConditionsView extends StatefulWidget {
 class _TermsAndConditionsView extends State<TermsAndConditionsView> {
 
   List<String> groupButtonIconList = [
-    AssetsData.flexible,
-    AssetsData.nonRefundable,
-    AssetsData.cash,
+    AssetsProviderData.flexible,
+    AssetsProviderData.nonRefundable,
+    AssetsProviderData.cash,
   ];
 
   List<String> groupButtonTitleList = [

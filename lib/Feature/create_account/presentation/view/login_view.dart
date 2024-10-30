@@ -126,7 +126,7 @@ class _LoginState extends State<Login> {
                           SizeData.s12,
                         ),
                         child: SvgPicture.asset(
-                          AssetsData.eyeSlash,
+                          AssetsProviderData.eyeSlash,
                         ),
                       ),
                     ),

@@ -1,8 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:parking_dashboard/Core/translations/utils/en.dart';
 import 'package:parking_dashboard/Core/unit/color_data.dart';
 import 'package:parking_dashboard/Core/unit/size_data.dart';
 import 'package:parking_dashboard/Core/translations/locale_keys.g.dart';
@@ -117,7 +115,7 @@ class _HoursForSpecialDate extends State<HoursForSpecialDate> {
               child: Row(
                 children: [
                   SvgPicture.asset(
-                    AssetsData.calendar2Blue,
+                    AssetsProviderData.calendar2Blue,
                   ),
                   SizedBox(
                     width: SizeData.s8,
@@ -130,7 +128,7 @@ class _HoursForSpecialDate extends State<HoursForSpecialDate> {
                   ),
                   const Spacer(),
                   SvgPicture.asset(
-                    AssetsData.arrowDown,
+                    AssetsProviderData.arrowDown,
                   ),
                 ],
               ),
@@ -170,8 +168,8 @@ class _HoursForSpecialDate extends State<HoursForSpecialDate> {
                   SvgPicture.asset(
                     width: Unit(context).getWidthSize*0.053,
                     startTime != null?
-                    AssetsData.clockBlue:
-                    AssetsData.clockIcon,
+                    AssetsProviderData.clockBlue:
+                    AssetsProviderData.clockIcon,
                   ),
                   SizedBox(
                     width: SizeData.s8,
@@ -186,7 +184,7 @@ class _HoursForSpecialDate extends State<HoursForSpecialDate> {
                   ),
                   const Spacer(),
                   SvgPicture.asset(
-                    AssetsData.arrowDown,
+                    AssetsProviderData.arrowDown,
                   ),
                 ],
               ),
@@ -226,8 +224,8 @@ class _HoursForSpecialDate extends State<HoursForSpecialDate> {
                   SvgPicture.asset(
                     width: Unit(context).getWidthSize*0.053,
                     endTime != null?
-                    AssetsData.clockBlue:
-                    AssetsData.clockIcon
+                    AssetsProviderData.clockBlue:
+                    AssetsProviderData.clockIcon
                   ),
                   SizedBox(
                     width: SizeData.s8,
@@ -242,7 +240,7 @@ class _HoursForSpecialDate extends State<HoursForSpecialDate> {
                   ),
                   const Spacer(),
                   SvgPicture.asset(
-                    AssetsData.arrowDown,
+                    AssetsProviderData.arrowDown,
                   ),
                 ],
               ),
@@ -287,8 +285,8 @@ class _HoursForSpecialDate extends State<HoursForSpecialDate> {
                 children: [
                   SvgPicture.asset(
                     isClosed ?
-                    AssetsData.clockIconPink :
-                    AssetsData.clockIcon,
+                    AssetsProviderData.clockIconPink :
+                    AssetsProviderData.clockIcon,
                   ),
                   SizedBox(
                     width: SizeData.s4,

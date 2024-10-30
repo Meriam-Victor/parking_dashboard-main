@@ -256,7 +256,7 @@ class _TypeOfPropertyView extends State<TypeOfPropertyView> {
                         width: SizeData.s8,
                       ),
                       SvgPicture.asset(
-                        AssetsData.infoCircleBlue,
+                        AssetsProviderData.infoCircleBlue,
                         width: Unit(context).getWidthSize*0.053,
                       ),
                     ],
@@ -416,7 +416,7 @@ class _TypeOfPropertyView extends State<TypeOfPropertyView> {
                     child: Row(
                       children: [
                         SvgPicture.asset(
-                          AssetsData.addSquareIcon,
+                          AssetsProviderData.addSquareIcon,
                           width: Unit(context).getWidthSize*0.064,
                         ),
                         SizedBox(

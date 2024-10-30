@@ -42,11 +42,11 @@ class _OfferedServicesFirstView extends State<OfferedServicesFirstView> {
   ];
 
   List<String> groupButtonIconList = [
-    AssetsData.shuttleService,
-    AssetsData.carWash,
-    AssetsData.electricCharging,
-    AssetsData.vehicleCovers,
-    AssetsData.shuttleService,
+    AssetsProviderData.shuttleService,
+    AssetsProviderData.carWash,
+    AssetsProviderData.electricCharging,
+    AssetsProviderData.vehicleCovers,
+    AssetsProviderData.shuttleService,
   ];
 
   List<String> groupButtonTitleList = [
@@ -429,7 +429,7 @@ class _OfferedServicesFirstView extends State<OfferedServicesFirstView> {
                               value: priceBasedOn,
                               hintText: LocaleKeys.kSelectHere.tr(),
                               icon: SvgPicture.asset(
-                                AssetsData.arrowDown,
+                                AssetsProviderData.arrowDown,
                               ),
                               items: itemsList.map((String items) {
                                 return DropdownMenuItem(
@@ -470,7 +470,7 @@ class _OfferedServicesFirstView extends State<OfferedServicesFirstView> {
                                 child: Row(
                                   children: [
                                     SvgPicture.asset(
-                                      AssetsData.clockIcon,
+                                      AssetsProviderData.clockIcon,
                                     ),
                                     SizedBox(
                                       width: SizeData.s4,
@@ -483,7 +483,7 @@ class _OfferedServicesFirstView extends State<OfferedServicesFirstView> {
                                     ),
                                     const Spacer(),
                                     SvgPicture.asset(
-                                      AssetsData.arrowDown,
+                                      AssetsProviderData.arrowDown,
                                     ),
                                   ],
                                 ),
@@ -510,7 +510,7 @@ class _OfferedServicesFirstView extends State<OfferedServicesFirstView> {
                                 child: Row(
                                   children: [
                                     SvgPicture.asset(
-                                      AssetsData.clockIcon,
+                                      AssetsProviderData.clockIcon,
                                     ),
                                     SizedBox(
                                       width: SizeData.s4,
@@ -523,7 +523,7 @@ class _OfferedServicesFirstView extends State<OfferedServicesFirstView> {
                                     ),
                                     const Spacer(),
                                     SvgPicture.asset(
-                                      AssetsData.arrowDown,
+                                      AssetsProviderData.arrowDown,
                                     ),
                                   ],
                                 ),
@@ -570,8 +570,8 @@ class _OfferedServicesFirstView extends State<OfferedServicesFirstView> {
                                   children: [
                                     SvgPicture.asset(
                                       is24Hr ?
-                                      AssetsData.clockIconPink :
-                                      AssetsData.clockIcon,
+                                      AssetsProviderData.clockIconPink :
+                                      AssetsProviderData.clockIcon,
                                     ),
                                     SizedBox(
                                       width: SizeData.s4,

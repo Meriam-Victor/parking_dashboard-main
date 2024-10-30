@@ -42,7 +42,7 @@ buildCongratulationsDialog({required BuildContext context,}) {
                     height: SizeData.s16,
                   ),
                   Lottie.asset(
-                    AssetsData.great,
+                    AssetsProviderData.great,
                     width: Unit(context).getWidthSize*0.6,
                     height: Unit(context).getWidthSize*0.4,
                     alignment: Alignment.center,

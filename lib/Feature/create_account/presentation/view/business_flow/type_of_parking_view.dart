@@ -118,7 +118,7 @@ class _TypeOfParkingView extends State<TypeOfParkingView> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 SvgPicture.asset(
-                                  AssetsData.indoorIcon,
+                                  AssetsProviderData.indoorIcon,
                                   width: Unit(context).getWidthSize*0.0853,
                                 ),
                                 Text(
@@ -193,7 +193,7 @@ class _TypeOfParkingView extends State<TypeOfParkingView> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 SvgPicture.asset(
-                                  AssetsData.outdoorIcon,
+                                  AssetsProviderData.outdoorIcon,
                                   width: Unit(context).getWidthSize*0.0853,
                                 ),
                                 Text(
@@ -270,7 +270,7 @@ class _TypeOfParkingView extends State<TypeOfParkingView> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           SvgPicture.asset(
-                            AssetsData.parkingBoxIcon,
+                            AssetsProviderData.parkingBoxIcon,
                             width: Unit(context).getWidthSize*0.0853,
                           ),
                           Text(

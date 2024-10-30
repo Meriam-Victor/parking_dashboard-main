@@ -127,7 +127,7 @@ class _DayWorkingHours extends State<DayWorkingHours> {
                     child: Row(
                       children: [
                         SvgPicture.asset(
-                          AssetsData.clockIcon,
+                          AssetsProviderData.clockIcon,
                         ),
                         SizedBox(
                           width: SizeData.s4,
@@ -157,7 +157,7 @@ class _DayWorkingHours extends State<DayWorkingHours> {
                     child: Row(
                       children: [
                         SvgPicture.asset(
-                          AssetsData.clockIcon,
+                          AssetsProviderData.clockIcon,
                         ),
                         SizedBox(
                           width: SizeData.s4,
@@ -212,8 +212,8 @@ class _DayWorkingHours extends State<DayWorkingHours> {
                   children: [
                     SvgPicture.asset(
                       is24Hr ?
-                      AssetsData.clockIconPink :
-                      AssetsData.clockIcon,
+                      AssetsProviderData.clockIconPink :
+                      AssetsProviderData.clockIcon,
                     ),
                     SizedBox(
                       width: SizeData.s4,

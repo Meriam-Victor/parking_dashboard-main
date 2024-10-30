@@ -32,10 +32,10 @@ class _OfferedServicesSecondView extends State<OfferedServicesSecondView> {
   ];
 
   List<String> groupButtonIconList = [
-    AssetsData.leaveKeys,
-    AssetsData.valet,
-    AssetsData.disabilities,
-    AssetsData.securityCamera,
+    AssetsProviderData.leaveKeys,
+    AssetsProviderData.valet,
+    AssetsProviderData.disabilities,
+    AssetsProviderData.securityCamera,
   ];
 
   List<String> groupButtonTitleList = [

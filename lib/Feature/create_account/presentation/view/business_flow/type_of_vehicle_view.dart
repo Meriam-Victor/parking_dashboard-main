@@ -55,14 +55,14 @@ class _TypeOfVehicleView extends State<TypeOfVehicleView> {
   ];
 
   List<String> groupButtonImageList = [
-    AssetsData.realSedanIcon,
-    AssetsData.realVanIcon,
-    AssetsData.realCarWithTrailerIcon,
-    AssetsData.realCampingCarIcon,
-    AssetsData.realMotorcycleIcon,
-    AssetsData.realBusIcon,
-    AssetsData.realTruckIcon,
-    AssetsData.realCarTrailerIcon,
+    AssetsProviderData.realSedanIcon,
+    AssetsProviderData.realVanIcon,
+    AssetsProviderData.realCarWithTrailerIcon,
+    AssetsProviderData.realCampingCarIcon,
+    AssetsProviderData.realMotorcycleIcon,
+    AssetsProviderData.realBusIcon,
+    AssetsProviderData.realTruckIcon,
+    AssetsProviderData.realCarTrailerIcon,
   ];
 
   List<String> groupButtonTitleList = [

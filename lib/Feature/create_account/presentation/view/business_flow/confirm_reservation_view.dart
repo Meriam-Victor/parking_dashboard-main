@@ -24,8 +24,8 @@ class ConfirmReservationView extends StatefulWidget {
 class _ConfirmReservationView extends State<ConfirmReservationView> {
 
   List<String> groupButtonIconList = [
-    AssetsData.instant,
-    AssetsData.advanceBooking,
+    AssetsProviderData.instant,
+    AssetsProviderData.advanceBooking,
   ];
 
   List<String> groupButtonTitleList = [
@@ -193,7 +193,7 @@ class _ConfirmReservationView extends State<ConfirmReservationView> {
                       ),
                     ),
                     SvgPicture.asset(
-                      AssetsData.deadline,
+                      AssetsProviderData.deadline,
                       width: Unit(context).getWidthSize*0.15,
                     ),
                   ],
@@ -204,7 +204,7 @@ class _ConfirmReservationView extends State<ConfirmReservationView> {
                 DropDownFieldProviderCustom(
                   value: deadline,
                   icon: SvgPicture.asset(
-                    AssetsData.arrowDown
+                    AssetsProviderData.arrowDown
                   ),
                   hintText: LocaleKeys.kSelectHere.tr(),
                   items: itemsList.map((String items) {

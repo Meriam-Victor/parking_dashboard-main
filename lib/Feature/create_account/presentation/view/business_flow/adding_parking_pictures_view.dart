@@ -114,7 +114,7 @@ class _AddingParkingPicturesView extends State<AddingParkingPicturesView> {
                               backgroundColor: ColorProviderData.secondary1Color,
                               radius: Unit(context).getWidthSize*0.059,
                               child: SvgPicture.asset(
-                                AssetsData.documentUploadIcon,
+                                AssetsProviderData.documentUploadIcon,
                                 width: Unit(context).getWidthSize*0.064,
                               ),
                             ),
@@ -176,7 +176,7 @@ class _AddingParkingPicturesView extends State<AddingParkingPicturesView> {
                           backgroundColor: ColorProviderData.secondary1Color,
                           radius: Unit(context).getWidthSize*0.059,
                           child: SvgPicture.asset(
-                            AssetsData.documentUploadIcon,
+                            AssetsProviderData.documentUploadIcon,
                             width: Unit(context).getWidthSize*0.064,
                           ),
                         ),
@@ -231,7 +231,7 @@ class _AddingParkingPicturesView extends State<AddingParkingPicturesView> {
                           backgroundColor: ColorProviderData.secondary1Color,
                           radius: Unit(context).getWidthSize*0.059,
                           child: SvgPicture.asset(
-                            AssetsData.documentUploadIcon,
+                            AssetsProviderData.documentUploadIcon,
                             width: Unit(context).getWidthSize*0.064,
                           ),
                         ),
@@ -286,7 +286,7 @@ class _AddingParkingPicturesView extends State<AddingParkingPicturesView> {
                               backgroundColor: ColorProviderData.secondary1Color,
                               radius: Unit(context).getWidthSize*0.059,
                               child: SvgPicture.asset(
-                                AssetsData.documentUploadIcon,
+                                AssetsProviderData.documentUploadIcon,
                                 width: Unit(context).getWidthSize*0.064,
                               ),
                             ),

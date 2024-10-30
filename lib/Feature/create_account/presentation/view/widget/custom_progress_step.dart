@@ -35,10 +35,10 @@ class CustomProgressStep extends StatelessWidget {
           children: [
             SvgPicture.asset(
               stepState == 'Pending' ?
-                AssetsData.unactivatedStep :
+                AssetsProviderData.unactivatedStep :
               stepState == 'In progress' ?
-                AssetsData.activatedStep :
-                AssetsData.completedStep,
+                AssetsProviderData.activatedStep :
+                AssetsProviderData.completedStep,
               width: Unit(context).getWidthSize*0.064,
             ),
             LinearPercentIndicator(

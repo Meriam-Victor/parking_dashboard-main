@@ -124,7 +124,7 @@ class _AddParking extends State<AddParking> {
                           height: SizeData.s24,
                         ),
                         SvgPicture.asset(
-                          AssetsData.userIcon,
+                          AssetsProviderData.userIcon,
                           width: Unit(context).getWidthSize*0.128,
                         ),
                       ],
@@ -194,7 +194,7 @@ class _AddParking extends State<AddParking> {
                           height: SizeData.s24,
                         ),
                         SvgPicture.asset(
-                          AssetsData.buildings2,
+                          AssetsProviderData.buildings2,
                           width: Unit(context).getWidthSize*0.128,
                         ),
                       ],

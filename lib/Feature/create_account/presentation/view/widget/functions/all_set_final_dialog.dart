@@ -44,7 +44,7 @@ buildAllSetFinalDialog({required BuildContext context,}) {
                     height: SizeData.s16,
                   ),
                   Lottie.asset(
-                    AssetsData.allSet,
+                    AssetsProviderData.allSet,
                     width: Unit(context).getWidthSize*0.6,
                     height: Unit(context).getWidthSize*0.4,
                     alignment: Alignment.center,
@@ -75,7 +75,7 @@ buildAllSetFinalDialog({required BuildContext context,}) {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         SvgPicture.asset(
-                          AssetsData.infoCircleBlue,
+                          AssetsProviderData.infoCircleBlue,
                         ),
                         SizedBox(
                           width: SizeData.s8,

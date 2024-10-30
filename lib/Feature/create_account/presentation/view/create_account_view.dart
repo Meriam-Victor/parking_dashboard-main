@@ -126,7 +126,7 @@ class _CreateAccountState extends State<CreateAccount> {
                           SizeData.s12,
                         ),
                         child: SvgPicture.asset(
-                          AssetsData.eyeSlash,
+                          AssetsProviderData.eyeSlash,
                         ),
                       ),
                     ),
@@ -149,7 +149,7 @@ class _CreateAccountState extends State<CreateAccount> {
                           SizeData.s12,
                         ),
                         child: SvgPicture.asset(
-                          AssetsData.eyeSlash,
+                          AssetsProviderData.eyeSlash,
                         ),
                       ),
                     ),
