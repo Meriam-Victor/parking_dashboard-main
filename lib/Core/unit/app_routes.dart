@@ -14,8 +14,9 @@ import 'package:parking_dashboard/Feature/create_account/presentation/view/busin
 import 'package:parking_dashboard/Feature/create_account/presentation/view/business_flow/manage_payment_view.dart';
 import 'package:parking_dashboard/Feature/create_account/presentation/view/business_flow/offered_services_second_view.dart';
 import 'package:parking_dashboard/Feature/create_account/presentation/view/business_flow/type_of_booking_view.dart';
+import 'package:parking_dashboard/Feature/create_account/presentation/view/dashboard_view.dart';
 
-abstract class AppProviderRouter {
+abstract class AppRouter {
 
   static const kLogin='/Login';
   static const kCreateAccount='/CreateAccount';
@@ -32,6 +33,7 @@ abstract class AppProviderRouter {
   static const kOfferedServicesSecondView='/kOfferedServicesSecondView';
   static const kTypeOfBookingView='/kTypeOfBookingView';
   static const kManagePaymentView='/kManagePaymentView';
+  static const kDashboard='/kDashboard';
 
   static final GoRouter router = GoRouter(
     routes: [
@@ -115,6 +117,12 @@ abstract class AppProviderRouter {
         path: kManagePaymentView,
         builder: (context, state)=> const ManagePaymentView(),
       ),
+
+      GoRoute(
+        path: kDashboard,
+        builder: (context, state)=> const Dashboard(),
+      ),
+
     ],
   );
 }

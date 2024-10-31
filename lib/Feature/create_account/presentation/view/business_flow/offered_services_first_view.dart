@@ -94,12 +94,12 @@ class _OfferedServicesFirstView extends State<OfferedServicesFirstView> {
   Widget build(BuildContext context) {
 
     return Scaffold(
-      backgroundColor: ColorProviderData.whiteColor,
+      backgroundColor: ColorData.whiteColor,
       appBar: AppBar(
-        backgroundColor: ColorProviderData.whiteColor,
+        backgroundColor: ColorData.whiteColor,
         title: Text(
           LocaleKeys.kAddParking.tr(),
-          style: StylesProvider.textStyleGreyBlue5ColorR16,
+          style: Styles.textStyleGray700R16,
         ),
         centerTitle: true,
       ),
@@ -124,14 +124,14 @@ class _OfferedServicesFirstView extends State<OfferedServicesFirstView> {
               ),
               Text(
                 LocaleKeys.kServicesYourParkingOffers.tr(),
-                style: StylesProvider.textStyleGreyBlue1ColorM20,
+                style: Styles.textStyleGray500M20,
               ),
               SizedBox(
                 height: SizeData.s10,
               ),
               Text(
                 LocaleKeys.kYouCanStillAddServicesLater.tr(),
-                style: StylesProvider.textStyleGreyBlue3ColorR14,
+                style: Styles.textStyleGrey300R14,
               ),
               SizedBox(
                 height: SizeData.s32,
@@ -154,7 +154,7 @@ class _OfferedServicesFirstView extends State<OfferedServicesFirstView> {
                     ),
                     decoration: BoxDecoration(
                       border: Border.all(
-                        color: ColorProviderData.secondary1Color,
+                        color: ColorData.purple3Color,
                       ),
                       borderRadius: BorderRadius.circular(
                         SizeData.s8,
@@ -176,7 +176,7 @@ class _OfferedServicesFirstView extends State<OfferedServicesFirstView> {
                             ),
                             Text(
                               groupButtonTitleList[index],
-                              style: StylesProvider.textStyleGreyBlue1ColorR14,
+                              style: Styles.textStyleGray500R14,
                             ),
                           ],
                         ),
@@ -196,12 +196,12 @@ class _OfferedServicesFirstView extends State<OfferedServicesFirstView> {
                                   height: Unit(context).getHeightSize*0.045,
                                   decoration: BoxDecoration(
                                     color: groupButtonSelectedList[index] == 'yes' ?
-                                    ColorProviderData.secondary1Color :
-                                    ColorProviderData.whiteColor,
+                                    ColorData.purple3Color :
+                                    ColorData.whiteColor,
                                     border: Border.all(
                                       color: groupButtonSelectedList[index] == 'yes' ?
-                                      ColorProviderData.secondary2Color :
-                                      ColorProviderData.greyBlue2Color,
+                                      ColorData.secondaryColor :
+                                      ColorData.gray100Color,
                                     ),
                                     borderRadius: BorderRadius.circular(
                                       SizeData.s8,
@@ -214,10 +214,10 @@ class _OfferedServicesFirstView extends State<OfferedServicesFirstView> {
                                         child: Checkbox(
                                           shape: const CircleBorder(),
                                           value: groupButtonSelectedList[index] == 'yes',
-                                          activeColor: ColorProviderData.secondary4Color,
+                                          activeColor: ColorData.secondary1Color,
                                           side: BorderSide(
                                             width: SizeData.s1,
-                                            color: ColorProviderData.greyBlue9Color,
+                                            color: ColorData.gray200Color,
                                           ),
                                           onChanged: (bool? value) {
                                             setState(() {
@@ -229,8 +229,8 @@ class _OfferedServicesFirstView extends State<OfferedServicesFirstView> {
                                       Text(
                                         LocaleKeys.kYes.tr(),
                                         style: groupButtonSelectedList[index] == 'yes' ?
-                                        StylesProvider.textStylesProviderecondary4ColorR14 :
-                                        StylesProvider.textStyleGreyBlue8ColorR14,
+                                        Styles.textStyleSecondary1R14 :
+                                        Styles.textStyleGray600R14,
                                       ),
                                     ],
                                   ),
@@ -251,12 +251,12 @@ class _OfferedServicesFirstView extends State<OfferedServicesFirstView> {
                                   height: Unit(context).getHeightSize*0.045,
                                   decoration: BoxDecoration(
                                     color: groupButtonSelectedList[index] == 'no' ?
-                                    ColorProviderData.secondary1Color :
-                                    ColorProviderData.whiteColor,
+                                    ColorData.purple3Color :
+                                    ColorData.whiteColor,
                                     border: Border.all(
                                       color: groupButtonSelectedList[index] == 'no' ?
-                                      ColorProviderData.secondary2Color :
-                                      ColorProviderData.greyBlue2Color,
+                                      ColorData.secondaryColor :
+                                      ColorData.gray100Color,
                                     ),
                                     borderRadius: BorderRadius.circular(
                                       SizeData.s8,
@@ -269,10 +269,10 @@ class _OfferedServicesFirstView extends State<OfferedServicesFirstView> {
                                         child: Checkbox(
                                           shape: const CircleBorder(),
                                           value: groupButtonSelectedList[index] == 'no',
-                                          activeColor: ColorProviderData.secondary4Color,
+                                          activeColor: ColorData.secondary1Color,
                                           side: BorderSide(
                                             width: SizeData.s1,
-                                            color: ColorProviderData.greyBlue9Color,
+                                            color: ColorData.gray200Color,
                                           ),
                                           onChanged: (bool? value) {
                                             setState(() {
@@ -284,8 +284,8 @@ class _OfferedServicesFirstView extends State<OfferedServicesFirstView> {
                                       Text(
                                         LocaleKeys.kNo.tr(),
                                         style: groupButtonSelectedList[index] == 'no' ?
-                                        StylesProvider.textStylesProviderecondary4ColorR14 :
-                                        StylesProvider.textStyleGreyBlue8ColorR14,
+                                        Styles.textStyleSecondary1R14 :
+                                        Styles.textStyleGray600R14,
                                       ),
                                     ],
                                   ),
@@ -300,7 +300,7 @@ class _OfferedServicesFirstView extends State<OfferedServicesFirstView> {
                         if (groupButtonSelectedList[index] == 'yes') ...[
                           Divider(
                             thickness: 1.0,
-                            color: ColorProviderData.greyBlue7Color,
+                            color: ColorData.white3Color,
                           ),
                           if (groupButtonTitleList[index] == LocaleKeys.kShuttleService.tr()) ...[
                             SizedBox(
@@ -308,14 +308,14 @@ class _OfferedServicesFirstView extends State<OfferedServicesFirstView> {
                             ),
                             Text(
                               LocaleKeys.kShuttleDetails.tr(),
-                              style: StylesProvider.textStyleGreyBlue1ColorM16,
+                              style: Styles.textStyleGray500M16,
                             ),
                             SizedBox(
                               height: SizeData.s10,
                             ),
                             Text(
                               LocaleKeys.kYouWillBeAbleToAddMoreDetailsAboutYourShuttleLater.tr(),
-                              style: StylesProvider.textStyleGreyBlue8ColorR12,
+                              style: Styles.textStyleGray400R12,
                             ),
                             SizedBox(
                               height: SizeData.s16,
@@ -323,7 +323,7 @@ class _OfferedServicesFirstView extends State<OfferedServicesFirstView> {
                           ],
                           Text(
                             LocaleKeys.kPricing.tr(),
-                            style: StylesProvider.textStyleGreyBlue1ColorM16,
+                            style: Styles.textStyleGray500M16,
                           ),
                           SizedBox(
                             height: SizeData.s10,
@@ -345,12 +345,12 @@ class _OfferedServicesFirstView extends State<OfferedServicesFirstView> {
                                   ),
                                   decoration: BoxDecoration(
                                     color: groupButtonPaidList[index] == 'free' ?
-                                    ColorProviderData.blue3Color :
-                                    ColorProviderData.whiteColor,
+                                    ColorData.blue2Color :
+                                    ColorData.whiteColor,
                                     border: Border.all(
                                       color: groupButtonPaidList[index] == 'free' ?
-                                      ColorProviderData.blue5Color :
-                                      ColorProviderData.greyBlue2Color,
+                                      ColorData.blue9Color :
+                                      ColorData.gray100Color,
                                     ),
                                     borderRadius: BorderRadius.circular(
                                       SizeData.s8,
@@ -360,8 +360,8 @@ class _OfferedServicesFirstView extends State<OfferedServicesFirstView> {
                                     child: Text(
                                       LocaleKeys.kForFree.tr(),
                                       style: groupButtonPaidList[index] == 'free' ?
-                                      StylesProvider.textStyleBlue2ColorR12 :
-                                      StylesProvider.textStyleGreyBlue8ColorR12,
+                                      Styles.textStyleBlue7R12 :
+                                      Styles.textStyleGray400R12,
                                     ),
                                   ),
                                 ),
@@ -384,12 +384,12 @@ class _OfferedServicesFirstView extends State<OfferedServicesFirstView> {
                                   ),
                                   decoration: BoxDecoration(
                                     color: groupButtonPaidList[index] == 'paid' ?
-                                    ColorProviderData.blue3Color :
-                                    ColorProviderData.whiteColor,
+                                    ColorData.blue2Color :
+                                    ColorData.whiteColor,
                                     border: Border.all(
                                       color: groupButtonPaidList[index] == 'paid' ?
-                                      ColorProviderData.blue5Color :
-                                      ColorProviderData.greyBlue2Color,
+                                      ColorData.blue9Color :
+                                      ColorData.gray100Color,
                                     ),
                                     borderRadius: BorderRadius.circular(
                                       SizeData.s8,
@@ -399,8 +399,8 @@ class _OfferedServicesFirstView extends State<OfferedServicesFirstView> {
                                     child: Text(
                                       LocaleKeys.kPaid.tr(),
                                       style: groupButtonPaidList[index] == 'paid' ?
-                                      StylesProvider.textStyleBlue2ColorR12 :
-                                      StylesProvider.textStyleGreyBlue8ColorR12,
+                                      Styles.textStyleBlue7R12 :
+                                      Styles.textStyleGray400R12,
                                     ),
                                   ),
                                 ),
@@ -413,7 +413,7 @@ class _OfferedServicesFirstView extends State<OfferedServicesFirstView> {
                             ),
                             Text(
                               LocaleKeys.kSetPrice.tr(),
-                              style: StylesProvider.textStyleGreyBlue1ColorR14,
+                              style: Styles.textStyleGray500R14,
                             ),
                             SizedBox(
                               height: SizeData.s10,
@@ -421,6 +421,11 @@ class _OfferedServicesFirstView extends State<OfferedServicesFirstView> {
                             InputTextProviderCustom(
                               controller: TextEditingController(),
                               hintText: LocaleKeys.kTypeHere.tr(),
+                              suffixIcon: Icon(
+                                Icons.euro_outlined,
+                                color: ColorData.gray300Color,
+                                size: SizeData.s16,
+                              ),
                             ),
                             SizedBox(
                               height: SizeData.s10,
@@ -448,7 +453,7 @@ class _OfferedServicesFirstView extends State<OfferedServicesFirstView> {
                             ),
                             Text(
                               LocaleKeys.kShuttleHours.tr(),
-                              style: StylesProvider.textStyleGreyBlue1ColorM16,
+                              style: Styles.textStyleGray500M16,
                             ),
                             SizedBox(
                               height: SizeData.s10,
@@ -461,7 +466,7 @@ class _OfferedServicesFirstView extends State<OfferedServicesFirstView> {
                                 ),
                                 decoration: BoxDecoration(
                                   border: Border.all(
-                                      color: ColorProviderData.greyBlue2Color
+                                      color: ColorData.gray100Color
                                   ),
                                   borderRadius: BorderRadius.circular(
                                     SizeData.s8,
@@ -479,7 +484,7 @@ class _OfferedServicesFirstView extends State<OfferedServicesFirstView> {
                                       startTime != null
                                           ? startTime!.format(context)
                                           : LocaleKeys.kFromTime.tr(),
-                                      style: StylesProvider.textStyleGreyBlue1ColorR12,
+                                      style: Styles.textStyleGray500R12,
                                     ),
                                     const Spacer(),
                                     SvgPicture.asset(
@@ -501,7 +506,7 @@ class _OfferedServicesFirstView extends State<OfferedServicesFirstView> {
                                 ),
                                 decoration: BoxDecoration(
                                   border: Border.all(
-                                      color: ColorProviderData.greyBlue2Color
+                                      color: ColorData.gray100Color
                                   ),
                                   borderRadius: BorderRadius.circular(
                                       SizeData.s8,
@@ -519,7 +524,7 @@ class _OfferedServicesFirstView extends State<OfferedServicesFirstView> {
                                       endTime != null
                                           ? endTime!.format(context)
                                           : LocaleKeys.kToTime.tr(),
-                                      style: StylesProvider.textStyleGreyBlue1ColorR12,
+                                      style: Styles.textStyleGray500R12,
                                     ),
                                     const Spacer(),
                                     SvgPicture.asset(
@@ -559,8 +564,8 @@ class _OfferedServicesFirstView extends State<OfferedServicesFirstView> {
                                 ),
                                 decoration: BoxDecoration(
                                   color: is24Hr ?
-                                  ColorProviderData.secondary1Color :
-                                  ColorProviderData.greyBlue7Color,
+                                  ColorData.purple3Color :
+                                  ColorData.white3Color,
                                   borderRadius: BorderRadius.circular(
                                     SizeData.s10,
                                   ),
@@ -579,8 +584,8 @@ class _OfferedServicesFirstView extends State<OfferedServicesFirstView> {
                                     Text(
                                       LocaleKeys.k24Hrs.tr(),
                                       style: is24Hr ?
-                                      StylesProvider.textStylesProviderecondary4ColorM14 :
-                                      StylesProvider.textStyleGreyBlue8ColorR14,
+                                      Styles.textStyleSecondary1M14 :
+                                      Styles.textStyleGray600R14,
                                     ),
                                   ],
                                 ),
@@ -611,15 +616,15 @@ class _OfferedServicesFirstView extends State<OfferedServicesFirstView> {
                     onTap: (){},
                     width: Unit(context).getWidthSize*0.35,
                     text: LocaleKeys.kSaveForLater.tr(),
-                    color: ColorProviderData.whiteColor,
-                    colorFont: ColorProviderData.primary2Color,
-                    borderColor: ColorProviderData.primary2Color,
+                    color: ColorData.whiteColor,
+                    colorFont: ColorData.purple4Color,
+                    borderColor: ColorData.purple4Color,
                     borderWidth: 1.0,
                   ),
                   const Spacer(),
                   MainButtonProviderCustom(
                     onTap: (){
-                      GoRouter.of(context).push(AppProviderRouter.kOfferedServicesSecondView);
+                      GoRouter.of(context).push(AppRouter.kOfferedServicesSecondView);
                     },
                     width: Unit(context).getWidthSize*0.48,
                     text: LocaleKeys.kNext.tr(),
@@ -633,12 +638,12 @@ class _OfferedServicesFirstView extends State<OfferedServicesFirstView> {
                 ),
                 GestureDetector(
                   onTap: (){
-                    GoRouter.of(context).push(AppProviderRouter.kOfferedServicesSecondView);
+                    GoRouter.of(context).push(AppRouter.kOfferedServicesSecondView);
                   },
                   child: Center(
                     child: Text(
                       LocaleKeys.kSkipThisStep.tr(),
-                      style: StylesProvider.textStyleBlue1ColorM14,
+                      style: Styles.textStyleBlue500M14,
                     ),
                   ),
                 ),

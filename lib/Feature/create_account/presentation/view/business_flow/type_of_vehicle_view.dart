@@ -82,12 +82,12 @@ class _TypeOfVehicleView extends State<TypeOfVehicleView> {
   Widget build(BuildContext context) {
 
     return Scaffold(
-      backgroundColor: ColorProviderData.whiteColor,
+      backgroundColor: ColorData.whiteColor,
       appBar: AppBar(
-        backgroundColor: ColorProviderData.whiteColor,
+        backgroundColor: ColorData.whiteColor,
         title: Text(
           LocaleKeys.kAddParking.tr(),
-          style: StylesProvider.textStyleGreyBlue5ColorR16,
+          style: Styles.textStyleGray700R16,
         ),
         centerTitle: true,
       ),
@@ -113,7 +113,7 @@ class _TypeOfVehicleView extends State<TypeOfVehicleView> {
               ),
               Text(
                 LocaleKeys.kAcceptedVehiclesType.tr(),
-                style: StylesProvider.textStyleGreyBlue1ColorM20,
+                style: Styles.textStyleGray500M20,
               ),
               SizedBox(
                 height: SizeData.s10,
@@ -136,7 +136,7 @@ class _TypeOfVehicleView extends State<TypeOfVehicleView> {
                     ),
                     decoration: BoxDecoration(
                       border: Border.all(
-                        color: ColorProviderData.greyBlue2Color,
+                        color: ColorData.gray100Color,
                       ),
                       borderRadius: BorderRadius.circular(
                         SizeData.s8,
@@ -158,15 +158,15 @@ class _TypeOfVehicleView extends State<TypeOfVehicleView> {
                             ),
                             Text(
                               groupButtonTitleList[index],
-                              style: StylesProvider.textStyleGreyBlue1ColorR14,
+                              style: Styles.textStyleGray500R14,
                             ),
                             const Spacer(),
                             Checkbox(
                               value: groupButtonCheckBoxList[index],
-                              activeColor: ColorProviderData.blue1Color,
+                              activeColor: ColorData.blue500Color,
                               side: BorderSide(
                                 width: SizeData.s1,
-                                color: ColorProviderData.greyBlue9Color,
+                                color: ColorData.gray200Color,
                               ),
                               onChanged: (bool? value) {
                                 setState(() {
@@ -183,7 +183,7 @@ class _TypeOfVehicleView extends State<TypeOfVehicleView> {
                             children: [
                               Text(
                                 LocaleKeys.kMaxHeightLimit.tr(),
-                                style: StylesProvider.textStyleGreyBlue1ColorR12,
+                                style: Styles.textStyleGray500R12,
                               ),
                               SizedBox(
                                 height: SizeData.s8,
@@ -210,11 +210,11 @@ class _TypeOfVehicleView extends State<TypeOfVehicleView> {
                                         ),
                                         border: Border.all(
                                           color: groupButtonIsUnlimitedList[index] ?
-                                          ColorProviderData.primary4Color :
-                                          ColorProviderData.primary8Color,
+                                          ColorData.purple2Color :
+                                          ColorData.primaryP6Color,
                                           width: SizeData.s1,
                                         ),
-                                        color: ColorProviderData.whiteColor,
+                                        color: ColorData.whiteColor,
                                       ),
                                       child: Row(
                                         mainAxisAlignment: MainAxisAlignment.start,
@@ -222,13 +222,13 @@ class _TypeOfVehicleView extends State<TypeOfVehicleView> {
                                           Text(
                                             LocaleKeys.kHeight.tr(),
                                             style: groupButtonIsUnlimitedList[index] ?
-                                            StylesProvider.textStylePrimary4ColorR10 :
-                                            StylesProvider.textStylePrimaryColorR10,
+                                            Styles.textStylePurple2R10 :
+                                            Styles.textStylePrimaryPR10,
                                           ),
                                           VerticalDivider(
                                             color: groupButtonIsUnlimitedList[index] ?
-                                            ColorProviderData.primary4Color :
-                                            ColorProviderData.primaryColor,
+                                            ColorData.purple2Color :
+                                            ColorData.primaryPColor,
                                             thickness: 1,
                                             indent: 8,
                                             endIndent: 8,
@@ -237,8 +237,8 @@ class _TypeOfVehicleView extends State<TypeOfVehicleView> {
                                           Text(
                                             '${groupButtonMaxHeightList[index].toStringAsFixed(2)} M',
                                             style: groupButtonIsUnlimitedList[index] ?
-                                            StylesProvider.textStylePrimary4ColorR10 :
-                                            StylesProvider.textStylePrimaryColorR10,
+                                            Styles.textStylePurple2R10 :
+                                            Styles.textStylePrimaryPR10,
                                           ),
                                         ],
                                       ),
@@ -263,21 +263,21 @@ class _TypeOfVehicleView extends State<TypeOfVehicleView> {
                                         ),
                                         border: Border.all(
                                           color: groupButtonIsUnlimitedList[index] ?
-                                          ColorProviderData.primary4Color :
-                                          ColorProviderData.primary8Color,
+                                          ColorData.purple2Color :
+                                          ColorData.primaryP6Color,
                                           width: SizeData.s1,
                                         ),
                                         color: groupButtonIsUnlimitedList[index] ?
-                                        ColorProviderData.primary4Color :
-                                        ColorProviderData.whiteColor,
+                                        ColorData.purple2Color :
+                                        ColorData.whiteColor,
                                       ),
                                       child: Row(
                                         children: [
                                           Icon(
                                             Icons.all_inclusive,
                                             color: groupButtonIsUnlimitedList[index] ?
-                                            ColorProviderData.primaryColor :
-                                            ColorProviderData.primary4Color,
+                                            ColorData.primaryPColor :
+                                            ColorData.purple2Color,
                                             size: Unit(context).getWidthSize*0.043,
                                             //SizeData.s16,
                                           ),
@@ -287,8 +287,8 @@ class _TypeOfVehicleView extends State<TypeOfVehicleView> {
                                           Text(
                                             LocaleKeys.kUnlimited.tr(),
                                             style: groupButtonIsUnlimitedList[index] ?
-                                                StylesProvider.textStylePrimaryColorR10 :
-                                                StylesProvider.textStylePrimary4ColorR10,
+                                                Styles.textStylePrimaryPR10 :
+                                                Styles.textStylePurple2R10,
                                           ),
                                         ],
                                       ),
@@ -320,15 +320,15 @@ class _TypeOfVehicleView extends State<TypeOfVehicleView> {
                     onTap: (){},
                     width: Unit(context).getWidthSize*0.35,
                     text: LocaleKeys.kSaveForLater.tr(),
-                    color: ColorProviderData.whiteColor,
-                    colorFont: ColorProviderData.primary2Color,
-                    borderColor: ColorProviderData.primary2Color,
+                    color: ColorData.whiteColor,
+                    colorFont: ColorData.purple4Color,
+                    borderColor: ColorData.purple4Color,
                     borderWidth: 1.0,
                   ),
                   const Spacer(),
                   MainButtonProviderCustom(
                     onTap: (){
-                      GoRouter.of(context).push(AppProviderRouter.kTermsAndConditionsView);
+                      GoRouter.of(context).push(AppRouter.kTermsAndConditionsView);
                     },
                     width: Unit(context).getWidthSize*0.48,
                     text: LocaleKeys.kNext.tr(),

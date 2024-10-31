@@ -5,10 +5,10 @@ import 'package:parking_dashboard/Core/unit/color_data.dart';
 import 'package:parking_dashboard/Core/unit/size_data.dart';
 import 'package:parking_dashboard/Core/translations/locale_keys.g.dart';
 import 'package:parking_dashboard/Core/unit/unit.dart';
-import 'package:parking_dashboard/Core/unit/style_data.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
-import 'package:parking_dashboard/Core/unit/font_weight_data.dart';
 import 'package:parking_dashboard/Core/unit/assets_data.dart';
+import 'package:parking_dashboard/Core/unit/font_weight_data.dart';
+import 'package:parking_dashboard/Core/unit/style_data.dart';
 
 class CustomProgressStep extends StatelessWidget {
 
@@ -44,12 +44,12 @@ class CustomProgressStep extends StatelessWidget {
             LinearPercentIndicator(
               width: Unit(context).getWidthSize*0.387,
               lineHeight: SizeData.s2,
-              backgroundColor: ColorProviderData.greyBlue7Color,
+              backgroundColor: ColorData.white3Color,
               progressColor: stepState == 'Pending' ?
-              ColorProviderData.blue2Color :
+              ColorData.blue10Color :
               stepState == 'In progress' ?
-              ColorProviderData.blue2Color :
-              ColorProviderData.green3Color,
+              ColorData.blue10Color :
+              ColorData.greenColor,
               percent: stepState == 'Pending' ?
               0.0 :
               stepState == 'In progress' ?
@@ -63,14 +63,14 @@ class CustomProgressStep extends StatelessWidget {
         ),
         Text(
           LocaleKeys.kStep.tr()+stepNumber,
-          style: StylesProvider.textStyleGreyBlue1ColorR12,
+          style: Styles.textStyleGray500R12,
         ),
         SizedBox(
           height: SizeData.s4,
         ),
         Text(
           title,
-          style: StylesProvider.textStyleGreyBlue4ColorM16,
+          style: Styles.textStyleGray600M16,
         ),
         SizedBox(
           height: SizeData.s8,
@@ -82,10 +82,10 @@ class CustomProgressStep extends StatelessWidget {
           width: Unit(context).getWidthSize*0.25,
           decoration: BoxDecoration(
             color: stepState == 'Pending' ?
-            ColorProviderData.greyBlue7Color :
+            ColorData.white3Color :
             stepState == 'In progress' ?
-            ColorProviderData.blue3Color :
-            ColorProviderData.green2Color,
+            ColorData.blue2Color :
+            ColorData.green2Color,
             borderRadius: BorderRadius.circular(
               SizeData.s16,
             ),
@@ -99,11 +99,11 @@ class CustomProgressStep extends StatelessWidget {
               LocaleKeys.kConfirmed.tr(),
               style: TextStyle(
                 color: stepState == 'Pending' ?
-                ColorProviderData.greyBlue5Color :
+                ColorData.gray700Color :
                 stepState == 'In progress' ?
-                ColorProviderData.blue4Color :
-                ColorProviderData.green1Color,
-                fontWeight: FontWeightStylesProvider.regular,
+                ColorData.blue8Color :
+                ColorData.green3Color,
+                fontWeight: FontWeightStyles.regular,
                 fontSize: 14,
                 height: 0.0,
                 fontFamily: fontFamily,

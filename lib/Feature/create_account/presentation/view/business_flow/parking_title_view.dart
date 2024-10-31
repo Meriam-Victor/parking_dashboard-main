@@ -24,12 +24,12 @@ class _ParkingTitleView extends State<ParkingTitleView> {
   Widget build(BuildContext context) {
 
     return Scaffold(
-      backgroundColor: ColorProviderData.whiteColor,
+      backgroundColor: ColorData.whiteColor,
       appBar: AppBar(
-        backgroundColor: ColorProviderData.whiteColor,
+        backgroundColor: ColorData.whiteColor,
         title: Text(
           LocaleKeys.kAddParking.tr(),
-          style: StylesProvider.textStyleGreyBlue5ColorR16,
+          style: Styles.textStyleGray700R16,
         ),
         centerTitle: true,
       ),
@@ -55,14 +55,14 @@ class _ParkingTitleView extends State<ParkingTitleView> {
               ),
               Text(
                 LocaleKeys.kNowLetUsGiveYourParkingTitle.tr(),
-                style: StylesProvider.textStyleGreyBlue1ColorM20,
+                style: Styles.textStyleGray500M20,
               ),
               SizedBox(
                 height: SizeData.s32,
               ),
               Text(
                 LocaleKeys.kParkingTitle.tr(),
-                style: StylesProvider.textStyleGreyBlue1ColorR14,
+                style: Styles.textStyleGray500R14,
               ),
               SizedBox(
                 height: SizeData.s8,
@@ -76,7 +76,7 @@ class _ParkingTitleView extends State<ParkingTitleView> {
               ),
               Text(
                 LocaleKeys.kDescription.tr(),
-                style: StylesProvider.textStyleGreyBlue1ColorR14,
+                style: Styles.textStyleGray500R14,
               ),
               SizedBox(
                 height: SizeData.s8,
@@ -91,7 +91,7 @@ class _ParkingTitleView extends State<ParkingTitleView> {
               ),
               Text(
                 LocaleKeys.kAddress.tr(),
-                style: StylesProvider.textStyleGreyBlue1ColorR14,
+                style: Styles.textStyleGray500R14,
               ),
               SizedBox(
                 height: SizeData.s8,
@@ -109,13 +109,13 @@ class _ParkingTitleView extends State<ParkingTitleView> {
                     onTap: (){},
                     width: Unit(context).getWidthSize*0.3,
                     text: LocaleKeys.kCancel.tr(),
-                    color: ColorProviderData.primary3Color,
-                    colorFont: ColorProviderData.primary2Color,
+                    color: ColorData.primaryP2Color,
+                    colorFont: ColorData.purple4Color,
                   ),
                   const Spacer(),
                   MainButtonProviderCustom(
                     onTap: (){
-                      GoRouter.of(context).push(AppProviderRouter.kTypeOfPropertyView);
+                      GoRouter.of(context).push(AppRouter.kTypeOfPropertyView);
                     },
                     width: Unit(context).getWidthSize*0.55,
                     text: LocaleKeys.kNext.tr(),

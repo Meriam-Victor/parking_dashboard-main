@@ -59,12 +59,12 @@ class _ConfirmReservationView extends State<ConfirmReservationView> {
   Widget build(BuildContext context) {
 
     return Scaffold(
-      backgroundColor: ColorProviderData.whiteColor,
+      backgroundColor: ColorData.whiteColor,
       appBar: AppBar(
-        backgroundColor: ColorProviderData.whiteColor,
+        backgroundColor: ColorData.whiteColor,
         title: Text(
           LocaleKeys.kAddParking.tr(),
-          style: StylesProvider.textStyleGreyBlue5ColorR16,
+          style: Styles.textStyleGray700R16,
         ),
         centerTitle: true,
       ),
@@ -89,7 +89,7 @@ class _ConfirmReservationView extends State<ConfirmReservationView> {
               ),
               Text(
                 LocaleKeys.kDecideHowYouWillConfirmReservations.tr(),
-                style: StylesProvider.textStyleGreyBlue1ColorM20,
+                style: Styles.textStyleGray500M20,
               ),
               SizedBox(
                 height: SizeData.s32,
@@ -119,12 +119,12 @@ class _ConfirmReservationView extends State<ConfirmReservationView> {
                       ),
                       decoration: BoxDecoration(
                         color: groupButtonCheckList[index] ?
-                        ColorProviderData.blue3Color :
-                        ColorProviderData.whiteColor,
+                        ColorData.blue2Color :
+                        ColorData.whiteColor,
                         border: Border.all(
                           color: groupButtonCheckList[index] ?
-                          ColorProviderData.blue5Color :
-                          ColorProviderData.greyBlue2Color,
+                          ColorData.blue9Color :
+                          ColorData.gray100Color,
                         ),
                         borderRadius: BorderRadius.circular(
                           SizeData.s8,
@@ -140,14 +140,14 @@ class _ConfirmReservationView extends State<ConfirmReservationView> {
                               children: [
                                 Text(
                                   groupButtonTitleList[index],
-                                  style: StylesProvider.textStyleGreyBlue8ColorM16,
+                                  style: Styles.textStyleGray600M16,
                                 ),
                                 SizedBox(
                                   height: SizeData.s4,
                                 ),
                                 Text(
                                   groupButtonTextList[index],
-                                  style: StylesProvider.textStyleGreyBlue8ColorR12,
+                                  style: Styles.textStyleGray400R12,
                                 ),
                               ],
                             ),
@@ -180,14 +180,14 @@ class _ConfirmReservationView extends State<ConfirmReservationView> {
                         children: [
                           Text(
                             LocaleKeys.kBookingDeadlineBeforeArrival.tr(),
-                            style: StylesProvider.textStyleGreyBlue8ColorM16,
+                            style: Styles.textStyleGray600M16,
                           ),
                           SizedBox(
                             height: SizeData.s4,
                           ),
                           Text(
                             LocaleKeys.kHowLongBeforeArrivalDoYouNeedToReceiveATravelerReservation.tr(),
-                            style: StylesProvider.textStyleGreyBlue8ColorR12,
+                            style: Styles.textStyleGray400R12,
                           ),
                         ],
                       ),
@@ -227,15 +227,15 @@ class _ConfirmReservationView extends State<ConfirmReservationView> {
                     onTap: (){},
                     width: Unit(context).getWidthSize*0.35,
                     text: LocaleKeys.kSaveForLater.tr(),
-                    color: ColorProviderData.whiteColor,
-                    colorFont: ColorProviderData.primary2Color,
-                    borderColor: ColorProviderData.primary2Color,
+                    color: ColorData.whiteColor,
+                    colorFont: ColorData.purple4Color,
+                    borderColor: ColorData.purple4Color,
                     borderWidth: 1.0,
                   ),
                   const Spacer(),
                   MainButtonProviderCustom(
                     onTap: (){
-                      GoRouter.of(context).push(AppProviderRouter.kAddingParkingPicturesView);
+                      GoRouter.of(context).push(AppRouter.kAddingParkingPicturesView);
                     },
                     width: Unit(context).getWidthSize*0.48,
                     text: LocaleKeys.kNext.tr(),

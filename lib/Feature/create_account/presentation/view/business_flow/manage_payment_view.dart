@@ -20,18 +20,18 @@ class _ManagePaymentView extends State<ManagePaymentView> {
   Widget build(BuildContext context) {
 
     return Scaffold(
-      backgroundColor: ColorProviderData.whiteColor,
+      backgroundColor: ColorData.whiteColor,
       appBar: AppBar(
-        backgroundColor: ColorProviderData.whiteColor,
+        backgroundColor: ColorData.whiteColor,
         title: Text(
           LocaleKeys.kAddParking.tr(),
-          style: StylesProvider.textStyleGreyBlue5ColorR16,
+          style: Styles.textStyleGray700R16,
         ),
         centerTitle: true,
       ),
       body: Padding(
         padding: EdgeInsets.all(
-          SizeData.s24,
+          SizeData.s16,
         ),
         child: SingleChildScrollView(
           child: Column(
@@ -39,28 +39,27 @@ class _ManagePaymentView extends State<ManagePaymentView> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-              //  width: Unit(context).getWidthSize*0.96,
-                padding: EdgeInsets.symmetric(
-                  horizontal: SizeData.s16,
-                  vertical: SizeData.s48,
+                width: double.infinity,
+                padding: EdgeInsets.all(
+                  SizeData.s16,
                 ),
                 margin: EdgeInsets.all(
                   SizeData.s16,
                 ),
                 decoration: BoxDecoration(
-                  color: ColorProviderData.whiteColor,
+                  color: ColorData.whiteColor,
                   borderRadius: BorderRadius.circular(
                     SizeData.s16,
                   ),
                   boxShadow: [
                     BoxShadow(
-                      color: ColorProviderData.shadow1Color,
+                      color: ColorData.grayShadow3Color,
                       spreadRadius: -2,
                       blurRadius: 8,
                       offset: const Offset(0, 4),
                     ),
                     BoxShadow(
-                      color: ColorProviderData.shadow2Color,
+                      color: ColorData.grayShadow4Color,
                       spreadRadius: 0,
                       blurRadius: 4,
                       offset: const Offset(0, 2),
@@ -77,7 +76,7 @@ class _ManagePaymentView extends State<ManagePaymentView> {
                     ),
                     Text(
                       LocaleKeys.kAddNewPayoutMethod.tr(),
-                      style: StylesProvider.textStyleBlue1ColorM14,
+                      style: Styles.textStyleBlue500M14,
                     ),
                   ],
                 ),

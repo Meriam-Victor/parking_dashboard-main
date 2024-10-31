@@ -8,6 +8,7 @@ import 'package:parking_dashboard/Core/unit/style_data.dart';
 import 'package:parking_dashboard/Core/unit/color_data.dart';
 import 'package:parking_dashboard/Core/translations/locale_keys.g.dart';
 import 'package:parking_dashboard/Core/unit/unit.dart';
+import 'package:parking_dashboard/Feature/create_account/presentation/view/widget/functions/side_bar_view.dart';
 import 'package:parking_dashboard/Feature/create_account/presentation/view/widget/functions/verification_code_dialog.dart';
 import 'package:parking_dashboard/Core/unit/app_routes.dart';
 import 'package:parking_dashboard/Core/widget/provider_app/buttons/main_button_custom.dart';
@@ -26,7 +27,8 @@ class _CreateAccountState extends State<CreateAccount> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: ColorProviderData.whiteColor,
+      backgroundColor: ColorData.whiteColor,
+      drawer: buildSideBar(context: context),
       body: Column(
         children: [
           AppBarProviderCustom(
@@ -44,19 +46,19 @@ class _CreateAccountState extends State<CreateAccount> {
                 SizeData.s16,
               ),
               decoration: BoxDecoration(
-                color: ColorProviderData.whiteColor,
+                color: ColorData.whiteColor,
                 borderRadius: BorderRadius.circular(
                   SizeData.s16,
                 ),
                 boxShadow: [
                   BoxShadow(
-                    color: ColorProviderData.shadow1Color,
+                    color: ColorData.grayShadow3Color,
                     spreadRadius: -2,
                     blurRadius: 8,
                     offset: const Offset(0, 4),
                   ),
                   BoxShadow(
-                    color: ColorProviderData.shadow2Color,
+                    color: ColorData.grayShadow4Color,
                     spreadRadius: 0,
                     blurRadius: 4,
                     offset: const Offset(0, 2),
@@ -70,21 +72,21 @@ class _CreateAccountState extends State<CreateAccount> {
                   children: [
                     Text(
                       LocaleKeys.kCreateAccount.tr(),
-                      style: StylesProvider.textStyleGreyBlue1ColorSB24,
+                      style: Styles.textStyleGray500SB24,
                     ),
                     SizedBox(
                       height: SizeData.s8,
                     ),
                     Text(
                       'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy',
-                      style: StylesProvider.textStyleGreyBlue1ColorR14,
+                      style: Styles.textStyleGray500R14,
                     ),
                     SizedBox(
                       height: SizeData.s48,
                     ),
                     Text(
                       LocaleKeys.kName.tr(),
-                      style: StylesProvider.textStyleGreyBlue1ColorR14,
+                      style: Styles.textStyleGray500R14,
                     ),
                     SizedBox(
                       height: SizeData.s8,
@@ -98,7 +100,7 @@ class _CreateAccountState extends State<CreateAccount> {
                     ),
                     Text(
                       LocaleKeys.kEmail.tr(),
-                      style: StylesProvider.textStyleGreyBlue1ColorR14,
+                      style: Styles.textStyleGray500R14,
                     ),
                     SizedBox(
                       height: SizeData.s8,
@@ -112,7 +114,7 @@ class _CreateAccountState extends State<CreateAccount> {
                     ),
                     Text(
                       LocaleKeys.kPassword.tr(),
-                      style: StylesProvider.textStyleGreyBlue1ColorR14,
+                      style: Styles.textStyleGray500R14,
                     ),
                     SizedBox(
                       height: SizeData.s8,
@@ -135,7 +137,7 @@ class _CreateAccountState extends State<CreateAccount> {
                     ),
                     Text(
                       LocaleKeys.kRepeatPassword.tr(),
-                      style: StylesProvider.textStyleGreyBlue1ColorR14,
+                      style: Styles.textStyleGray500R14,
                     ),
                     SizedBox(
                       height: SizeData.s8,
@@ -170,18 +172,18 @@ class _CreateAccountState extends State<CreateAccount> {
                       children: [
                         Text(
                           LocaleKeys.kAlreadyHaveAnAccount.tr(),
-                          style: StylesProvider.textStyleGreyBlue1ColorR14,
+                          style: Styles.textStyleGray500R14,
                         ),
                         SizedBox(
                           width: SizeData.s8,
                         ),
                         GestureDetector(
                           onTap: (){
-                            GoRouter.of(context).push(AppProviderRouter.kLogin);
+                            GoRouter.of(context).push(AppRouter.kLogin);
                           },
                           child: Text(
                             LocaleKeys.kLogIn.tr(),
-                            style: StylesProvider.textStyleBlue1ColorR14,
+                            style: Styles.textStyleBlue500R14,
                           ),
                         ),
                       ],
