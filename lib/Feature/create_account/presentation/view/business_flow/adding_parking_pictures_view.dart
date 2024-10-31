@@ -40,12 +40,12 @@ class _AddingParkingPicturesView extends State<AddingParkingPicturesView> {
   Widget build(BuildContext context) {
 
     return Scaffold(
-      backgroundColor: ColorProviderData.whiteColor,
+      backgroundColor: ColorData.whiteColor,
       appBar: AppBar(
-        backgroundColor: ColorProviderData.whiteColor,
+        backgroundColor: ColorData.whiteColor,
         title: Text(
           LocaleKeys.kAddParking.tr(),
-          style: StylesProvider.textStyleGreyBlue5ColorR16,
+          style: Styles.textStyleGray700R16,
         ),
         centerTitle: true,
       ),
@@ -70,27 +70,27 @@ class _AddingParkingPicturesView extends State<AddingParkingPicturesView> {
               ),
               Text(
                 LocaleKeys.kAddParkingPhotos.tr(),
-                style: StylesProvider.textStyleGreyBlue1ColorM20,
+                style: Styles.textStyleGray500M20,
               ),
               SizedBox(
                 height: SizeData.s10,
               ),
               Text(
                 LocaleKeys.kYouCanStillAddPhotosLater.tr(),
-                style: StylesProvider.textStyleGreyBlue3ColorR14,
+                style: Styles.textStyleGrey300R14,
               ),
               SizedBox(
                 height: SizeData.s32,
               ),
               Text(
                 LocaleKeys.kCoverPhoto.tr(),
-                style: StylesProvider.textStyleGreyBlue4ColorM14,
+                style: Styles.textStyleGrey600M14,
               ),
               SizedBox(
                 height: SizeData.s8,
               ),
               DottedBorder(
-                color: ColorProviderData.greyBlue2Color,
+                color: ColorData.gray100Color,
                 strokeWidth: 1,
                 dashPattern: const [6, 3],
                 borderType: BorderType.RRect,
@@ -111,7 +111,7 @@ class _AddingParkingPicturesView extends State<AddingParkingPicturesView> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             CircleAvatar(
-                              backgroundColor: ColorProviderData.secondary1Color,
+                              backgroundColor: ColorData.purple3Color,
                               radius: Unit(context).getWidthSize*0.059,
                               child: SvgPicture.asset(
                                 AssetsProviderData.documentUploadIcon,
@@ -123,14 +123,14 @@ class _AddingParkingPicturesView extends State<AddingParkingPicturesView> {
                             ),
                             Text(
                               LocaleKeys.kDragAndDrop.tr(),
-                              style: StylesProvider.textStyleGreyBlue8ColorR14,
+                              style: Styles.textStyleGray600R14,
                             ),
                             SizedBox(
                               height: SizeData.s4,
                             ),
                             Text(
                                 LocaleKeys.kMaxFileSize25MB.tr(),
-                              style: StylesProvider.textStyleGreyBlue8ColorR12,
+                              style: Styles.textStyleGray400R12,
                             ),
                           ],
                         )
@@ -146,13 +146,13 @@ class _AddingParkingPicturesView extends State<AddingParkingPicturesView> {
               ),
               Text(
                 LocaleKeys.kGallery.tr(),
-                style: StylesProvider.textStyleGreyBlue4ColorM14,
+                style: Styles.textStyleGrey600M14,
               ),
               SizedBox(
                 height: SizeData.s8,
               ),
               DottedBorder(
-                color: ColorProviderData.greyBlue2Color,
+                color: ColorData.gray100Color,
                 strokeWidth: 1,
                 dashPattern: const [6, 3],
                 borderType: BorderType.RRect,
@@ -173,7 +173,7 @@ class _AddingParkingPicturesView extends State<AddingParkingPicturesView> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         CircleAvatar(
-                          backgroundColor: ColorProviderData.secondary1Color,
+                          backgroundColor: ColorData.purple3Color,
                           radius: Unit(context).getWidthSize*0.059,
                           child: SvgPicture.asset(
                             AssetsProviderData.documentUploadIcon,
@@ -185,14 +185,14 @@ class _AddingParkingPicturesView extends State<AddingParkingPicturesView> {
                         ),
                         Text(
                           LocaleKeys.kDragAndDrop.tr(),
-                          style: StylesProvider.textStyleGreyBlue8ColorR14,
+                          style: Styles.textStyleGray600R14,
                         ),
                         SizedBox(
                           height: SizeData.s4,
                         ),
                         Text(
                           LocaleKeys.kMaxFileSize25MB.tr(),
-                          style: StylesProvider.textStyleGreyBlue8ColorR12,
+                          style: Styles.textStyleGray400R12,
                         ),
                       ],
                     )
@@ -207,7 +207,7 @@ class _AddingParkingPicturesView extends State<AddingParkingPicturesView> {
                 height: SizeData.s8,
               ),
               DottedBorder(
-                color: ColorProviderData.greyBlue2Color,
+                color: ColorData.gray100Color,
                 strokeWidth: 1,
                 dashPattern: const [6, 3],
                 borderType: BorderType.RRect,
@@ -228,7 +228,7 @@ class _AddingParkingPicturesView extends State<AddingParkingPicturesView> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         CircleAvatar(
-                          backgroundColor: ColorProviderData.secondary1Color,
+                          backgroundColor: ColorData.purple3Color,
                           radius: Unit(context).getWidthSize*0.059,
                           child: SvgPicture.asset(
                             AssetsProviderData.documentUploadIcon,
@@ -240,14 +240,14 @@ class _AddingParkingPicturesView extends State<AddingParkingPicturesView> {
                         ),
                         Text(
                           LocaleKeys.kDragAndDrop.tr(),
-                          style: StylesProvider.textStyleGreyBlue8ColorR14,
+                          style: Styles.textStyleGray600R14,
                         ),
                         SizedBox(
                           height: SizeData.s4,
                         ),
                         Text(
                           LocaleKeys.kMaxFileSize25MB.tr(),
-                          style: StylesProvider.textStyleGreyBlue8ColorR12,
+                          style: Styles.textStyleGray400R12,
                         ),
                       ],
                     )
@@ -262,7 +262,7 @@ class _AddingParkingPicturesView extends State<AddingParkingPicturesView> {
                 height: SizeData.s8,
               ),
               DottedBorder(
-                color: ColorProviderData.greyBlue2Color,
+                color: ColorData.gray100Color,
                 strokeWidth: 1,
                 dashPattern: const [6, 3],
                 borderType: BorderType.RRect,
@@ -283,7 +283,7 @@ class _AddingParkingPicturesView extends State<AddingParkingPicturesView> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             CircleAvatar(
-                              backgroundColor: ColorProviderData.secondary1Color,
+                              backgroundColor: ColorData.purple3Color,
                               radius: Unit(context).getWidthSize*0.059,
                               child: SvgPicture.asset(
                                 AssetsProviderData.documentUploadIcon,
@@ -295,14 +295,14 @@ class _AddingParkingPicturesView extends State<AddingParkingPicturesView> {
                             ),
                             Text(
                               LocaleKeys.kDragAndDrop.tr(),
-                              style: StylesProvider.textStyleGreyBlue8ColorR14,
+                              style: Styles.textStyleGray600R14,
                             ),
                             SizedBox(
                               height: SizeData.s4,
                             ),
                             Text(
                               LocaleKeys.kMaxFileSize25MB.tr(),
-                              style: StylesProvider.textStyleGreyBlue8ColorR12,
+                              style: Styles.textStyleGray400R12,
                             ),
                           ],
                         )
@@ -323,9 +323,9 @@ class _AddingParkingPicturesView extends State<AddingParkingPicturesView> {
                     onTap: (){},
                     width: Unit(context).getWidthSize*0.35,
                     text: LocaleKeys.kSaveForLater.tr(),
-                    color: ColorProviderData.whiteColor,
-                    colorFont: ColorProviderData.primary2Color,
-                    borderColor: ColorProviderData.primary2Color,
+                    color: ColorData.whiteColor,
+                    colorFont: ColorData.purple4Color,
+                    borderColor: ColorData.purple4Color,
                     borderWidth: 1.0,
                   ),
                   const Spacer(),
@@ -350,7 +350,7 @@ class _AddingParkingPicturesView extends State<AddingParkingPicturesView> {
                   child: Center(
                     child: Text(
                       LocaleKeys.kSkipThisStep.tr(),
-                      style: StylesProvider.textStyleBlue1ColorM14,
+                      style: Styles.textStyleBlue500M14,
                     ),
                   ),
                 ),

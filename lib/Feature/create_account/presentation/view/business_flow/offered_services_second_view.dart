@@ -51,12 +51,12 @@ class _OfferedServicesSecondView extends State<OfferedServicesSecondView> {
   Widget build(BuildContext context) {
 
     return Scaffold(
-      backgroundColor: ColorProviderData.whiteColor,
+      backgroundColor: ColorData.whiteColor,
       appBar: AppBar(
-        backgroundColor: ColorProviderData.whiteColor,
+        backgroundColor: ColorData.whiteColor,
         title: Text(
           LocaleKeys.kAddParking.tr(),
-          style: StylesProvider.textStyleGreyBlue5ColorR16,
+          style: Styles.textStyleGray700R16,
         ),
         centerTitle: true,
       ),
@@ -81,14 +81,14 @@ class _OfferedServicesSecondView extends State<OfferedServicesSecondView> {
               ),
               Text(
                 LocaleKeys.kServicesYourParkingOffers.tr(),
-                style: StylesProvider.textStyleGreyBlue1ColorM20,
+                style: Styles.textStyleGray500M20,
               ),
               SizedBox(
                 height: SizeData.s10,
               ),
               Text(
                 LocaleKeys.kYouCanStillAddServicesLater.tr(),
-                style: StylesProvider.textStyleGreyBlue3ColorR14,
+                style: Styles.textStyleGrey300R14,
               ),
               SizedBox(
                 height: SizeData.s32,
@@ -111,7 +111,7 @@ class _OfferedServicesSecondView extends State<OfferedServicesSecondView> {
                     ),
                     decoration: BoxDecoration(
                       border: Border.all(
-                        color: ColorProviderData.secondary1Color,
+                        color: ColorData.purple3Color,
                       ),
                       borderRadius: BorderRadius.circular(
                         SizeData.s8,
@@ -134,7 +134,7 @@ class _OfferedServicesSecondView extends State<OfferedServicesSecondView> {
                             Expanded(
                               child: Text(
                                 groupButtonTitleList[index],
-                                style: StylesProvider.textStyleGreyBlue1ColorR14,
+                                style: Styles.textStyleGray500R14,
                               ),
                             ),
                           ],
@@ -155,12 +155,12 @@ class _OfferedServicesSecondView extends State<OfferedServicesSecondView> {
                                   height: Unit(context).getHeightSize*0.045,
                                   decoration: BoxDecoration(
                                     color: groupButtonSelectedList[index] == 'yes' ?
-                                    ColorProviderData.secondary1Color :
-                                    ColorProviderData.whiteColor,
+                                    ColorData.purple3Color :
+                                    ColorData.whiteColor,
                                     border: Border.all(
                                       color: groupButtonSelectedList[index] == 'yes' ?
-                                      ColorProviderData.secondary2Color :
-                                      ColorProviderData.greyBlue2Color,
+                                      ColorData.secondaryColor :
+                                      ColorData.gray100Color,
                                     ),
                                     borderRadius: BorderRadius.circular(
                                       SizeData.s8,
@@ -173,10 +173,10 @@ class _OfferedServicesSecondView extends State<OfferedServicesSecondView> {
                                         child: Checkbox(
                                           shape: const CircleBorder(),
                                           value: groupButtonSelectedList[index] == 'yes',
-                                          activeColor: ColorProviderData.secondary4Color,
+                                          activeColor: ColorData.secondary1Color,
                                           side: BorderSide(
                                             width: SizeData.s1,
-                                            color: ColorProviderData.greyBlue9Color,
+                                            color: ColorData.gray200Color,
                                           ),
                                           onChanged: (bool? value) {
                                             setState(() {
@@ -188,8 +188,8 @@ class _OfferedServicesSecondView extends State<OfferedServicesSecondView> {
                                       Text(
                                         LocaleKeys.kYes.tr(),
                                         style: groupButtonSelectedList[index] == 'yes' ?
-                                        StylesProvider.textStylesProviderecondary4ColorR14 :
-                                        StylesProvider.textStyleGreyBlue8ColorR14,
+                                        Styles.textStyleSecondary1R14 :
+                                        Styles.textStyleGray600R14,
                                       ),
                                     ],
                                   ),
@@ -210,12 +210,12 @@ class _OfferedServicesSecondView extends State<OfferedServicesSecondView> {
                                   height: Unit(context).getHeightSize*0.045,
                                   decoration: BoxDecoration(
                                     color: groupButtonSelectedList[index] == 'no' ?
-                                    ColorProviderData.secondary1Color :
-                                    ColorProviderData.whiteColor,
+                                    ColorData.purple3Color :
+                                    ColorData.whiteColor,
                                     border: Border.all(
                                       color: groupButtonSelectedList[index] == 'no' ?
-                                      ColorProviderData.secondary2Color :
-                                      ColorProviderData.greyBlue2Color,
+                                      ColorData.secondaryColor :
+                                      ColorData.gray100Color,
                                     ),
                                     borderRadius: BorderRadius.circular(
                                       SizeData.s8,
@@ -228,10 +228,10 @@ class _OfferedServicesSecondView extends State<OfferedServicesSecondView> {
                                         child: Checkbox(
                                           shape: const CircleBorder(),
                                           value: groupButtonSelectedList[index] == 'no',
-                                          activeColor: ColorProviderData.secondary4Color,
+                                          activeColor: ColorData.secondary1Color,
                                           side: BorderSide(
                                             width: SizeData.s1,
-                                            color: ColorProviderData.greyBlue9Color,
+                                            color: ColorData.gray200Color,
                                           ),
                                           onChanged: (bool? value) {
                                             setState(() {
@@ -243,8 +243,8 @@ class _OfferedServicesSecondView extends State<OfferedServicesSecondView> {
                                       Text(
                                         LocaleKeys.kNo.tr(),
                                         style: groupButtonSelectedList[index] == 'no' ?
-                                        StylesProvider.textStylesProviderecondary4ColorR14 :
-                                        StylesProvider.textStyleGreyBlue8ColorR14,
+                                        Styles.textStyleSecondary1R14 :
+                                        Styles.textStyleGray600R14,
                                       ),
                                     ],
                                   ),
@@ -275,9 +275,9 @@ class _OfferedServicesSecondView extends State<OfferedServicesSecondView> {
                     onTap: (){},
                     width: Unit(context).getWidthSize*0.35,
                     text: LocaleKeys.kSaveForLater.tr(),
-                    color: ColorProviderData.whiteColor,
-                    colorFont: ColorProviderData.primary2Color,
-                    borderColor: ColorProviderData.primary2Color,
+                    color: ColorData.whiteColor,
+                    colorFont: ColorData.purple4Color,
+                    borderColor: ColorData.purple4Color,
                     borderWidth: 1.0,
                   ),
                   const Spacer(),
@@ -302,7 +302,7 @@ class _OfferedServicesSecondView extends State<OfferedServicesSecondView> {
                   child: Center(
                     child: Text(
                       LocaleKeys.kSkipThisStep.tr(),
-                      style: StylesProvider.textStyleBlue1ColorM14,
+                      style: Styles.textStyleBlue500M14,
                     ),
                   ),
                 ),

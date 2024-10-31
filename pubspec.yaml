@@ -54,6 +54,7 @@ flutter:
     - assets/
     - assets/image/
     - assets/image/provider_app/
+    - assets/image/provider_app/lottie/
     - assets/translations/
 
   fonts:

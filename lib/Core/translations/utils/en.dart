@@ -253,6 +253,19 @@ const Map<String, String> en = {
   'kSkipAnyway' : 'Skip anyway',
   'kGoBack' : 'Go Back',
   'kAddNewPayoutMethod' : 'Add New Payout Method',
+  'kPricePerHour' : 'Price per Hour (0.5 euro - 3 euros)',
+  'kPricePerDay' : 'Price per Day (2 euro - 10 euros)',
+  'kPricePerWeek' : 'Price per Week',
+  'kPricePerMonth' : 'Price per Month',
+  'kAddMoreDays' : 'Add More Days',
+  'kAddMoreHours' : 'Add More Hours',
+  'kAddMoreWeeks' : 'Add More Weeks',
+  'kAddMoreMonths' : 'Add More Months',
+  'kPeriods' : 'Periods',
+  'kPriceForOneDay' : 'Price for 1 day',
+  'kPriceForOneHour' : 'Price for 1 hour',
+  'kPriceForOneWeek' : 'Price for 1 week',
+  'kPriceForOneMonth' : 'Price for 1 month',
 
 
 };

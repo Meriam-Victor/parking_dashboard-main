@@ -30,12 +30,12 @@ class _TypeOfParkingView extends State<TypeOfParkingView> {
   Widget build(BuildContext context) {
 
     return Scaffold(
-      backgroundColor: ColorProviderData.whiteColor,
+      backgroundColor: ColorData.whiteColor,
       appBar: AppBar(
-        backgroundColor: ColorProviderData.whiteColor,
+        backgroundColor: ColorData.whiteColor,
         title: Text(
           LocaleKeys.kAddParking.tr(),
-          style: StylesProvider.textStyleGreyBlue5ColorR16,
+          style: Styles.textStyleGray700R16,
         ),
         centerTitle: true,
       ),
@@ -61,14 +61,14 @@ class _TypeOfParkingView extends State<TypeOfParkingView> {
               ),
               Text(
                 LocaleKeys.kParkingTypeAccepted.tr(),
-                style: StylesProvider.textStyleGreyBlue1ColorM20,
+                style: Styles.textStyleGray500M20,
               ),
               SizedBox(
                 height: SizeData.s10,
               ),
               Text(
                 LocaleKeys.kYouCanStillEditTheseDataLater.tr(),
-                style: StylesProvider.textStyleGreyBlue3ColorR14,
+                style: Styles.textStyleGrey300R14,
               ),
               SizedBox(
                 height: SizeData.s32,
@@ -90,19 +90,19 @@ class _TypeOfParkingView extends State<TypeOfParkingView> {
                         ),
                         decoration: BoxDecoration(
                           color: indoor ?
-                          ColorProviderData.blue3Color :
-                          ColorProviderData.whiteColor,
+                          ColorData.blue2Color :
+                          ColorData.whiteColor,
                           border: Border.all(
                             color: indoor ?
-                            ColorProviderData.blue5Color :
-                            ColorProviderData.greyBlue2Color,
+                            ColorData.blue9Color :
+                            ColorData.gray100Color,
                           ),
                           borderRadius: BorderRadius.circular(
                             SizeData.s8,
                           ),
                           boxShadow: [
                             BoxShadow(
-                              color: ColorProviderData.shadow2Color,
+                              color: ColorData.grayShadow4Color,
                               spreadRadius: 0,
                               blurRadius: 4,
                               offset: const Offset(0, 2),
@@ -123,17 +123,17 @@ class _TypeOfParkingView extends State<TypeOfParkingView> {
                                 ),
                                 Text(
                                   LocaleKeys.kIndoor.tr(),
-                                  style: StylesProvider.textStyleGreyBlue1ColorR16,
+                                  style: Styles.textStyleGray500R16,
                                 ),
                               ],
                             ),
                             Checkbox(
                               shape: const CircleBorder(),
                               value: indoor,
-                              activeColor: ColorProviderData.blue1Color,
+                              activeColor: ColorData.blue500Color,
                               side: BorderSide(
                                 width: SizeData.s1,
-                                color: ColorProviderData.greyBlue9Color,
+                                color: ColorData.gray200Color,
                               ),
                               onChanged: (bool? value) {
                                 setState(() {
@@ -165,19 +165,19 @@ class _TypeOfParkingView extends State<TypeOfParkingView> {
                         ),
                         decoration: BoxDecoration(
                           color: outdoor ?
-                          ColorProviderData.blue3Color :
-                          ColorProviderData.whiteColor,
+                          ColorData.blue2Color :
+                          ColorData.whiteColor,
                           border: Border.all(
                             color: outdoor ?
-                            ColorProviderData.blue5Color :
-                            ColorProviderData.greyBlue2Color,
+                            ColorData.blue9Color :
+                            ColorData.gray100Color,
                           ),
                           borderRadius: BorderRadius.circular(
                             SizeData.s8,
                           ),
                           boxShadow: [
                             BoxShadow(
-                              color: ColorProviderData.shadow2Color,
+                              color: ColorData.grayShadow4Color,
                               spreadRadius: 0,
                               blurRadius: 4,
                               offset: const Offset(0, 2),
@@ -198,17 +198,17 @@ class _TypeOfParkingView extends State<TypeOfParkingView> {
                                 ),
                                 Text(
                                   LocaleKeys.kOutdoor.tr(),
-                                  style: StylesProvider.textStyleGreyBlue1ColorR16,
+                                  style: Styles.textStyleGray500R16,
                                 ),
                               ],
                             ),
                             Checkbox(
                               shape: const CircleBorder(),
                               value: outdoor,
-                              activeColor: ColorProviderData.blue1Color,
+                              activeColor: ColorData.blue500Color,
                               side: BorderSide(
                                 width: SizeData.s1,
-                                color: ColorProviderData.greyBlue9Color,
+                                color: ColorData.gray200Color,
                               ),
                               onChanged: (bool? value) {
                                 setState(() {
@@ -242,19 +242,19 @@ class _TypeOfParkingView extends State<TypeOfParkingView> {
                   ),
                   decoration: BoxDecoration(
                     color: parkingBox ?
-                    ColorProviderData.blue3Color :
-                    ColorProviderData.whiteColor,
+                    ColorData.blue2Color :
+                    ColorData.whiteColor,
                     border: Border.all(
                       color: indoor ?
-                      ColorProviderData.blue5Color :
-                      ColorProviderData.greyBlue2Color,
+                      ColorData.blue9Color :
+                      ColorData.gray100Color,
                     ),
                     borderRadius: BorderRadius.circular(
                       SizeData.s8,
                     ),
                     boxShadow: [
                       BoxShadow(
-                        color: ColorProviderData.shadow2Color,
+                        color: ColorData.grayShadow4Color,
                         spreadRadius: 0,
                         blurRadius: 4,
                         offset: const Offset(0, 2),
@@ -275,17 +275,17 @@ class _TypeOfParkingView extends State<TypeOfParkingView> {
                           ),
                           Text(
                             LocaleKeys.kParkingBoxes.tr(),
-                            style: StylesProvider.textStyleGreyBlue1ColorR16,
+                            style: Styles.textStyleGray500R16,
                           ),
                         ],
                       ),
                       Checkbox(
                         shape: const CircleBorder(),
                         value: parkingBox,
-                        activeColor: ColorProviderData.blue1Color,
+                        activeColor: ColorData.blue500Color,
                         side: BorderSide(
                           width: SizeData.s1,
-                          color: ColorProviderData.greyBlue9Color,
+                          color: ColorData.gray200Color,
                         ),
                         onChanged: (bool? value) {
                           setState(() {
@@ -303,7 +303,7 @@ class _TypeOfParkingView extends State<TypeOfParkingView> {
               ),
               Text(
                 LocaleKeys.kTotalNumberOfSlot.tr(),
-                style: StylesProvider.textStyleGreyBlue1ColorM14,
+                style: Styles.textStyleGray500M14,
               ),
               SizedBox(
                 height: SizeData.s8,
@@ -317,7 +317,7 @@ class _TypeOfParkingView extends State<TypeOfParkingView> {
               ),
               Text(
                 LocaleKeys.kIndoorParkingVehicleCapacity.tr(),
-                style: StylesProvider.textStyleGreyBlue1ColorM14,
+                style: Styles.textStyleGray500M14,
               ),
               SizedBox(
                 height: SizeData.s8,
@@ -331,7 +331,7 @@ class _TypeOfParkingView extends State<TypeOfParkingView> {
               ),
               Text(
                 LocaleKeys.kOutdoorParkingVehicleCapacity.tr(),
-                style: StylesProvider.textStyleGreyBlue1ColorM14,
+                style: Styles.textStyleGray500M14,
               ),
               SizedBox(
                 height: SizeData.s8,
@@ -353,9 +353,9 @@ class _TypeOfParkingView extends State<TypeOfParkingView> {
                     onTap: (){},
                     width: Unit(context).getWidthSize*0.35,
                     text: LocaleKeys.kSaveForLater.tr(),
-                    color: ColorProviderData.whiteColor,
-                    colorFont: ColorProviderData.primary2Color,
-                    borderColor: ColorProviderData.primary2Color,
+                    color: ColorData.whiteColor,
+                    colorFont: ColorData.purple4Color,
+                    borderColor: ColorData.purple4Color,
                     borderWidth: 1.0,
                   ),
                   const Spacer(),

@@ -28,12 +28,12 @@ class _AddParking extends State<AddParking> {
   Widget build(BuildContext context) {
 
     return Scaffold(
-      backgroundColor: ColorProviderData.whiteColor,
+      backgroundColor: ColorData.whiteColor,
       appBar: AppBar(
-        backgroundColor: ColorProviderData.whiteColor,
+        backgroundColor: ColorData.whiteColor,
         title: Text(
           LocaleKeys.kAddParking.tr(),
-          style: StylesProvider.textStyleGreyBlue5ColorR16,
+          style: Styles.textStyleGray700R16,
         ),
         centerTitle: true,
       ),
@@ -60,7 +60,7 @@ class _AddParking extends State<AddParking> {
 
               Text(
                 LocaleKeys.kAreYouUsingParticularOrBusinessAccount.tr(),
-                style: StylesProvider.textStyleGreyBlue1ColorM20,
+                style: Styles.textStyleGray500M20,
               ),
               SizedBox(
                 height: SizeData.s32,
@@ -83,19 +83,19 @@ class _AddParking extends State<AddParking> {
                     side: WidgetStateProperty.resolveWith<BorderSide>((states) {
                       if (states.contains(WidgetState.pressed)) {
                         return BorderSide(
-                          color: ColorProviderData.blue5Color,
+                          color: ColorData.blue9Color,
                           width: SizeData.s1,
                         );
                       }
                       return BorderSide(
-                        color: ColorProviderData.greyBlue7Color,
+                        color: ColorData.white3Color,
                         width: SizeData.s1,
                       );
                     }),
-                    overlayColor: WidgetStateProperty.all(ColorProviderData.blue3Color),
+                    overlayColor: WidgetStateProperty.all(ColorData.blue2Color),
                     backgroundColor: WidgetStateProperty.resolveWith<Color>((states) {
                       if (states.contains(WidgetState.pressed)) {
-                        return ColorProviderData.blue3Color;
+                        return ColorData.blue2Color;
                       }
                       return Colors.transparent;
                     }),
@@ -111,14 +111,14 @@ class _AddParking extends State<AddParking> {
                       children: [
                         Text(
                           LocaleKeys.kParticular.tr(),
-                          style: StylesProvider.textStyleGreyBlue8ColorM16,
+                          style: Styles.textStyleGray600M16,
                         ),
                         SizedBox(
                           height: SizeData.s10,
                         ),
                         Text(
                           LocaleKeys.kIdealForIndividualParkingSpaceOwners.tr(),
-                          style: StylesProvider.textStyleGreyBlue8ColorR14,
+                          style: Styles.textStyleGray600R14,
                         ),
                         SizedBox(
                           height: SizeData.s24,
@@ -153,19 +153,19 @@ class _AddParking extends State<AddParking> {
                     side: WidgetStateProperty.resolveWith<BorderSide>((states) {
                       if (states.contains(WidgetState.pressed)) {
                         return BorderSide(
-                          color: ColorProviderData.blue5Color,
+                          color: ColorData.blue9Color,
                           width: SizeData.s1,
                         );
                       }
                       return BorderSide(
-                        color: ColorProviderData.greyBlue7Color,
+                        color: ColorData.white3Color,
                         width: SizeData.s1,
                       );
                     }),
-                    overlayColor: WidgetStateProperty.all(ColorProviderData.blue3Color),
+                    overlayColor: WidgetStateProperty.all(ColorData.blue2Color),
                     backgroundColor: WidgetStateProperty.resolveWith<Color>((states) {
                       if (states.contains(WidgetState.pressed)) {
-                        return ColorProviderData.blue3Color;
+                        return ColorData.blue2Color;
                       }
                       return Colors.transparent;
                     }),
@@ -181,14 +181,14 @@ class _AddParking extends State<AddParking> {
                       children: [
                         Text(
                           LocaleKeys.kBusinessCompany.tr(),
-                          style: StylesProvider.textStyleGreyBlue8ColorM16,
+                          style: Styles.textStyleGray600M16,
                         ),
                         SizedBox(
                           height: SizeData.s10,
                         ),
                         Text(
                           LocaleKeys.kDesignedForBusinessesWithMultipleParkingLocations.tr(),
-                          style: StylesProvider.textStyleGreyBlue8ColorR14,
+                          style: Styles.textStyleGray600R14,
                         ),
                         SizedBox(
                           height: SizeData.s24,

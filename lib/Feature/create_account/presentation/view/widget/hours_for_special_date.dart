@@ -76,7 +76,7 @@ class _HoursForSpecialDate extends State<HoursForSpecialDate> {
       decoration: BoxDecoration(
         border: Border.all(
           width: SizeData.s1,
-          color: ColorProviderData.greyBlue2Color,
+          color: ColorData.gray100Color,
         ),
         borderRadius: BorderRadius.circular(
           SizeData.s8,
@@ -90,7 +90,7 @@ class _HoursForSpecialDate extends State<HoursForSpecialDate> {
             alignment: Alignment.centerLeft,
             child: Text(
               LocaleKeys.kDate.tr(),
-              style: StylesProvider.textStyleGreyBlue1ColorR14,
+              style: Styles.textStyleGray500R14,
             ),
           ),
           SizedBox(
@@ -106,7 +106,7 @@ class _HoursForSpecialDate extends State<HoursForSpecialDate> {
               ),
               decoration: BoxDecoration(
                 border: Border.all(
-                    color: ColorProviderData.greyBlue2Color
+                    color: ColorData.gray100Color
                 ),
                 borderRadius: BorderRadius.circular(
                   SizeData.s10,
@@ -124,7 +124,7 @@ class _HoursForSpecialDate extends State<HoursForSpecialDate> {
                     selectedDate != null
                         ? "${selectedDate!.day}/${selectedDate!.month}/${selectedDate!.year}"
                         : LocaleKeys.kSelectDate.tr(),
-                    style: StylesProvider.textStyleBlue1ColorR14,
+                    style: Styles.textStyleBlue500R14,
                   ),
                   const Spacer(),
                   SvgPicture.asset(
@@ -141,7 +141,7 @@ class _HoursForSpecialDate extends State<HoursForSpecialDate> {
             alignment: Alignment.centerLeft,
             child: Text(
               LocaleKeys.kStartTime.tr(),
-              style: StylesProvider.textStyleGreyBlue1ColorR14,
+              style: Styles.textStyleGray500R14,
             ),
           ),
           SizedBox(
@@ -157,7 +157,7 @@ class _HoursForSpecialDate extends State<HoursForSpecialDate> {
               ),
               decoration: BoxDecoration(
                 border: Border.all(
-                    color: ColorProviderData.greyBlue2Color
+                    color: ColorData.gray100Color
                 ),
                 borderRadius: BorderRadius.circular(
                   SizeData.s10,
@@ -179,8 +179,8 @@ class _HoursForSpecialDate extends State<HoursForSpecialDate> {
                         ? startTime!.format(context)
                         : LocaleKeys.kSelectHere.tr(),
                     style: startTime != null?
-                        StylesProvider.textStyleBlue1ColorR14 :
-                        StylesProvider.textStyleGreyBlue1ColorR14,
+                        Styles.textStyleBlue500R14 :
+                        Styles.textStyleGray500R14,
                   ),
                   const Spacer(),
                   SvgPicture.asset(
@@ -197,7 +197,7 @@ class _HoursForSpecialDate extends State<HoursForSpecialDate> {
             alignment: Alignment.centerLeft,
             child: Text(
               LocaleKeys.kEndTime.tr(),
-              style: StylesProvider.textStyleGreyBlue1ColorR14,
+              style: Styles.textStyleGray500R14,
             ),
           ),
           SizedBox(
@@ -213,7 +213,7 @@ class _HoursForSpecialDate extends State<HoursForSpecialDate> {
               ),
               decoration: BoxDecoration(
                 border: Border.all(
-                    color: ColorProviderData.greyBlue2Color
+                    color: ColorData.gray100Color
                 ),
                 borderRadius: BorderRadius.circular(
                   SizeData.s10,
@@ -235,8 +235,8 @@ class _HoursForSpecialDate extends State<HoursForSpecialDate> {
                         ? endTime!.format(context)
                         : LocaleKeys.kSelectHere.tr(),
                     style: endTime != null?
-                    StylesProvider.textStyleBlue1ColorR14 :
-                    StylesProvider.textStyleGreyBlue1ColorR14,
+                    Styles.textStyleBlue500R14 :
+                    Styles.textStyleGray500R14,
                   ),
                   const Spacer(),
                   SvgPicture.asset(
@@ -274,8 +274,8 @@ class _HoursForSpecialDate extends State<HoursForSpecialDate> {
               decoration: BoxDecoration(
                 color:
                 isClosed ?
-                ColorProviderData.secondary1Color :
-                ColorProviderData.greyBlue7Color,
+                ColorData.purple3Color :
+                ColorData.white3Color,
                 borderRadius: BorderRadius.circular(
                   SizeData.s10,
                 ),
@@ -294,8 +294,8 @@ class _HoursForSpecialDate extends State<HoursForSpecialDate> {
                   Text(
                     LocaleKeys.kOffClosed.tr(),
                     style: isClosed ?
-                    StylesProvider.textStylesProviderecondary4ColorM14 :
-                    StylesProvider.textStyleGreyBlue8ColorR14,
+                    Styles.textStyleSecondary1M14 :
+                    Styles.textStyleGray600R14,
                   ),
                 ],
               ),

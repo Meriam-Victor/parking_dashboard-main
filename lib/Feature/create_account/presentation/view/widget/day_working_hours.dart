@@ -63,7 +63,7 @@ class _DayWorkingHours extends State<DayWorkingHours> {
       decoration: BoxDecoration(
         border: Border.all(
           width: SizeData.s1,
-          color: ColorProviderData.greyBlue7Color,
+          color: ColorData.white3Color,
         ),
         borderRadius: BorderRadius.circular(
           SizeData.s8,
@@ -78,7 +78,7 @@ class _DayWorkingHours extends State<DayWorkingHours> {
             children: [
               Text(
                 widget.day,
-                style: StylesProvider.textStyleGreyBlue1ColorR14,
+                style: Styles.textStyleGray500R14,
               ),
               SizedBox(
                 width: Unit(context).getWidthSize*0.1,
@@ -87,7 +87,7 @@ class _DayWorkingHours extends State<DayWorkingHours> {
                   fit: BoxFit.fill,
                   child: CupertinoSwitch(
                     value: isSwitchEnabled,
-                    activeColor: ColorProviderData.blue1Color,
+                    activeColor: ColorData.blue500Color,
                     onChanged: (value) {
                       setState(() {
                         isSwitchEnabled = value;
@@ -118,7 +118,7 @@ class _DayWorkingHours extends State<DayWorkingHours> {
                     ),
                     decoration: BoxDecoration(
                       border: Border.all(
-                          color: ColorProviderData.greyBlue2Color
+                          color: ColorData.gray100Color
                       ),
                       borderRadius: BorderRadius.circular(
                           SizeData.s10,
@@ -136,7 +136,7 @@ class _DayWorkingHours extends State<DayWorkingHours> {
                           startTime != null
                               ? startTime!.format(context)
                               : LocaleKeys.kStartTime.tr(),
-                          style: StylesProvider.textStyleGreyBlue1ColorR12,
+                          style: Styles.textStyleGray500R12,
                         ),
                       ],
                     ),
@@ -151,7 +151,7 @@ class _DayWorkingHours extends State<DayWorkingHours> {
                       SizeData.s10,
                     ),
                     decoration: BoxDecoration(
-                      border: Border.all(color: ColorProviderData.greyBlue2Color),
+                      border: Border.all(color: ColorData.gray100Color),
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: Row(
@@ -166,7 +166,7 @@ class _DayWorkingHours extends State<DayWorkingHours> {
                           endTime != null
                               ? endTime!.format(context)
                               : LocaleKeys.kEndDate.tr(),
-                          style: StylesProvider.textStyleGreyBlue1ColorR12,
+                          style: Styles.textStyleGray500R12,
                         ),
                       ],
                     ),
@@ -201,8 +201,8 @@ class _DayWorkingHours extends State<DayWorkingHours> {
                 ),
                 decoration: BoxDecoration(
                   color: is24Hr ?
-                  ColorProviderData.secondary1Color :
-                  ColorProviderData.greyBlue7Color,
+                  ColorData.purple3Color :
+                  ColorData.white3Color,
                   borderRadius: BorderRadius.circular(
                     SizeData.s10,
                   ),
@@ -221,8 +221,8 @@ class _DayWorkingHours extends State<DayWorkingHours> {
                     Text(
                       LocaleKeys.k24Hrs.tr(),
                       style: is24Hr ?
-                      StylesProvider.textStylesProviderecondary4ColorM14 :
-                      StylesProvider.textStyleGreyBlue8ColorR14,
+                      Styles.textStyleSecondary1M14 :
+                      Styles.textStyleGray600R14,
                     ),
                   ],
                 ),

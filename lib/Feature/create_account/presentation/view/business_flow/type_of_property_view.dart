@@ -43,12 +43,12 @@ class _TypeOfPropertyView extends State<TypeOfPropertyView> {
   Widget build(BuildContext context) {
 
     return Scaffold(
-      backgroundColor: ColorProviderData.whiteColor,
+      backgroundColor: ColorData.whiteColor,
       appBar: AppBar(
-        backgroundColor: ColorProviderData.whiteColor,
+        backgroundColor: ColorData.whiteColor,
         title: Text(
           LocaleKeys.kAddParking.tr(),
-          style: StylesProvider.textStyleGreyBlue5ColorR16,
+          style: Styles.textStyleGray700R16,
         ),
         centerTitle: true,
       ),
@@ -74,7 +74,7 @@ class _TypeOfPropertyView extends State<TypeOfPropertyView> {
               ),
               Text(
                 LocaleKeys.kTypeOfProperty.tr(),
-                style: StylesProvider.textStyleGreyBlue1ColorM20,
+                style: Styles.textStyleGray500M20,
               ),
               SizedBox(
                 height: SizeData.s32,
@@ -88,20 +88,20 @@ class _TypeOfPropertyView extends State<TypeOfPropertyView> {
                     child: ListTile(
                       title: Text(type),
                       tileColor: selectedPropertyType == type ?
-                      ColorProviderData.blue3Color :
-                      ColorProviderData.whiteColor,
-                      selectedTileColor: ColorProviderData.blue3Color,
+                      ColorData.blue2Color :
+                      ColorData.whiteColor,
+                      selectedTileColor: ColorData.blue2Color,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(
                           SizeData.s8,
                         ),
                         side: selectedPropertyType == type ?
                         BorderSide(
-                          color: ColorProviderData.blue7Color,
+                          color: ColorData.blue10Color,
                           width: SizeData.s1,
                         ) :
                         BorderSide(
-                          color: ColorProviderData.greyBlue2Color,
+                          color: ColorData.gray100Color,
                           width: SizeData.s1,
                         ),
                       ),
@@ -123,14 +123,14 @@ class _TypeOfPropertyView extends State<TypeOfPropertyView> {
               if (showSecurityFeature) ...[
                 Text(
                   LocaleKeys.kSecurityFeature.tr(),
-                  style: StylesProvider.textStyleGreyBlue1ColorM16,
+                  style: Styles.textStyleGray500M16,
                 ),
                 SizedBox(
                   height: SizeData.s8,
                 ),
                 Text(
                   LocaleKeys.kDoesYourParkingHasEntryCodeAtTheFrontGate.tr(),
-                  style: StylesProvider.textStyleGreyBlue8ColorR14,
+                  style: Styles.textStyleGray600R14,
                 ),
                 SizedBox(
                   height: SizeData.s16,
@@ -147,12 +147,12 @@ class _TypeOfPropertyView extends State<TypeOfPropertyView> {
                         width: Unit(context).getWidthSize*0.22,
                         decoration: BoxDecoration(
                           color: selectedValue == 'yes' ?
-                          ColorProviderData.secondary1Color :
-                          ColorProviderData.whiteColor,
+                          ColorData.purple3Color :
+                          ColorData.whiteColor,
                           border: Border.all(
                             color: selectedValue == 'yes' ?
-                            ColorProviderData.secondary2Color :
-                            ColorProviderData.greyBlue2Color,
+                            ColorData.secondaryColor :
+                            ColorData.gray100Color,
                           ),
                           borderRadius: BorderRadius.circular(
                             SizeData.s8,
@@ -165,10 +165,10 @@ class _TypeOfPropertyView extends State<TypeOfPropertyView> {
                               child: Checkbox(
                                 shape: const CircleBorder(),
                                 value: selectedValue == 'yes',
-                                activeColor: ColorProviderData.secondary4Color,
+                                activeColor: ColorData.secondary1Color,
                                 side: BorderSide(
                                   width: SizeData.s1,
-                                  color: ColorProviderData.greyBlue9Color,
+                                  color: ColorData.gray200Color,
                                 ),
                                 onChanged: (bool? value) {
                                   setState(() {
@@ -180,8 +180,8 @@ class _TypeOfPropertyView extends State<TypeOfPropertyView> {
                             Text(
                               LocaleKeys.kYes.tr(),
                               style: selectedValue == 'yes' ?
-                              StylesProvider.textStylesProviderecondary4ColorR14 :
-                              StylesProvider.textStyleGreyBlue8ColorR14,
+                              Styles.textStyleSecondary1R14 :
+                              Styles.textStyleGray600R14,
                             ),
                           ],
                         ),
@@ -200,12 +200,12 @@ class _TypeOfPropertyView extends State<TypeOfPropertyView> {
                         width: Unit(context).getWidthSize*0.22,
                         decoration: BoxDecoration(
                           color: selectedValue == 'no' ?
-                          ColorProviderData.secondary1Color :
-                          ColorProviderData.whiteColor,
+                          ColorData.purple3Color :
+                          ColorData.whiteColor,
                           border: Border.all(
                             color: selectedValue == 'no' ?
-                            ColorProviderData.secondary2Color :
-                            ColorProviderData.greyBlue2Color,
+                            ColorData.secondaryColor :
+                            ColorData.gray100Color,
                           ),
                           borderRadius: BorderRadius.circular(
                             SizeData.s8,
@@ -218,10 +218,10 @@ class _TypeOfPropertyView extends State<TypeOfPropertyView> {
                               child: Checkbox(
                                 shape: const CircleBorder(),
                                 value: selectedValue == 'no',
-                                activeColor: ColorProviderData.secondary4Color,
+                                activeColor: ColorData.secondary1Color,
                                 side: BorderSide(
                                   width: SizeData.s1,
-                                  color: ColorProviderData.greyBlue9Color,
+                                  color: ColorData.gray200Color,
                                 ),
                                 onChanged: (bool? value) {
                                   setState(() {
@@ -233,8 +233,8 @@ class _TypeOfPropertyView extends State<TypeOfPropertyView> {
                             Text(
                               LocaleKeys.kNo.tr(),
                               style: selectedValue == 'no' ?
-                              StylesProvider.textStylesProviderecondary4ColorR14 :
-                              StylesProvider.textStyleGreyBlue8ColorR14,
+                              Styles.textStyleSecondary1R14 :
+                              Styles.textStyleGray600R14,
                             ),
                           ],
                         ),
@@ -250,7 +250,7 @@ class _TypeOfPropertyView extends State<TypeOfPropertyView> {
                     children: [
                       Text(
                         LocaleKeys.kEnterCode.tr(),
-                        style: StylesProvider.textStyleGreyBlue1ColorR14,
+                        style: Styles.textStyleGray500R14,
                       ),
                       SizedBox(
                         width: SizeData.s8,
@@ -273,7 +273,7 @@ class _TypeOfPropertyView extends State<TypeOfPropertyView> {
               if(showParkingComposition) ...[
                 Text(
                   LocaleKeys.kYourParkingIsComposedOf.tr(),
-                  style: StylesProvider.textStyleGreyBlue1ColorM16,
+                  style: Styles.textStyleGray500M16,
                 ),
                 SizedBox(
                   height: SizeData.s8,
@@ -290,12 +290,12 @@ class _TypeOfPropertyView extends State<TypeOfPropertyView> {
                         width: Unit(context).getWidthSize*0.427,
                         decoration: BoxDecoration(
                           color: isSingleLevel ?
-                          ColorProviderData.blue3Color :
-                          ColorProviderData.whiteColor,
+                          ColorData.blue2Color :
+                          ColorData.whiteColor,
                           border: Border.all(
                             color: isSingleLevel ?
-                            ColorProviderData.blue5Color :
-                            ColorProviderData.greyBlue2Color,
+                            ColorData.blue9Color :
+                            ColorData.gray100Color,
                           ),
                           borderRadius: BorderRadius.circular(
                             SizeData.s8,
@@ -309,8 +309,8 @@ class _TypeOfPropertyView extends State<TypeOfPropertyView> {
                             child: Text(
                               LocaleKeys.kSingleLevelGarage.tr(),
                               style: isSingleLevel ?
-                              StylesProvider.textStyleBlue2ColorR12 :
-                              StylesProvider.textStyleGreyBlue8ColorR12,
+                              Styles.textStyleBlue7R12 :
+                              Styles.textStyleGray400R12,
                             ),
                           ),
                         ),
@@ -327,12 +327,12 @@ class _TypeOfPropertyView extends State<TypeOfPropertyView> {
                         width: Unit(context).getWidthSize*0.427,
                         decoration: BoxDecoration(
                           color: !isSingleLevel ?
-                          ColorProviderData.blue3Color :
-                          ColorProviderData.whiteColor,
+                          ColorData.blue2Color :
+                          ColorData.whiteColor,
                           border: Border.all(
                             color: !isSingleLevel ?
-                            ColorProviderData.blue5Color :
-                            ColorProviderData.greyBlue2Color,
+                            ColorData.blue9Color :
+                            ColorData.gray100Color,
                           ),
                           borderRadius: BorderRadius.circular(
                             SizeData.s8,
@@ -346,8 +346,8 @@ class _TypeOfPropertyView extends State<TypeOfPropertyView> {
                             child: Text(
                               LocaleKeys.kMultiLevelGarage.tr(),
                               style: !isSingleLevel ?
-                              StylesProvider.textStyleBlue2ColorR12 :
-                              StylesProvider.textStyleGreyBlue8ColorR12,
+                              Styles.textStyleBlue7R12 :
+                              Styles.textStyleGray400R12,
                             ),
                           ),
                         ),
@@ -371,7 +371,7 @@ class _TypeOfPropertyView extends State<TypeOfPropertyView> {
                         children: [
                           Text(
                             LocaleKeys.kFloorNumber.tr(),
-                            style: StylesProvider.textStyleGreyBlue1ColorR14,
+                            style: Styles.textStyleGray500R14,
                           ),
                           SizedBox(
                             height: SizeData.s8,
@@ -393,7 +393,7 @@ class _TypeOfPropertyView extends State<TypeOfPropertyView> {
                           children: [
                             Text(
                               LocaleKeys.kFloorNumber.tr(),
-                              style: StylesProvider.textStyleGreyBlue1ColorR14,
+                              style: Styles.textStyleGray500R14,
                             ),
                             SizedBox(
                               height: SizeData.s8,
@@ -424,7 +424,7 @@ class _TypeOfPropertyView extends State<TypeOfPropertyView> {
                         ),
                         Text(
                           LocaleKeys.kAddMoreFloor.tr(),
-                          style: StylesProvider.textStyleBlue1ColorR14,
+                          style: Styles.textStyleBlue500R14,
                         ),
                       ],
                     ),
@@ -440,9 +440,9 @@ class _TypeOfPropertyView extends State<TypeOfPropertyView> {
                     onTap: (){},
                     width: Unit(context).getWidthSize*0.35,
                     text: LocaleKeys.kSaveForLater.tr(),
-                    color: ColorProviderData.whiteColor,
-                    colorFont: ColorProviderData.primary2Color,
-                    borderColor: ColorProviderData.primary2Color,
+                    color: ColorData.whiteColor,
+                    colorFont: ColorData.purple4Color,
+                    borderColor: ColorData.purple4Color,
                     borderWidth: 1.0,
                   ),
                   const Spacer(),

@@ -20,7 +20,7 @@ buildAllSetDialog({required BuildContext context,}) {
             SizeData.s16,
           ),
         ),
-        backgroundColor: ColorProviderData.whiteColor,
+        backgroundColor: ColorData.whiteColor,
         child: Stack(
           clipBehavior: Clip.none,
           alignment: Alignment.center,
@@ -36,7 +36,7 @@ buildAllSetDialog({required BuildContext context,}) {
                 children: [
                   Text(
                     LocaleKeys.kYouAreAllSet.tr(),
-                    style: StylesProvider.textStyleBlue5ColorR18,
+                    style: Styles.textStyleGray7005R18,
                   ),
                   SizedBox(
                     height: SizeData.s16,
@@ -52,7 +52,7 @@ buildAllSetDialog({required BuildContext context,}) {
                   ),
                   Text(
                     LocaleKeys.kYourOTPHasBeenVerifiedSuccessfully.tr(),
-                    style: StylesProvider.textStyleGreyBlue1ColorR16,
+                    style: Styles.textStyleGray500R16,
                     textAlign: TextAlign.center,
                   ),
                   SizedBox(
@@ -78,7 +78,7 @@ buildAllSetDialog({required BuildContext context,}) {
                 },
                 child: CircleAvatar(
                   radius: SizeData.s20,
-                  backgroundColor: ColorProviderData.whiteColor,
+                  backgroundColor: ColorData.whiteColor,
                   child: const Icon(
                     Icons.close,
                   ),

@@ -252,6 +252,19 @@ abstract class  LocaleKeys {
   static const String kSkipAnyway='kSkipAnyway';
   static const String kGoBack='kGoBack';
   static const String kAddNewPayoutMethod='kAddNewPayoutMethod';
+  static const String kPricePerHour='kPricePerHour';
+  static const String kPricePerDay='kPricePerDay';
+  static const String kPricePerWeek='kPricePerWeek';
+  static const String kPricePerMonth='kPricePerMonth';
+  static const String kAddMoreDays='kAddMoreDays';
+  static const String kAddMoreHours='kAddMoreHours';
+  static const String kAddMoreWeeks='kAddMoreWeeks';
+  static const String kAddMoreMonths='kAddMoreMonths';
+  static const String kPeriods='kPeriods';
+  static const String kPriceForOneDay='kPriceForOneDay';
+  static const String kPriceForOneHour='kPriceForOneHour';
+  static const String kPriceForOneWeek='kPriceForOneWeek';
+  static const String kPriceForOneMonth='kPriceForOneMonth';
 
 
 

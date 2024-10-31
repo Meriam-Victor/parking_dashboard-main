@@ -22,7 +22,7 @@ buildAllSetFinalDialog({required BuildContext context,}) {
             SizeData.s16,
           ),
         ),
-        backgroundColor: ColorProviderData.whiteColor,
+        backgroundColor: ColorData.whiteColor,
         child: Stack(
           clipBehavior: Clip.none,
           alignment: Alignment.center,
@@ -38,7 +38,7 @@ buildAllSetFinalDialog({required BuildContext context,}) {
                 children: [
                   Text(
                     LocaleKeys.kYouAreAllSet.tr(),
-                    style: StylesProvider.textStyleBlue5ColorR18,
+                    style: Styles.textStyleGray7005R18,
                   ),
                   SizedBox(
                     height: SizeData.s16,
@@ -54,7 +54,7 @@ buildAllSetFinalDialog({required BuildContext context,}) {
                   ),
                   Text(
                     LocaleKeys.kYourParkingDetailsHaveBeenSubmittedSuccessfully.tr(),
-                    style: StylesProvider.textStyleGreyBlue1ColorR16,
+                    style: Styles.textStyleGray500R16,
                     textAlign: TextAlign.center,
                   ),
                   SizedBox(
@@ -65,7 +65,7 @@ buildAllSetFinalDialog({required BuildContext context,}) {
                       SizeData.s8,
                     ),
                     decoration: BoxDecoration(
-                      color: ColorProviderData.blue3Color,
+                      color: ColorData.blue2Color,
                       borderRadius: BorderRadius.circular(
                         SizeData.s8,
                       ),
@@ -83,7 +83,7 @@ buildAllSetFinalDialog({required BuildContext context,}) {
                         Expanded(
                           child: Text(
                             LocaleKeys.kDonNotWorryYouCanStillAddMoreParkingSpacesInYourDashboard.tr(),
-                            style: StylesProvider.textStyleBlue1ColorR12,
+                            style: Styles.textStyleBlue500R12,
                           ),
                         ),
                       ],
@@ -98,8 +98,8 @@ buildAllSetFinalDialog({required BuildContext context,}) {
                         child: MainButtonProviderCustom(
                           onTap: (){},
                           text: LocaleKeys.kAddNewParking.tr(),
-                          color: ColorProviderData.primary3Color,
-                          colorFont: ColorProviderData.primary2Color,
+                          color: ColorData.primaryP2Color,
+                          colorFont: ColorData.purple4Color,
                         ),
                       ),
                       SizedBox(
@@ -127,7 +127,7 @@ buildAllSetFinalDialog({required BuildContext context,}) {
                 },
                 child: CircleAvatar(
                   radius: SizeData.s20,
-                  backgroundColor: ColorProviderData.whiteColor,
+                  backgroundColor: ColorData.whiteColor,
                   child: const Icon(
                     Icons.close,
                   ),

@@ -19,7 +19,7 @@ buildVerificationCodeDialog({required BuildContext context,}) {
             SizeData.s16,
           ),
         ),
-        backgroundColor: ColorProviderData.whiteColor,
+        backgroundColor: ColorData.whiteColor,
         child: Stack(
           clipBehavior: Clip.none,
           alignment: Alignment.center,
@@ -35,14 +35,14 @@ buildVerificationCodeDialog({required BuildContext context,}) {
                 children: [
                   Text(
                     LocaleKeys.kVerificationCode.tr(),
-                    style: StylesProvider.textStyleBlue5ColorR18,
+                    style: Styles.textStyleGray7005R18,
                   ),
                   SizedBox(
                     height: SizeData.s8,
                   ),
                   Text(
                     LocaleKeys.kWeHaveSentAVerificationCodeTo.tr(),
-                    style: StylesProvider.textStyleGreyBlue1ColorR14,
+                    style: Styles.textStyleGray500R14,
                   ),
                   SizedBox(
                     height: SizeData.s32,
@@ -52,10 +52,10 @@ buildVerificationCodeDialog({required BuildContext context,}) {
                     onSubmit: (String pin) {},
                     onChange: (String text) {  },
                     otpPinFieldStyle: OtpPinFieldStyle(
-                      defaultFieldBorderColor: ColorProviderData.greyBlue2Color,
-                      activeFieldBorderColor: ColorProviderData.blue1Color,
+                      defaultFieldBorderColor: ColorData.gray100Color,
+                      activeFieldBorderColor: ColorData.blue500Color,
                       fieldBorderWidth: 1,
-                      textStyle: StylesProvider.textStyleGreyBlue1ColorR16,
+                      textStyle: Styles.textStyleGray500R16,
                     ),
                     otpPinFieldDecoration: OtpPinFieldDecoration.defaultPinBoxDecoration,
                   ),
@@ -68,7 +68,7 @@ buildVerificationCodeDialog({required BuildContext context,}) {
                       Expanded(
                         child: Text(
                           LocaleKeys.kDidNotReceiveTheCode.tr(),
-                          style: StylesProvider.textStyleGreyBlue1ColorR14,
+                          style: Styles.textStyleGray500R14,
                         ),
                       ),
                       SizedBox(
@@ -81,7 +81,7 @@ buildVerificationCodeDialog({required BuildContext context,}) {
                         child: Expanded(
                           child: Text(
                             LocaleKeys.kResendCode.tr(),
-                            style: StylesProvider.textStyleBlue1ColorR14,
+                            style: Styles.textStyleBlue500R14,
                           ),
                         ),
                       ),
@@ -104,7 +104,7 @@ buildVerificationCodeDialog({required BuildContext context,}) {
                     children: [
                       Text(
                         LocaleKeys.kHavingTrouble.tr(),
-                        style: StylesProvider.textStyleGreyBlue1ColorR14,
+                        style: Styles.textStyleGray500R14,
                       ),
                       SizedBox(
                         width: SizeData.s4,
@@ -116,7 +116,7 @@ buildVerificationCodeDialog({required BuildContext context,}) {
                         child: Expanded(
                           child: Text(
                             LocaleKeys.kContactSupport.tr(),
-                            style: StylesProvider.textStyleBlue1ColorR14,
+                            style: Styles.textStyleBlue500R14,
                           ),
                         ),
                       ),
@@ -133,7 +133,7 @@ buildVerificationCodeDialog({required BuildContext context,}) {
                 },
                 child: CircleAvatar(
                   radius: SizeData.s20,
-                  backgroundColor: ColorProviderData.whiteColor,
+                  backgroundColor: ColorData.whiteColor,
                   child: const Icon(
                     Icons.close,
                   ),

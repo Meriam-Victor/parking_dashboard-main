@@ -12,6 +12,7 @@ import 'package:parking_dashboard/Core/unit/style_data.dart';
 import 'package:parking_dashboard/Core/widget/provider_app/buttons/main_button_custom.dart';
 import 'package:parking_dashboard/Core/widget/provider_app/input_fields/input_text_custom.dart';
 import 'package:parking_dashboard/Core/widget/provider_app/app_bar_custom.dart';
+import 'package:parking_dashboard/Feature/create_account/presentation/view/widget/functions/side_bar_view.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -27,7 +28,8 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: ColorProviderData.whiteColor,
+      drawer: buildSideBar(context: context),
+      backgroundColor: ColorData.whiteColor,
       body: Column(
         children: [
           AppBarProviderCustom(
@@ -45,19 +47,19 @@ class _LoginState extends State<Login> {
                 SizeData.s16,
               ),
               decoration: BoxDecoration(
-                color: ColorProviderData.whiteColor,
+                color: ColorData.whiteColor,
                 borderRadius: BorderRadius.circular(
                   SizeData.s16,
                 ),
                 boxShadow: [
                   BoxShadow(
-                    color: ColorProviderData.shadow1Color,
+                    color: ColorData.grayShadow3Color,
                     spreadRadius: -2,
                     blurRadius: 8,
                     offset: const Offset(0, 4),
                   ),
                   BoxShadow(
-                    color: ColorProviderData.shadow2Color,
+                    color: ColorData.grayShadow4Color,
                     spreadRadius: 0,
                     blurRadius: 4,
                     offset: const Offset(0, 2),
@@ -71,21 +73,21 @@ class _LoginState extends State<Login> {
                   children: [
                     Text(
                       LocaleKeys.kLogInAsAPartner.tr(),
-                      style: StylesProvider.textStyleGreyBlue1ColorSB24,
+                      style: Styles.textStyleGray500SB24,
                     ),
                     SizedBox(
                       height: SizeData.s8,
                     ),
                     Text(
                       LocaleKeys.kHereYouCanLogIntoYourDashboard.tr(),
-                      style: StylesProvider.textStyleGreyBlue1ColorR14,
+                      style: Styles.textStyleGray500R14,
                     ),
                     SizedBox(
                       height: SizeData.s48,
                     ),
                     Text(
                       LocaleKeys.kEmail.tr(),
-                      style: StylesProvider.textStyleGreyBlue1ColorR14,
+                      style: Styles.textStyleGray500R14,
                     ),
                     SizedBox(
                       height: SizeData.s8,
@@ -103,7 +105,7 @@ class _LoginState extends State<Login> {
                         alignment: Alignment.centerRight,
                         child: Text(
                           LocaleKeys.kForgotEmailQuestion.tr(),
-                          style: StylesProvider.textStyleBlue1ColorR12,
+                          style: Styles.textStyleBlue500R12,
                         ),
                       ),
                     ),
@@ -112,7 +114,7 @@ class _LoginState extends State<Login> {
                     ),
                     Text(
                       LocaleKeys.kPassword.tr(),
-                      style: StylesProvider.textStyleGreyBlue1ColorR14,
+                      style: Styles.textStyleGray500R14,
                     ),
                     SizedBox(
                       height: SizeData.s8,
@@ -142,14 +144,14 @@ class _LoginState extends State<Login> {
                         ),
                         Text(
                           LocaleKeys.kRememberMe.tr(),
-                          style: StylesProvider.textStyleBlue4ColorR12,
+                          style: Styles.textStyleGray600R12,
                         ),
                         const Spacer(),
                         GestureDetector(
                           onTap: (){},
                           child: Text(
                             LocaleKeys.kForgotPasswordQuestion.tr(),
-                            style: StylesProvider.textStyleBlue1ColorR12,
+                            style: Styles.textStyleBlue500R12,
                           ),
                         ),
                       ],
@@ -171,7 +173,7 @@ class _LoginState extends State<Login> {
                       children: [
                         Text(
                           LocaleKeys.kDoNotHaveAccount.tr(),
-                          style: StylesProvider.textStyleGreyBlue1ColorR14,
+                          style: Styles.textStyleGray500R14,
                         ),
                         SizedBox(
                           width: SizeData.s8,
@@ -182,7 +184,7 @@ class _LoginState extends State<Login> {
                           },
                           child: Text(
                             LocaleKeys.kCreateAccount.tr(),
-                            style: StylesProvider.textStyleBlue1ColorR14,
+                            style: Styles.textStyleBlue500R14,
                           ),
                         ),
                       ],

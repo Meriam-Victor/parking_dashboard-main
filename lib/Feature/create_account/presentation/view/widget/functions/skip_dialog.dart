@@ -23,7 +23,7 @@ buildSkipDialog({required BuildContext context,}) {
             SizeData.s16,
           ),
         ),
-        backgroundColor: ColorProviderData.whiteColor,
+        backgroundColor: ColorData.whiteColor,
         child: Stack(
           clipBehavior: Clip.none,
           alignment: Alignment.center,
@@ -48,7 +48,7 @@ buildSkipDialog({required BuildContext context,}) {
                   ),
                   Text(
                     LocaleKeys.kSkippingThisStepMeansYourParkingWillNotOfferAnyOfTheseServices.tr(),
-                    style: StylesProvider.textStyleGreyBlue1ColorR16,
+                    style: Styles.textStyleGray500R16,
                     textAlign: TextAlign.center,
                   ),
                   SizedBox(
@@ -59,7 +59,7 @@ buildSkipDialog({required BuildContext context,}) {
                       SizeData.s8,
                     ),
                     decoration: BoxDecoration(
-                      color: ColorProviderData.yellow1Color,
+                      color: ColorData.yellow1Color,
                       borderRadius: BorderRadius.circular(
                         SizeData.s8,
                       ),
@@ -77,7 +77,7 @@ buildSkipDialog({required BuildContext context,}) {
                         Expanded(
                           child: Text(
                             LocaleKeys.kDoNotWorryYouCanStillManageServicesAtYourParkingLater.tr(),
-                            style: StylesProvider.textStyleYellow2ColorR12,
+                            style: Styles.textStyleYellow3R12,
                           ),
                         ),
                       ],
@@ -94,8 +94,8 @@ buildSkipDialog({required BuildContext context,}) {
                             GoRouter.of(context).push(AppProviderRouter.kOfferedServicesSecondView);
                           },
                           text: LocaleKeys.kGoBack.tr(),
-                          color: ColorProviderData.primary3Color,
-                          colorFont: ColorProviderData.primary2Color,
+                          color: ColorData.primaryP2Color,
+                          colorFont: ColorData.purple4Color,
                         ),
                       ),
                       SizedBox(
@@ -123,7 +123,7 @@ buildSkipDialog({required BuildContext context,}) {
                 },
                 child: CircleAvatar(
                   radius: SizeData.s20,
-                  backgroundColor: ColorProviderData.whiteColor,
+                  backgroundColor: ColorData.whiteColor,
                   child: const Icon(
                     Icons.close,
                   ),

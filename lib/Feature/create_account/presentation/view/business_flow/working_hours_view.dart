@@ -30,12 +30,12 @@ class _WorkingHoursView extends State<WorkingHoursView> {
   Widget build(BuildContext context) {
 
     return Scaffold(
-      backgroundColor: ColorProviderData.whiteColor,
+      backgroundColor: ColorData.whiteColor,
       appBar: AppBar(
-        backgroundColor: ColorProviderData.whiteColor,
+        backgroundColor: ColorData.whiteColor,
         title: Text(
           LocaleKeys.kAddParking.tr(),
-          style: StylesProvider.textStyleGreyBlue5ColorR16,
+          style: Styles.textStyleGray700R16,
         ),
         centerTitle: true,
       ),
@@ -61,14 +61,14 @@ class _WorkingHoursView extends State<WorkingHoursView> {
               ),
               Text(
                 LocaleKeys.kWorkingHours.tr(),
-                style: StylesProvider.textStyleGreyBlue1ColorM20,
+                style: Styles.textStyleGray500M20,
               ),
               SizedBox(
                 height: SizeData.s10,
               ),
               Text(
                 LocaleKeys.kThisSectionAllowsYouToManageYourParkingSchedule.tr(),
-                style: StylesProvider.textStyleGreyBlue3ColorR14,
+                style: Styles.textStyleGrey300R14,
               ),
               SizedBox(
                 height: SizeData.s32,
@@ -108,9 +108,9 @@ class _WorkingHoursView extends State<WorkingHoursView> {
                   SizeData.s16,
                 ),
                 decoration: BoxDecoration(
-                  color: ColorProviderData.whiteColor,
+                  color: ColorData.whiteColor,
                   border: Border.all(
-                    color: ColorProviderData.blue5Color,
+                    color: ColorData.blue9Color,
                   ),
                   borderRadius: BorderRadius.circular(
                     SizeData.s8,
@@ -123,7 +123,7 @@ class _WorkingHoursView extends State<WorkingHoursView> {
                         SizeData.s8,
                       ),
                       decoration: BoxDecoration(
-                        color: ColorProviderData.blue3Color,
+                        color: ColorData.blue2Color,
                         borderRadius: BorderRadius.circular(
                           SizeData.s8,
                         ),
@@ -144,7 +144,7 @@ class _WorkingHoursView extends State<WorkingHoursView> {
                             ),
                             Text(
                               LocaleKeys.kOpeningHoursForSpecialDates.tr(),
-                              style: StylesProvider.textStyleBlue1ColorM14,
+                              style: Styles.textStyleBlue500M14,
                             ),
                           ],
                         ),
@@ -171,9 +171,9 @@ class _WorkingHoursView extends State<WorkingHoursView> {
                     onTap: (){},
                     width: Unit(context).getWidthSize*0.35,
                     text: LocaleKeys.kSaveForLater.tr(),
-                    color: ColorProviderData.whiteColor,
-                    colorFont: ColorProviderData.primary2Color,
-                    borderColor: ColorProviderData.primary2Color,
+                    color: ColorData.whiteColor,
+                    colorFont: ColorData.purple4Color,
+                    borderColor: ColorData.purple4Color,
                     borderWidth: 1.0,
                   ),
                   const Spacer(),
