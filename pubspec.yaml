@@ -33,6 +33,9 @@ dependencies:
   otp_pin_field:
   percent_indicator: ^4.0.1
   dotted_border: ^2.0.0
+  flutter_date_range_picker: ^0.1.1
+
+
 
 
 

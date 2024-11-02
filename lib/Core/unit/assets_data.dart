@@ -153,6 +153,8 @@ class AssetsProviderData {
   static const String calendar2Blue ='$buseUrl/provider_app/calendar_2_blue.svg';
   static const String clockBlue ='$buseUrl/provider_app/clock_blue.svg';
   static const String addSquareWhite ='$buseUrl/provider_app/add_square_pink.svg';
+  static const String parking ='$buseUrl/provider_app/parking.png';
+  static const String parking2 ='$buseUrl/provider_app/parking2.png';
 
 
 

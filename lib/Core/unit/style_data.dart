@@ -294,6 +294,14 @@ abstract class Styles {
     fontFamily: fontFamily,
   );
 
+  static TextStyle textStyleGray600SB16 = TextStyle(
+    color: ColorData.gray600Color,
+    fontWeight: FontWeightStyles.semiBold,
+    fontSize: unit!.fontSize(16),
+    height: 0.0,
+    fontFamily: fontFamily,
+  );
+
   static TextStyle textStyleGray600R16 = TextStyle(
     color: ColorData.gray600Color,
     fontWeight: FontWeightStyles.regular,
@@ -743,10 +751,10 @@ abstract class Styles {
     fontFamily: fontFamily,
   );
 
-  static TextStyle textStylePurple24R10 = TextStyle(
-    color: ColorData.purple2Color,
+  static TextStyle textStylePurple4R12 = TextStyle(
+    color: ColorData.purple4Color,
     fontWeight: FontWeightStyles.regular,
-    fontSize: unit!.fontSize(10),
+    fontSize: unit!.fontSize(12),
     height: 0.0,
     fontFamily: fontFamily,
   );

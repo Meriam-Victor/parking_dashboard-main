@@ -84,7 +84,6 @@ const Map<String, String> fr = {
   'kViewDetails':'View Details',
   'kSeeMore':'See More',
   'kOtherParkingPrices':'Other Parking prices',
-  'kParkingNameTitle':'Parking name |',
   'kAvailableParkingSpot ':'Available Parking Spot ',
   'kNumberOfBookings':'Number of Bookings',
   'kCancelBooking':'Cancel Booking',
@@ -268,6 +267,8 @@ const Map<String, String> fr = {
   'kPriceForOneHour' : 'Price for 1 hour',
   'kPriceForOneWeek' : 'Price for 1 week',
   'kPriceForOneMonth' : 'Price for 1 month',
+  'kWithShuttle' : 'With Shuttle',
+  'kSearchParkingName' : 'Search Parking Name',
 
 };
 

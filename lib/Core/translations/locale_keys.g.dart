@@ -79,7 +79,6 @@ abstract class  LocaleKeys {
   static const String kViewDetails = 'kViewDetails';
   static const String kSeeMore = 'kSeeMore';
   static const String kOtherParkingPrices = 'kOtherParkingPrices';
-  static const String kParkingNameTitle = 'kParkingNameTitle';
   static const String kAvailableParkingSpot = 'kAvailableParkingSpot';
   static const String kNumberOfBookings = 'kNumberOfBookings';
   static const String kCancelBooking = 'kCancelBooking';
@@ -265,6 +264,8 @@ abstract class  LocaleKeys {
   static const String kPriceForOneHour='kPriceForOneHour';
   static const String kPriceForOneWeek='kPriceForOneWeek';
   static const String kPriceForOneMonth='kPriceForOneMonth';
+  static const String kWithShuttle='kWithShuttle';
+  static const String kSearchParkingName='kSearchParkingName';
 
 
 

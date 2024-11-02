@@ -13,8 +13,10 @@ import 'package:parking_dashboard/Core/widget/provider_app/buttons/main_button_c
 import 'package:parking_dashboard/Core/widget/provider_app/input_fields/input_text_custom.dart';
 import 'package:parking_dashboard/Core/widget/provider_app/app_bar_custom.dart';
 import 'package:parking_dashboard/Feature/create_account/presentation/view/widget/functions/side_bar_view.dart';
-
-import '../../../../Core/widget/provider_app/input_fields/drop_down_custom.dart';
+import 'package:parking_dashboard/Core/widget/provider_app/input_fields/drop_down_custom.dart';
+import 'package:flutter_date_range_picker/flutter_date_range_picker.dart';
+import 'package:parking_dashboard/Feature/create_account/presentation/view/widget/other_parking_prices_card_custom.dart';
+import 'package:parking_dashboard/Feature/create_account/presentation/view/widget/parking_card_custom.dart';
 
 class Dashboard extends StatefulWidget {
   const Dashboard({super.key});
@@ -29,6 +31,27 @@ class _Dashboard extends State<Dashboard> {
     LocaleKeys.kAllParking.tr(),
   ];
 
+  DateTimeRange? _selectedDateRange;
+
+  void _showDateRangePicker() async {
+    DateTimeRange? picked = await showDateRangePicker(
+      context: context,
+      firstDate: DateTime.now(),
+      lastDate: DateTime(2100),
+      initialDateRange: _selectedDateRange,
+    );
+    if (picked != null && picked != _selectedDateRange) {
+      setState(() {
+        _selectedDateRange = picked;
+      });
+    }
+  }
+
+  String _formatDate(DateTime date) {
+    return DateFormat("dd MMM").format(date);
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,98 +63,295 @@ class _Dashboard extends State<Dashboard> {
             title: LocaleKeys.kLogIn.tr(),
           ),
           Expanded(
-            child: Container(
-              width: Unit(context).getWidthSize*0.96,
-              height: Unit(context).getHeightSize*0.831,
-              padding: EdgeInsets.all(
-                SizeData.s16,
-              ),
-              margin: EdgeInsets.all(
-                SizeData.s16,
-              ),
-              decoration: BoxDecoration(
-                color: ColorData.whiteColor,
-                borderRadius: BorderRadius.circular(
-                  SizeData.s16,
-                ),
-                boxShadow: [
-                  BoxShadow(
-                    color: ColorData.grayShadow3Color,
-                    spreadRadius: -2,
-                    blurRadius: 8,
-                    offset: const Offset(0, 4),
-                  ),
-                  BoxShadow(
-                    color: ColorData.grayShadow4Color,
-                    spreadRadius: 0,
-                    blurRadius: 4,
-                    offset: const Offset(0, 2),
-                  ),
-                ],
-              ),
-              child: SingleChildScrollView(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Row(
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Container(
+                    width: Unit(context).getWidthSize*0.96,
+                    padding: EdgeInsets.all(
+                      SizeData.s16,
+                    ),
+                    margin: EdgeInsets.symmetric(
+                      horizontal: SizeData.s16,
+                    ),
+                    decoration: BoxDecoration(
+                      color: ColorData.whiteColor,
+                      borderRadius: BorderRadius.circular(
+                        SizeData.s16,
+                      ),
+                      boxShadow: [
+                        BoxShadow(
+                          color: ColorData.grayShadow3Color,
+                          spreadRadius: -2,
+                          blurRadius: 8,
+                          offset: const Offset(0, 4),
+                        ),
+                        BoxShadow(
+                          color: ColorData.grayShadow4Color,
+                          spreadRadius: 0,
+                          blurRadius: 4,
+                          offset: const Offset(0, 2),
+                        ),
+                      ],
+                    ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
-                          LocaleKeys.kUpcomingBookings.tr(),
-                          style: Styles.textStyleGray3M16,
+                        Row(
+                          children: [
+                            Text(
+                              LocaleKeys.kUpcomingBookings.tr(),
+                              style: Styles.textStyleGray3M16,
+                            ),
+                            SizedBox(
+                              width: SizeData.s8,
+                            ),
+                            Container(
+                              padding: EdgeInsets.all(
+                                SizeData.s8,
+                              ),
+                              decoration: BoxDecoration(
+                                color: ColorData.purple3Color,
+                                borderRadius: BorderRadius.circular(
+                                  SizeData.s12,
+                                ),
+                              ),
+                              child: Text(
+                                '5 News',
+                                style: Styles.textStyleSecondary1R12,
+                              ),
+                            ),
+                          ],
                         ),
                         SizedBox(
-                          width: SizeData.s8,
+                          height: SizeData.s8,
                         ),
-                        Container(
-                          padding: EdgeInsets.all(
-                            SizeData.s8,
+                        Row(
+                          children: [
+                            SizedBox(
+                              width: Unit(context).getWidthSize*0.34,
+                              height: Unit(context).getHeightSize*0.044,
+                              child: DropDownFieldProviderCustom(
+                                hintText: LocaleKeys.kSelectHere.tr(),
+                                icon: SvgPicture.asset(
+                                  AssetsProviderData.arrowDown,
+                                ),
+                                items: allParkingList.map((String items) {
+                                  return DropdownMenuItem(
+                                    value: items,
+                                    child: Text(items),
+                                  );
+                                }).toList(),
+                                onChanged: (newValue) {
+                                },
+                              ),
+                            ),
+                            SizedBox(
+                              width: SizeData.s8,
+                            ),
+                            GestureDetector(
+                              onTap: _showDateRangePicker,
+                              child: Container(
+                                width: Unit(context).getWidthSize*0.437,
+                                height: Unit(context).getHeightSize*0.044,
+                                padding: EdgeInsets.all(
+                                  SizeData.s8,
+                                ),
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(
+                                    SizeData.s8,
+                                  ),
+                                  border: Border.all(
+                                    color: ColorData.gray100Color,
+                                  ),
+                                ),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    SvgPicture.asset(
+                                      AssetsProviderData.calendar2Icon,
+                                    ),
+                                    SizedBox(
+                                      width: SizeData.s8,
+                                    ),
+                                    Text(
+                                      _selectedDateRange != null
+                                          ? '${_formatDate(_selectedDateRange!.start)} - ${_formatDate(_selectedDateRange!.end)}'
+                                          : LocaleKeys.kSelectDate.tr(),
+                                      style: Styles.textStyleGray500R14,
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        SizedBox(
+                          height: SizeData.s16,
+                        ),
+                        ParkingCardCustom(
+                          parkingName: 'Parking Name',
+                          parkingCode: 'TX37403',
+                          price: 24.0,
+                          outdoor: 'Outdoor',
+                          startDate: '7/30/2024 9:30 AM',
+                          endDate: '7/30/2024 9:30 AM',
+                          carDetails: 'Sedan ,BMW - 3 Series ',
+                          plateNumber: 'ABC-1234',
+                          luggage: '3 Bags',
+                          passengers: '2 Adults',
+                        ),
+                        SizedBox(
+                          height: SizeData.s16,
+                        ),
+                        GestureDetector(
+                          onTap: (){},
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              Text(
+                                LocaleKeys.kSeeMore.tr(),
+                                style: Styles.textStyleSecondary1M14,
+                              ),
+                              SizedBox(
+                                width: SizeData.s4,
+                              ),
+                              Icon(
+                                Icons.arrow_forward,
+                                color: ColorData.secondary1Color,
+                              ),
+                            ],
                           ),
-                          decoration: BoxDecoration(
-                            color: ColorData.purple3Color,
-                            borderRadius: BorderRadius.circular(
+                        ),
+            
+                      ],
+                    ),
+                  ),
+                  Container(
+                    width: Unit(context).getWidthSize*0.96,
+                    padding: EdgeInsets.all(
+                      SizeData.s16,
+                    ),
+                    margin: EdgeInsets.all(
+                      SizeData.s16,
+                    ),
+                    decoration: BoxDecoration(
+                      color: ColorData.whiteColor,
+                      borderRadius: BorderRadius.circular(
+                        SizeData.s16,
+                      ),
+                      boxShadow: [
+                        BoxShadow(
+                          color: ColorData.grayShadow3Color,
+                          spreadRadius: -2,
+                          blurRadius: 8,
+                          offset: const Offset(0, 4),
+                        ),
+                        BoxShadow(
+                          color: ColorData.grayShadow4Color,
+                          spreadRadius: 0,
+                          blurRadius: 4,
+                          offset: const Offset(0, 2),
+                        ),
+                      ],
+                    ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          children: [
+                            Text(
+                              LocaleKeys.kOtherParkingPrices.tr(),
+                              style: Styles.textStyleGray3M16,
+                            ),
+                            const Spacer(),
+                            Container(
+                              padding: EdgeInsets.symmetric(
+                                vertical: SizeData.s8,
+                                horizontal: SizeData.s16
+                              ),
+                              decoration: BoxDecoration(
+                                color: ColorData.purple4Color,
+                                borderRadius: BorderRadius.circular(
+                                  SizeData.s8,
+                                ),
+                              ),
+                              child: Row(
+                                children: [
+                                  Text(
+                                    '5 k.m',
+                                    style: Styles.textStyleWhiteR14,
+                                  ),
+                                  VerticalDivider(
+                                    thickness: 1.0,
+                                    color: ColorData.whiteColor,
+                                  ),
+                                  Icon(
+                                    Icons.add,
+                                    color: ColorData.whiteColor,
+                                  ),
+            
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                        SizedBox(
+                          height: SizeData.s8,
+                        ),
+                        InputTextProviderCustom(
+                          controller: TextEditingController(),
+                          hintText: LocaleKeys.kSearchParkingName.tr(),
+                          prefix: Padding(
+                            padding: EdgeInsets.all(
                               SizeData.s12,
                             ),
-                          ),
-                          child: Text(
-                            '5 News',
-                            style: Styles.textStyleSecondary1R12,
-                          ),
-                        ),
-                      ],
-                    ),
-                    SizedBox(
-                      height: SizeData.s8,
-                    ),
-                    Row(
-                      children: [
-                        Expanded(
-                          child: DropDownFieldProviderCustom(
-                            hintText: LocaleKeys.kSelectHere.tr(),
-                            icon: SvgPicture.asset(
-                              AssetsProviderData.arrowDown,
+                            child: SvgPicture.asset(
+                              AssetsProviderData.searchIcon,
                             ),
-                            items: allParkingList.map((String items) {
-                              return DropdownMenuItem(
-                                value: items,
-                                child: Text(items),
-                              );
-                            }).toList(),
-                            onChanged: (newValue) {
-                            },
                           ),
                         ),
                         SizedBox(
-                          width: SizeData.s8,
+                          height: SizeData.s8,
                         ),
 
+                        OtherParkingPricesCardCustom(
+                          parkingName: 'Parking Name',
+                          location: '62 Uruwat Al-Rijal Street, After Lafa Grilled Food',
+                          price: '€2,0000',
+                        ),
 
-
+                        SizedBox(
+                          height: SizeData.s16,
+                        ),
+                        GestureDetector(
+                          onTap: (){},
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              Text(
+                                LocaleKeys.kSeeMore.tr(),
+                                style: Styles.textStyleSecondary1M14,
+                              ),
+                              SizedBox(
+                                width: SizeData.s4,
+                              ),
+                              Icon(
+                                Icons.arrow_forward,
+                                color: ColorData.secondary1Color,
+                              ),
+                            ],
+                          ),
+                        ),
+            
                       ],
                     ),
-
-                  ],
-                ),
+                  ),
+                ],
               ),
             ),
           ),
