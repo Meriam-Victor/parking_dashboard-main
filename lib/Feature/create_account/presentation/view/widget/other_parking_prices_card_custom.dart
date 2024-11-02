@@ -10,7 +10,6 @@ import 'package:parking_dashboard/Core/unit/assets_data.dart';
 import 'package:parking_dashboard/Core/unit/font_weight_data.dart';
 import 'package:parking_dashboard/Core/unit/style_data.dart';
 
-import '../../../../../Core/widget/provider_app/buttons/main_button_custom.dart';
 
 class OtherParkingPricesCardCustom extends StatelessWidget {
 
