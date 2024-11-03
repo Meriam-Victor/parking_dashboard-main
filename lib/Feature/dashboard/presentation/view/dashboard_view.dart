@@ -15,8 +15,9 @@ import 'package:parking_dashboard/Core/widget/provider_app/app_bar_custom.dart';
 import 'package:parking_dashboard/Feature/create_account/presentation/view/widget/functions/side_bar_view.dart';
 import 'package:parking_dashboard/Core/widget/provider_app/input_fields/drop_down_custom.dart';
 import 'package:flutter_date_range_picker/flutter_date_range_picker.dart';
-import 'package:parking_dashboard/Feature/create_account/presentation/view/widget/other_parking_prices_card_custom.dart';
-import 'package:parking_dashboard/Feature/create_account/presentation/view/widget/parking_card_custom.dart';
+import 'package:parking_dashboard/Feature/dashboard/presentation/view/widget/functions/other_parking_prices_dialog.dart';
+import 'package:parking_dashboard/Feature/dashboard/presentation/view/widget/other_parking_prices_card_custom.dart';
+import 'package:parking_dashboard/Feature/dashboard/presentation/view/widget/parking_card_custom.dart';
 
 class Dashboard extends StatefulWidget {
   const Dashboard({super.key});
@@ -69,7 +70,7 @@ class _Dashboard extends State<Dashboard> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
-                    width: Unit(context).getWidthSize*0.96,
+                    width: double.infinity,
                     padding: EdgeInsets.all(
                       SizeData.s16,
                     ),
@@ -208,7 +209,8 @@ class _Dashboard extends State<Dashboard> {
                           height: SizeData.s16,
                         ),
                         GestureDetector(
-                          onTap: (){},
+                          onTap: (){
+                          },
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: [
@@ -231,7 +233,7 @@ class _Dashboard extends State<Dashboard> {
                     ),
                   ),
                   Container(
-                    width: Unit(context).getWidthSize*0.96,
+                    width: double.infinity,
                     padding: EdgeInsets.all(
                       SizeData.s16,
                     ),
@@ -329,7 +331,9 @@ class _Dashboard extends State<Dashboard> {
                           height: SizeData.s16,
                         ),
                         GestureDetector(
-                          onTap: (){},
+                          onTap: (){
+                            buildOtherParkingPricesDialog(context: context);
+                          },
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: [

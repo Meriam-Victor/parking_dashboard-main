@@ -8,6 +8,7 @@ import 'package:parking_dashboard/Core/translations/locale_keys.g.dart';
 import 'package:parking_dashboard/Core/unit/style_data.dart';
 import 'package:parking_dashboard/Core/unit/assets_data.dart';
 import 'package:parking_dashboard/Core/unit/app_routes.dart';
+import 'package:parking_dashboard/Feature/dashboard/presentation/view/widget/functions/notification_dialog.dart';
 
 buildSideBar({required BuildContext context,}) {
 
@@ -73,7 +74,10 @@ buildSideBar({required BuildContext context,}) {
             LocaleKeys.kListing.tr(),
             style: Styles.textStyleGray500R16,
           ),
-          onTap: () {},
+          onTap: () {
+            //notification
+            buildNotificationDialog(context: context);
+          },
         ),
         ListTile(
           leading: SvgPicture.asset(

@@ -153,6 +153,7 @@ class ParkingCardCustom extends StatelessWidget {
             children: [
               SvgPicture.asset(
                 AssetsProviderData.calendarIcon,
+                width: Unit(context).getWidthSize*0.05,
               ),
               SizedBox(
                 width: SizeData.s8,
@@ -177,6 +178,7 @@ class ParkingCardCustom extends StatelessWidget {
             children: [
               SvgPicture.asset(
                 AssetsProviderData.calendarIcon,
+                width: Unit(context).getWidthSize*0.05,
               ),
               SizedBox(
                 width: SizeData.s8,
@@ -208,6 +210,8 @@ class ParkingCardCustom extends StatelessWidget {
             children: [
               SvgPicture.asset(
                 AssetsProviderData.carIcon,
+                width: Unit(context).getWidthSize*0.05,
+
               ),
               SizedBox(
                 width: SizeData.s8,
@@ -232,6 +236,8 @@ class ParkingCardCustom extends StatelessWidget {
             children: [
               SvgPicture.asset(
                 AssetsProviderData.plateNoIcon,
+                width: Unit(context).getWidthSize*0.05,
+
               ),
               SizedBox(
                 width: SizeData.s8,
@@ -263,6 +269,8 @@ class ParkingCardCustom extends StatelessWidget {
             children: [
               SvgPicture.asset(
                 AssetsProviderData.luggageIcon,
+                width: Unit(context).getWidthSize*0.05,
+
               ),
               SizedBox(
                 width: SizeData.s8,
@@ -287,6 +295,8 @@ class ParkingCardCustom extends StatelessWidget {
             children: [
               SvgPicture.asset(
                 AssetsProviderData.passengersIcon,
+                width: Unit(context).getWidthSize*0.05,
+
               ),
               SizedBox(
                 width: SizeData.s8,

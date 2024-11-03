@@ -68,10 +68,11 @@ class OtherParkingPricesCardCustom extends StatelessWidget {
                     SizedBox(
                       width: SizeData.s4,
                     ),
-                    // Text(
-                    //   location,
-                    //   style: Styles.textStyleGray400R12,
-                    //   maxLines: 3,
+                    // Expanded(
+                    //   child: Text(
+                    //     location,
+                    //     style: Styles.textStyleGray400R12,
+                    //   ),
                     // ),
                   ],
                 ),
