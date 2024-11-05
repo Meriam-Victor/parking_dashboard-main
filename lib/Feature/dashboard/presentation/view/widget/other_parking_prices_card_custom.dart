@@ -3,11 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:parking_dashboard/Core/unit/color_data.dart';
 import 'package:parking_dashboard/Core/unit/size_data.dart';
-import 'package:parking_dashboard/Core/translations/locale_keys.g.dart';
 import 'package:parking_dashboard/Core/unit/unit.dart';
-import 'package:percent_indicator/linear_percent_indicator.dart';
 import 'package:parking_dashboard/Core/unit/assets_data.dart';
-import 'package:parking_dashboard/Core/unit/font_weight_data.dart';
 import 'package:parking_dashboard/Core/unit/style_data.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 

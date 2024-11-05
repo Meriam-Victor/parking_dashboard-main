@@ -10,8 +10,6 @@ import 'package:parking_dashboard/Core/unit/assets_data.dart';
 import 'package:parking_dashboard/Core/unit/app_routes.dart';
 import 'package:parking_dashboard/Feature/dashboard/presentation/view/widget/functions/notification_dialog.dart';
 
-import '../../../Feature/personal_details/presentation/view/personal_details_view.dart';
-
 buildSideBar({required BuildContext context,}) {
 
   return Drawer(
