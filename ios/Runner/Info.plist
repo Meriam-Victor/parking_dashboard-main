@@ -47,5 +47,15 @@
 	<true/>
 	<key>NSPhotoLibraryUsageDescription</key>
     <string>We need access to your photo library to upload images.</string>
+
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>We need access to your photo library to pick files.</string>
+    <key>NSDocumentDirectoryUsageDescription</key>
+    <string>We need access to your documents to pick files.</string>
+    <key>UIFileSharingEnabled</key>
+    <true/>
+    <key>LSSupportsOpeningDocumentsInPlace</key>
+    <true/>
+
 </dict>
 </plist>

@@ -342,6 +342,14 @@ abstract class Styles {
     fontFamily: fontFamily,
   );
 
+  static TextStyle textStyleGray700R14 = TextStyle(
+    color: ColorData.gray700Color,
+    fontWeight: FontWeightStyles.regular,
+    fontSize: unit!.fontSize(14),
+    height: 0.0,
+    fontFamily: fontFamily,
+  );
+
   static TextStyle textStyleGrayR12 = TextStyle(
     color: ColorData.gray400Color,
     fontWeight: FontWeightStyles.regular,

@@ -1,3 +1,6 @@
+import 'dart:io';
+
+import 'package:dotted_border/dotted_border.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -13,6 +16,7 @@ import 'package:parking_dashboard/Core/unit/style_data.dart';
 import 'package:parking_dashboard/Core/widget/provider_app/buttons/main_button_custom.dart';
 import 'package:parking_dashboard/Core/widget/provider_app/input_fields/input_text_custom.dart';
 import 'package:parking_dashboard/Core/widget/provider_app/input_fields/drop_down_custom.dart';
+import 'package:file_picker/file_picker.dart';
 
 class PersonalDetailsView extends StatefulWidget {
   const PersonalDetailsView({super.key});
@@ -45,6 +49,28 @@ class _PersonalDetailsView extends State<PersonalDetailsView> with SingleTickerP
 
   bool subjectToVATChecked = false;
   bool sendDocumentsChecked = false;
+
+  bool filePicked = false;
+
+  PlatformFile? selectedFile1;
+  PlatformFile? selectedFile2;
+
+  Future<void> pickFile() async {
+    FilePickerResult? result = await FilePicker.platform.pickFiles();
+
+    if (result != null) {
+      setState(() {
+        selectedFile1 = result.files.first;
+        selectedFile2 = result.files.first;
+        filePicked = true;
+      });
+    } else {
+      setState(() {
+        filePicked = false;
+      });
+    }
+  }
+
 
 
   @override
@@ -729,7 +755,136 @@ class _PersonalDetailsView extends State<PersonalDetailsView> with SingleTickerP
                   SizedBox(
                     height: SizeData.s8,
                   ),
-                  //upload
+                  DottedBorder(
+                    color: ColorData.gray100Color,
+                    strokeWidth: 1,
+                    dashPattern: const [6, 3],
+                    borderType: BorderType.RRect,
+                    radius: Radius.circular(
+                      SizeData.s8,
+                    ),
+                    child: GestureDetector(
+                      onTap: pickFile,
+                      child: Container(
+                        width: double.infinity,
+                        padding: EdgeInsets.all(
+                          SizeData.s16,
+                        ),
+                        alignment: Alignment.center,
+                        child: selectedFile1 == null ?
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            CircleAvatar(
+                              backgroundColor: ColorData.gray25Color,
+                              radius: Unit(context).getWidthSize*0.059,
+                              child: SvgPicture.asset(
+                                AssetsProviderData.documentUploadIcon,
+                                width: Unit(context).getWidthSize*0.064,
+                              ),
+                            ),
+                            SizedBox(
+                              width: SizeData.s8,
+                            ),
+                            Expanded(
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Row(
+                                    children: [
+                                      Expanded(
+                                        child: Text(
+                                          LocaleKeys.kClickToUpload.tr(),
+                                          style: Styles.textStyleBlue500R14,
+                                        ),
+                                      ),
+                                      Expanded(
+                                        child: Text(
+                                          'or ' + LocaleKeys.kDragAndDrop.tr(),
+                                          style: Styles.textStyleGray600R14,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  SizedBox(
+                                    height: SizeData.s4,
+                                  ),
+                                  Text(
+                                    LocaleKeys.kMaxFileSize25MB.tr(),
+                                    style: Styles.textStyleGray400R12,
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        )
+                        : Container(
+                          padding: EdgeInsets.all(
+                            SizeData.s16,
+                          ),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(
+                              SizeData.s8,
+                            ),
+                            border: Border.all(
+                                color: ColorData.gray100Color,
+                            ),
+                          ),
+                          child: Row(
+                            children: [
+                              SvgPicture.asset(
+                                AssetsProviderData.documentTextIcon,
+                                width: Unit(context).getWidthSize*0.055,
+                              ),
+                              SizedBox(
+                                width: SizeData.s8,
+                              ),
+                              Expanded(
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      selectedFile1!.name,
+                                      style: Styles.textStyleGray700R14,
+                                    ),
+                                    Text(
+                                      "${(selectedFile1!.size / 1024).toStringAsFixed(2)} KB",
+                                      style: Styles.textStyleGray300R12,
+                                    ),
+                                    GestureDetector(
+                                      onTap: () {
+                                        // Implement file view functionality here
+                                      },
+                                      child: Text(
+                                        LocaleKeys.kClickToView.tr(),
+                                        style: Styles.textStyleGray3SB14,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              IconButton(
+                                icon: Icon(
+                                    Icons.delete,
+                                    color: ColorData.gray100Color,
+                                ),
+                                onPressed: () {
+                                  setState(() {
+                                    selectedFile1 = null;
+                                  });
+                                },
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: SizeData.s16,
+                  ),
                   Text(
                     LocaleKeys.kDueDate.tr(),
                     style: Styles.textStyleGray500R14,
@@ -753,7 +908,136 @@ class _PersonalDetailsView extends State<PersonalDetailsView> with SingleTickerP
                   SizedBox(
                     height: SizeData.s8,
                   ),
-                  //upload
+                  DottedBorder(
+                    color: ColorData.gray100Color,
+                    strokeWidth: 1,
+                    dashPattern: const [6, 3],
+                    borderType: BorderType.RRect,
+                    radius: Radius.circular(
+                      SizeData.s8,
+                    ),
+                    child: GestureDetector(
+                      onTap: pickFile,
+                      child: Container(
+                        width: double.infinity,
+                        padding: EdgeInsets.all(
+                          SizeData.s16,
+                        ),
+                        alignment: Alignment.center,
+                        child: selectedFile2 == null ?
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            CircleAvatar(
+                              backgroundColor: ColorData.gray25Color,
+                              radius: Unit(context).getWidthSize*0.059,
+                              child: SvgPicture.asset(
+                                AssetsProviderData.documentUploadIcon,
+                                width: Unit(context).getWidthSize*0.064,
+                              ),
+                            ),
+                            SizedBox(
+                              width: SizeData.s8,
+                            ),
+                            Expanded(
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Row(
+                                    children: [
+                                      Expanded(
+                                        child: Text(
+                                          LocaleKeys.kClickToUpload.tr(),
+                                          style: Styles.textStyleBlue500R14,
+                                        ),
+                                      ),
+                                      Expanded(
+                                        child: Text(
+                                          'or ' + LocaleKeys.kDragAndDrop.tr(),
+                                          style: Styles.textStyleGray600R14,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  SizedBox(
+                                    height: SizeData.s4,
+                                  ),
+                                  Text(
+                                    LocaleKeys.kMaxFileSize25MB.tr(),
+                                    style: Styles.textStyleGray400R12,
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        )
+                        : Container(
+                          padding: EdgeInsets.all(
+                            SizeData.s16,
+                          ),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(
+                              SizeData.s8,
+                            ),
+                            border: Border.all(
+                              color: ColorData.gray100Color,
+                            ),
+                          ),
+                          child: Row(
+                            children: [
+                              SvgPicture.asset(
+                                AssetsProviderData.documentTextIcon,
+                                width: Unit(context).getWidthSize*0.055,
+                              ),
+                              SizedBox(
+                                width: SizeData.s8,
+                              ),
+                              Expanded(
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      selectedFile2!.name,
+                                      style: Styles.textStyleGray700R14,
+                                    ),
+                                    Text(
+                                      "${(selectedFile2!.size / 1024).toStringAsFixed(2)} KB",
+                                      style: Styles.textStyleGray300R12,
+                                    ),
+                                    GestureDetector(
+                                      onTap: () {
+                                        // Implement file view functionality here
+                                      },
+                                      child: Text(
+                                        LocaleKeys.kClickToView.tr(),
+                                        style: Styles.textStyleGray3SB14,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              IconButton(
+                                icon: Icon(
+                                  Icons.delete,
+                                  color: ColorData.gray100Color,
+                                ),
+                                onPressed: () {
+                                  setState(() {
+                                    selectedFile2 = null;
+                                  });
+                                },
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: SizeData.s16,
+                  ),
                   Text(
                     LocaleKeys.kDueDate.tr(),
                     style: Styles.textStyleGray500R14,

@@ -288,6 +288,8 @@ abstract class  LocaleKeys {
   static const String kDueDate='kDueDate';
   static const String kCertificateOfRegistrationOfCompany='kCertificateOfRegistrationOfCompany';
   static const String kCheckThisBoxIfYouWishToSendTheseDocumentsByEmail='kCheckThisBoxIfYouWishToSendTheseDocumentsByEmail';
+  static const String kClickToUpload='kClickToUpload';
+  static const String kClickToView='kClickToView';
 
 
 

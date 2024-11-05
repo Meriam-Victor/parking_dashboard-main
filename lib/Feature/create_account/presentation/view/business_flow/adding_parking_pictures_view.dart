@@ -225,32 +225,32 @@ class _AddingParkingPicturesView extends State<AddingParkingPicturesView> {
                     alignment: Alignment.center,
                     child: _imageFile == null
                         ? Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        CircleAvatar(
-                          backgroundColor: ColorData.purple3Color,
-                          radius: Unit(context).getWidthSize*0.059,
-                          child: SvgPicture.asset(
-                            AssetsProviderData.documentUploadIcon,
-                            width: Unit(context).getWidthSize*0.064,
-                          ),
-                        ),
-                        SizedBox(
-                          height: SizeData.s12,
-                        ),
-                        Text(
-                          LocaleKeys.kDragAndDrop.tr(),
-                          style: Styles.textStyleGray600R14,
-                        ),
-                        SizedBox(
-                          height: SizeData.s4,
-                        ),
-                        Text(
-                          LocaleKeys.kMaxFileSize25MB.tr(),
-                          style: Styles.textStyleGray400R12,
-                        ),
-                      ],
-                    )
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            CircleAvatar(
+                              backgroundColor: ColorData.purple3Color,
+                              radius: Unit(context).getWidthSize*0.059,
+                              child: SvgPicture.asset(
+                                AssetsProviderData.documentUploadIcon,
+                                width: Unit(context).getWidthSize*0.064,
+                              ),
+                            ),
+                            SizedBox(
+                              height: SizeData.s12,
+                            ),
+                            Text(
+                              LocaleKeys.kDragAndDrop.tr(),
+                              style: Styles.textStyleGray600R14,
+                            ),
+                            SizedBox(
+                              height: SizeData.s4,
+                            ),
+                            Text(
+                              LocaleKeys.kMaxFileSize25MB.tr(),
+                              style: Styles.textStyleGray400R12,
+                            ),
+                          ],
+                        )
                         : Image.file(
                       _imageFile!,
                       fit: BoxFit.cover,

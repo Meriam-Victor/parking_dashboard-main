@@ -201,6 +201,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "7.0.1"
+  file_picker:
+    dependency: "direct main"
+    description:
+      name: file_picker
+      sha256: aac85f20436608e01a6ffd1fdd4e746a7f33c93a2c83752e626bdfaea139b877
+      url: "https://pub.dev"
+    source: hosted
+    version: "8.1.3"
   file_selector_linux:
     dependency: transitive
     description:
@@ -311,10 +319,10 @@ packages:
     dependency: "direct main"
     description:
       name: flutter_svg
-      sha256: "1b7723a814d84fb65869ea7115cdb3ee7c3be5a27a755c1ec60e049f6b9fcbb2"
+      sha256: "2ca230f2ef6e31151769f4a03ec806b94f0554ff02ea1a40bb0d531ac150f035"
       url: "https://pub.dev"
     source: hosted
-    version: "2.0.11"
+    version: "2.0.12"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -337,10 +345,10 @@ packages:
     dependency: "direct main"
     description:
       name: go_router
-      sha256: "5a7419238fe5ed0b6bcf62f2eec8153caf12929dcebe05a891d530bf4b4ef52e"
+      sha256: ce89c5a993ca5eea74535f798478502c30a625ecb10a1de4d7fef5cd1bcac2a4
       url: "https://pub.dev"
     source: hosted
-    version: "14.4.0"
+    version: "14.4.1"
   group_button:
     dependency: "direct main"
     description:
@@ -1002,6 +1010,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.1.0"
+  win32:
+    dependency: transitive
+    description:
+      name: win32
+      sha256: "84ba388638ed7a8cb3445a320c8273136ab2631cd5f2c57888335504ddab1bc2"
+      url: "https://pub.dev"
+    source: hosted
+    version: "5.8.0"
   xdg_directories:
     dependency: transitive
     description:

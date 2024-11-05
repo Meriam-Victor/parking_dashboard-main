@@ -291,6 +291,8 @@ const Map<String, String> fr = {
   'kDueDate' : 'Due Date',
   'kCertificateOfRegistrationOfCompany' : 'certificate of registration of Company',
   'kCheckThisBoxIfYouWishToSendTheseDocumentsByEmail' : 'Check this box if you wish to send these documents by : email : ',
+  'kClickToUpload' : 'Click to Upload',
+  'kClickToView' : 'Click to view',
 
 };
 
