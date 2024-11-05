@@ -5,13 +5,9 @@ import 'package:parking_dashboard/Core/unit/color_data.dart';
 import 'package:parking_dashboard/Core/unit/size_data.dart';
 import 'package:parking_dashboard/Core/translations/locale_keys.g.dart';
 import 'package:parking_dashboard/Core/unit/style_data.dart';
-import 'package:otp_pin_field/otp_pin_field.dart';
-import 'package:parking_dashboard/Feature/create_account/presentation/view/widget/functions/all_set_dialog.dart';
-import 'package:parking_dashboard/Core/widget/provider_app/buttons/main_button_custom.dart';
-
-import '../../../../../../Core/unit/assets_data.dart';
-import '../../../../../../Core/widget/provider_app/input_fields/input_text_custom.dart';
-import '../other_parking_prices_card_custom.dart';
+import 'package:parking_dashboard/Core/unit/assets_data.dart';
+import 'package:parking_dashboard/Core/widget/provider_app/input_fields/input_text_custom.dart';
+import 'package:parking_dashboard/Feature/dashboard/presentation/view/widget/other_parking_prices_card_custom.dart';
 
 buildOtherParkingPricesDialog({required BuildContext context,}) {
 
