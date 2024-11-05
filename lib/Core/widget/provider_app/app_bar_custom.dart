@@ -6,7 +6,6 @@ import 'package:parking_dashboard/Core/unit/color_data.dart';
 import 'package:parking_dashboard/Core/unit/size_data.dart';
 import 'package:parking_dashboard/Core/unit/style_data.dart';
 import 'package:parking_dashboard/Core/unit/unit.dart';
-import 'package:parking_dashboard/Core/widget/provider_app/side_bar_view.dart';
 
 
 class AppBarProviderCustom extends StatelessWidget{
