@@ -95,37 +95,17 @@ buildOtherParkingPricesDialog({required BuildContext context,}) {
                     height: SizeData.s8,
                   ),
 
-                  OtherParkingPricesCardCustom(
-                    parkingName: 'Parking Name',
-                    location: '62 Uruwat Al-Rijal Street, After Lafa Grilled Food',
-                    price: '€2,0000',
+                  ...List.generate(
+                      6, (index){
+                    return OtherParkingPricesCardCustom(
+                      parkingName: 'Parking Name',
+                      location: '62 Uruwat Al-Rijal Street, After Lafa Grilled Food',
+                      price: '€2,0000',
+                      parkingRating: 3.0,
+                    );
+                  }
                   ),
 
-                  OtherParkingPricesCardCustom(
-                    parkingName: 'Parking Name',
-                    location: '62 Uruwat Al-Rijal Street, After Lafa Grilled Food',
-                    price: '€2,0000',
-                  ),
-                  OtherParkingPricesCardCustom(
-                    parkingName: 'Parking Name',
-                    location: '62 Uruwat Al-Rijal Street, After Lafa Grilled Food',
-                    price: '€2,0000',
-                  ),
-                  OtherParkingPricesCardCustom(
-                    parkingName: 'Parking Name',
-                    location: '62 Uruwat Al-Rijal Street, After Lafa Grilled Food',
-                    price: '€2,0000',
-                  ),
-                  OtherParkingPricesCardCustom(
-                    parkingName: 'Parking Name',
-                    location: '62 Uruwat Al-Rijal Street, After Lafa Grilled Food',
-                    price: '€2,0000',
-                  ),
-                  OtherParkingPricesCardCustom(
-                    parkingName: 'Parking Name',
-                    location: '62 Uruwat Al-Rijal Street, After Lafa Grilled Food',
-                    price: '€2,0000',
-                  ),
 
                   SizedBox(
                     height: SizeData.s16,

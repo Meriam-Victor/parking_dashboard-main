@@ -9,6 +9,7 @@ import 'package:percent_indicator/linear_percent_indicator.dart';
 import 'package:parking_dashboard/Core/unit/assets_data.dart';
 import 'package:parking_dashboard/Core/unit/font_weight_data.dart';
 import 'package:parking_dashboard/Core/unit/style_data.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 
 class OtherParkingPricesCardCustom extends StatelessWidget {
@@ -16,12 +17,14 @@ class OtherParkingPricesCardCustom extends StatelessWidget {
   String parkingName;
   String location;
   String price;
+  double parkingRating;
 
   OtherParkingPricesCardCustom({
     super.key,
     required this.parkingName,
     required this.location,
     required this.price,
+    required this.parkingRating,
   });
 
   @override
@@ -34,12 +37,9 @@ class OtherParkingPricesCardCustom extends StatelessWidget {
         ),
         Row(
           children: [
-            Container(
-              width: Unit(context).getWidthSize*0.237,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(
-                  SizeData.s12,
-                ),
+            ClipRRect(
+              borderRadius: BorderRadius.circular(
+                SizeData.s12,
               ),
               child: Image.asset(
                 AssetsProviderData.parking2,
@@ -48,64 +48,61 @@ class OtherParkingPricesCardCustom extends StatelessWidget {
             SizedBox(
               width: SizeData.s8,
             ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  parkingName,
-                  style: Styles.textStyleGrey600SB14,
-                ),
-                SizedBox(
-                  height: SizeData.s4,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    SvgPicture.asset(
-                      AssetsProviderData.locationIcon,
-                    ),
-                    SizedBox(
-                      width: SizeData.s4,
-                    ),
-                    // Expanded(
-                    //   child: Text(
-                    //     location,
-                    //     style: Styles.textStyleGray400R12,
-                    //   ),
-                    // ),
-                  ],
-                ),
-                SizedBox(
-                  height: SizeData.s4,
-                ),
-                Row(
-                  children: [
-                    SvgPicture.asset(
-                      AssetsProviderData.starSelectedIcon,
-                    ),
-                    SvgPicture.asset(
-                      AssetsProviderData.starSelectedIcon,
-                    ),
-                    SvgPicture.asset(
-                      AssetsProviderData.starSelectedIcon,
-                    ),
-                    SvgPicture.asset(
-                      AssetsProviderData.starSelectedIcon,
-                    ),
-                    SvgPicture.asset(
-                      AssetsProviderData.starUnselectedIcon,
-                    ),
-                    SizedBox(
-                      width: SizeData.s20,
-                    ),
-                    Text(
-                      price,
-                      style: Styles.textStyleGray600SB16,
-                    ),
-                  ],
-                ),
-              ],
+            Expanded(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    parkingName,
+                    style: Styles.textStyleGrey600SB14,
+                  ),
+                  SizedBox(
+                    height: SizeData.s4,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      SvgPicture.asset(
+                        AssetsProviderData.locationIcon,
+                      ),
+                      SizedBox(
+                        width: SizeData.s4,
+                      ),
+                      Expanded(
+                        child: Text(
+                          location,
+                          style: Styles.textStyleGray400R12,
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: SizeData.s4,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                        RatingBar.builder(
+                          initialRating: parkingRating,
+                          allowHalfRating: true,
+                          itemCount: 5,
+                          itemSize: Unit(context).getWidthSize*0.05,
+                          itemBuilder: (context, _) => Icon(
+                            Icons.star,
+                            color: ColorData.yellow3Color,
+                          ),
+                          unratedColor: ColorData.gray100Color,
+                          onRatingUpdate: (double value) {  },
+                      ),
+                      Text(
+                        price,
+                        style: Styles.textStyleGray600SB16,
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
           ],
         ),

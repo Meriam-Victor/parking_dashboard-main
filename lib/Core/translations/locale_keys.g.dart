@@ -266,6 +266,28 @@ abstract class  LocaleKeys {
   static const String kPriceForOneMonth='kPriceForOneMonth';
   static const String kWithShuttle='kWithShuttle';
   static const String kSearchParkingName='kSearchParkingName';
+  static const String kParticularAccount='kParticularAccount';
+  static const String kBusinessAccount='kBusinessAccount';
+  static const String kDetails='kDetails';
+  static const String kManagerOwner='kManagerOwner';
+  static const String kFullName='kFullName';
+  static const String kPhoneOne='kPhoneOne';
+  static const String kPhoneTwo='kPhoneTwo';
+  static const String kPhoneNumber='kPhoneNumber';
+  static const String kContactInfo='kContactInfo';
+  static const String kHereYouCanSelectTheContactInformation='kHereYouCanSelectTheContactInformation';
+  static const String kBusinessInformation='kBusinessInformation';
+  static const String kNRCSRM='kNRCSRM';
+  static const String kShareCapitalAmount='kShareCapitalAmount';
+  static const String kLegalForm='kLegalForm';
+  static const String kSIREN='kSIREN';
+  static const String kNIC='kNIC';
+  static const String kSubjectToVAT='kSubjectToVAT';
+  static const String kDocumentation='kDocumentation';
+  static const String kLiabilityInsuranceForParking='kLiabilityInsuranceForParking';
+  static const String kDueDate='kDueDate';
+  static const String kCertificateOfRegistrationOfCompany='kCertificateOfRegistrationOfCompany';
+  static const String kCheckThisBoxIfYouWishToSendTheseDocumentsByEmail='kCheckThisBoxIfYouWishToSendTheseDocumentsByEmail';
 
 
 

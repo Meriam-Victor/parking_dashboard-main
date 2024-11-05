@@ -10,11 +10,11 @@
 		</data>
 		<key>flutter_assets/AssetManifest.bin</key>
 		<data>
-		fhnXogCeDc2Tm6NT0hPyeeNsmtU=
+		114NKCMZWjoDbZkgTaK2cOTZBYM=
 		</data>
 		<key>flutter_assets/AssetManifest.json</key>
 		<data>
-		AT2txrzxm99q8XuxIV6M2OLsKwc=
+		RZZY88QM9B7h90GfX4THwmuLtO8=
 		</data>
 		<key>flutter_assets/FontManifest.json</key>
 		<data>
@@ -22,7 +22,7 @@
 		</data>
 		<key>flutter_assets/NOTICES.Z</key>
 		<data>
-		iv05t5HdSZbJpucOtkQccIKcKIM=
+		B/5hl13Db9C20q92MSsu/sXzglU=
 		</data>
 		<key>flutter_assets/assets/.DS_Store</key>
 		<data>
@@ -66,7 +66,7 @@
 		</data>
 		<key>flutter_assets/assets/image/.DS_Store</key>
 		<data>
-		W37wrvprKFbH3uElqLM7hDvUK9U=
+		7UaPyEyNmAvBXI0SJquUVYQFJXE=
 		</data>
 		<key>flutter_assets/assets/image/provider_app/.DS_Store</key>
 		<data>
@@ -468,6 +468,14 @@
 		<data>
 		7rqsfQMZCVCAy1v/x0HDedvp9bQ=
 		</data>
+		<key>flutter_assets/assets/image/provider_app/parking.png</key>
+		<data>
+		prfNzIIeYLBkxRKYtFfE8uhHIic=
+		</data>
+		<key>flutter_assets/assets/image/provider_app/parking2.png</key>
+		<data>
+		4cQsdVz5NdBQ8oTBQaUj9CQZaj8=
+		</data>
 		<key>flutter_assets/assets/image/provider_app/parking_available.svg</key>
 		<data>
 		6dS5nFd1i+B8Hzu0AWNzxu4kcGU=
@@ -710,7 +718,7 @@
 		</data>
 		<key>flutter_assets/kernel_blob.bin</key>
 		<data>
-		E/MvEJz946DUfU4qCN0qKBbtZNE=
+		Zo1lV9EEolK/6iTQa42uBdAlqUg=
 		</data>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
@@ -1763,14 +1771,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ozF2OAn/okCqxasmrS0AP3Wv6Dxu6t6SW3ze7Ms2zR0=
+			5fdii9gM/BC7SI/KJ/Gvw3Fa1M6z1MiIW9uGnIkLQiM=
 			</data>
 		</dict>
 		<key>flutter_assets/AssetManifest.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			TaebvA2DLXCgHmEmIFS/pV8OXzH58x7pLIC69BF9SSM=
+			fWzUAVIWdjwuaegx/CAQ6vXybdTCFUIpW3nFenV+QBQ=
 			</data>
 		</dict>
 		<key>flutter_assets/FontManifest.json</key>
@@ -1784,7 +1792,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			zF2N7SPMicaE/NzRldRhqoUZjMqDWxuKQSqnpYzzUZE=
+			/mpqfml7j4NXi3TZ8VEW5WBVN0BqzLi8r/BDLOAuAZY=
 			</data>
 		</dict>
 		<key>flutter_assets/assets/font/Inter-Black.ttf</key>
@@ -2536,6 +2544,20 @@
 			BYQjv6jHKLRxEWwy/NP2wcmD5/q/mPNbXqFmAWPekfU=
 			</data>
 		</dict>
+		<key>flutter_assets/assets/image/provider_app/parking.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			CLDLePftHs9kcSGSP84R7b6BcQ2kOx9N9QiZw4R1gvQ=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/image/provider_app/parking2.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			ARVF8VQ9odT5MdQvF7kZ10C8ACtlIdGOTEjFR2qDmtA=
+			</data>
+		</dict>
 		<key>flutter_assets/assets/image/provider_app/parking_available.svg</key>
 		<dict>
 			<key>hash2</key>
@@ -2960,7 +2982,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			VY8B/5nBfDrbiNu0L5L8NVQkScymbX+7fFzgS9l3YPU=
+			nkJsjEjmW9xxYl+gCZGSGesk6Kp1uSyv2fUHRSsSBsA=
 			</data>
 		</dict>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>

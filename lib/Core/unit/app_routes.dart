@@ -15,6 +15,7 @@ import 'package:parking_dashboard/Feature/create_account/presentation/view/busin
 import 'package:parking_dashboard/Feature/create_account/presentation/view/business_flow/offered_services_second_view.dart';
 import 'package:parking_dashboard/Feature/create_account/presentation/view/business_flow/type_of_booking_view.dart';
 import 'package:parking_dashboard/Feature/dashboard/presentation/view/dashboard_view.dart';
+import 'package:parking_dashboard/Feature/personal_details/presentation/view/personal_details_view.dart';
 
 abstract class AppRouter {
 
@@ -34,6 +35,7 @@ abstract class AppRouter {
   static const kTypeOfBookingView='/kTypeOfBookingView';
   static const kManagePaymentView='/kManagePaymentView';
   static const kDashboard='/kDashboard';
+  static const kPersonalDetailsView='/kPersonalDetailsView';
 
   static final GoRouter router = GoRouter(
     routes: [
@@ -121,6 +123,11 @@ abstract class AppRouter {
       GoRoute(
         path: kDashboard,
         builder: (context, state)=> const Dashboard(),
+      ),
+
+      GoRoute(
+        path: kPersonalDetailsView,
+        builder: (context, state)=> const PersonalDetailsView(),
       ),
 
     ],

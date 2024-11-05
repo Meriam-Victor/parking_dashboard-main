@@ -12,7 +12,7 @@ import 'package:parking_dashboard/Core/unit/style_data.dart';
 import 'package:parking_dashboard/Core/widget/provider_app/buttons/main_button_custom.dart';
 import 'package:parking_dashboard/Core/widget/provider_app/input_fields/input_text_custom.dart';
 import 'package:parking_dashboard/Core/widget/provider_app/app_bar_custom.dart';
-import 'package:parking_dashboard/Feature/create_account/presentation/view/widget/functions/side_bar_view.dart';
+import 'package:parking_dashboard/Core/widget/provider_app/side_bar_view.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});

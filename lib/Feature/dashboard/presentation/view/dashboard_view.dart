@@ -12,7 +12,7 @@ import 'package:parking_dashboard/Core/unit/style_data.dart';
 import 'package:parking_dashboard/Core/widget/provider_app/buttons/main_button_custom.dart';
 import 'package:parking_dashboard/Core/widget/provider_app/input_fields/input_text_custom.dart';
 import 'package:parking_dashboard/Core/widget/provider_app/app_bar_custom.dart';
-import 'package:parking_dashboard/Feature/create_account/presentation/view/widget/functions/side_bar_view.dart';
+import 'package:parking_dashboard/Core/widget/provider_app/side_bar_view.dart';
 import 'package:parking_dashboard/Core/widget/provider_app/input_fields/drop_down_custom.dart';
 import 'package:flutter_date_range_picker/flutter_date_range_picker.dart';
 import 'package:parking_dashboard/Feature/dashboard/presentation/view/widget/functions/other_parking_prices_dialog.dart';
@@ -27,6 +27,8 @@ class Dashboard extends StatefulWidget {
 }
 
 class _Dashboard extends State<Dashboard> {
+
+   TextEditingController searchController = TextEditingController();
 
   List<String> allParkingList = [
     LocaleKeys.kAllParking.tr(),
@@ -130,81 +132,93 @@ class _Dashboard extends State<Dashboard> {
                         SizedBox(
                           height: SizeData.s8,
                         ),
-                        Row(
-                          children: [
-                            SizedBox(
-                              width: Unit(context).getWidthSize*0.34,
-                              height: Unit(context).getHeightSize*0.044,
-                              child: DropDownFieldProviderCustom(
-                                hintText: LocaleKeys.kSelectHere.tr(),
-                                icon: SvgPicture.asset(
-                                  AssetsProviderData.arrowDown,
-                                ),
-                                items: allParkingList.map((String items) {
-                                  return DropdownMenuItem(
-                                    value: items,
-                                    child: Text(items),
-                                  );
-                                }).toList(),
-                                onChanged: (newValue) {
-                                },
-                              ),
-                            ),
-                            SizedBox(
-                              width: SizeData.s8,
-                            ),
-                            GestureDetector(
-                              onTap: _showDateRangePicker,
-                              child: Container(
-                                width: Unit(context).getWidthSize*0.437,
-                                height: Unit(context).getHeightSize*0.044,
-                                padding: EdgeInsets.all(
-                                  SizeData.s8,
-                                ),
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(
-                                    SizeData.s8,
+                        SizedBox(
+                          height: kToolbarHeight,
+                          child: Row(
+                            children: [
+                              Expanded(
+                                flex: 2,
+                                child: DropDownFieldProviderCustom(
+                                  hintText: LocaleKeys.kSelectHere.tr(),
+                                  icon: SvgPicture.asset(
+                                    AssetsProviderData.arrowDown,
                                   ),
-                                  border: Border.all(
-                                    color: ColorData.gray100Color,
-                                  ),
-                                ),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    SvgPicture.asset(
-                                      AssetsProviderData.calendar2Icon,
-                                    ),
-                                    SizedBox(
-                                      width: SizeData.s8,
-                                    ),
-                                    Text(
-                                      _selectedDateRange != null
-                                          ? '${_formatDate(_selectedDateRange!.start)} - ${_formatDate(_selectedDateRange!.end)}'
-                                          : LocaleKeys.kSelectDate.tr(),
-                                      style: Styles.textStyleGray500R14,
-                                    ),
-                                  ],
+                                  items: allParkingList.map((String items) {
+                                    return DropdownMenuItem(
+                                      value: items,
+                                      child: Text(items),
+                                    );
+                                  }).toList(),
+                                  onChanged: (newValue) {
+                                  },
                                 ),
                               ),
-                            ),
-                          ],
+                              SizedBox(
+                                width: SizeData.s8,
+                              ),
+                              Expanded(
+                                flex: 3,
+                                child: GestureDetector(
+                                  onTap: _showDateRangePicker,
+                                  child: Container(
+                                    padding: EdgeInsets.all(
+                                      SizeData.s8,
+                                    ),
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(
+                                        SizeData.s8,
+                                      ),
+                                      border: Border.all(
+                                        color: ColorData.gray100Color,
+                                      ),
+                                    ),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.min,
+                                      children: [
+                                        Icon(
+                                          Icons.calendar_month,
+                                          color: ColorData.gray400Color,
+                                          size: Unit(context).getWidthSize*0.055,
+                                        ),
+                                        SizedBox(
+                                          width: SizeData.s8,
+                                        ),
+                                        Text(
+                                          _selectedDateRange != null
+                                              ? '${_formatDate(_selectedDateRange!.start)} - ${_formatDate(_selectedDateRange!.end)}'
+                                              : LocaleKeys.kSelectDate.tr(),
+                                          style: Styles.textStyleGray500R14,
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                         SizedBox(
                           height: SizeData.s16,
                         ),
-                        ParkingCardCustom(
-                          parkingName: 'Parking Name',
-                          parkingCode: 'TX37403',
-                          price: 24.0,
-                          outdoor: 'Outdoor',
-                          startDate: '7/30/2024 9:30 AM',
-                          endDate: '7/30/2024 9:30 AM',
-                          carDetails: 'Sedan ,BMW - 3 Series ',
-                          plateNumber: 'ABC-1234',
-                          luggage: '3 Bags',
-                          passengers: '2 Adults',
+                        ...List.generate(
+                            2,
+                            (index){
+                              return ParkingCardCustom(
+                                parkingName: 'Parking Name',
+                                parkingCode: 'TX37403',
+                                price: 24.0,
+                                outdoor: 'Outdoor',
+                                startDate: '7/30/2024 9:30 AM',
+                                endDate: '7/30/2024 9:30 AM',
+                                carDetails: 'Sedan ,BMW - 3 Series ',
+                                plateNumber: 'ABC-1234',
+                                luggage: '3 Bags',
+                                passengers: '2 Adults',
+                                withShuttle: true,
+                              );
+                            }
                         ),
+
                         SizedBox(
                           height: SizeData.s16,
                         ),
@@ -306,7 +320,7 @@ class _Dashboard extends State<Dashboard> {
                           height: SizeData.s8,
                         ),
                         InputTextProviderCustom(
-                          controller: TextEditingController(),
+                          controller: searchController,
                           hintText: LocaleKeys.kSearchParkingName.tr(),
                           prefix: Padding(
                             padding: EdgeInsets.all(
@@ -320,13 +334,16 @@ class _Dashboard extends State<Dashboard> {
                         SizedBox(
                           height: SizeData.s8,
                         ),
-
-                        OtherParkingPricesCardCustom(
-                          parkingName: 'Parking Name',
-                          location: '62 Uruwat Al-Rijal Street, After Lafa Grilled Food',
-                          price: '€2,0000',
+                        ...List.generate(
+                            2, (index){
+                          return OtherParkingPricesCardCustom(
+                            parkingName: 'Parking Name',
+                            location: '62 Uruwat Al-Rijal Street, After Lafa Grilled Food',
+                            price: '€2,0000',
+                            parkingRating: 3.0,
+                            );
+                          }
                         ),
-
                         SizedBox(
                           height: SizeData.s16,
                         ),

@@ -20,7 +20,7 @@ class ParkingCardCustom extends StatelessWidget {
   String outdoor;
   String startDate;
   String endDate;
-  bool? withShuttle = true;
+  bool? withShuttle;
   String carDetails;
   String plateNumber;
   String luggage;
@@ -50,6 +50,9 @@ class ParkingCardCustom extends StatelessWidget {
       padding: EdgeInsets.all(
         SizeData.s16,
       ),
+      margin: EdgeInsets.symmetric(
+          vertical: SizeData.s4,
+      ),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(
           SizeData.s12,
@@ -62,15 +65,13 @@ class ParkingCardCustom extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Container(
-            width: double.infinity,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(
-                SizeData.s12,
-              ),
+          ClipRRect(
+            borderRadius: BorderRadius.circular(
+              SizeData.s12,
             ),
             child: Image.asset(
               AssetsProviderData.parking,
+              width: double.infinity,
             ),
           ),
           SizedBox(
@@ -127,7 +128,7 @@ class ParkingCardCustom extends StatelessWidget {
               SizedBox(
                 width: SizeData.s4,
               ),
-              if (withShuttle == true)
+              if (withShuttle??false)
                 Container(
                   padding: EdgeInsets.symmetric(
                     horizontal: SizeData.s8,
@@ -151,9 +152,10 @@ class ParkingCardCustom extends StatelessWidget {
           ),
           Row(
             children: [
-              SvgPicture.asset(
-                AssetsProviderData.calendarIcon,
-                width: Unit(context).getWidthSize*0.05,
+              Icon(
+                Icons.calendar_month,
+                color: ColorData.gray400Color,
+                size: Unit(context).getWidthSize*0.05,
               ),
               SizedBox(
                 width: SizeData.s8,
@@ -176,9 +178,10 @@ class ParkingCardCustom extends StatelessWidget {
           ),
           Row(
             children: [
-              SvgPicture.asset(
-                AssetsProviderData.calendarIcon,
-                width: Unit(context).getWidthSize*0.05,
+              Icon(
+                Icons.calendar_month,
+                color: ColorData.gray400Color,
+                size: Unit(context).getWidthSize*0.055,
               ),
               SizedBox(
                 width: SizeData.s8,
