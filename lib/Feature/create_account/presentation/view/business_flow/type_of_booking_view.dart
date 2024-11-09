@@ -7,12 +7,13 @@ import 'package:parking_dashboard/Core/unit/color_data.dart';
 import 'package:parking_dashboard/Core/unit/size_data.dart';
 import 'package:parking_dashboard/Core/unit/style_data.dart';
 import 'package:parking_dashboard/Core/unit/unit.dart';
+import 'package:parking_dashboard/Core/widget/provider_app/buttons/out_line_button_custom.dart';
+import 'package:parking_dashboard/Core/widget/provider_app/input_fileds/input_text_custom.dart';
 import 'package:parking_dashboard/Feature/create_account/presentation/view/add_parking_view.dart';
 import 'package:parking_dashboard/Feature/create_account/presentation/view/widget/progress_steps.dart';
 import 'package:parking_dashboard/Core/widget/provider_app/buttons/main_button_custom.dart';
 import 'package:parking_dashboard/Feature/create_account/presentation/view/widget/functions/all_set_final_dialog.dart';
 import 'package:parking_dashboard/Core/unit/assets_data.dart';
-import 'package:parking_dashboard/Core/widget/provider_app/input_fields/input_text_custom.dart';
 
 class TypeOfBookingView extends StatefulWidget {
   const TypeOfBookingView({super.key});
@@ -175,14 +176,10 @@ class _TypeOfBookingView extends State<TypeOfBookingView> with SingleTickerProvi
                   SizedBox(
                     height: SizeData.s8,
                   ),
-                  InputTextProviderCustom(
+                  InputTextCustom(
                     controller: TextEditingController(),
                     hintText: LocaleKeys.kTypeHere.tr(),
-                    suffixIcon: Icon(
-                      Icons.euro_outlined,
-                      color: ColorData.gray300Color,
-                      size: SizeData.s16,
-                    ),
+                    suffixIcon: Icons.euro_outlined,
                   ),
                 ],
                 if (groupButtonCheckBoxList[1]) ...[
@@ -196,14 +193,10 @@ class _TypeOfBookingView extends State<TypeOfBookingView> with SingleTickerProvi
                   SizedBox(
                     height: SizeData.s8,
                   ),
-                  InputTextProviderCustom(
+                  InputTextCustom(
                     controller: TextEditingController(),
                     hintText: LocaleKeys.kTypeHere.tr(),
-                    suffixIcon: Icon(
-                      Icons.euro_outlined,
-                      color: ColorData.gray300Color,
-                      size: SizeData.s16,
-                    ),
+                    suffixIcon: Icons.euro_outlined,
                   ),
                 ],
                 if (groupButtonCheckBoxList[2]) ...[
@@ -217,14 +210,10 @@ class _TypeOfBookingView extends State<TypeOfBookingView> with SingleTickerProvi
                   SizedBox(
                     height: SizeData.s8,
                   ),
-                  InputTextProviderCustom(
+                  InputTextCustom(
                     controller: TextEditingController(),
                     hintText: LocaleKeys.kTypeHere.tr(),
-                    suffixIcon: Icon(
-                      Icons.euro_outlined,
-                      color: ColorData.gray300Color,
-                      size: SizeData.s16,
-                    ),
+                    suffixIcon: Icons.euro_outlined,
                   ),
                 ],
                 if (groupButtonCheckBoxList[3]) ...[
@@ -238,14 +227,10 @@ class _TypeOfBookingView extends State<TypeOfBookingView> with SingleTickerProvi
                   SizedBox(
                     height: SizeData.s8,
                   ),
-                  InputTextProviderCustom(
+                  InputTextCustom(
                     controller: TextEditingController(),
                     hintText: LocaleKeys.kTypeHere.tr(),
-                    suffixIcon: Icon(
-                      Icons.euro_outlined,
-                      color: ColorData.gray300Color,
-                      size: SizeData.s16,
-                    ),
+                    suffixIcon: Icons.euro_outlined,
                   ),
                 ],
               ],
@@ -410,14 +395,10 @@ class _TypeOfBookingView extends State<TypeOfBookingView> with SingleTickerProvi
                                 ),
                                 SizedBox(
                                   width: Unit(context).getWidthSize*0.4,
-                                  child: InputTextProviderCustom(
+                                  child: InputTextCustom(
                                     controller: TextEditingController(),
                                     hintText: '300',
-                                    suffixIcon: Icon(
-                                      Icons.euro_outlined,
-                                      color: ColorData.gray300Color,
-                                      size: SizeData.s16,
-                                    ),
+                                    suffixIcon: Icons.euro_outlined,
                                   ),
                                 ),
                               ],
@@ -434,14 +415,10 @@ class _TypeOfBookingView extends State<TypeOfBookingView> with SingleTickerProvi
                                 ),
                                 SizedBox(
                                   width: Unit(context).getWidthSize*0.4,
-                                  child: InputTextProviderCustom(
+                                  child: InputTextCustom(
                                     controller: TextEditingController(),
                                     hintText: '300',
-                                    suffixIcon: Icon(
-                                      Icons.euro_outlined,
-                                      color: ColorData.gray300Color,
-                                      size: SizeData.s16,
-                                    ),
+                                    suffixIcon:Icons.euro_outlined,
                                   ),
                                 ),
                               ],
@@ -458,14 +435,10 @@ class _TypeOfBookingView extends State<TypeOfBookingView> with SingleTickerProvi
                                 ),
                                 SizedBox(
                                   width: Unit(context).getWidthSize*0.4,
-                                  child: InputTextProviderCustom(
+                                  child: InputTextCustom(
                                     controller: TextEditingController(),
                                     hintText: '300',
-                                    suffixIcon: Icon(
-                                      Icons.euro_outlined,
-                                      color: ColorData.gray300Color,
-                                      size: SizeData.s16,
-                                    ),
+                                    suffixIcon: Icons.euro_outlined,
                                   ),
                                 ),
                               ],
@@ -518,14 +491,10 @@ class _TypeOfBookingView extends State<TypeOfBookingView> with SingleTickerProvi
                                 ),
                                 SizedBox(
                                   width: Unit(context).getWidthSize*0.4,
-                                  child: InputTextProviderCustom(
+                                  child: InputTextCustom(
                                     controller: TextEditingController(),
                                     hintText: '300',
-                                    suffixIcon: Icon(
-                                      Icons.euro_outlined,
-                                      color: ColorData.gray300Color,
-                                      size: SizeData.s16,
-                                    ),
+                                    suffixIcon: Icons.euro_outlined,
                                   ),
                                 ),
                               ],
@@ -542,14 +511,10 @@ class _TypeOfBookingView extends State<TypeOfBookingView> with SingleTickerProvi
                                 ),
                                 SizedBox(
                                   width: Unit(context).getWidthSize*0.4,
-                                  child: InputTextProviderCustom(
+                                  child: InputTextCustom(
                                     controller: TextEditingController(),
                                     hintText: '300',
-                                    suffixIcon: Icon(
-                                      Icons.euro_outlined,
-                                      color: ColorData.gray300Color,
-                                      size: SizeData.s16,
-                                    ),
+                                    suffixIcon: Icons.euro_outlined,
                                   ),
                                 ),
                               ],
@@ -566,14 +531,10 @@ class _TypeOfBookingView extends State<TypeOfBookingView> with SingleTickerProvi
                                 ),
                                 SizedBox(
                                   width: Unit(context).getWidthSize*0.4,
-                                  child: InputTextProviderCustom(
+                                  child: InputTextCustom(
                                     controller: TextEditingController(),
                                     hintText: '300',
-                                    suffixIcon: Icon(
-                                      Icons.euro_outlined,
-                                      color: ColorData.gray300Color,
-                                      size: SizeData.s16,
-                                    ),
+                                    suffixIcon: Icons.euro_outlined,
                                   ),
                                 ),
                               ],
@@ -626,14 +587,10 @@ class _TypeOfBookingView extends State<TypeOfBookingView> with SingleTickerProvi
                                 ),
                                 SizedBox(
                                   width: Unit(context).getWidthSize*0.4,
-                                  child: InputTextProviderCustom(
+                                  child: InputTextCustom(
                                     controller: TextEditingController(),
                                     hintText: '300',
-                                    suffixIcon: Icon(
-                                      Icons.euro_outlined,
-                                      color: ColorData.gray300Color,
-                                      size: SizeData.s16,
-                                    ),
+                                    suffixIcon: Icons.euro_outlined,
                                   ),
                                 ),
                               ],
@@ -650,14 +607,10 @@ class _TypeOfBookingView extends State<TypeOfBookingView> with SingleTickerProvi
                                 ),
                                 SizedBox(
                                   width: Unit(context).getWidthSize*0.4,
-                                  child: InputTextProviderCustom(
+                                  child: InputTextCustom(
                                     controller: TextEditingController(),
                                     hintText: '300',
-                                    suffixIcon: Icon(
-                                      Icons.euro_outlined,
-                                      color: ColorData.gray300Color,
-                                      size: SizeData.s16,
-                                    ),
+                                    suffixIcon: Icons.euro_outlined,
                                   ),
                                 ),
                               ],
@@ -674,14 +627,10 @@ class _TypeOfBookingView extends State<TypeOfBookingView> with SingleTickerProvi
                                 ),
                                 SizedBox(
                                   width: Unit(context).getWidthSize*0.4,
-                                  child: InputTextProviderCustom(
+                                  child: InputTextCustom(
                                     controller: TextEditingController(),
                                     hintText: '300',
-                                    suffixIcon: Icon(
-                                      Icons.euro_outlined,
-                                      color: ColorData.gray300Color,
-                                      size: SizeData.s16,
-                                    ),
+                                    suffixIcon: Icons.euro_outlined,
                                   ),
                                 ),
                               ],
@@ -734,14 +683,10 @@ class _TypeOfBookingView extends State<TypeOfBookingView> with SingleTickerProvi
                                 ),
                                 SizedBox(
                                   width: Unit(context).getWidthSize*0.4,
-                                  child: InputTextProviderCustom(
+                                  child: InputTextCustom(
                                     controller: TextEditingController(),
                                     hintText: '300',
-                                    suffixIcon: Icon(
-                                      Icons.euro_outlined,
-                                      color: ColorData.gray300Color,
-                                      size: SizeData.s16,
-                                    ),
+                                    suffixIcon: Icons.euro_outlined,
                                   ),
                                 ),
                               ],
@@ -758,14 +703,10 @@ class _TypeOfBookingView extends State<TypeOfBookingView> with SingleTickerProvi
                                 ),
                                 SizedBox(
                                   width: Unit(context).getWidthSize*0.4,
-                                  child: InputTextProviderCustom(
+                                  child: InputTextCustom(
                                     controller: TextEditingController(),
                                     hintText: '300',
-                                    suffixIcon: Icon(
-                                      Icons.euro_outlined,
-                                      color: ColorData.gray300Color,
-                                      size: SizeData.s16,
-                                    ),
+                                    suffixIcon: Icons.euro_outlined,
                                   ),
                                 ),
                               ],
@@ -782,14 +723,10 @@ class _TypeOfBookingView extends State<TypeOfBookingView> with SingleTickerProvi
                                 ),
                                 SizedBox(
                                   width: Unit(context).getWidthSize*0.4,
-                                  child: InputTextProviderCustom(
+                                  child: InputTextCustom(
                                     controller: TextEditingController(),
                                     hintText: '300',
-                                    suffixIcon: Icon(
-                                      Icons.euro_outlined,
-                                      color: ColorData.gray300Color,
-                                      size: SizeData.s16,
-                                    ),
+                                    suffixIcon: Icons.euro_outlined,
                                   ),
                                 ),
                               ],
@@ -808,22 +745,19 @@ class _TypeOfBookingView extends State<TypeOfBookingView> with SingleTickerProvi
               ),
               Row(
                 children: [
-                  MainButtonProviderCustom(
+                  OutLineButtonCustom(
                     onTap: (){},
-                    width: Unit(context).getWidthSize*0.35,
+                    isProvider: true,
                     text: LocaleKeys.kSaveForLater.tr(),
                     color: ColorData.whiteColor,
-                    colorFont: ColorData.purple4Color,
-                    borderColor: ColorData.purple4Color,
-                    borderWidth: 1.0,
                   ),
                   const Spacer(),
-                  MainButtonProviderCustom(
+                  MainButtonCustom(
                     onTap: (){
                       buildAllSetFinalDialog(context: context);
                       //GoRouter.of(context).push(AppRouter.kTypeOfParkingView);
                     },
-                    width: Unit(context).getWidthSize*0.48,
+                    isProvider: true,
                     text: LocaleKeys.kNext.tr(),
                     arrowIcon: true,
                   ),

@@ -9,6 +9,7 @@ import 'package:parking_dashboard/Core/unit/color_data.dart';
 import 'package:parking_dashboard/Core/unit/size_data.dart';
 import 'package:parking_dashboard/Core/unit/style_data.dart';
 import 'package:parking_dashboard/Core/unit/unit.dart';
+import 'package:parking_dashboard/Core/widget/provider_app/buttons/out_line_button_custom.dart';
 import 'package:parking_dashboard/Feature/create_account/presentation/view/widget/progress_steps.dart';
 import 'package:parking_dashboard/Core/unit/app_routes.dart';
 import 'package:parking_dashboard/Core/widget/provider_app/buttons/main_button_custom.dart';
@@ -271,21 +272,18 @@ class _OfferedServicesSecondView extends State<OfferedServicesSecondView> {
               ),
               Row(
                 children: [
-                  MainButtonProviderCustom(
+                  OutLineButtonCustom(
                     onTap: (){},
-                    width: Unit(context).getWidthSize*0.35,
+                    isProvider: true,
                     text: LocaleKeys.kSaveForLater.tr(),
                     color: ColorData.whiteColor,
-                    colorFont: ColorData.purple4Color,
-                    borderColor: ColorData.purple4Color,
-                    borderWidth: 1.0,
                   ),
                   const Spacer(),
-                  MainButtonProviderCustom(
+                  MainButtonCustom(
                     onTap: (){
                       GoRouter.of(context).push(AppRouter.kTypeOfBookingView);
                     },
-                    width: Unit(context).getWidthSize*0.48,
+                    isProvider: true,
                     text: LocaleKeys.kNext.tr(),
                     arrowIcon: true,
                   ),

@@ -695,6 +695,14 @@ abstract class Styles {
     fontFamily: fontFamily,
   );
 
+  static TextStyle textStyleGray200R18 = TextStyle(
+    color: ColorData.gray200Color,
+    fontWeight: FontWeightStyles.regular,
+    fontSize: unit!.fontSize(18),
+    height: 0.0,
+    fontFamily: fontFamily,
+  );
+
   static TextStyle textStyleGray200R12 = TextStyle(
     color: ColorData.gray200Color,
     fontWeight: FontWeightStyles.regular,
@@ -751,6 +759,13 @@ abstract class Styles {
     fontFamily: fontFamily,
   );
 
+  static TextStyle textStylePrimaryPR10 = TextStyle(
+    color: ColorData.primaryPColor,
+    fontWeight: FontWeightStyles.regular,
+    fontSize: unit!.fontSize(10),
+    height: 0.0,
+    fontFamily: fontFamily,
+  );
   static TextStyle textStylePrimaryP2R14 = TextStyle(
     color: ColorData.primaryP2Color,
     fontWeight: FontWeightStyles.regular,
@@ -759,13 +774,6 @@ abstract class Styles {
     fontFamily: fontFamily,
   );
 
-  static TextStyle textStylePrimaryPR10 = TextStyle(
-    color: ColorData.primaryPColor,
-    fontWeight: FontWeightStyles.regular,
-    fontSize: unit!.fontSize(10),
-    height: 0.0,
-    fontFamily: fontFamily,
-  );
 
   static TextStyle textStylePurple4R12 = TextStyle(
     color: ColorData.purple4Color,
@@ -848,6 +856,14 @@ abstract class Styles {
     fontFamily: fontFamily,
   );
 
+  static TextStyle textStyleGrey500R18 = TextStyle(
+    color: ColorData.gray500Color,
+    fontWeight: FontWeightStyles.regular,
+    fontSize: unit!.fontSize(18),
+    height: 0.0,
+    fontFamily: fontFamily,
+  );
+
   static TextStyle textStyleGrey600SB14 = TextStyle(
     color: ColorData.gray600Color,
     fontWeight: FontWeightStyles.semiBold,
@@ -876,6 +892,14 @@ abstract class Styles {
     color: ColorData.gray600Color,
     fontWeight: FontWeightStyles.medium,
     fontSize: unit!.fontSize(16),
+    height: 0.0,
+    fontFamily: fontFamily,
+  );
+
+  static TextStyle textStyleGray600R20 = TextStyle(
+    color: ColorData.gray600Color,
+    fontWeight: FontWeightStyles.regular,
+    fontSize: unit!.fontSize(20),
     height: 0.0,
     fontFamily: fontFamily,
   );
@@ -932,6 +956,14 @@ abstract class Styles {
     color: ColorData.secondary1Color,
     fontWeight: FontWeightStyles.regular,
     fontSize: unit!.fontSize(14),
+    height: 0.0,
+    fontFamily: fontFamily,
+  );
+
+  static TextStyle textStyleSecondary1R16 = TextStyle(
+    color: ColorData.secondary1Color,
+    fontWeight: FontWeightStyles.regular,
+    fontSize: unit!.fontSize(16),
     height: 0.0,
     fontFamily: fontFamily,
   );

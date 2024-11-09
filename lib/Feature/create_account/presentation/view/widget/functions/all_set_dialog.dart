@@ -62,8 +62,9 @@ buildAllSetDialog({required BuildContext context,}) {
                     padding: EdgeInsets.symmetric(
                       horizontal: Unit(context).getWidthSize*0.148,
                     ),
-                    child: MainButtonProviderCustom(
+                    child: MainButtonCustom(
                       onTap: (){},
+                      isProvider: true,
                       text: LocaleKeys.kGetStarted.tr(),
                     ),
                   ),

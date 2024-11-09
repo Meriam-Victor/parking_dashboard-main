@@ -64,10 +64,11 @@ buildCongratulationsDialog({required BuildContext context,}) {
                     padding: EdgeInsets.symmetric(
                       horizontal: Unit(context).getWidthSize*0.148,
                     ),
-                    child: MainButtonProviderCustom(
+                    child: MainButtonCustom(
                       onTap: (){
                         GoRouter.of(context).push(AppRouter.kManagePaymentView);
                       },
+                      isProvider: true,
                       text: LocaleKeys.kAddBankDetails.tr(),
                     ),
                   ),

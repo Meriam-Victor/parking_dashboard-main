@@ -155,6 +155,10 @@ class AssetsProviderData {
   static const String addSquareWhite ='$buseUrl/provider_app/add_square_pink.svg';
   static const String parking ='$buseUrl/provider_app/parking.png';
   static const String parking2 ='$buseUrl/provider_app/parking2.png';
+  static const String category ='$buseUrl/provider_app/category.svg';
+  static const String addIcon ='$buseUrl/provider_app/add_icon.svg';
+  static const String calendarPink ='$buseUrl/provider_app/calendar_pink.svg';
+  static const String carPurple ='$buseUrl/provider_app/car_purple.svg';
 
 
 

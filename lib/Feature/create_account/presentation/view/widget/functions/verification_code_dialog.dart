@@ -90,10 +90,11 @@ buildVerificationCodeDialog({required BuildContext context,}) {
                   SizedBox(
                     height: SizeData.s32,
                   ),
-                  MainButtonProviderCustom(
+                  MainButtonCustom(
                     onTap: (){
                       buildAllSetDialog(context: context);
                     },
+                    isProvider: true,
                     text: LocaleKeys.kVerify.tr(),
                   ),
                   SizedBox(

@@ -6,10 +6,10 @@ import 'package:parking_dashboard/Core/unit/color_data.dart';
 import 'package:parking_dashboard/Core/unit/size_data.dart';
 import 'package:parking_dashboard/Core/unit/style_data.dart';
 import 'package:parking_dashboard/Core/unit/unit.dart';
+import 'package:parking_dashboard/Core/widget/provider_app/input_fileds/input_text_custom.dart';
 import 'package:parking_dashboard/Feature/create_account/presentation/view/widget/progress_steps.dart';
 import 'package:parking_dashboard/Core/unit/app_routes.dart';
 import 'package:parking_dashboard/Core/widget/provider_app/buttons/main_button_custom.dart';
-import 'package:parking_dashboard/Core/widget/provider_app/input_fields/input_text_custom.dart';
 
 class ParkingTitleView extends StatefulWidget {
   const ParkingTitleView({super.key});
@@ -67,7 +67,7 @@ class _ParkingTitleView extends State<ParkingTitleView> {
               SizedBox(
                 height: SizeData.s8,
               ),
-              InputTextProviderCustom(
+              InputTextCustom(
                 controller: TextEditingController(),
                 hintText: LocaleKeys.kTypeHere.tr(),
               ),
@@ -81,7 +81,7 @@ class _ParkingTitleView extends State<ParkingTitleView> {
               SizedBox(
                 height: SizeData.s8,
               ),
-              InputTextProviderCustom(
+              InputTextCustom(
                 controller: TextEditingController(),
                 hintText: LocaleKeys.kTypeHere.tr(),
                 minLines: 6,
@@ -96,7 +96,7 @@ class _ParkingTitleView extends State<ParkingTitleView> {
               SizedBox(
                 height: SizeData.s8,
               ),
-              InputTextProviderCustom(
+              InputTextCustom(
                 controller: TextEditingController(),
                 hintText: LocaleKeys.kTypeHere.tr(),
               ),
@@ -105,19 +105,19 @@ class _ParkingTitleView extends State<ParkingTitleView> {
               ),
               Row(
                 children: [
-                  MainButtonProviderCustom(
+                  MainButtonCustom(
                     onTap: (){},
-                    width: Unit(context).getWidthSize*0.3,
+                    isProvider: true,
                     text: LocaleKeys.kCancel.tr(),
                     color: ColorData.primaryP2Color,
                     colorFont: ColorData.purple4Color,
                   ),
                   const Spacer(),
-                  MainButtonProviderCustom(
+                  MainButtonCustom(
                     onTap: (){
                       GoRouter.of(context).push(AppRouter.kTypeOfPropertyView);
                     },
-                    width: Unit(context).getWidthSize*0.55,
+                    isProvider: true,
                     text: LocaleKeys.kNext.tr(),
                     arrowIcon: true,
                   ),

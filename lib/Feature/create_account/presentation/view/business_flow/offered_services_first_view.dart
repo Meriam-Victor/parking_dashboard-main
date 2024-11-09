@@ -9,11 +9,12 @@ import 'package:parking_dashboard/Core/unit/color_data.dart';
 import 'package:parking_dashboard/Core/unit/size_data.dart';
 import 'package:parking_dashboard/Core/unit/style_data.dart';
 import 'package:parking_dashboard/Core/unit/unit.dart';
+import 'package:parking_dashboard/Core/widget/provider_app/buttons/out_line_button_custom.dart';
+import 'package:parking_dashboard/Core/widget/provider_app/input_fileds/drop_down_custom.dart';
+import 'package:parking_dashboard/Core/widget/provider_app/input_fileds/input_text_custom.dart';
 import 'package:parking_dashboard/Feature/create_account/presentation/view/widget/progress_steps.dart';
 import 'package:parking_dashboard/Core/unit/app_routes.dart';
 import 'package:parking_dashboard/Core/widget/provider_app/buttons/main_button_custom.dart';
-import 'package:parking_dashboard/Core/widget/provider_app/input_fields/drop_down_custom.dart';
-import 'package:parking_dashboard/Core/widget/provider_app/input_fields/input_text_custom.dart';
 import 'package:parking_dashboard/Feature/create_account/presentation/view/add_parking_view.dart';
 
 class OfferedServicesFirstView extends StatefulWidget {
@@ -418,24 +419,18 @@ class _OfferedServicesFirstView extends State<OfferedServicesFirstView> {
                             SizedBox(
                               height: SizeData.s10,
                             ),
-                            InputTextProviderCustom(
+                            InputTextCustom(
                               controller: TextEditingController(),
                               hintText: LocaleKeys.kTypeHere.tr(),
-                              suffixIcon: Icon(
-                                Icons.euro_outlined,
-                                color: ColorData.gray300Color,
-                                size: SizeData.s16,
-                              ),
+                              suffixIcon: Icons.euro_outlined,
                             ),
                             SizedBox(
                               height: SizeData.s10,
                             ),
-                            DropDownFieldProviderCustom(
+                            DropDownFiledCustom(
                               value: priceBasedOn,
                               hintText: LocaleKeys.kSelectHere.tr(),
-                              icon: SvgPicture.asset(
-                                AssetsProviderData.arrowDown,
-                              ),
+                              isProvider: true,
                               items: itemsList.map((String items) {
                                 return DropdownMenuItem(
                                   value: items,
@@ -612,21 +607,18 @@ class _OfferedServicesFirstView extends State<OfferedServicesFirstView> {
               ),
               Row(
                 children: [
-                  MainButtonProviderCustom(
+                  OutLineButtonCustom(
                     onTap: (){},
-                    width: Unit(context).getWidthSize*0.35,
+                    isProvider: true,
                     text: LocaleKeys.kSaveForLater.tr(),
                     color: ColorData.whiteColor,
-                    colorFont: ColorData.purple4Color,
-                    borderColor: ColorData.purple4Color,
-                    borderWidth: 1.0,
                   ),
                   const Spacer(),
-                  MainButtonProviderCustom(
+                  MainButtonCustom(
                     onTap: (){
                       GoRouter.of(context).push(AppRouter.kOfferedServicesSecondView);
                     },
-                    width: Unit(context).getWidthSize*0.48,
+                    isProvider: true,
                     text: LocaleKeys.kNext.tr(),
                     arrowIcon: true,
                   ),

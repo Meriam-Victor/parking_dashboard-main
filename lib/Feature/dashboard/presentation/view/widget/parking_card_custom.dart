@@ -1,6 +1,8 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:go_router/go_router.dart';
+import 'package:parking_dashboard/Core/unit/app_routes.dart';
 import 'package:parking_dashboard/Core/unit/color_data.dart';
 import 'package:parking_dashboard/Core/unit/size_data.dart';
 import 'package:parking_dashboard/Core/translations/locale_keys.g.dart';
@@ -8,6 +10,7 @@ import 'package:parking_dashboard/Core/unit/unit.dart';
 import 'package:parking_dashboard/Core/unit/assets_data.dart';
 import 'package:parking_dashboard/Core/unit/style_data.dart';
 import 'package:parking_dashboard/Core/widget/provider_app/buttons/main_button_custom.dart';
+import 'package:parking_dashboard/Core/widget/provider_app/buttons/out_line_button_custom.dart';
 
 class ParkingCardCustom extends StatelessWidget {
 
@@ -320,20 +323,25 @@ class ParkingCardCustom extends StatelessWidget {
 
           Row(
             children: [
-              MainButtonProviderCustom(
-                onTap: (){},
-                width: Unit(context).getWidthSize*0.3,
-                text: LocaleKeys.kCancel.tr(),
-                color: ColorData.whiteColor,
-                colorFont: ColorData.purple4Color,
-                borderColor: ColorData.purple4Color,
-                borderWidth: 1.0,
+              Expanded(
+                child: OutLineButtonCustom(
+                  onTap: (){},
+                  text: LocaleKeys.kCancel.tr(),
+                  color: ColorData.whiteColor,
+                  isProvider: true,
+                ),
               ),
-              const Spacer(),
-              MainButtonProviderCustom(
-                onTap: (){},
-                width: Unit(context).getWidthSize*0.41,
-                text: LocaleKeys.kViewDetails.tr(),
+              SizedBox(
+                width: SizeData.s8,
+              ),
+              Expanded(
+                child: MainButtonCustom(
+                  onTap: (){
+                    GoRouter.of(context).push(AppRouter.kViewDetails);
+                  },
+                  isProvider: true,
+                  text: LocaleKeys.kViewDetails.tr(),
+                ),
               ),
             ],
           ),

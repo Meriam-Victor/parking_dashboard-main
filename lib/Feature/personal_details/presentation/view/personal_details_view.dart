@@ -12,9 +12,10 @@ import 'package:parking_dashboard/Core/unit/unit.dart';
 import 'package:parking_dashboard/Core/unit/assets_data.dart';
 import 'package:parking_dashboard/Core/unit/style_data.dart';
 import 'package:parking_dashboard/Core/widget/provider_app/buttons/main_button_custom.dart';
-import 'package:parking_dashboard/Core/widget/provider_app/input_fields/input_text_custom.dart';
-import 'package:parking_dashboard/Core/widget/provider_app/input_fields/drop_down_custom.dart';
 import 'package:file_picker/file_picker.dart';
+
+import '../../../../Core/widget/provider_app/input_fileds/drop_down_custom.dart';
+import '../../../../Core/widget/provider_app/input_fileds/input_text_custom.dart';
 
 class PersonalDetailsView extends StatefulWidget {
   const PersonalDetailsView({super.key});
@@ -39,6 +40,19 @@ class _PersonalDetailsView extends State<PersonalDetailsView> with SingleTickerP
   TextEditingController contactEmailController = TextEditingController();
   TextEditingController contactMessageController = TextEditingController();
   TextEditingController contactWhatsappController = TextEditingController();
+
+  FocusNode nameNode = FocusNode();
+  FocusNode emailNode = FocusNode();
+  FocusNode addressNode = FocusNode();
+  FocusNode shareCapitalNode = FocusNode();
+  FocusNode SIRENNode = FocusNode();
+  FocusNode NICNode = FocusNode();
+
+  FocusNode contactPhoneNode = FocusNode();
+  FocusNode contactEmailNode = FocusNode();
+  FocusNode contactMessageNode = FocusNode();
+  FocusNode contactWhatsappNode = FocusNode();
+
 
   bool phoneChecked = false;
   bool emailChecked = false;
@@ -202,9 +216,6 @@ class _PersonalDetailsView extends State<PersonalDetailsView> with SingleTickerP
                 padding: EdgeInsets.all(
                   SizeData.s16,
                 ),
-                margin: EdgeInsets.symmetric(
-                  horizontal: SizeData.s16,
-                ),
                 decoration: BoxDecoration(
                   color: ColorData.whiteColor,
                   borderRadius: BorderRadius.circular(
@@ -243,11 +254,9 @@ class _PersonalDetailsView extends State<PersonalDetailsView> with SingleTickerP
                     SizedBox(
                       height: SizeData.s8,
                     ),
-                    DropDownFieldProviderCustom(
+                    DropDownFiledCustom(
                       hintText: LocaleKeys.kTypeHere.tr(),
-                      icon: SvgPicture.asset(
-                        AssetsProviderData.arrowDown,
-                      ),
+                      isProvider: true,
                     ),
                     SizedBox(
                       height: SizeData.s16,
@@ -259,8 +268,10 @@ class _PersonalDetailsView extends State<PersonalDetailsView> with SingleTickerP
                     SizedBox(
                       height: SizeData.s8,
                     ),
-                    InputTextProviderCustom(
+                    InputTextCustom(
                         controller: nameController,
+                        focusNode: nameNode,
+                        onEditingComplete: ()=>FocusScope.of(context).requestFocus(emailNode),
                         hintText: LocaleKeys.kTypeHere.tr(),
                     ),
                     SizedBox(
@@ -273,8 +284,10 @@ class _PersonalDetailsView extends State<PersonalDetailsView> with SingleTickerP
                     SizedBox(
                       height: SizeData.s8,
                     ),
-                    InputTextProviderCustom(
+                    InputTextCustom(
                       controller: emailController,
+                      focusNode: emailNode,
+                      onEditingComplete: ()=>FocusScope.of(context).requestFocus(addressNode),
                       hintText: LocaleKeys.kTypeHere.tr(),
                     ),
                     SizedBox(
@@ -359,8 +372,10 @@ class _PersonalDetailsView extends State<PersonalDetailsView> with SingleTickerP
                     SizedBox(
                       height: SizeData.s8,
                     ),
-                    InputTextProviderCustom(
+                    InputTextCustom(
                       controller: addressController,
+                      focusNode: addressNode,
+                      onEditingComplete: ()=>FocusScope.of(context).requestFocus(contactPhoneNode),
                       hintText: LocaleKeys.kTypeHere.tr(),
                     ),
 
@@ -375,9 +390,6 @@ class _PersonalDetailsView extends State<PersonalDetailsView> with SingleTickerP
               width: double.infinity,
               padding: EdgeInsets.all(
                 SizeData.s16,
-              ),
-              margin: EdgeInsets.symmetric(
-                horizontal: SizeData.s16,
               ),
               decoration: BoxDecoration(
                 color: ColorData.whiteColor,
@@ -449,8 +461,10 @@ class _PersonalDetailsView extends State<PersonalDetailsView> with SingleTickerP
                         height: SizeData.s4,
                       ),
                       Expanded(
-                        child: InputTextProviderCustom(
+                        child: InputTextCustom(
                           controller: contactPhoneController,
+                          focusNode: contactPhoneNode,
+                          onEditingComplete: ()=>FocusScope.of(context).requestFocus(contactEmailNode),
                           hintText: LocaleKeys.kTypeHere.tr(),
                           prefix: Padding(
                             padding: EdgeInsets.all(
@@ -481,8 +495,10 @@ class _PersonalDetailsView extends State<PersonalDetailsView> with SingleTickerP
                         height: SizeData.s4,
                       ),
                       Expanded(
-                        child: InputTextProviderCustom(
+                        child: InputTextCustom(
                           controller: contactEmailController,
+                          focusNode: contactEmailNode,
+                          onEditingComplete: ()=>FocusScope.of(context).requestFocus(contactMessageNode),
                           hintText: LocaleKeys.kTypeHere.tr(),
                           prefix: Padding(
                             padding: EdgeInsets.all(
@@ -513,8 +529,10 @@ class _PersonalDetailsView extends State<PersonalDetailsView> with SingleTickerP
                         height: SizeData.s4,
                       ),
                       Expanded(
-                        child: InputTextProviderCustom(
+                        child: InputTextCustom(
                           controller: contactMessageController,
+                          focusNode: contactMessageNode,
+                          onEditingComplete: ()=>FocusScope.of(context).requestFocus(contactWhatsappNode),
                           hintText: LocaleKeys.kTypeHere.tr(),
                           prefix: Padding(
                             padding: EdgeInsets.all(
@@ -545,8 +563,12 @@ class _PersonalDetailsView extends State<PersonalDetailsView> with SingleTickerP
                         height: SizeData.s4,
                       ),
                       Expanded(
-                        child: InputTextProviderCustom(
+                        child: InputTextCustom(
                           controller: contactWhatsappController,
+                          focusNode: contactWhatsappNode,
+                          onEditingComplete: currentIndex == 1?
+                            ()=>FocusScope.of(context).requestFocus(shareCapitalNode):
+                            ()=>FocusScope.of(context).requestFocus(),
                           hintText: LocaleKeys.kTypeHere.tr(),
                           prefix: Padding(
                             padding: EdgeInsets.all(
@@ -571,9 +593,6 @@ class _PersonalDetailsView extends State<PersonalDetailsView> with SingleTickerP
                 width: double.infinity,
                 padding: EdgeInsets.all(
                   SizeData.s16,
-                ),
-                margin: EdgeInsets.symmetric(
-                  horizontal: SizeData.s16,
                 ),
                 decoration: BoxDecoration(
                   color: ColorData.whiteColor,
@@ -613,11 +632,9 @@ class _PersonalDetailsView extends State<PersonalDetailsView> with SingleTickerP
                     SizedBox(
                       height: SizeData.s8,
                     ),
-                    DropDownFieldProviderCustom(
+                    DropDownFiledCustom(
                       hintText: LocaleKeys.kTypeHere.tr(),
-                      icon: SvgPicture.asset(
-                        AssetsProviderData.arrowDown,
-                      ),
+                      isProvider: true,
                     ),
                     SizedBox(
                       height: SizeData.s16,
@@ -629,8 +646,10 @@ class _PersonalDetailsView extends State<PersonalDetailsView> with SingleTickerP
                     SizedBox(
                       height: SizeData.s8,
                     ),
-                    InputTextProviderCustom(
+                    InputTextCustom(
                       controller: shareCapitalController,
+                      focusNode: shareCapitalNode,
+                      onEditingComplete: ()=>FocusScope.of(context).requestFocus(SIRENNode),
                       hintText: LocaleKeys.kTypeHere.tr(),
                     ),
                     SizedBox(
@@ -643,11 +662,9 @@ class _PersonalDetailsView extends State<PersonalDetailsView> with SingleTickerP
                     SizedBox(
                       height: SizeData.s8,
                     ),
-                    DropDownFieldProviderCustom(
+                    DropDownFiledCustom(
                       hintText: LocaleKeys.kTypeHere.tr(),
-                      icon: SvgPicture.asset(
-                        AssetsProviderData.arrowDown,
-                      ),
+                      isProvider: true,
                     ),
                     SizedBox(
                       height: SizeData.s16,
@@ -659,8 +676,10 @@ class _PersonalDetailsView extends State<PersonalDetailsView> with SingleTickerP
                     SizedBox(
                       height: SizeData.s8,
                     ),
-                    InputTextProviderCustom(
+                    InputTextCustom(
                       controller: SIRENController,
+                      focusNode: SIRENNode,
+                      onEditingComplete: ()=>FocusScope.of(context).requestFocus(NICNode),
                       hintText: LocaleKeys.kTypeHere.tr(),
                     ),
                     SizedBox(
@@ -673,7 +692,7 @@ class _PersonalDetailsView extends State<PersonalDetailsView> with SingleTickerP
                     SizedBox(
                       height: SizeData.s8,
                     ),
-                    InputTextProviderCustom(
+                    InputTextCustom(
                       controller: NICController,
                       hintText: LocaleKeys.kTypeHere.tr(),
                     ),
@@ -711,9 +730,6 @@ class _PersonalDetailsView extends State<PersonalDetailsView> with SingleTickerP
               width: double.infinity,
               padding: EdgeInsets.all(
                 SizeData.s16,
-              ),
-              margin: EdgeInsets.symmetric(
-                horizontal: SizeData.s16,
               ),
               decoration: BoxDecoration(
                 color: ColorData.whiteColor,
@@ -853,7 +869,6 @@ class _PersonalDetailsView extends State<PersonalDetailsView> with SingleTickerP
                                     ),
                                     GestureDetector(
                                       onTap: () {
-                                        // Implement file view functionality here
                                       },
                                       child: Text(
                                         LocaleKeys.kClickToView.tr(),
@@ -890,11 +905,9 @@ class _PersonalDetailsView extends State<PersonalDetailsView> with SingleTickerP
                   SizedBox(
                     height: SizeData.s8,
                   ),
-                  DropDownFieldProviderCustom(
+                  DropDownFiledCustom(
                     hintText: LocaleKeys.kTypeHere.tr(),
-                    icon: SvgPicture.asset(
-                      AssetsProviderData.arrowDown,
-                    ),
+                    isProvider: true,
                   ),
                   SizedBox(
                     height: SizeData.s16,
@@ -1006,7 +1019,6 @@ class _PersonalDetailsView extends State<PersonalDetailsView> with SingleTickerP
                                     ),
                                     GestureDetector(
                                       onTap: () {
-                                        // Implement file view functionality here
                                       },
                                       child: Text(
                                         LocaleKeys.kClickToView.tr(),
@@ -1043,11 +1055,9 @@ class _PersonalDetailsView extends State<PersonalDetailsView> with SingleTickerP
                   SizedBox(
                     height: SizeData.s8,
                   ),
-                  DropDownFieldProviderCustom(
+                  DropDownFiledCustom(
                     hintText: LocaleKeys.kTypeHere.tr(),
-                    icon: SvgPicture.asset(
-                      AssetsProviderData.arrowDown,
-                    ),
+                    isProvider: true,
                   ),
                   SizedBox(
                     height: SizeData.s16,
@@ -1084,8 +1094,9 @@ class _PersonalDetailsView extends State<PersonalDetailsView> with SingleTickerP
             Row(
               children: [
                 Expanded(
-                  child: MainButtonProviderCustom(
+                  child: MainButtonCustom(
                     onTap: (){},
+                    isProvider: true,
                     text: LocaleKeys.kCancel.tr(),
                     color: ColorData.primaryP2Color,
                     colorFont: ColorData.purple4Color,
@@ -1095,10 +1106,9 @@ class _PersonalDetailsView extends State<PersonalDetailsView> with SingleTickerP
                   width: SizeData.s8,
                 ),
                 Expanded(
-                  child: MainButtonProviderCustom(
-                    onTap: (){
-                      GoRouter.of(context).push(AppRouter.kTypeOfPropertyView);
-                    },
+                  child: MainButtonCustom(
+                    onTap: (){},
+                    isProvider: true,
                     text: LocaleKeys.kSave.tr(),
                   ),
                 ),

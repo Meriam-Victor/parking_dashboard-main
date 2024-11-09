@@ -95,8 +95,9 @@ buildAllSetFinalDialog({required BuildContext context,}) {
                   Row(
                     children: [
                       Expanded(
-                        child: MainButtonProviderCustom(
+                        child: MainButtonCustom(
                           onTap: (){},
+                          isProvider: true,
                           text: LocaleKeys.kAddNewParking.tr(),
                           color: ColorData.primaryP2Color,
                           colorFont: ColorData.purple4Color,
@@ -106,11 +107,12 @@ buildAllSetFinalDialog({required BuildContext context,}) {
                         width: SizeData.s8,
                       ),
                       Expanded(
-                        child: MainButtonProviderCustom(
+                        child: MainButtonCustom(
                           onTap: (){
                             Navigator.of(context).pop();
                             buildCongratulationsDialog(context: context);
                           },
+                          isProvider: true,
                           text: LocaleKeys.kExploreDashboard.tr(),
                         ),
                       ),

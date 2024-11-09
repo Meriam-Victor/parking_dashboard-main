@@ -10,8 +10,8 @@ import 'package:parking_dashboard/Core/unit/unit.dart';
 import 'package:parking_dashboard/Core/unit/assets_data.dart';
 import 'package:parking_dashboard/Core/unit/style_data.dart';
 import 'package:parking_dashboard/Core/widget/provider_app/buttons/main_button_custom.dart';
-import 'package:parking_dashboard/Core/widget/provider_app/input_fields/input_text_custom.dart';
 import 'package:parking_dashboard/Core/widget/provider_app/app_bar_custom.dart';
+import 'package:parking_dashboard/Core/widget/provider_app/input_fileds/input_text_custom.dart';
 import 'package:parking_dashboard/Core/widget/provider_app/side_bar_view.dart';
 
 class Login extends StatefulWidget {
@@ -92,7 +92,7 @@ class _LoginState extends State<Login> {
                     SizedBox(
                       height: SizeData.s8,
                     ),
-                    InputTextProviderCustom(
+                    InputTextCustom(
                       controller: TextEditingController(),
                       hintText: LocaleKeys.kTypeHere.tr(),
                     ),
@@ -119,18 +119,11 @@ class _LoginState extends State<Login> {
                     SizedBox(
                       height: SizeData.s8,
                     ),
-                    InputTextProviderCustom(
+                    InputTextCustom(
                       controller: TextEditingController(),
                       hintText: LocaleKeys.kTypeHere.tr(),
                       obscureText: true,
-                      suffixIcon: Padding(
-                        padding: EdgeInsets.all(
-                          SizeData.s12,
-                        ),
-                        child: SvgPicture.asset(
-                          AssetsProviderData.eyeSlash,
-                        ),
-                      ),
+                      suffixIcon: Icons.visibility_off
                     ),
                     Row(
                       children: [
@@ -159,10 +152,11 @@ class _LoginState extends State<Login> {
                     SizedBox(
                       height: SizeData.s32,
                     ),
-                    MainButtonProviderCustom(
+                    MainButtonCustom(
                       onTap: () {
                         GoRouter.of(context).push(AppRouter.kAddParking);
                       },
+                      isProvider: true,
                       text: LocaleKeys.kLogIn.tr(),
                     ),
                     SizedBox(

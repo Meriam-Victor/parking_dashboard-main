@@ -6,7 +6,7 @@ import 'package:parking_dashboard/Core/unit/size_data.dart';
 import 'package:parking_dashboard/Core/translations/locale_keys.g.dart';
 import 'package:parking_dashboard/Core/unit/style_data.dart';
 import 'package:parking_dashboard/Core/unit/assets_data.dart';
-import 'package:parking_dashboard/Core/widget/provider_app/input_fields/input_text_custom.dart';
+import 'package:parking_dashboard/Core/widget/provider_app/input_fileds/input_text_custom.dart';
 import 'package:parking_dashboard/Feature/dashboard/presentation/view/widget/other_parking_prices_card_custom.dart';
 
 buildOtherParkingPricesDialog({required BuildContext context,}) {
@@ -75,7 +75,7 @@ buildOtherParkingPricesDialog({required BuildContext context,}) {
                   SizedBox(
                     height: SizeData.s8,
                   ),
-                  InputTextProviderCustom(
+                  InputTextCustom(
                     controller: TextEditingController(),
                     hintText: LocaleKeys.kSearchParkingName.tr(),
                     prefix: Padding(

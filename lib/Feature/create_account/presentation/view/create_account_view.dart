@@ -8,11 +8,11 @@ import 'package:parking_dashboard/Core/unit/style_data.dart';
 import 'package:parking_dashboard/Core/unit/color_data.dart';
 import 'package:parking_dashboard/Core/translations/locale_keys.g.dart';
 import 'package:parking_dashboard/Core/unit/unit.dart';
+import 'package:parking_dashboard/Core/widget/provider_app/input_fileds/input_text_custom.dart';
 import 'package:parking_dashboard/Core/widget/provider_app/side_bar_view.dart';
 import 'package:parking_dashboard/Feature/create_account/presentation/view/widget/functions/verification_code_dialog.dart';
 import 'package:parking_dashboard/Core/unit/app_routes.dart';
 import 'package:parking_dashboard/Core/widget/provider_app/buttons/main_button_custom.dart';
-import 'package:parking_dashboard/Core/widget/provider_app/input_fields/input_text_custom.dart';
 import 'package:parking_dashboard/Core/widget/provider_app/app_bar_custom.dart';
 
 class CreateAccount extends StatefulWidget {
@@ -91,7 +91,7 @@ class _CreateAccountState extends State<CreateAccount> {
                     SizedBox(
                       height: SizeData.s8,
                     ),
-                    InputTextProviderCustom(
+                    InputTextCustom(
                       controller: TextEditingController(),
                       hintText: LocaleKeys.kTypeHere.tr(),
                     ),
@@ -105,7 +105,7 @@ class _CreateAccountState extends State<CreateAccount> {
                     SizedBox(
                       height: SizeData.s8,
                     ),
-                    InputTextProviderCustom(
+                    InputTextCustom(
                       controller: TextEditingController(),
                       hintText: LocaleKeys.kTypeHere.tr(),
                     ),
@@ -119,18 +119,11 @@ class _CreateAccountState extends State<CreateAccount> {
                     SizedBox(
                       height: SizeData.s8,
                     ),
-                    InputTextProviderCustom(
+                    InputTextCustom(
                       controller: TextEditingController(),
                       hintText: LocaleKeys.kTypeHere.tr(),
                       obscureText: true,
-                      suffixIcon: Padding(
-                        padding: EdgeInsets.all(
-                          SizeData.s12,
-                        ),
-                        child: SvgPicture.asset(
-                          AssetsProviderData.eyeSlash,
-                        ),
-                      ),
+                      suffixIcon: Icons.visibility_off,
                     ),
                     SizedBox(
                       height: SizeData.s16,
@@ -142,26 +135,20 @@ class _CreateAccountState extends State<CreateAccount> {
                     SizedBox(
                       height: SizeData.s8,
                     ),
-                    InputTextProviderCustom(
+                    InputTextCustom(
                       controller: TextEditingController(),
                       hintText: LocaleKeys.kTypeHere.tr(),
                       obscureText: true,
-                      suffixIcon: Padding(
-                        padding: EdgeInsets.all(
-                          SizeData.s12,
-                        ),
-                        child: SvgPicture.asset(
-                          AssetsProviderData.eyeSlash,
-                        ),
-                      ),
+                      suffixIcon: Icons.visibility_off,
                     ),
                     SizedBox(
                       height: SizeData.s32,
                     ),
-                    MainButtonProviderCustom(
+                    MainButtonCustom(
                       onTap: () {
                         buildVerificationCodeDialog(context: context);
                       },
+                      isProvider: true,
                       text: LocaleKeys.kCreateAccount.tr(),
                     ),
                     SizedBox(

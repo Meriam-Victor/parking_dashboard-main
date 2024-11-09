@@ -7,13 +7,13 @@ import 'package:parking_dashboard/Core/unit/size_data.dart';
 import 'package:parking_dashboard/Core/unit/unit.dart';
 import 'package:parking_dashboard/Core/unit/assets_data.dart';
 import 'package:parking_dashboard/Core/unit/style_data.dart';
-import 'package:parking_dashboard/Core/widget/provider_app/input_fields/input_text_custom.dart';
 import 'package:parking_dashboard/Core/widget/provider_app/app_bar_custom.dart';
 import 'package:parking_dashboard/Core/widget/provider_app/side_bar_view.dart';
-import 'package:parking_dashboard/Core/widget/provider_app/input_fields/drop_down_custom.dart';
 import 'package:parking_dashboard/Feature/dashboard/presentation/view/widget/functions/other_parking_prices_dialog.dart';
 import 'package:parking_dashboard/Feature/dashboard/presentation/view/widget/other_parking_prices_card_custom.dart';
 import 'package:parking_dashboard/Feature/dashboard/presentation/view/widget/parking_card_custom.dart';
+import 'package:parking_dashboard/Core/widget/provider_app/input_fileds/drop_down_custom.dart';
+import 'package:parking_dashboard/Core/widget/provider_app/input_fileds/input_text_custom.dart';
 
 class Dashboard extends StatefulWidget {
   const Dashboard({super.key});
@@ -134,11 +134,9 @@ class _Dashboard extends State<Dashboard> {
                             children: [
                               Expanded(
                                 flex: 2,
-                                child: DropDownFieldProviderCustom(
+                                child: DropDownFiledCustom(
                                   hintText: LocaleKeys.kSelectHere.tr(),
-                                  icon: SvgPicture.asset(
-                                    AssetsProviderData.arrowDown,
-                                  ),
+                                  isProvider: true,
                                   items: allParkingList.map((String items) {
                                     return DropdownMenuItem(
                                       value: items,
@@ -315,7 +313,7 @@ class _Dashboard extends State<Dashboard> {
                         SizedBox(
                           height: SizeData.s8,
                         ),
-                        InputTextProviderCustom(
+                        InputTextCustom(
                           controller: searchController,
                           hintText: LocaleKeys.kSearchParkingName.tr(),
                           prefix: Padding(

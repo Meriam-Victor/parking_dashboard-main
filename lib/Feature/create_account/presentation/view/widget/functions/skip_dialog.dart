@@ -89,10 +89,11 @@ buildSkipDialog({required BuildContext context,}) {
                   Row(
                     children: [
                       Expanded(
-                        child: MainButtonProviderCustom(
+                        child: MainButtonCustom(
                           onTap: (){
                             GoRouter.of(context).push(AppRouter.kOfferedServicesSecondView);
                           },
+                          isProvider: true,
                           text: LocaleKeys.kGoBack.tr(),
                           color: ColorData.primaryP2Color,
                           colorFont: ColorData.purple4Color,
@@ -102,11 +103,12 @@ buildSkipDialog({required BuildContext context,}) {
                         width: SizeData.s8,
                       ),
                       Expanded(
-                        child: MainButtonProviderCustom(
+                        child: MainButtonCustom(
                           onTap: (){
                             Navigator.of(context).pop();
                             GoRouter.of(context).push(AppRouter.kTypeOfBookingView);
                           },
+                          isProvider: true,
                           text: LocaleKeys.kSkipAnyway.tr(),
                         ),
                       ),

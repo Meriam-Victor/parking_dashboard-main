@@ -102,10 +102,12 @@ buildSideBar({required BuildContext context,}) {
             AssetsProviderData.calendarIcon,
           ),
           title: Text(
-            LocaleKeys.kPlanning.tr(),
+            LocaleKeys.kCalender.tr(),
             style: Styles.textStyleGray500R16,
           ),
-          onTap: () {},
+          onTap: () {
+            GoRouter.of(context).push(AppRouter.kCalender);
+          },
         ),
         ExpansionTile(
           leading: SvgPicture.asset(
