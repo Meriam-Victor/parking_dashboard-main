@@ -306,61 +306,61 @@ class BookingCardCustom extends StatelessWidget {
             height: SizeData.s16,
           ),
 
-          // Row(
-          //   children: [
-          //     Expanded(
-          //       child: OutLineButtonCustom(
-          //         onTap: (){},
-          //         text: LocaleKeys.kCancel.tr(),
-          //         color: ColorData.whiteColor,
-          //         isProvider: true,
-          //       ),
-          //     ),
-          //     SizedBox(
-          //       width: SizeData.s8,
-          //     ),
-          //     Expanded(
-          //       child: MainButtonCustom(
-          //         onTap: (){},
-          //         isProvider: true,
-          //         text: LocaleKeys.kViewDetails.tr(),
-          //       ),
-          //     ),
-          //     IconButton(
-          //       onPressed: (){},
-          //       icon: Icon(Icons.more_vert_outlined),
-          //     ),
-          //   ],
-          // ),
-          // SizedBox(
-          //   height: SizeData.s16,
-          // ),
-          // Row(
-          //   children: [
-          //     Expanded(
-          //       child: OutLineButtonCustom(
-          //         onTap: (){},
-          //         text: LocaleKeys.kReject.tr(),
-          //         color: ColorData.whiteColor,
-          //         isProvider: true,
-          //       ),
-          //     ),
-          //     SizedBox(
-          //       width: SizeData.s8,
-          //     ),
-          //     Expanded(
-          //       child: MainButtonCustom(
-          //         onTap: (){},
-          //         isProvider: true,
-          //         text: LocaleKeys.kAccept.tr(),
-          //       ),
-          //     ),
-          //     IconButton(
-          //       onPressed: (){},
-          //       icon: const Icon(Icons.more_vert_outlined),
-          //     ),
-          //   ],
-          // ),
+          Row(
+            children: [
+              Expanded(
+                child: OutLineButtonCustom(
+                  onTap: (){},
+                  text: LocaleKeys.kCancel.tr(),
+                  color: ColorData.whiteColor,
+                  isProvider: true,
+                ),
+              ),
+              SizedBox(
+                width: SizeData.s8,
+              ),
+              Expanded(
+                child: MainButtonCustom(
+                  onTap: (){},
+                  isProvider: true,
+                  text: LocaleKeys.kViewDetails.tr(),
+                ),
+              ),
+              IconButton(
+                onPressed: (){},
+                icon: Icon(Icons.more_vert_outlined),
+              ),
+            ],
+          ),
+          SizedBox(
+            height: SizeData.s16,
+          ),
+          Row(
+            children: [
+              Expanded(
+                child: OutLineButtonCustom(
+                  onTap: (){},
+                  text: LocaleKeys.kReject.tr(),
+                  color: ColorData.whiteColor,
+                  isProvider: true,
+                ),
+              ),
+              SizedBox(
+                width: SizeData.s8,
+              ),
+              Expanded(
+                child: MainButtonCustom(
+                  onTap: (){},
+                  isProvider: true,
+                  text: LocaleKeys.kAccept.tr(),
+                ),
+              ),
+              IconButton(
+                onPressed: (){},
+                icon: const Icon(Icons.more_vert_outlined),
+              ),
+            ],
+          ),
         ],
       ),
     );
