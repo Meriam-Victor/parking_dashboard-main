@@ -365,7 +365,6 @@ class BookingCardCustom extends StatelessWidget {
       ),
     );
   }
-
   Widget rowData({
     required BuildContext context,
     required String icon,

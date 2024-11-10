@@ -8,23 +8,67 @@ import 'package:parking_dashboard/Core/unit/unit.dart';
 import 'package:parking_dashboard/Core/unit/assets_data.dart';
 import 'package:parking_dashboard/Core/unit/style_data.dart';
 import 'package:parking_dashboard/Core/widget/provider_app/buttons/main_button_custom.dart';
-import 'package:parking_dashboard/Core/widget/provider_app/buttons/out_line_button_custom.dart';
+import 'package:parking_dashboard/Core/widget/provider_app/input_fileds/drop_down_custom.dart';
+import 'package:parking_dashboard/Core/widget/provider_app/input_fileds/input_text_custom.dart';
+import 'package:parking_dashboard/Feature/calender/presentation/view/widget/functions/assign_driver_dialog.dart';
 import 'package:parking_dashboard/Feature/dashboard/presentation/view/widget/view_details_text_field_custom.dart';
 
-class ViewDetails extends StatefulWidget {
-  const ViewDetails({super.key});
+class CreateBooking extends StatefulWidget {
+  const CreateBooking({super.key});
 
   @override
-  State<ViewDetails> createState() => _ViewDetails();
+  State<CreateBooking> createState() => _CreateBooking();
 }
 
-class _ViewDetails extends State<ViewDetails> with SingleTickerProviderStateMixin{
+class _CreateBooking extends State<CreateBooking> with SingleTickerProviderStateMixin{
+
+  TextEditingController nameController = TextEditingController();
+  TextEditingController emailController = TextEditingController();
+  TextEditingController phoneController = TextEditingController();
+  TextEditingController plateNoController = TextEditingController();
+
+  TextEditingController startDateController = TextEditingController();
+  TextEditingController startTimeController = TextEditingController();
+  TextEditingController endDateController = TextEditingController();
+  TextEditingController endTimeController = TextEditingController();
+
+  TextEditingController firstTransferDateController = TextEditingController();
+  TextEditingController firstTransferTimeController = TextEditingController();
+  TextEditingController secondTransferDateController = TextEditingController();
+  TextEditingController secondTransferTimeController = TextEditingController();
+
+  TextEditingController priceController = TextEditingController();
+  TextEditingController clientPhoneController = TextEditingController();
+  TextEditingController reservedAtDateController = TextEditingController();
+  TextEditingController reservedAtTimeController = TextEditingController();
+
+  TextEditingController commentController = TextEditingController();
+
+  FocusNode nameNode = FocusNode();
+  FocusNode emailNode = FocusNode();
+  FocusNode phoneNode = FocusNode();
+  FocusNode plateNoNode = FocusNode();
+
+  FocusNode startDateNode = FocusNode();
+  FocusNode startTimeNode = FocusNode();
+  FocusNode endDateNode = FocusNode();
+  FocusNode endTimeNode = FocusNode();
+
+  FocusNode firstTransferDateNode = FocusNode();
+  FocusNode firstTransferTimeNode = FocusNode();
+  FocusNode secondTransferDateNode = FocusNode();
+  FocusNode secondTransferTimeNode = FocusNode();
+
+  FocusNode priceNode = FocusNode();
+  FocusNode clientPhoneNode = FocusNode();
+  FocusNode reservedAtDateNode = FocusNode();
+  FocusNode reservedAtTimeNode = FocusNode();
+
+  FocusNode commentNode = FocusNode();
+
 
   int currentIndex = 0;
   late TabController tabController;
-
-  bool ticketGenerated = false;
-  bool invoiceGenerated = false;
 
   @override
   void initState() {
@@ -38,7 +82,7 @@ class _ViewDetails extends State<ViewDetails> with SingleTickerProviderStateMixi
       backgroundColor: ColorData.whiteColor,
       appBar: AppBar(
         title: Text(
-          LocaleKeys.kViewDetails.tr(),
+          LocaleKeys.kReferenceId.tr(),
           style: Styles.textStyleGray700R16,
         ),
       ),
@@ -62,7 +106,7 @@ class _ViewDetails extends State<ViewDetails> with SingleTickerProviderStateMixi
                 ),
               ),
               child: Text(
-                LocaleKeys.kBookingDetails.tr(),
+                LocaleKeys.kNewBooking.tr(),
                 style: Styles.textStyleWhiteR16,
               ),
             ),
@@ -128,9 +172,20 @@ class _ViewDetails extends State<ViewDetails> with SingleTickerProviderStateMixi
                   SizedBox(
                     height: SizeData.s4,
                   ),
-                  ViewDetailsTextFieldCustom(
-                    icon: AssetsProviderData.personalCard,
-                    data: 'Mariam Kamel',
+                  InputTextCustom(
+                    controller: nameController,
+                    focusNode: nameNode,
+                    onEditingComplete: ()=>FocusScope.of(context).requestFocus(emailNode),
+                    hintText: LocaleKeys.kTypeHere.tr(),
+                    prefix: Padding(
+                      padding: EdgeInsets.all(
+                        SizeData.s12,
+                      ),
+                      child: SvgPicture.asset(
+                        AssetsProviderData.personalCard,
+                        width: Unit(context).getWidthSize*0.06,
+                      ),
+                    ),
                   ),
                   SizedBox(
                     height: SizeData.s8,
@@ -142,9 +197,20 @@ class _ViewDetails extends State<ViewDetails> with SingleTickerProviderStateMixi
                   SizedBox(
                     height: SizeData.s4,
                   ),
-                  ViewDetailsTextFieldCustom(
-                    icon: AssetsProviderData.smsIcon,
-                    data: 'MariamKamel@mail.com',
+                  InputTextCustom(
+                    controller: emailController,
+                    focusNode: emailNode,
+                    onEditingComplete: ()=>FocusScope.of(context).requestFocus(phoneNode),
+                    hintText: LocaleKeys.kTypeHere.tr(),
+                    prefix: Padding(
+                      padding: EdgeInsets.all(
+                        SizeData.s12,
+                      ),
+                      child: SvgPicture.asset(
+                        AssetsProviderData.smsIcon,
+                        width: Unit(context).getWidthSize*0.06,
+                      ),
+                    ),
                   ),
                   SizedBox(
                     height: SizeData.s8,
@@ -156,9 +222,20 @@ class _ViewDetails extends State<ViewDetails> with SingleTickerProviderStateMixi
                   SizedBox(
                     height: SizeData.s4,
                   ),
-                  ViewDetailsTextFieldCustom(
-                    icon: AssetsProviderData.callIcon,
-                    data: '+33 659556556',
+                  InputTextCustom(
+                    controller: phoneController,
+                    focusNode: phoneNode,
+                    onEditingComplete: ()=>FocusScope.of(context).requestFocus(plateNoNode),
+                    hintText: LocaleKeys.kTypeHere.tr(),
+                    prefix: Padding(
+                      padding: EdgeInsets.all(
+                        SizeData.s12,
+                      ),
+                      child: SvgPicture.asset(
+                        AssetsProviderData.callIcon,
+                        width: Unit(context).getWidthSize*0.06,
+                      ),
+                    ),
                   ),
                   SizedBox(
                     height: SizeData.s8,
@@ -170,9 +247,17 @@ class _ViewDetails extends State<ViewDetails> with SingleTickerProviderStateMixi
                   SizedBox(
                     height: SizeData.s4,
                   ),
-                  ViewDetailsTextFieldCustom(
-                    icon: AssetsProviderData.carIcon,
-                    data: 'Sedan',
+                  DropDownFiledCustom(
+                    hintText: LocaleKeys.kTypeHere.tr(),
+                    prefix: Padding(
+                      padding: EdgeInsets.only(
+                        right: SizeData.s12,
+                      ),
+                      child: SvgPicture.asset(
+                        AssetsProviderData.carIcon,
+                        width: Unit(context).getWidthSize*0.06,
+                      ),
+                    ),
                   ),
                   SizedBox(
                     height: SizeData.s8,
@@ -184,9 +269,17 @@ class _ViewDetails extends State<ViewDetails> with SingleTickerProviderStateMixi
                   SizedBox(
                     height: SizeData.s4,
                   ),
-                  ViewDetailsTextFieldCustom(
-                    icon: AssetsProviderData.carIcon,
-                    data: 'BMW',
+                  DropDownFiledCustom(
+                    hintText: LocaleKeys.kTypeHere.tr(),
+                    prefix: Padding(
+                      padding: EdgeInsets.only(
+                        right: SizeData.s12,
+                      ),
+                      child: SvgPicture.asset(
+                        AssetsProviderData.carIcon,
+                        width: Unit(context).getWidthSize*0.06,
+                      ),
+                    ),
                   ),
                   SizedBox(
                     height: SizeData.s8,
@@ -201,9 +294,20 @@ class _ViewDetails extends State<ViewDetails> with SingleTickerProviderStateMixi
                   SizedBox(
                     height: SizeData.s4,
                   ),
-                  ViewDetailsTextFieldCustom(
-                    icon: AssetsProviderData.plateNoIcon,
-                    data: 'ABC-1234',
+                  InputTextCustom(
+                    controller: plateNoController,
+                    focusNode: plateNoNode,
+                    onEditingComplete: ()=>FocusScope.of(context).requestFocus(startDateNode),
+                    hintText: LocaleKeys.kTypeHere.tr(),
+                    prefix: Padding(
+                      padding: EdgeInsets.all(
+                        SizeData.s12,
+                      ),
+                      child: SvgPicture.asset(
+                        AssetsProviderData.plateNoIcon,
+                        width: Unit(context).getWidthSize*0.06,
+                      ),
+                    ),
                   ),
                   SizedBox(
                     height: SizeData.s8,
@@ -273,16 +377,38 @@ class _ViewDetails extends State<ViewDetails> with SingleTickerProviderStateMixi
                   SizedBox(
                     height: SizeData.s4,
                   ),
-                  ViewDetailsTextFieldCustom(
-                    icon: AssetsProviderData.calendar2Icon,
-                    data: '8-13-2024',
+                  InputTextCustom(
+                    controller: startDateController,
+                    focusNode: startDateNode,
+                    onEditingComplete: ()=>FocusScope.of(context).requestFocus(startTimeNode),
+                    hintText: LocaleKeys.kTypeHere.tr(),
+                    prefix: Padding(
+                      padding: EdgeInsets.all(
+                        SizeData.s12,
+                      ),
+                      child: SvgPicture.asset(
+                        AssetsProviderData.calendar2Icon,
+                        width: Unit(context).getWidthSize*0.06,
+                      ),
+                    ),
                   ),
                   SizedBox(
                     height: SizeData.s8,
                   ),
-                  ViewDetailsTextFieldCustom(
-                    icon: AssetsProviderData.clockIcon,
-                    data: '16:00 PM',
+                  InputTextCustom(
+                    controller: startTimeController,
+                    focusNode: startTimeNode,
+                    onEditingComplete: ()=>FocusScope.of(context).requestFocus(endDateNode),
+                    hintText: LocaleKeys.kTypeHere.tr(),
+                    prefix: Padding(
+                      padding: EdgeInsets.all(
+                        SizeData.s12,
+                      ),
+                      child: SvgPicture.asset(
+                        AssetsProviderData.clockIcon,
+                        width: Unit(context).getWidthSize*0.06,
+                      ),
+                    ),
                   ),
                   SizedBox(
                     height: SizeData.s8,
@@ -294,16 +420,38 @@ class _ViewDetails extends State<ViewDetails> with SingleTickerProviderStateMixi
                   SizedBox(
                     height: SizeData.s4,
                   ),
-                  ViewDetailsTextFieldCustom(
-                    icon: AssetsProviderData.calendar2Icon,
-                    data: '8-13-2024',
+                  InputTextCustom(
+                    controller: endDateController,
+                    focusNode: endDateNode,
+                    onEditingComplete: ()=>FocusScope.of(context).requestFocus(endTimeNode),
+                    hintText: LocaleKeys.kTypeHere.tr(),
+                    prefix: Padding(
+                      padding: EdgeInsets.all(
+                        SizeData.s12,
+                      ),
+                      child: SvgPicture.asset(
+                        AssetsProviderData.calendar2Icon,
+                        width: Unit(context).getWidthSize*0.06,
+                      ),
+                    ),
                   ),
                   SizedBox(
                     height: SizeData.s8,
                   ),
-                  ViewDetailsTextFieldCustom(
-                    icon: AssetsProviderData.clockIcon,
-                    data: '16:00 PM',
+                  InputTextCustom(
+                    controller: endTimeController,
+                    focusNode: endTimeNode,
+                    onEditingComplete: ()=>FocusScope.of(context).requestFocus(firstTransferDateNode),
+                    hintText: LocaleKeys.kTypeHere.tr(),
+                    prefix: Padding(
+                      padding: EdgeInsets.all(
+                        SizeData.s12,
+                      ),
+                      child: SvgPicture.asset(
+                        AssetsProviderData.clockIcon,
+                        width: Unit(context).getWidthSize*0.06,
+                      ),
+                    ),
                   ),
                   SizedBox(
                     height: SizeData.s8,
@@ -315,9 +463,17 @@ class _ViewDetails extends State<ViewDetails> with SingleTickerProviderStateMixi
                   SizedBox(
                     height: SizeData.s4,
                   ),
-                  ViewDetailsTextFieldCustom(
-                    icon: AssetsProviderData.building,
-                    data: 'Outdoor',
+                  DropDownFiledCustom(
+                    hintText: LocaleKeys.kTypeHere.tr(),
+                    prefix: Padding(
+                      padding: EdgeInsets.only(
+                        right: SizeData.s12,
+                      ),
+                      child: SvgPicture.asset(
+                        AssetsProviderData.building,
+                        width: Unit(context).getWidthSize*0.06,
+                      ),
+                    ),
                   ),
                   SizedBox(
                     height: SizeData.s8,
@@ -329,9 +485,17 @@ class _ViewDetails extends State<ViewDetails> with SingleTickerProviderStateMixi
                   SizedBox(
                     height: SizeData.s4,
                   ),
-                  ViewDetailsTextFieldCustom(
-                    icon: AssetsProviderData.category,
-                    data: 'confirmed',
+                  DropDownFiledCustom(
+                    hintText: LocaleKeys.kTypeHere.tr(),
+                    prefix: Padding(
+                      padding: EdgeInsets.only(
+                        right: SizeData.s12,
+                      ),
+                      child: SvgPicture.asset(
+                        AssetsProviderData.category,
+                        width: Unit(context).getWidthSize*0.06,
+                      ),
+                    ),
                   ),
                   SizedBox(
                     height: SizeData.s8,
@@ -724,9 +888,20 @@ class _ViewDetails extends State<ViewDetails> with SingleTickerProviderStateMixi
                         SizedBox(
                           height: SizeData.s4,
                         ),
-                        ViewDetailsTextFieldCustom(
-                          icon: AssetsProviderData.calendar2Icon,
-                          data: '8-13-2024',
+                        InputTextCustom(
+                          controller: firstTransferDateController,
+                          focusNode: firstTransferDateNode,
+                          onEditingComplete: ()=>FocusScope.of(context).requestFocus(firstTransferTimeNode),
+                          hintText: LocaleKeys.kTypeHere.tr(),
+                          prefix: Padding(
+                            padding: EdgeInsets.all(
+                              SizeData.s12,
+                            ),
+                            child: SvgPicture.asset(
+                              AssetsProviderData.calendar2Icon,
+                              width: Unit(context).getWidthSize*0.06,
+                            ),
+                          ),
                         ),
                         SizedBox(
                           height: SizeData.s8,
@@ -738,40 +913,73 @@ class _ViewDetails extends State<ViewDetails> with SingleTickerProviderStateMixi
                         SizedBox(
                           height: SizeData.s4,
                         ),
-                        ViewDetailsTextFieldCustom(
-                          icon: AssetsProviderData.clockIcon,
-                          data: '16:00 PM',
+                        InputTextCustom(
+                          controller: firstTransferTimeController,
+                          focusNode: firstTransferTimeNode,
+                          onEditingComplete: ()=>FocusScope.of(context).requestFocus(secondTransferDateNode),
+                          hintText: LocaleKeys.kTypeHere.tr(),
+                          prefix: Padding(
+                            padding: EdgeInsets.all(
+                              SizeData.s12,
+                            ),
+                            child: SvgPicture.asset(
+                              AssetsProviderData.clockIcon,
+                              width: Unit(context).getWidthSize*0.06,
+                            ),
+                          ),
                         ),
                         SizedBox(
                           height: SizeData.s8,
                         ),
-                        Text(
-                          LocaleKeys.kDriverName.tr(),
-                          style: Styles.textStyleGray500R14,
-                        ),
-                        SizedBox(
-                          height: SizeData.s4,
-                        ),
-                        ViewDetailsTextFieldCustom(
-                          icon: AssetsProviderData.personalCard,
-                          data: 'Adam Jhon (Internal)',
-                        ),
-                        SizedBox(
-                          height: SizeData.s8,
-                        ),
-                        SizedBox(
-                          width: SizeData.s8,
-                        ),
-                        Text(
-                          LocaleKeys.kPhone.tr(),
-                          style: Styles.textStyleGray500R14,
-                        ),
-                        SizedBox(
-                          height: SizeData.s4,
-                        ),
-                        ViewDetailsTextFieldCustom(
-                          icon: AssetsProviderData.callIcon,
-                          data: '+33 659556556',
+                        Container(
+                          width: double.infinity,
+                          padding: EdgeInsets.all(
+                            SizeData.s16,
+                          ),
+                          decoration: BoxDecoration(
+                            color: ColorData.whiteColor,
+                            borderRadius: BorderRadius.circular(
+                              SizeData.s8,
+                            ),
+                            border: Border.all(
+                              color: ColorData.gray100Color,
+                            ),
+                          ),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                LocaleKeys.kDrivers.tr(),
+                                style: Styles.textStyleGray500M16,
+                              ),
+                              SizedBox(
+                                height: SizeData.s8,
+                              ),
+                              Text(
+                                LocaleKeys.kHereYouCanAssignDriverToSecondTripShuttle.tr(),
+                                style: Styles.textStyleGray400R14,
+                              ),
+                              SizedBox(
+                                height: SizeData.s16,
+                              ),
+                              MainButtonCustom(
+                                onTap: (){
+                                  buildAssignDriversDialog(
+                                    context: context,
+                                    title: LocaleKeys.kFirstTransfer.tr(),
+                                    firstTransferDateController: firstTransferDateController,
+                                    firstTransferTimeController: firstTransferTimeController,
+                                    secondTransferDateController: secondTransferDateController,
+                                    secondTransferTimeController: secondTransferTimeController,
+                                  );
+                                },
+                                isProvider: true,
+                                text: LocaleKeys.kAssignDriver.tr(),
+                                prefix: AssetsProviderData.addIcon,
+                              ),
+                            ],
+                          ),
                         ),
                         SizedBox(
                           height: SizeData.s8,
@@ -814,9 +1022,20 @@ class _ViewDetails extends State<ViewDetails> with SingleTickerProviderStateMixi
                         SizedBox(
                           height: SizeData.s4,
                         ),
-                        ViewDetailsTextFieldCustom(
-                          icon: AssetsProviderData.calendar2Icon,
-                          data: '8-13-2024',
+                        InputTextCustom(
+                          controller: secondTransferDateController,
+                          focusNode: secondTransferDateNode,
+                          onEditingComplete: ()=>FocusScope.of(context).requestFocus(secondTransferTimeNode),
+                          hintText: LocaleKeys.kTypeHere.tr(),
+                          prefix: Padding(
+                            padding: EdgeInsets.all(
+                              SizeData.s12,
+                            ),
+                            child: SvgPicture.asset(
+                              AssetsProviderData.calendar2Icon,
+                              width: Unit(context).getWidthSize*0.06,
+                            ),
+                          ),
                         ),
                         SizedBox(
                           height: SizeData.s8,
@@ -828,40 +1047,73 @@ class _ViewDetails extends State<ViewDetails> with SingleTickerProviderStateMixi
                         SizedBox(
                           height: SizeData.s4,
                         ),
-                        ViewDetailsTextFieldCustom(
-                          icon: AssetsProviderData.clockIcon,
-                          data: '16:00 PM',
+                        InputTextCustom(
+                          controller: secondTransferTimeController,
+                          focusNode: secondTransferTimeNode,
+                          onEditingComplete: ()=>FocusScope.of(context).requestFocus(priceNode),
+                          hintText: LocaleKeys.kTypeHere.tr(),
+                          prefix: Padding(
+                            padding: EdgeInsets.all(
+                              SizeData.s12,
+                            ),
+                            child: SvgPicture.asset(
+                              AssetsProviderData.clockIcon,
+                              width: Unit(context).getWidthSize*0.06,
+                            ),
+                          ),
                         ),
                         SizedBox(
                           height: SizeData.s8,
                         ),
-                        Text(
-                          LocaleKeys.kDriverName.tr(),
-                          style: Styles.textStyleGray500R14,
-                        ),
-                        SizedBox(
-                          height: SizeData.s4,
-                        ),
-                        ViewDetailsTextFieldCustom(
-                          icon: AssetsProviderData.personalCard,
-                          data: 'Adam Jhon (Internal)',
-                        ),
-                        SizedBox(
-                          height: SizeData.s8,
-                        ),
-                        SizedBox(
-                          width: SizeData.s8,
-                        ),
-                        Text(
-                          LocaleKeys.kPhone.tr(),
-                          style: Styles.textStyleGray500R14,
-                        ),
-                        SizedBox(
-                          height: SizeData.s4,
-                        ),
-                        ViewDetailsTextFieldCustom(
-                          icon: AssetsProviderData.callIcon,
-                          data: '+33 659556556',
+                        Container(
+                          width: double.infinity,
+                          padding: EdgeInsets.all(
+                            SizeData.s16,
+                          ),
+                          decoration: BoxDecoration(
+                            color: ColorData.whiteColor,
+                            borderRadius: BorderRadius.circular(
+                              SizeData.s8,
+                            ),
+                            border: Border.all(
+                              color: ColorData.gray100Color,
+                            ),
+                          ),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                LocaleKeys.kDrivers.tr(),
+                                style: Styles.textStyleGray500M16,
+                              ),
+                              SizedBox(
+                                height: SizeData.s8,
+                              ),
+                              Text(
+                                LocaleKeys.kHereYouCanAssignDriverToSecondTripShuttle.tr(),
+                                style: Styles.textStyleGray400R14,
+                              ),
+                              SizedBox(
+                                height: SizeData.s16,
+                              ),
+                              MainButtonCustom(
+                                onTap: (){
+                                  buildAssignDriversDialog(
+                                    context: context,
+                                    title: LocaleKeys.kSecondTransfer.tr(),
+                                    firstTransferDateController: firstTransferDateController,
+                                    firstTransferTimeController: firstTransferTimeController,
+                                    secondTransferDateController: secondTransferDateController,
+                                    secondTransferTimeController: secondTransferTimeController,
+                                  );
+                                },
+                                isProvider: true,
+                                text: LocaleKeys.kAssignDriver.tr(),
+                                prefix: AssetsProviderData.addIcon,
+                              ),
+                            ],
+                          ),
                         ),
                         SizedBox(
                           height: SizeData.s8,
@@ -934,9 +1186,17 @@ class _ViewDetails extends State<ViewDetails> with SingleTickerProviderStateMixi
                   SizedBox(
                     height: SizeData.s4,
                   ),
-                  ViewDetailsTextFieldCustom(
-                    icon: AssetsProviderData.money,
-                    data: 'Cash',
+                  DropDownFiledCustom(
+                    hintText: LocaleKeys.kSelectHere.tr(),
+                    prefix: Padding(
+                      padding: EdgeInsets.only(
+                        right: SizeData.s12,
+                      ),
+                      child: SvgPicture.asset(
+                        AssetsProviderData.money,
+                        width: Unit(context).getWidthSize*0.06,
+                      ),
+                    ),
                   ),
                   SizedBox(
                     height: SizeData.s8,
@@ -948,9 +1208,20 @@ class _ViewDetails extends State<ViewDetails> with SingleTickerProviderStateMixi
                   SizedBox(
                     height: SizeData.s4,
                   ),
-                  ViewDetailsTextFieldCustom(
-                    icon: AssetsProviderData.money2,
-                    data: '26.20',
+                  InputTextCustom(
+                    controller: priceController,
+                    focusNode: priceNode,
+                    onEditingComplete: ()=>FocusScope.of(context).requestFocus(clientPhoneNode),
+                    hintText: LocaleKeys.kTypeHere.tr(),
+                    prefix: Padding(
+                      padding: EdgeInsets.all(
+                        SizeData.s12,
+                      ),
+                      child: SvgPicture.asset(
+                        AssetsProviderData.money2,
+                        width: Unit(context).getWidthSize*0.06,
+                      ),
+                    ),
                   ),
                   SizedBox(
                     height: SizeData.s8,
@@ -962,9 +1233,17 @@ class _ViewDetails extends State<ViewDetails> with SingleTickerProviderStateMixi
                   SizedBox(
                     height: SizeData.s4,
                   ),
-                  ViewDetailsTextFieldCustom(
-                    icon: AssetsProviderData.money,
-                    data: 'Paid',
+                  DropDownFiledCustom(
+                    hintText: LocaleKeys.kSelectHere.tr(),
+                    prefix: Padding(
+                      padding: EdgeInsets.only(
+                        right: SizeData.s12,
+                      ),
+                      child: SvgPicture.asset(
+                        AssetsProviderData.money,
+                        width: Unit(context).getWidthSize*0.06,
+                      ),
+                    ),
                   ),
                   SizedBox(
                     height: SizeData.s8,
@@ -976,9 +1255,17 @@ class _ViewDetails extends State<ViewDetails> with SingleTickerProviderStateMixi
                   SizedBox(
                     height: SizeData.s4,
                   ),
-                  ViewDetailsTextFieldCustom(
-                    icon: AssetsProviderData.discount,
-                    data: '------',
+                  DropDownFiledCustom(
+                    hintText: '------',
+                    prefix: Padding(
+                      padding: EdgeInsets.only(
+                        right: SizeData.s12,
+                      ),
+                      child: SvgPicture.asset(
+                        AssetsProviderData.discount,
+                        width: Unit(context).getWidthSize*0.06,
+                      ),
+                    ),
                   ),
                   SizedBox(
                     height: SizeData.s8,
@@ -1014,285 +1301,16 @@ class _ViewDetails extends State<ViewDetails> with SingleTickerProviderStateMixi
                   ),
                 ],
               ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        LocaleKeys.kDocumentation.tr(),
-                        style: Styles.textStyleGray500R16,
-                      ),
-                      Icon(
-                        Icons.minimize_outlined,
-                        color: ColorData.gray300Color,
-                      ),
-                    ],
+                  Text(
+                    LocaleKeys.kDocumentation.tr(),
+                    style: Styles.textStyleGray500R16,
                   ),
-                  SizedBox(
-                    height: SizeData.s8,
-                  ),
-                  Divider(
-                    thickness: 1,
-                    color: ColorData.gray100Color,
-                  ),
-                  SizedBox(
-                    height: SizeData.s8,
-                  ),
-                  ticketGenerated ?
-                  Container(
-                    padding: EdgeInsets.all(
-                      SizeData.s16,
-                    ),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(
-                        SizeData.s8,
-                      ),
-                      border: Border.all(
-                        color: ColorData.gray100Color,
-                      ),
-                    ),
-                    child: Column(
-                      children: [
-                        Row(
-                          children: [
-                            SvgPicture.asset(
-                              AssetsProviderData.documentTextIcon,
-                              width: Unit(context).getWidthSize*0.055,
-                            ),
-                            SizedBox(
-                              width: SizeData.s8,
-                            ),
-                            Column(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  'Doc_1.PDF',
-                                  style: Styles.textStyleGray700R12,
-                                ),
-                                Text(
-                                  "200 KB",
-                                  style: Styles.textStyleGray300R10,
-                                ),
-                                GestureDetector(
-                                  onTap: () {},
-                                  child: Text(
-                                    LocaleKeys.kClickToView.tr(),
-                                    style: Styles.textStyleGray3SB12,
-                                  ),
-                                ),
-                              ],
-                            ),
-                            SizedBox(
-                              width: SizeData.s8,
-                            ),
-                            Expanded(
-                              child: OutLineButtonCustom(
-                                onTap: (){},
-                                text: LocaleKeys.kDownload.tr(),
-                                color: ColorData.whiteColor,
-                                isProvider: true,
-                              ),
-                            ),
-                            SizedBox(
-                              width: SizeData.s8,
-                            ),
-                            Expanded(
-                              child: MainButtonCustom(
-                                onTap: (){},
-                                isProvider: true,
-                                text: LocaleKeys.kSendToClient.tr(),
-                                prefix: AssetsProviderData.send,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ):
-                  Container(
-                    width: double.infinity,
-                    padding: EdgeInsets.all(
-                      SizeData.s16,
-                    ),
-                    decoration: BoxDecoration(
-                      color: ColorData.whiteColor,
-                      borderRadius: BorderRadius.circular(
-                        SizeData.s8,
-                      ),
-                      border: Border.all(
-                        color: ColorData.gray100Color,
-                      ),
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Expanded(
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                LocaleKeys.kTicket.tr(),
-                                style: Styles.textStyleGray500M14,
-                              ),
-                              SizedBox(
-                                height: SizeData.s4,
-                              ),
-                              Text(
-                                LocaleKeys.kHereYouCanGenerateYourTicket.tr(),
-                                style: Styles.textStyleGray400R12,
-                                overflow: TextOverflow.visible,
-                              ),
-                            ],
-                          ),
-                        ),
-                        SizedBox(
-                          width: SizeData.s16,
-                        ),
-                        Expanded(
-                          child: MainButtonCustom(
-                            onTap: (){
-                              setState(() {
-                                ticketGenerated = true;
-                              });
-                            },
-                            isProvider: true,
-                            text: LocaleKeys.kGenerate.tr(),
-                            prefix: AssetsProviderData.addIcon,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  SizedBox(
-                    height: SizeData.s8,
-                  ),
-                  invoiceGenerated ?
-                  Container(
-                    padding: EdgeInsets.all(
-                      SizeData.s16,
-                    ),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(
-                        SizeData.s8,
-                      ),
-                      border: Border.all(
-                        color: ColorData.gray100Color,
-                      ),
-                    ),
-                    child: Row(
-                      children: [
-                        SvgPicture.asset(
-                          AssetsProviderData.documentTextIcon,
-                          width: Unit(context).getWidthSize*0.055,
-                        ),
-                        SizedBox(
-                          width: SizeData.s8,
-                        ),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'Doc_1.PDF',
-                              style: Styles.textStyleGray700R12,
-                            ),
-                            Text(
-                              "200 KB",
-                              style: Styles.textStyleGray300R10,
-                            ),
-                            GestureDetector(
-                              onTap: () {},
-                              child: Text(
-                                LocaleKeys.kClickToView.tr(),
-                                style: Styles.textStyleGray3SB12,
-                              ),
-                            ),
-                          ],
-                        ),
-                        SizedBox(
-                          width: SizeData.s8,
-                        ),
-                        Expanded(
-                          child: OutLineButtonCustom(
-                            onTap: (){},
-                            text: LocaleKeys.kDownload.tr(),
-                            color: ColorData.whiteColor,
-                            isProvider: true,
-                          ),
-                        ),
-                        SizedBox(
-                          width: SizeData.s8,
-                        ),
-                        Expanded(
-                          child: MainButtonCustom(
-                            onTap: (){},
-                            isProvider: true,
-                            text: LocaleKeys.kSendToClient.tr(),
-                            prefix: AssetsProviderData.send,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ):
-                  Container(
-                    width: double.infinity,
-                    padding: EdgeInsets.all(
-                      SizeData.s16,
-                    ),
-                    decoration: BoxDecoration(
-                      color: ColorData.whiteColor,
-                      borderRadius: BorderRadius.circular(
-                        SizeData.s8,
-                      ),
-                      border: Border.all(
-                        color: ColorData.gray100Color,
-                      ),
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Expanded(
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                LocaleKeys.kInvoice.tr(),
-                                style: Styles.textStyleGray500M14,
-                              ),
-                              SizedBox(
-                                height: SizeData.s4,
-                              ),
-                              Text(
-                                LocaleKeys.kHereYouCanGenerateYourInvoice.tr(),
-                                style: Styles.textStyleGray400R12,
-                                overflow: TextOverflow.visible,
-                              ),
-                            ],
-                          ),
-                        ),
-                        Expanded(
-                          child: MainButtonCustom(
-                            onTap: (){
-                              setState(() {
-                                invoiceGenerated = true;
-                              });
-                            },
-                            isProvider: true,
-                            text: LocaleKeys.kGenerate.tr(),
-                            prefix: AssetsProviderData.addIcon,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  SizedBox(
-                    height: SizeData.s16,
+                  Icon(
+                    Icons.add,
+                    color: ColorData.gray300Color,
                   ),
                 ],
               ),
@@ -1361,6 +1379,7 @@ class _ViewDetails extends State<ViewDetails> with SingleTickerProviderStateMixi
                   ),
                   ViewDetailsTextFieldCustom(
                     data: 'username Parkorus + name',
+                    icon: AssetsProviderData.userIcon,
                   ),
                   SizedBox(
                     height: SizeData.s8,
@@ -1372,8 +1391,20 @@ class _ViewDetails extends State<ViewDetails> with SingleTickerProviderStateMixi
                   SizedBox(
                     height: SizeData.s4,
                   ),
-                  ViewDetailsTextFieldCustom(
-                    data: 'Client phone',
+                  InputTextCustom(
+                    controller: clientPhoneController,
+                    focusNode: clientPhoneNode,
+                    onEditingComplete: ()=>FocusScope.of(context).requestFocus(reservedAtDateNode),
+                    hintText: LocaleKeys.kTypeHere.tr(),
+                    prefix: Padding(
+                      padding: EdgeInsets.all(
+                        SizeData.s12,
+                      ),
+                      child: SvgPicture.asset(
+                        AssetsProviderData.userIcon,
+                        width: Unit(context).getWidthSize*0.06,
+                      ),
+                    ),
                   ),
                   SizedBox(
                     height: SizeData.s8,
@@ -1385,16 +1416,38 @@ class _ViewDetails extends State<ViewDetails> with SingleTickerProviderStateMixi
                   SizedBox(
                     height: SizeData.s4,
                   ),
-                  ViewDetailsTextFieldCustom(
-                    icon: AssetsProviderData.calendar2Icon,
-                    data: '09/07/2024',
+                  InputTextCustom(
+                    controller: reservedAtDateController,
+                    focusNode: reservedAtDateNode,
+                    onEditingComplete: ()=>FocusScope.of(context).requestFocus(reservedAtTimeNode),
+                    hintText: LocaleKeys.kTypeHere.tr(),
+                    prefix: Padding(
+                      padding: EdgeInsets.all(
+                        SizeData.s12,
+                      ),
+                      child: SvgPicture.asset(
+                        AssetsProviderData.calendar2Icon,
+                        width: Unit(context).getWidthSize*0.06,
+                      ),
+                    ),
                   ),
                   SizedBox(
                     height: SizeData.s8,
                   ),
-                  ViewDetailsTextFieldCustom(
-                    icon: AssetsProviderData.clockIcon,
-                    data: '06:50 PM',
+                  InputTextCustom(
+                    controller: reservedAtTimeController,
+                    focusNode: reservedAtTimeNode,
+                    onEditingComplete: ()=>FocusScope.of(context).requestFocus(commentNode),
+                    hintText: LocaleKeys.kTypeHere.tr(),
+                    prefix: Padding(
+                      padding: EdgeInsets.all(
+                        SizeData.s12,
+                      ),
+                      child: SvgPicture.asset(
+                        AssetsProviderData.clockIcon,
+                        width: Unit(context).getWidthSize*0.06,
+                      ),
+                    ),
                   ),
                   SizedBox(
                     height: SizeData.s16,
@@ -1471,15 +1524,15 @@ class _ViewDetails extends State<ViewDetails> with SingleTickerProviderStateMixi
                   SizedBox(
                     height: SizeData.s4,
                   ),
-                  ViewDetailsTextFieldCustom(
-                    height: Unit(context).getHeightSize*0.24,
-                    data: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad',
+                  InputTextCustom(
+                    controller: commentController,
+                    focusNode: commentNode,
+                    onEditingComplete: ()=>FocusScope.of(context).requestFocus(),
+                    hintText: LocaleKeys.kTypeHere.tr(),
                   ),
                 ],
               ),
             ),
-
-
           ],
         ),
       ),
@@ -1501,8 +1554,8 @@ class _ViewDetails extends State<ViewDetails> with SingleTickerProviderStateMixi
             SizeData.s8,
           ),
           decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            color: ColorData.purple3Color
+              shape: BoxShape.circle,
+              color: ColorData.purple3Color
           ),
           width: Unit(context).getWidthSize*0.15,
           child: SvgPicture.asset(
@@ -1535,7 +1588,7 @@ class _ViewDetails extends State<ViewDetails> with SingleTickerProviderStateMixi
         ),
         const Spacer(),
         Text(
-         '$number',
+          '$number',
           style: Styles.textStyleGrey400R16,
         ),
         SizedBox(

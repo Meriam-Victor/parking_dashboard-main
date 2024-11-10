@@ -347,6 +347,12 @@ abstract class  LocaleKeys {
   static const String kSecondFlight='kSecondFlight';
   static const String kReject='kReject';
   static const String kAccept='kAccept';
+  static const String kReferenceId='kReferenceId';
+  static const String kNewBooking='kNewBooking';
+  static const String kDrivers='kDrivers';
+  static const String kHereYouCanAssignDriverToSecondTripShuttle='kHereYouCanAssignDriverToSecondTripShuttle';
+  static const String kAssignDriver='kAssignDriver';
+  static const String kSelectDriver='kSelectDriver';
 
 
 

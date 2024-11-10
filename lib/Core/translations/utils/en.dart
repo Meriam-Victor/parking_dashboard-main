@@ -348,6 +348,12 @@ const Map<String, String> en = {
   'kSecondFlight' : '2nd Flight',
   'kReject' : 'Reject',
   'kAccept' : 'Accept',
+  'kReferenceId' : 'Reference ID',
+  'kNewBooking' : 'New Booking',
+  'kDrivers' : 'Drivers',
+  'kHereYouCanAssignDriverToSecondTripShuttle' : 'Here you can Assign Driver to Second Trip Shuttle ',
+  'kAssignDriver' : 'Assign Driver',
+  'kSelectDriver' : 'Select Driver',
 
 
 };

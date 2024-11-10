@@ -1,6 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:parking_dashboard/Core/unit/color_data.dart';
 import 'package:parking_dashboard/Core/translations/locale_keys.g.dart';
 import 'package:parking_dashboard/Core/unit/size_data.dart';
@@ -10,12 +11,8 @@ import 'package:parking_dashboard/Core/unit/style_data.dart';
 import 'package:parking_dashboard/Core/widget/provider_app/app_bar_custom.dart';
 import 'package:parking_dashboard/Core/widget/provider_app/side_bar_view.dart';
 import 'package:parking_dashboard/Feature/calender/presentation/view/all_booking_view.dart';
-import 'package:parking_dashboard/Feature/dashboard/presentation/view/widget/functions/other_parking_prices_dialog.dart';
-import 'package:parking_dashboard/Feature/dashboard/presentation/view/widget/other_parking_prices_card_custom.dart';
-import 'package:parking_dashboard/Feature/dashboard/presentation/view/widget/parking_card_custom.dart';
-import 'package:parking_dashboard/Core/widget/provider_app/input_fileds/drop_down_custom.dart';
-import 'package:parking_dashboard/Core/widget/provider_app/input_fileds/input_text_custom.dart';
 import 'package:table_calendar/table_calendar.dart';
+import 'package:parking_dashboard/Core/unit/app_routes.dart';
 
 class Calender extends StatefulWidget {
   const Calender({super.key});
@@ -72,48 +69,53 @@ class _Calender extends State<Calender> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Container(
-                    width: double.infinity,
-                    padding: EdgeInsets.all(
-                      SizeData.s16,
-                    ),
-                    margin: EdgeInsets.symmetric(
-                      horizontal: SizeData.s16,
-                    ),
-                    decoration: BoxDecoration(
-                      color: ColorData.whiteColor,
-                      borderRadius: BorderRadius.circular(
+                  GestureDetector(
+                    onTap: (){
+                      GoRouter.of(context).push(AppRouter.kCreateBooking);
+                    },
+                    child: Container(
+                      width: double.infinity,
+                      padding: EdgeInsets.all(
                         SizeData.s16,
                       ),
-                      boxShadow: [
-                        BoxShadow(
-                          color: ColorData.grayShadow3Color,
-                          spreadRadius: -2,
-                          blurRadius: 8,
-                          offset: const Offset(0, 4),
+                      margin: EdgeInsets.symmetric(
+                        horizontal: SizeData.s16,
+                      ),
+                      decoration: BoxDecoration(
+                        color: ColorData.whiteColor,
+                        borderRadius: BorderRadius.circular(
+                          SizeData.s16,
                         ),
-                        BoxShadow(
-                          color: ColorData.grayShadow4Color,
-                          spreadRadius: 0,
-                          blurRadius: 4,
-                          offset: const Offset(0, 2),
-                        ),
-                      ],
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          LocaleKeys.kCreateBooking.tr(),
-                          style: Styles.textStyleSecondary1R16,
-                        ),
-                        SizedBox(
-                          width: SizeData.s8,
-                        ),
-                        SvgPicture.asset(
-                          AssetsProviderData.calendarPink,
-                        ),
-                      ],
+                        boxShadow: [
+                          BoxShadow(
+                            color: ColorData.grayShadow3Color,
+                            spreadRadius: -2,
+                            blurRadius: 8,
+                            offset: const Offset(0, 4),
+                          ),
+                          BoxShadow(
+                            color: ColorData.grayShadow4Color,
+                            spreadRadius: 0,
+                            blurRadius: 4,
+                            offset: const Offset(0, 2),
+                          ),
+                        ],
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            LocaleKeys.kCreateBooking.tr(),
+                            style: Styles.textStyleSecondary1R16,
+                          ),
+                          SizedBox(
+                            width: SizeData.s8,
+                          ),
+                          SvgPicture.asset(
+                            AssetsProviderData.calendarPink,
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                   TableCalendar(

@@ -254,6 +254,14 @@ abstract class Styles {
     fontFamily: fontFamily,
   );
 
+  static TextStyle textStyleWhiteR16 = TextStyle(
+    color: ColorData.whiteColor,
+    fontWeight: FontWeightStyles.regular,
+    fontSize: unit!.fontSize(16),
+    height: 0.0,
+    fontFamily: fontFamily,
+  );
+
   static TextStyle textStyleBlue400M14 = TextStyle(
     color: ColorData.blue3Color,
     fontWeight: FontWeightStyles.medium,

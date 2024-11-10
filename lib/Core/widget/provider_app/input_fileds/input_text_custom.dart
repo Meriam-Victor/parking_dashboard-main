@@ -54,7 +54,6 @@ class InputTextCustom extends StatelessWidget {
         prefixIcon: prefix,
         enabled: enabled??true,
         contentPadding: EdgeInsets.all(SizeData.s10),
-
         border: OutlineInputBorder(
           borderSide: BorderSide(
             color: ColorData.gray100Color,
