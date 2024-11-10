@@ -2,20 +2,17 @@ import 'package:dotted_border/dotted_border.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:go_router/go_router.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 import 'package:parking_dashboard/Core/unit/color_data.dart';
 import 'package:parking_dashboard/Core/translations/locale_keys.g.dart';
-import 'package:parking_dashboard/Core/unit/app_routes.dart';
 import 'package:parking_dashboard/Core/unit/size_data.dart';
 import 'package:parking_dashboard/Core/unit/unit.dart';
 import 'package:parking_dashboard/Core/unit/assets_data.dart';
 import 'package:parking_dashboard/Core/unit/style_data.dart';
 import 'package:parking_dashboard/Core/widget/provider_app/buttons/main_button_custom.dart';
 import 'package:file_picker/file_picker.dart';
-
-import '../../../../Core/widget/provider_app/input_fileds/drop_down_custom.dart';
-import '../../../../Core/widget/provider_app/input_fileds/input_text_custom.dart';
+import 'package:parking_dashboard/Core/widget/provider_app/input_fileds/drop_down_custom.dart';
+import 'package:parking_dashboard/Core/widget/provider_app/input_fileds/input_text_custom.dart';
 
 class PersonalDetailsView extends StatefulWidget {
   const PersonalDetailsView({super.key});

@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:parking_dashboard/Core/unit/color_data.dart';
 import 'package:parking_dashboard/Core/unit/size_data.dart';
