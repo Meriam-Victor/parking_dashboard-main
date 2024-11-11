@@ -18,7 +18,7 @@ import 'package:parking_dashboard/Feature/dashboard/presentation/view/dashboard_
 import 'package:parking_dashboard/Feature/personal_details/presentation/view/personal_details_view.dart';
 import 'package:parking_dashboard/Feature/dashboard/presentation/view/view_details_view.dart';
 import 'package:parking_dashboard/Feature/calender/presentation/view/calender_view.dart';
-import 'package:parking_dashboard/Feature/calender/presentation/view/all_booking_view.dart';
+import 'package:parking_dashboard/Feature/calender/presentation/view/all_booking_calender_view.dart';
 import 'package:parking_dashboard/Feature/calender/presentation/view/create_booking_view.dart';
 
 abstract class AppRouter {
