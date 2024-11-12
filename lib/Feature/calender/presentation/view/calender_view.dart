@@ -40,7 +40,7 @@ class _Calender extends State<Calender> {
       Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => AllBookingView(date: day),
+          builder: (context) => AllBookingCalenderView(date: day),
         ),
       );
     } else {

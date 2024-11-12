@@ -559,6 +559,14 @@ abstract class Styles {
     fontFamily: fontFamily,
   );
 
+  static TextStyle textStyleGreenR14 = TextStyle(
+    color: ColorData.greenColor,
+    fontWeight: FontWeightStyles.regular,
+    fontSize: unit!.fontSize(14),
+    height: 0.0,
+    fontFamily: fontFamily,
+  );
+
   static TextStyle textStyleDangerR11 = TextStyle(
     color: ColorData.danger2Color,
     fontWeight: FontWeightStyles.regular,
@@ -743,6 +751,14 @@ abstract class Styles {
     fontFamily: fontFamily,
   );
 
+  static TextStyle textStyleBlue7M12 = TextStyle(
+    color: ColorData.blue7Color,
+    fontWeight: FontWeightStyles.medium,
+    fontSize: unit!.fontSize(12),
+    height: 0.0,
+    fontFamily: fontFamily,
+  );
+
   static TextStyle textStyleSecondary2M16 = TextStyle(
     color: ColorData.secondary2Color,
     fontWeight: FontWeightStyles.medium,
@@ -828,6 +844,14 @@ abstract class Styles {
     color: ColorData.gray500Color,
     fontWeight: FontWeightStyles.medium,
     fontSize: unit!.fontSize(14),
+    height: 0.0,
+    fontFamily: fontFamily,
+  );
+
+  static TextStyle textStyleGray500M18 = TextStyle(
+    color: ColorData.gray500Color,
+    fontWeight: FontWeightStyles.medium,
+    fontSize: unit!.fontSize(18),
     height: 0.0,
     fontFamily: fontFamily,
   );

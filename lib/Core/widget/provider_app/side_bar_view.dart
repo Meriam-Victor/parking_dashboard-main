@@ -94,7 +94,7 @@ buildSideBar({required BuildContext context,}) {
             style: Styles.textStyleGray500R16,
           ),
           onTap: () {
-
+          GoRouter.of(context).push(AppRouter.kAllBookingReservationView);
           },
         ),
         ListTile(

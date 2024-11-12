@@ -159,6 +159,7 @@ class AssetsProviderData {
   static const String addIcon ='$buseUrl/provider_app/add_icon.svg';
   static const String calendarPink ='$buseUrl/provider_app/calendar_pink.svg';
   static const String carPurple ='$buseUrl/provider_app/car_purple.svg';
+  static const String printGrayIcon ='$buseUrl/provider_app/print_Icon.svg';
 
 
 

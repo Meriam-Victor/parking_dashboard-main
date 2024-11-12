@@ -32,6 +32,15 @@ class _ViewDetails extends State<ViewDetails> with SingleTickerProviderStateMixi
     super.initState();
   }
 
+  bool showCustomerDetails = true;
+  bool showBookingDetails = true;
+  bool showPassengersAndLuggage = true;
+  bool showShuttleDetails = true;
+  bool showPaymentDetails = true;
+  bool showDocumentation = true;
+  bool showCreationDetails = true;
+  bool showSideNotes = true;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -69,6 +78,7 @@ class _ViewDetails extends State<ViewDetails> with SingleTickerProviderStateMixi
             SizedBox(
               height: SizeData.s16,
             ),
+            showCustomerDetails ?
             Container(
               width: double.infinity,
               padding: EdgeInsets.all(
@@ -105,9 +115,16 @@ class _ViewDetails extends State<ViewDetails> with SingleTickerProviderStateMixi
                         LocaleKeys.kCustomerDetails.tr(),
                         style: Styles.textStyleGray500R16,
                       ),
-                      Icon(
-                        Icons.minimize_outlined,
-                        color: ColorData.gray300Color,
+                      IconButton(
+                        icon: Icon(
+                          Icons.minimize_outlined,
+                          color: ColorData.gray300Color,
+                        ),
+                        onPressed: () {
+                          setState(() {
+                            showCustomerDetails = false;
+                          });
+                        },
                       ),
                     ],
                   ),
@@ -210,10 +227,57 @@ class _ViewDetails extends State<ViewDetails> with SingleTickerProviderStateMixi
                   ),
                 ],
               ),
+            ):
+            Container(
+              width: double.infinity,
+              padding: EdgeInsets.all(
+                SizeData.s16,
+              ),
+              decoration: BoxDecoration(
+                color: ColorData.whiteColor,
+                borderRadius: BorderRadius.circular(
+                  SizeData.s16,
+                ),
+                boxShadow: [
+                  BoxShadow(
+                    color: ColorData.grayShadow3Color,
+                    spreadRadius: -2,
+                    blurRadius: 8,
+                    offset: const Offset(0, 4),
+                  ),
+                  BoxShadow(
+                    color: ColorData.grayShadow4Color,
+                    spreadRadius: 0,
+                    blurRadius: 4,
+                    offset: const Offset(0, 2),
+                  ),
+                ],
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    LocaleKeys.kCustomerDetails.tr(),
+                    style: Styles.textStyleGray500R16,
+                  ),
+                  IconButton(
+                    icon: Icon(
+                      Icons.add,
+                      color: ColorData.gray300Color,
+                    ),
+                    onPressed: () {
+                      setState(() {
+                        showCustomerDetails = true;
+                      });
+                    },
+                  ),
+                ],
+              ),
             ),
             SizedBox(
               height: SizeData.s16,
             ),
+            showBookingDetails ?
             Container(
               width: double.infinity,
               padding: EdgeInsets.all(
@@ -250,9 +314,16 @@ class _ViewDetails extends State<ViewDetails> with SingleTickerProviderStateMixi
                         LocaleKeys.kBookingDetails.tr(),
                         style: Styles.textStyleGray500R16,
                       ),
-                      Icon(
-                        Icons.minimize_outlined,
-                        color: ColorData.gray300Color,
+                      IconButton(
+                        icon: Icon(
+                          Icons.minimize_outlined,
+                          color: ColorData.gray300Color,
+                        ),
+                        onPressed: () {
+                          setState(() {
+                            showBookingDetails = false;
+                          });
+                        },
                       ),
                     ],
                   ),
@@ -338,10 +409,57 @@ class _ViewDetails extends State<ViewDetails> with SingleTickerProviderStateMixi
                   ),
                 ],
               ),
+            ):
+            Container(
+              width: double.infinity,
+              padding: EdgeInsets.all(
+                SizeData.s16,
+              ),
+              decoration: BoxDecoration(
+                color: ColorData.whiteColor,
+                borderRadius: BorderRadius.circular(
+                  SizeData.s16,
+                ),
+                boxShadow: [
+                  BoxShadow(
+                    color: ColorData.grayShadow3Color,
+                    spreadRadius: -2,
+                    blurRadius: 8,
+                    offset: const Offset(0, 4),
+                  ),
+                  BoxShadow(
+                    color: ColorData.grayShadow4Color,
+                    spreadRadius: 0,
+                    blurRadius: 4,
+                    offset: const Offset(0, 2),
+                  ),
+                ],
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    LocaleKeys.kBookingDetails.tr(),
+                    style: Styles.textStyleGray500R16,
+                  ),
+                  IconButton(
+                    icon: Icon(
+                      Icons.add,
+                      color: ColorData.gray300Color,
+                    ),
+                    onPressed: () {
+                      setState(() {
+                        showBookingDetails = true;
+                      });
+                    },
+                  ),
+                ],
+              ),
             ),
             SizedBox(
               height: SizeData.s16,
             ),
+            showPassengersAndLuggage ?
             Container(
               width: double.infinity,
               padding: EdgeInsets.all(
@@ -378,9 +496,16 @@ class _ViewDetails extends State<ViewDetails> with SingleTickerProviderStateMixi
                         LocaleKeys.kPassengersAndLuggage.tr(),
                         style: Styles.textStyleGray500R16,
                       ),
-                      Icon(
-                        Icons.minimize_outlined,
-                        color: ColorData.gray300Color,
+                      IconButton(
+                        icon: Icon(
+                          Icons.minimize_outlined,
+                          color: ColorData.gray300Color,
+                        ),
+                        onPressed: () {
+                          setState(() {
+                            showPassengersAndLuggage = false;
+                          });
+                        },
                       ),
                     ],
                   ),
@@ -636,10 +761,57 @@ class _ViewDetails extends State<ViewDetails> with SingleTickerProviderStateMixi
                   ],
                 ],
               ),
+            ):
+            Container(
+              width: double.infinity,
+              padding: EdgeInsets.all(
+                SizeData.s16,
+              ),
+              decoration: BoxDecoration(
+                color: ColorData.whiteColor,
+                borderRadius: BorderRadius.circular(
+                  SizeData.s16,
+                ),
+                boxShadow: [
+                  BoxShadow(
+                    color: ColorData.grayShadow3Color,
+                    spreadRadius: -2,
+                    blurRadius: 8,
+                    offset: const Offset(0, 4),
+                  ),
+                  BoxShadow(
+                    color: ColorData.grayShadow4Color,
+                    spreadRadius: 0,
+                    blurRadius: 4,
+                    offset: const Offset(0, 2),
+                  ),
+                ],
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    LocaleKeys.kPassengersAndLuggage.tr(),
+                    style: Styles.textStyleGray500R16,
+                  ),
+                  IconButton(
+                    icon: Icon(
+                      Icons.add,
+                      color: ColorData.gray300Color,
+                    ),
+                    onPressed: () {
+                      setState(() {
+                        showPassengersAndLuggage = true;
+                      });
+                    },
+                  ),
+                ],
+              ),
             ),
             SizedBox(
               height: SizeData.s16,
             ),
+            showShuttleDetails ?
             Container(
               width: double.infinity,
               padding: EdgeInsets.all(
@@ -676,9 +848,16 @@ class _ViewDetails extends State<ViewDetails> with SingleTickerProviderStateMixi
                         LocaleKeys.kShuttleDetails.tr(),
                         style: Styles.textStyleGray500R16,
                       ),
-                      Icon(
-                        Icons.minimize_outlined,
-                        color: ColorData.gray300Color,
+                      IconButton(
+                        icon: Icon(
+                          Icons.minimize_outlined,
+                          color: ColorData.gray300Color,
+                        ),
+                        onPressed: () {
+                          setState(() {
+                            showShuttleDetails = false;
+                          });
+                        },
                       ),
                     ],
                   ),
@@ -871,10 +1050,57 @@ class _ViewDetails extends State<ViewDetails> with SingleTickerProviderStateMixi
                   ),
                 ],
               ),
+            ):
+            Container(
+              width: double.infinity,
+              padding: EdgeInsets.all(
+                SizeData.s16,
+              ),
+              decoration: BoxDecoration(
+                color: ColorData.whiteColor,
+                borderRadius: BorderRadius.circular(
+                  SizeData.s16,
+                ),
+                boxShadow: [
+                  BoxShadow(
+                    color: ColorData.grayShadow3Color,
+                    spreadRadius: -2,
+                    blurRadius: 8,
+                    offset: const Offset(0, 4),
+                  ),
+                  BoxShadow(
+                    color: ColorData.grayShadow4Color,
+                    spreadRadius: 0,
+                    blurRadius: 4,
+                    offset: const Offset(0, 2),
+                  ),
+                ],
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    LocaleKeys.kShuttleDetails.tr(),
+                    style: Styles.textStyleGray500R16,
+                  ),
+                  IconButton(
+                    icon: Icon(
+                      Icons.add,
+                      color: ColorData.gray300Color,
+                    ),
+                    onPressed: () {
+                      setState(() {
+                        showShuttleDetails = true;
+                      });
+                    },
+                  ),
+                ],
+              ),
             ),
             SizedBox(
               height: SizeData.s16,
             ),
+            showPaymentDetails ?
             Container(
               width: double.infinity,
               padding: EdgeInsets.all(
@@ -911,9 +1137,16 @@ class _ViewDetails extends State<ViewDetails> with SingleTickerProviderStateMixi
                         LocaleKeys.kPaymentDetails.tr(),
                         style: Styles.textStyleGray500R16,
                       ),
-                      Icon(
-                        Icons.minimize_outlined,
-                        color: ColorData.gray300Color,
+                      IconButton(
+                        icon: Icon(
+                          Icons.minimize_outlined,
+                          color: ColorData.gray300Color,
+                        ),
+                        onPressed: () {
+                          setState(() {
+                            showPaymentDetails = false;
+                          });
+                        },
                       ),
                     ],
                   ),
@@ -985,10 +1218,57 @@ class _ViewDetails extends State<ViewDetails> with SingleTickerProviderStateMixi
                   ),
                 ],
               ),
+            ):
+            Container(
+              width: double.infinity,
+              padding: EdgeInsets.all(
+                SizeData.s16,
+              ),
+              decoration: BoxDecoration(
+                color: ColorData.whiteColor,
+                borderRadius: BorderRadius.circular(
+                  SizeData.s16,
+                ),
+                boxShadow: [
+                  BoxShadow(
+                    color: ColorData.grayShadow3Color,
+                    spreadRadius: -2,
+                    blurRadius: 8,
+                    offset: const Offset(0, 4),
+                  ),
+                  BoxShadow(
+                    color: ColorData.grayShadow4Color,
+                    spreadRadius: 0,
+                    blurRadius: 4,
+                    offset: const Offset(0, 2),
+                  ),
+                ],
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    LocaleKeys.kPaymentDetails.tr(),
+                    style: Styles.textStyleGray500R16,
+                  ),
+                  IconButton(
+                    icon: Icon(
+                      Icons.add,
+                      color: ColorData.gray300Color,
+                    ),
+                    onPressed: () {
+                      setState(() {
+                        showPaymentDetails = true;
+                      });
+                    },
+                  ),
+                ],
+              ),
             ),
             SizedBox(
               height: SizeData.s16,
             ),
+            showDocumentation ?
             Container(
               width: double.infinity,
               padding: EdgeInsets.all(
@@ -1025,9 +1305,16 @@ class _ViewDetails extends State<ViewDetails> with SingleTickerProviderStateMixi
                         LocaleKeys.kDocumentation.tr(),
                         style: Styles.textStyleGray500R16,
                       ),
-                      Icon(
-                        Icons.minimize_outlined,
-                        color: ColorData.gray300Color,
+                      IconButton(
+                        icon: Icon(
+                          Icons.minimize_outlined,
+                          color: ColorData.gray300Color,
+                        ),
+                        onPressed: () {
+                          setState(() {
+                            showDocumentation = false;
+                          });
+                        },
                       ),
                     ],
                   ),
@@ -1054,63 +1341,74 @@ class _ViewDetails extends State<ViewDetails> with SingleTickerProviderStateMixi
                         color: ColorData.gray100Color,
                       ),
                     ),
-                    child: Column(
-                      children: [
-                        Row(
-                          children: [
-                            SvgPicture.asset(
-                              AssetsProviderData.documentTextIcon,
-                              width: Unit(context).getWidthSize*0.055,
-                            ),
-                            SizedBox(
-                              width: SizeData.s8,
-                            ),
-                            Column(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  'Doc_1.PDF',
-                                  style: Styles.textStyleGray700R12,
-                                ),
-                                Text(
-                                  "200 KB",
-                                  style: Styles.textStyleGray300R10,
-                                ),
-                                GestureDetector(
-                                  onTap: () {},
-                                  child: Text(
-                                    LocaleKeys.kClickToView.tr(),
-                                    style: Styles.textStyleGray3SB12,
-                                  ),
-                                ),
-                              ],
-                            ),
-                            SizedBox(
-                              width: SizeData.s8,
-                            ),
-                            Expanded(
-                              child: OutLineButtonCustom(
-                                onTap: (){},
-                                text: LocaleKeys.kDownload.tr(),
-                                color: ColorData.whiteColor,
-                                isProvider: true,
+                    child: Expanded(
+                      child: Column(
+                        children: [
+                          Row(
+                            children: [
+                              SvgPicture.asset(
+                                AssetsProviderData.documentTextIcon,
+                                width: Unit(context).getWidthSize*0.055,
                               ),
-                            ),
-                            SizedBox(
-                              width: SizeData.s8,
-                            ),
-                            Expanded(
-                              child: MainButtonCustom(
-                                onTap: (){},
-                                isProvider: true,
-                                text: LocaleKeys.kSendToClient.tr(),
-                                prefix: AssetsProviderData.send,
+                              SizedBox(
+                                width: SizeData.s8,
                               ),
-                            ),
-                          ],
-                        ),
-                      ],
+                              Expanded(
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      'Doc_1.PDF',
+                                      style: Styles.textStyleGray700R12,
+                                    ),
+                                    Text(
+                                      "200 KB",
+                                      style: Styles.textStyleGray300R10,
+                                    ),
+                                    SizedBox(
+                                      height: SizeData.s8,
+                                    ),
+                                    GestureDetector(
+                                      onTap: () {},
+                                      child: Text(
+                                        LocaleKeys.kClickToView.tr(),
+                                        style: Styles.textStyleGray3SB12,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                          SizedBox(
+                            height: SizeData.s8,
+                          ),
+                          Row(
+                            children: [
+                              Expanded(
+                                child: OutLineButtonCustom(
+                                  onTap: (){},
+                                  text: LocaleKeys.kDownload.tr(),
+                                  color: ColorData.whiteColor,
+                                  isProvider: true,
+                                ),
+                              ),
+                              SizedBox(
+                                width: SizeData.s8,
+                              ),
+                              Expanded(
+                                child: MainButtonCustom(
+                                  onTap: (){},
+                                  isProvider: true,
+                                  text: LocaleKeys.kSendToClient.tr(),
+                                  prefix: AssetsProviderData.send,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
                   ):
                   Container(
@@ -1184,59 +1482,74 @@ class _ViewDetails extends State<ViewDetails> with SingleTickerProviderStateMixi
                         color: ColorData.gray100Color,
                       ),
                     ),
-                    child: Row(
-                      children: [
-                        SvgPicture.asset(
-                          AssetsProviderData.documentTextIcon,
-                          width: Unit(context).getWidthSize*0.055,
-                        ),
-                        SizedBox(
-                          width: SizeData.s8,
-                        ),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'Doc_1.PDF',
-                              style: Styles.textStyleGray700R12,
-                            ),
-                            Text(
-                              "200 KB",
-                              style: Styles.textStyleGray300R10,
-                            ),
-                            GestureDetector(
-                              onTap: () {},
-                              child: Text(
-                                LocaleKeys.kClickToView.tr(),
-                                style: Styles.textStyleGray3SB12,
+                    child: Expanded(
+                      child: Column(
+                        children: [
+                          Row(
+                            children: [
+                              SvgPicture.asset(
+                                AssetsProviderData.documentTextIcon,
+                                width: Unit(context).getWidthSize*0.055,
                               ),
-                            ),
-                          ],
-                        ),
-                        SizedBox(
-                          width: SizeData.s8,
-                        ),
-                        Expanded(
-                          child: OutLineButtonCustom(
-                            onTap: (){},
-                            text: LocaleKeys.kDownload.tr(),
-                            color: ColorData.whiteColor,
-                            isProvider: true,
+                              SizedBox(
+                                width: SizeData.s8,
+                              ),
+                              Expanded(
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      'Doc_1.PDF',
+                                      style: Styles.textStyleGray700R12,
+                                    ),
+                                    Text(
+                                      "200 KB",
+                                      style: Styles.textStyleGray300R10,
+                                    ),
+                                    SizedBox(
+                                      height: SizeData.s8,
+                                    ),
+                                    GestureDetector(
+                                      onTap: () {},
+                                      child: Text(
+                                        LocaleKeys.kClickToView.tr(),
+                                        style: Styles.textStyleGray3SB12,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
                           ),
-                        ),
-                        SizedBox(
-                          width: SizeData.s8,
-                        ),
-                        Expanded(
-                          child: MainButtonCustom(
-                            onTap: (){},
-                            isProvider: true,
-                            text: LocaleKeys.kSendToClient.tr(),
-                            prefix: AssetsProviderData.send,
+                          SizedBox(
+                            height: SizeData.s8,
                           ),
-                        ),
-                      ],
+                          Row(
+                            children: [
+                              Expanded(
+                                child: OutLineButtonCustom(
+                                  onTap: (){},
+                                  text: LocaleKeys.kDownload.tr(),
+                                  color: ColorData.whiteColor,
+                                  isProvider: true,
+                                ),
+                              ),
+                              SizedBox(
+                                width: SizeData.s8,
+                              ),
+                              Expanded(
+                                child: MainButtonCustom(
+                                  onTap: (){},
+                                  isProvider: true,
+                                  text: LocaleKeys.kSendToClient.tr(),
+                                  prefix: AssetsProviderData.send,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
                   ):
                   Container(
@@ -1296,10 +1609,57 @@ class _ViewDetails extends State<ViewDetails> with SingleTickerProviderStateMixi
                   ),
                 ],
               ),
+            ):
+            Container(
+              width: double.infinity,
+              padding: EdgeInsets.all(
+                SizeData.s16,
+              ),
+              decoration: BoxDecoration(
+                color: ColorData.whiteColor,
+                borderRadius: BorderRadius.circular(
+                  SizeData.s16,
+                ),
+                boxShadow: [
+                  BoxShadow(
+                    color: ColorData.grayShadow3Color,
+                    spreadRadius: -2,
+                    blurRadius: 8,
+                    offset: const Offset(0, 4),
+                  ),
+                  BoxShadow(
+                    color: ColorData.grayShadow4Color,
+                    spreadRadius: 0,
+                    blurRadius: 4,
+                    offset: const Offset(0, 2),
+                  ),
+                ],
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    LocaleKeys.kDocumentation.tr(),
+                    style: Styles.textStyleGray500R16,
+                  ),
+                  IconButton(
+                    icon: Icon(
+                      Icons.add,
+                      color: ColorData.gray300Color,
+                    ),
+                    onPressed: () {
+                      setState(() {
+                        showDocumentation = true;
+                      });
+                    },
+                  ),
+                ],
+              ),
             ),
             SizedBox(
               height: SizeData.s16,
             ),
+            showCreationDetails ?
             Container(
               width: double.infinity,
               padding: EdgeInsets.all(
@@ -1336,9 +1696,16 @@ class _ViewDetails extends State<ViewDetails> with SingleTickerProviderStateMixi
                         LocaleKeys.kCreationDetails.tr(),
                         style: Styles.textStyleGray500R16,
                       ),
-                      Icon(
-                        Icons.minimize_outlined,
-                        color: ColorData.gray300Color,
+                      IconButton(
+                        icon: Icon(
+                          Icons.minimize_outlined,
+                          color: ColorData.gray300Color,
+                        ),
+                        onPressed: () {
+                          setState(() {
+                            showCreationDetails = false;
+                          });
+                        },
                       ),
                     ],
                   ),
@@ -1408,10 +1775,57 @@ class _ViewDetails extends State<ViewDetails> with SingleTickerProviderStateMixi
                   ),
                 ],
               ),
+            ):
+            Container(
+              width: double.infinity,
+              padding: EdgeInsets.all(
+                SizeData.s16,
+              ),
+              decoration: BoxDecoration(
+                color: ColorData.whiteColor,
+                borderRadius: BorderRadius.circular(
+                  SizeData.s16,
+                ),
+                boxShadow: [
+                  BoxShadow(
+                    color: ColorData.grayShadow3Color,
+                    spreadRadius: -2,
+                    blurRadius: 8,
+                    offset: const Offset(0, 4),
+                  ),
+                  BoxShadow(
+                    color: ColorData.grayShadow4Color,
+                    spreadRadius: 0,
+                    blurRadius: 4,
+                    offset: const Offset(0, 2),
+                  ),
+                ],
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    LocaleKeys.kCreationDetails.tr(),
+                    style: Styles.textStyleGray500R16,
+                  ),
+                  IconButton(
+                    icon: Icon(
+                      Icons.add,
+                      color: ColorData.gray300Color,
+                    ),
+                    onPressed: () {
+                      setState(() {
+                        showCreationDetails = true;
+                      });
+                    },
+                  ),
+                ],
+              ),
             ),
             SizedBox(
               height: SizeData.s16,
             ),
+            showSideNotes ?
             Container(
               width: double.infinity,
               padding: EdgeInsets.all(
@@ -1448,9 +1862,16 @@ class _ViewDetails extends State<ViewDetails> with SingleTickerProviderStateMixi
                         LocaleKeys.kSideNotes.tr(),
                         style: Styles.textStyleGray500R16,
                       ),
-                      Icon(
-                        Icons.minimize_outlined,
-                        color: ColorData.gray300Color,
+                      IconButton(
+                        icon: Icon(
+                          Icons.minimize_outlined,
+                          color: ColorData.gray300Color,
+                        ),
+                        onPressed: () {
+                          setState(() {
+                            showSideNotes = false;
+                          });
+                        },
                       ),
                     ],
                   ),
@@ -1477,9 +1898,56 @@ class _ViewDetails extends State<ViewDetails> with SingleTickerProviderStateMixi
                   ),
                 ],
               ),
+            ):
+            Container(
+              width: double.infinity,
+              padding: EdgeInsets.all(
+                SizeData.s16,
+              ),
+              decoration: BoxDecoration(
+                color: ColorData.whiteColor,
+                borderRadius: BorderRadius.circular(
+                  SizeData.s16,
+                ),
+                boxShadow: [
+                  BoxShadow(
+                    color: ColorData.grayShadow3Color,
+                    spreadRadius: -2,
+                    blurRadius: 8,
+                    offset: const Offset(0, 4),
+                  ),
+                  BoxShadow(
+                    color: ColorData.grayShadow4Color,
+                    spreadRadius: 0,
+                    blurRadius: 4,
+                    offset: const Offset(0, 2),
+                  ),
+                ],
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    LocaleKeys.kSideNotes.tr(),
+                    style: Styles.textStyleGray500R16,
+                  ),
+                  IconButton(
+                    icon: Icon(
+                      Icons.add,
+                      color: ColorData.gray300Color,
+                    ),
+                    onPressed: () {
+                      setState(() {
+                        showSideNotes = true;
+                      });
+                    },
+                  ),
+                ],
+              ),
             ),
-
-
+            SizedBox(
+              height: SizeData.s16,
+            ),
           ],
         ),
       ),

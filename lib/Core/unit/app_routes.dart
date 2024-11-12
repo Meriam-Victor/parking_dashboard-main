@@ -20,6 +20,8 @@ import 'package:parking_dashboard/Feature/dashboard/presentation/view/view_detai
 import 'package:parking_dashboard/Feature/calender/presentation/view/calender_view.dart';
 import 'package:parking_dashboard/Feature/calender/presentation/view/all_booking_calender_view.dart';
 import 'package:parking_dashboard/Feature/calender/presentation/view/create_booking_view.dart';
+import 'package:parking_dashboard/Feature/reservation/presentation/view/all_booking_reservation_view.dart';
+import 'package:parking_dashboard/Feature/reservation/presentation/view/widget/functions/filter_bookings_sheet.dart';
 
 abstract class AppRouter {
 
@@ -42,8 +44,9 @@ abstract class AppRouter {
   static const kPersonalDetailsView='/kPersonalDetailsView';
   static const kViewDetails='/kViewDetails';
   static const kCalender='/kCalender';
-  static const kAllBookingView='/kAllBookingView';
+  static const kAllBookingCalenderView='/kAllBookingCalenderView';
   static const kCreateBooking='/kCreateBooking';
+  static const kAllBookingReservationView='/kAllBookingReservationView';
 
   static final GoRouter router = GoRouter(
     routes: [
@@ -149,10 +152,10 @@ abstract class AppRouter {
       ),
 
       GoRoute(
-        path: '$kAllBookingView/:date',
+        path: '$kAllBookingCalenderView/:date',
         builder: (context, state) {
           final date = DateTime.parse(state.pathParameters['date']!);
-          return AllBookingView(date: date);
+          return AllBookingCalenderView(date: date);
         },
       ),
 
@@ -160,6 +163,12 @@ abstract class AppRouter {
         path: kCreateBooking,
         builder: (context, state)=> const CreateBooking(),
       ),
+
+      GoRoute(
+        path: kAllBookingReservationView,
+        builder: (context, state)=> const AllBookingReservationView(),
+      ),
+
     ],
   );
 }

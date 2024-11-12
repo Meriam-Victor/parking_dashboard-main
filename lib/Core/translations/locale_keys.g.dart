@@ -353,6 +353,32 @@ abstract class  LocaleKeys {
   static const String kHereYouCanAssignDriverToSecondTripShuttle='kHereYouCanAssignDriverToSecondTripShuttle';
   static const String kAssignDriver='kAssignDriver';
   static const String kSelectDriver='kSelectDriver';
+  static const String kAllBookings='kAllBookings';
+  static const String kFilter='kFilter';
+  static const String kPrint='kPrint';
+  static const String kCheckOutToday='kCheckOutToday';
+  static const String kCheckInToday='kCheckInToday';
+  static const String kCreatedToday='kCreatedToday';
+  static const String kAllDates='kAllDates';
+  static const String kToday='kToday';
+  static const String kYesterday='kYesterday';
+  static const String kTomorrow='kTomorrow';
+  static const String kAll='kAll';
+  static const String kUncompleted='kUncompleted';
+  static const String kWaitingConf='kWaitingConf';
+  static const String kRequestCancelled='kRequestCancelled';
+  static const String kCancelled='kCancelled';
+  static const String kRequestOfExtension='kRequestOfExtension';
+  static const String kCreatedAt='kCreatedAt';
+  static const String kThisMonth='kThisMonth';
+  static const String kThisYear='kThisYear';
+  static const String kPast7Days='kPast7Days';
+  static const String kSecurityCamera='kSecurityCamera';
+  static const String kEV='kEV';
+  static const String kAssigned='kAssigned';
+  static const String kUnassigned='kUnassigned';
+  static const String kShuttleDriver='kShuttleDriver';
+  static const String kApply='kApply';
 
 
 

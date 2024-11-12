@@ -5,16 +5,16 @@ import 'package:parking_dashboard/Core/unit/size_data.dart';
 import 'package:parking_dashboard/Core/unit/style_data.dart';
 import 'package:parking_dashboard/Feature/calender/presentation/view/widget/booking_card_custom.dart';
 
-class AllBookingView extends StatefulWidget {
+class AllBookingCalenderView extends StatefulWidget {
   final DateTime date;
 
-  const AllBookingView({super.key, required this.date});
+  const AllBookingCalenderView({super.key, required this.date});
 
   @override
-  State<AllBookingView> createState() => _AllBookingView();
+  State<AllBookingCalenderView> createState() => _AllBookingCalenderView();
 }
 
-class _AllBookingView extends State<AllBookingView> {
+class _AllBookingCalenderView extends State<AllBookingCalenderView> {
 
   @override
   Widget build(BuildContext context) {

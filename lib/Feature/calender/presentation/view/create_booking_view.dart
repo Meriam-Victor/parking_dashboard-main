@@ -22,6 +22,15 @@ class CreateBooking extends StatefulWidget {
 
 class _CreateBooking extends State<CreateBooking> with SingleTickerProviderStateMixin{
 
+  bool showCustomerDetails = true;
+  bool showBookingDetails = true;
+  bool showPassengersAndLuggage = true;
+  bool showShuttleDetails = true;
+  bool showPaymentDetails = true;
+  bool showDocumentation = true;
+  bool showCreationDetails = true;
+  bool showSideNotes = true;
+
   TextEditingController nameController = TextEditingController();
   TextEditingController emailController = TextEditingController();
   TextEditingController phoneController = TextEditingController();
@@ -113,6 +122,7 @@ class _CreateBooking extends State<CreateBooking> with SingleTickerProviderState
             SizedBox(
               height: SizeData.s16,
             ),
+            showCustomerDetails ?
             Container(
               width: double.infinity,
               padding: EdgeInsets.all(
@@ -149,9 +159,16 @@ class _CreateBooking extends State<CreateBooking> with SingleTickerProviderState
                         LocaleKeys.kCustomerDetails.tr(),
                         style: Styles.textStyleGray500R16,
                       ),
-                      Icon(
-                        Icons.minimize_outlined,
-                        color: ColorData.gray300Color,
+                      IconButton(
+                        icon: Icon(
+                          Icons.minimize_outlined,
+                          color: ColorData.gray300Color,
+                        ),
+                        onPressed: () {
+                          setState(() {
+                            showCustomerDetails = false;
+                          });
+                        },
                       ),
                     ],
                   ),
@@ -314,10 +331,57 @@ class _CreateBooking extends State<CreateBooking> with SingleTickerProviderState
                   ),
                 ],
               ),
+            ):
+            Container(
+              width: double.infinity,
+              padding: EdgeInsets.all(
+                SizeData.s16,
+              ),
+              decoration: BoxDecoration(
+                color: ColorData.whiteColor,
+                borderRadius: BorderRadius.circular(
+                  SizeData.s16,
+                ),
+                boxShadow: [
+                  BoxShadow(
+                    color: ColorData.grayShadow3Color,
+                    spreadRadius: -2,
+                    blurRadius: 8,
+                    offset: const Offset(0, 4),
+                  ),
+                  BoxShadow(
+                    color: ColorData.grayShadow4Color,
+                    spreadRadius: 0,
+                    blurRadius: 4,
+                    offset: const Offset(0, 2),
+                  ),
+                ],
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    LocaleKeys.kCustomerDetails.tr(),
+                    style: Styles.textStyleGray500R16,
+                  ),
+                  IconButton(
+                    icon: Icon(
+                      Icons.add,
+                      color: ColorData.gray300Color,
+                    ),
+                    onPressed: () {
+                      setState(() {
+                        showCustomerDetails = true;
+                      });
+                    },
+                  ),
+                ],
+              ),
             ),
             SizedBox(
               height: SizeData.s16,
             ),
+            showBookingDetails ?
             Container(
               width: double.infinity,
               padding: EdgeInsets.all(
@@ -354,9 +418,16 @@ class _CreateBooking extends State<CreateBooking> with SingleTickerProviderState
                         LocaleKeys.kBookingDetails.tr(),
                         style: Styles.textStyleGray500R16,
                       ),
-                      Icon(
-                        Icons.minimize_outlined,
-                        color: ColorData.gray300Color,
+                      IconButton(
+                        icon: Icon(
+                          Icons.minimize_outlined,
+                          color: ColorData.gray300Color,
+                        ),
+                        onPressed: () {
+                          setState(() {
+                            showBookingDetails = false;
+                          });
+                        },
                       ),
                     ],
                   ),
@@ -502,10 +573,57 @@ class _CreateBooking extends State<CreateBooking> with SingleTickerProviderState
                   ),
                 ],
               ),
+            ):
+            Container(
+              width: double.infinity,
+              padding: EdgeInsets.all(
+                SizeData.s16,
+              ),
+              decoration: BoxDecoration(
+                color: ColorData.whiteColor,
+                borderRadius: BorderRadius.circular(
+                  SizeData.s16,
+                ),
+                boxShadow: [
+                  BoxShadow(
+                    color: ColorData.grayShadow3Color,
+                    spreadRadius: -2,
+                    blurRadius: 8,
+                    offset: const Offset(0, 4),
+                  ),
+                  BoxShadow(
+                    color: ColorData.grayShadow4Color,
+                    spreadRadius: 0,
+                    blurRadius: 4,
+                    offset: const Offset(0, 2),
+                  ),
+                ],
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    LocaleKeys.kBookingDetails.tr(),
+                    style: Styles.textStyleGray500R16,
+                  ),
+                  IconButton(
+                    icon: Icon(
+                      Icons.add,
+                      color: ColorData.gray300Color,
+                    ),
+                    onPressed: () {
+                      setState(() {
+                        showBookingDetails = true;
+                      });
+                    },
+                  ),
+                ],
+              ),
             ),
             SizedBox(
               height: SizeData.s16,
             ),
+            showPassengersAndLuggage ?
             Container(
               width: double.infinity,
               padding: EdgeInsets.all(
@@ -542,9 +660,16 @@ class _CreateBooking extends State<CreateBooking> with SingleTickerProviderState
                         LocaleKeys.kPassengersAndLuggage.tr(),
                         style: Styles.textStyleGray500R16,
                       ),
-                      Icon(
-                        Icons.minimize_outlined,
-                        color: ColorData.gray300Color,
+                      IconButton(
+                        icon: Icon(
+                          Icons.minimize_outlined,
+                          color: ColorData.gray300Color,
+                        ),
+                        onPressed: () {
+                          setState(() {
+                            showPassengersAndLuggage = false;
+                          });
+                        },
                       ),
                     ],
                   ),
@@ -800,10 +925,57 @@ class _CreateBooking extends State<CreateBooking> with SingleTickerProviderState
                   ],
                 ],
               ),
+            ):
+            Container(
+              width: double.infinity,
+              padding: EdgeInsets.all(
+                SizeData.s16,
+              ),
+              decoration: BoxDecoration(
+                color: ColorData.whiteColor,
+                borderRadius: BorderRadius.circular(
+                  SizeData.s16,
+                ),
+                boxShadow: [
+                  BoxShadow(
+                    color: ColorData.grayShadow3Color,
+                    spreadRadius: -2,
+                    blurRadius: 8,
+                    offset: const Offset(0, 4),
+                  ),
+                  BoxShadow(
+                    color: ColorData.grayShadow4Color,
+                    spreadRadius: 0,
+                    blurRadius: 4,
+                    offset: const Offset(0, 2),
+                  ),
+                ],
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    LocaleKeys.kPassengersAndLuggage.tr(),
+                    style: Styles.textStyleGray500R16,
+                  ),
+                  IconButton(
+                    icon: Icon(
+                      Icons.add,
+                      color: ColorData.gray300Color,
+                    ),
+                    onPressed: () {
+                      setState(() {
+                        showPassengersAndLuggage = true;
+                      });
+                    },
+                  ),
+                ],
+              ),
             ),
             SizedBox(
               height: SizeData.s16,
             ),
+            showShuttleDetails ?
             Container(
               width: double.infinity,
               padding: EdgeInsets.all(
@@ -840,9 +1012,16 @@ class _CreateBooking extends State<CreateBooking> with SingleTickerProviderState
                         LocaleKeys.kShuttleDetails.tr(),
                         style: Styles.textStyleGray500R16,
                       ),
-                      Icon(
-                        Icons.minimize_outlined,
-                        color: ColorData.gray300Color,
+                      IconButton(
+                        icon: Icon(
+                          Icons.minimize_outlined,
+                          color: ColorData.gray300Color,
+                        ),
+                        onPressed: () {
+                          setState(() {
+                            showShuttleDetails = false;
+                          });
+                        },
                       ),
                     ],
                   ),
@@ -1123,10 +1302,57 @@ class _CreateBooking extends State<CreateBooking> with SingleTickerProviderState
                   ),
                 ],
               ),
+            ):
+            Container(
+              width: double.infinity,
+              padding: EdgeInsets.all(
+                SizeData.s16,
+              ),
+              decoration: BoxDecoration(
+                color: ColorData.whiteColor,
+                borderRadius: BorderRadius.circular(
+                  SizeData.s16,
+                ),
+                boxShadow: [
+                  BoxShadow(
+                    color: ColorData.grayShadow3Color,
+                    spreadRadius: -2,
+                    blurRadius: 8,
+                    offset: const Offset(0, 4),
+                  ),
+                  BoxShadow(
+                    color: ColorData.grayShadow4Color,
+                    spreadRadius: 0,
+                    blurRadius: 4,
+                    offset: const Offset(0, 2),
+                  ),
+                ],
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    LocaleKeys.kShuttleDetails.tr(),
+                    style: Styles.textStyleGray500R16,
+                  ),
+                  IconButton(
+                    icon: Icon(
+                      Icons.add,
+                      color: ColorData.gray300Color,
+                    ),
+                    onPressed: () {
+                      setState(() {
+                        showShuttleDetails = true;
+                      });
+                    },
+                  ),
+                ],
+              ),
             ),
             SizedBox(
               height: SizeData.s16,
             ),
+            showPaymentDetails ?
             Container(
               width: double.infinity,
               padding: EdgeInsets.all(
@@ -1163,9 +1389,16 @@ class _CreateBooking extends State<CreateBooking> with SingleTickerProviderState
                         LocaleKeys.kPaymentDetails.tr(),
                         style: Styles.textStyleGray500R16,
                       ),
-                      Icon(
-                        Icons.minimize_outlined,
-                        color: ColorData.gray300Color,
+                      IconButton(
+                        icon: Icon(
+                          Icons.minimize_outlined,
+                          color: ColorData.gray300Color,
+                        ),
+                        onPressed: () {
+                          setState(() {
+                            showPaymentDetails = false;
+                          });
+                        },
                       ),
                     ],
                   ),
@@ -1272,10 +1505,117 @@ class _CreateBooking extends State<CreateBooking> with SingleTickerProviderState
                   ),
                 ],
               ),
+            ):
+            Container(
+              width: double.infinity,
+              padding: EdgeInsets.all(
+                SizeData.s16,
+              ),
+              decoration: BoxDecoration(
+                color: ColorData.whiteColor,
+                borderRadius: BorderRadius.circular(
+                  SizeData.s16,
+                ),
+                boxShadow: [
+                  BoxShadow(
+                    color: ColorData.grayShadow3Color,
+                    spreadRadius: -2,
+                    blurRadius: 8,
+                    offset: const Offset(0, 4),
+                  ),
+                  BoxShadow(
+                    color: ColorData.grayShadow4Color,
+                    spreadRadius: 0,
+                    blurRadius: 4,
+                    offset: const Offset(0, 2),
+                  ),
+                ],
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    LocaleKeys.kPaymentDetails.tr(),
+                    style: Styles.textStyleGray500R16,
+                  ),
+                  IconButton(
+                    icon: Icon(
+                      Icons.add,
+                      color: ColorData.gray300Color,
+                    ),
+                    onPressed: () {
+                      setState(() {
+                        showPaymentDetails = true;
+                      });
+                    },
+                  ),
+                ],
+              ),
             ),
             SizedBox(
               height: SizeData.s16,
             ),
+            showDocumentation ?
+            Container(
+              width: double.infinity,
+              padding: EdgeInsets.all(
+                SizeData.s16,
+              ),
+              decoration: BoxDecoration(
+                color: ColorData.whiteColor,
+                borderRadius: BorderRadius.circular(
+                  SizeData.s16,
+                ),
+                boxShadow: [
+                  BoxShadow(
+                    color: ColorData.grayShadow3Color,
+                    spreadRadius: -2,
+                    blurRadius: 8,
+                    offset: const Offset(0, 4),
+                  ),
+                  BoxShadow(
+                    color: ColorData.grayShadow4Color,
+                    spreadRadius: 0,
+                    blurRadius: 4,
+                    offset: const Offset(0, 2),
+                  ),
+                ],
+              ),
+              child: Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        LocaleKeys.kDocumentation.tr(),
+                        style: Styles.textStyleGray500R16,
+                      ),
+                      IconButton(
+                        icon: Icon(
+                          Icons.minimize_outlined,
+                          color: ColorData.gray300Color,
+                        ),
+                        onPressed: () {
+                          setState(() {
+                            showDocumentation = false;
+                          });
+                        },
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: SizeData.s8,
+                  ),
+                  Divider(
+                    thickness: 1,
+                    color: ColorData.gray100Color,
+                  ),
+                  SizedBox(
+                    height: SizeData.s8,
+                  ),
+                ],
+              ),
+            ):
             Container(
               width: double.infinity,
               padding: EdgeInsets.all(
@@ -1308,9 +1648,16 @@ class _CreateBooking extends State<CreateBooking> with SingleTickerProviderState
                     LocaleKeys.kDocumentation.tr(),
                     style: Styles.textStyleGray500R16,
                   ),
-                  Icon(
-                    Icons.add,
-                    color: ColorData.gray300Color,
+                  IconButton(
+                    icon: Icon(
+                      Icons.add,
+                      color: ColorData.gray300Color,
+                    ),
+                    onPressed: () {
+                      setState(() {
+                        showDocumentation = true;
+                      });
+                    },
                   ),
                 ],
               ),
@@ -1318,6 +1665,7 @@ class _CreateBooking extends State<CreateBooking> with SingleTickerProviderState
             SizedBox(
               height: SizeData.s16,
             ),
+            showCreationDetails ?
             Container(
               width: double.infinity,
               padding: EdgeInsets.all(
@@ -1354,9 +1702,16 @@ class _CreateBooking extends State<CreateBooking> with SingleTickerProviderState
                         LocaleKeys.kCreationDetails.tr(),
                         style: Styles.textStyleGray500R16,
                       ),
-                      Icon(
-                        Icons.minimize_outlined,
-                        color: ColorData.gray300Color,
+                      IconButton(
+                        icon: Icon(
+                          Icons.minimize_outlined,
+                          color: ColorData.gray300Color,
+                        ),
+                        onPressed: () {
+                          setState(() {
+                            showCreationDetails = false;
+                          });
+                        },
                       ),
                     ],
                   ),
@@ -1461,10 +1816,57 @@ class _CreateBooking extends State<CreateBooking> with SingleTickerProviderState
                   ),
                 ],
               ),
+            ):
+            Container(
+              width: double.infinity,
+              padding: EdgeInsets.all(
+                SizeData.s16,
+              ),
+              decoration: BoxDecoration(
+                color: ColorData.whiteColor,
+                borderRadius: BorderRadius.circular(
+                  SizeData.s16,
+                ),
+                boxShadow: [
+                  BoxShadow(
+                    color: ColorData.grayShadow3Color,
+                    spreadRadius: -2,
+                    blurRadius: 8,
+                    offset: const Offset(0, 4),
+                  ),
+                  BoxShadow(
+                    color: ColorData.grayShadow4Color,
+                    spreadRadius: 0,
+                    blurRadius: 4,
+                    offset: const Offset(0, 2),
+                  ),
+                ],
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    LocaleKeys.kCreationDetails.tr(),
+                    style: Styles.textStyleGray500R16,
+                  ),
+                  IconButton(
+                    icon: Icon(
+                      Icons.add,
+                      color: ColorData.gray300Color,
+                    ),
+                    onPressed: () {
+                      setState(() {
+                        showCreationDetails = true;
+                      });
+                    },
+                  ),
+                ],
+              ),
             ),
             SizedBox(
               height: SizeData.s16,
             ),
+            showSideNotes ?
             Container(
               width: double.infinity,
               padding: EdgeInsets.all(
@@ -1501,9 +1903,16 @@ class _CreateBooking extends State<CreateBooking> with SingleTickerProviderState
                         LocaleKeys.kSideNotes.tr(),
                         style: Styles.textStyleGray500R16,
                       ),
-                      Icon(
-                        Icons.minimize_outlined,
-                        color: ColorData.gray300Color,
+                      IconButton(
+                        icon: Icon(
+                          Icons.minimize_outlined,
+                          color: ColorData.gray300Color,
+                        ),
+                        onPressed: () {
+                          setState(() {
+                            showSideNotes = false;
+                          });
+                        },
                       ),
                     ],
                   ),
@@ -1532,6 +1941,55 @@ class _CreateBooking extends State<CreateBooking> with SingleTickerProviderState
                   ),
                 ],
               ),
+            ):
+            Container(
+              width: double.infinity,
+              padding: EdgeInsets.all(
+                SizeData.s16,
+              ),
+              decoration: BoxDecoration(
+                color: ColorData.whiteColor,
+                borderRadius: BorderRadius.circular(
+                  SizeData.s16,
+                ),
+                boxShadow: [
+                  BoxShadow(
+                    color: ColorData.grayShadow3Color,
+                    spreadRadius: -2,
+                    blurRadius: 8,
+                    offset: const Offset(0, 4),
+                  ),
+                  BoxShadow(
+                    color: ColorData.grayShadow4Color,
+                    spreadRadius: 0,
+                    blurRadius: 4,
+                    offset: const Offset(0, 2),
+                  ),
+                ],
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    LocaleKeys.kSideNotes.tr(),
+                    style: Styles.textStyleGray500R16,
+                  ),
+                  IconButton(
+                    icon: Icon(
+                      Icons.add,
+                      color: ColorData.gray300Color,
+                    ),
+                    onPressed: () {
+                      setState(() {
+                        showSideNotes = true;
+                      });
+                    },
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(
+              height: SizeData.s16,
             ),
           ],
         ),
