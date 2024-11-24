@@ -379,6 +379,11 @@ abstract class  LocaleKeys {
   static const String kUnassigned='kUnassigned';
   static const String kShuttleDriver='kShuttleDriver';
   static const String kApply='kApply';
+  static const String kFrom='kFrom';
+  static const String kTo='kTo';
+  static const String kNumberOfTransfers='kNumberOfTransfers';
+  static const String kAreYouSureYouWantToSwitchToTravelling='kAreYouSureYouWantToSwitchToTravelling';
+  static const String kContinue='kContinue';
 
 
 

@@ -8,11 +8,13 @@ class DropDownFiledCustom extends StatelessWidget {
   final List<DropdownMenuItem<Object>>? items;
   final void Function(Object?)? onChanged;
   String? hintText;
+  TextStyle? hintTextStyle;
   Object? value;
   String? Function(Object?)? validator;
   Widget ? prefix;
   bool ? isProvider;
-  DropDownFiledCustom({super.key ,this.items, this.onChanged , this.value,this.hintText ,this.validator,this.prefix,this.isProvider});
+  Color ? color;
+  DropDownFiledCustom({super.key ,this.items, this.onChanged , this.value,this.hintText, this.hintTextStyle ,this.validator,this.prefix,this.isProvider,this.color});
 
   @override
   Widget build(BuildContext context) {
@@ -24,8 +26,9 @@ class DropDownFiledCustom extends StatelessWidget {
           return '';
         }
       },
-      hint: Text(hintText??'',style: Styles.textStyleGray300R14,),
+      hint: Text(hintText??'',style: hintTextStyle ?? Styles.textStyleGray300R14,),
       decoration: InputDecoration(
+        fillColor: color ?? ColorData.whiteColor,
         contentPadding: EdgeInsets.all(SizeData.s10),
         prefix: prefix,
         border: OutlineInputBorder(

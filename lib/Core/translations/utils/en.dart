@@ -82,7 +82,7 @@ const Map<String, String> en = {
   'kViewDetails': 'View Details',
   'kSeeMore': 'See More',
   'kOtherParkingPrices': 'Other Parking prices',
-  'kAvailableParkingSpot ': 'Available Parking Spot ',
+  'kAvailableParkingSpot': 'Available Parking Spot',
   'kNumberOfBookings': 'Number of Bookings',
   'kCancelBooking': 'Cancel Booking',
   'kNumberOfCars': 'number of cars',
@@ -380,6 +380,11 @@ const Map<String, String> en = {
   'kUnassigned' : 'Unassigned',
   'kShuttleDriver' : 'Shuttle Driver',
   'kApply' : 'Apply',
+  'kFrom' : 'From',
+  'kTo' : 'To',
+  'kNumberOfTransfers' : 'number of Transfers',
+  'kAreYouSureYouWantToSwitchToTravelling' : 'Are you Sure you want to switch to Travelling ?',
+  'kContinue' : 'Continue',
 
 
 };

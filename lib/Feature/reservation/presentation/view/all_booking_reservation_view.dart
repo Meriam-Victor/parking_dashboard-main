@@ -448,11 +448,13 @@ class _AllBookingReservationView extends State<AllBookingReservationView> with S
                                       SizedBox(
                                         width: SizeData.s8,
                                       ),
-                                      Text(
-                                        _selectedDateRange != null
-                                            ? '${_formatDate(_selectedDateRange!.start)} - ${_formatDate(_selectedDateRange!.end)}'
-                                            : LocaleKeys.kSelectDate.tr(),
-                                        style: Styles.textStyleGray500R14,
+                                      Expanded(
+                                        child: Text(
+                                          _selectedDateRange != null
+                                              ? '${_formatDate(_selectedDateRange!.start)} - ${_formatDate(_selectedDateRange!.end)}'
+                                              : LocaleKeys.kSelectDate.tr(),
+                                          style: Styles.textStyleGray500R14,
+                                        ),
                                       ),
                                     ],
                                   ),

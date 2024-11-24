@@ -18,6 +18,7 @@ class ColorData{
   static Color primaryP4Color = const Color(0xff50117E);
   static Color primaryP5Color = const Color(0xff5D1B8D);
   static Color primaryP6Color = const Color(0xffA38CB4);
+  static Color primaryP7Color = const Color(0xff7A5892);
 
   // todo: secondary
   static Color secondaryColor = const Color(0xffE380D6);
@@ -90,6 +91,8 @@ class ColorData{
   static Color yellow2Color = const Color(0xff9D6507);
   static Color yellow3Color = const Color(0xffDD8E0A);
   static Color yellow4Color = const Color(0xffC98109);
+  static Color yellow5Color = const Color(0xffF59E0B);
+  static Color yellow6Color = const Color(0xffFACC15);
 
   // todo: blue
   static Color blueColor = const Color(0xff3575DD);
@@ -114,6 +117,7 @@ class ColorData{
   static Color green1Color = const Color(0xff1FB356);
   static Color green2Color = const Color(0xffE9F9EF);
   static Color green3Color = const Color(0xff188C43);
+  static Color green4Color = const Color(0xff14B8A6);
 
   // todo: purple
   static Color purpleColor = const Color(0xff55265C);
